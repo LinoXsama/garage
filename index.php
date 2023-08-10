@@ -31,7 +31,7 @@
                     max="100"
                     step="1"
                     value="0"
-                    class="d-block"
+                    class="d-block mb-2 custom-slider"
                 />
                 <span class="">177 220 km - 267 220 km</span>
                 <button class="reset-btn">Réinitialiser</button>
@@ -294,4 +294,4 @@
 
 </main>
 
-<?php require_once  'templates/footer.php'; ?>
+<?php require_once 'templates/footer.php'; ?>

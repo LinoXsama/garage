@@ -29,7 +29,7 @@
                 </div>
                 
                 <div class="col-3 d-flex align-items-center">
-                    <h5>Nos horaires d'ouvertures : </h5>
+                    <h5>Nos horaires d'ouverture : </h5>
                 </div>
 
                 <div class="col">

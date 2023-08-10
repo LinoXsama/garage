@@ -21,8 +21,9 @@ li span {
     font-weight: bold;
 }
 
-
-
+.custom-slider::webkit-slider-thumb {
+    width: 100%;
+}
 /* INDEX.PHP - END */
 
 
