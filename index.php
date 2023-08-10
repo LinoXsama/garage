@@ -244,8 +244,6 @@
 
     </div>
 
-    <?php require_once 'templates/bottom_navbar.php'; ?>
-
 </main>
 
 <?php require_once  'templates/footer.php'; ?>
