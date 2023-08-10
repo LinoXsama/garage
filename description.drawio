@@ -1,0 +1,116 @@
+<mxfile host="65bd71144e">
+    <diagram id="hd9V6HLWF7xjtRXXJGI9" name="Page-1">
+        <mxGraphModel dx="1044" dy="1748" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="62" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4" target="61">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Chaque donnée du formulaire sera stockés individuellement dans le tableau SESSION après sa conversion via la fonction htmlspecialchars de PHP" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="237.5" y="150" width="320" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="8" target="11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8" target="15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="1/ On vérifie si email ou password est vide" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="316.75" y="600" width="161.5" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="11" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="2/ On vérifie si email est valide ou non" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="316.75" y="770" width="161.5" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="13" target="70">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="3/ On vérifie si password est valide ou non" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="316.75" y="940" width="161.5" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="On stocke dans le tableau login_errors le message : le mot de passe ou le mail est vide !&lt;br&gt;&amp;nbsp;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="635" width="490" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="NON" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="488.75" y="640" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="&lt;b&gt;OUI&lt;/b&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="730" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="53">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="478.2500000000002" y="835" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="53" value="On stocke dans le tableau login_errors le message : le mail est invalide !&lt;br&gt;Ici la validation du mail se fait sur base de la présence en base de données de l'adresse mail fournie par l'utilisateur" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="805" width="530" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="55">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="478.2500000000002" y="1005" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="On stocke dans le tableau login_errors le message : le mot de passe est invalide !&lt;br&gt;Ici pour le contrôle on vérifie : si le mot de passe fournit par l'utilisateur correspondant à celui &lt;br&gt;qui est base de données et est associé à l'adresse email fournie par l'utilisateur" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="975" width="520" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="NON" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="805" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="&lt;b&gt;OUI&lt;/b&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="900" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="NON" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="975" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="61" target="64">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="Le tableau de SESSION sera transmis aux fonctions :&lt;br&gt;1/ check si email ou password est vide&lt;br&gt;2/ check si email est valide&lt;br&gt;3/ verif si password est valide" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="237.5" y="290" width="320" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="64" target="8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="On crée un tableau login_errors qui contiendra les différentes erreurs renvoyées par les fonctions de contrôles. Les éléments de ce tableau seront passés aux fonction de controle correspondantes&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="246.25" y="450" width="302.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="70" target="72">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="70" target="85">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="On vérifie si le tableau login_errors est vide" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="316.75" y="1150" width="161.5" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="L'utilisateur est redirgé vers la page de son compte" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="337.5" y="1360" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="&lt;b&gt;OUI&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="1090" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="On utilise les données de login_errors pour afficher les erreurs au dessus des champs concernés par les erreurs et on reste sur la page login" style="whiteSpace=wrap;html=1;rounded=0;glass=0;shadow=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="579" y="1185" width="271" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="&lt;b&gt;OUI&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="1290" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="NON" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="1185" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="On vérifie si le formulaire de connection est soumis" style="rhombus;whiteSpace=wrap;html=1;rounded=0;shadow=1;glass=0;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="202.49" y="-170" width="390" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="1/ On démarre une session&lt;br&gt;2/ On définit un tableau de SESSION à vide avec les clés email et password" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="240.62" y="-30" width="313.75" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="On stocke dans un tableau login_errors:&lt;br&gt;la ou les erreurs relatives aux informations manquantes" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;glass=0;" vertex="1" parent="1">
+                    <mxGeometry x="807.5" y="10" width="212.5" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

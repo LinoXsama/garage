@@ -1,0 +1,33 @@
+/* INDEX.PHP - START */
+
+#search form {
+    width: 50%;
+    /* border: 1px solid crimson; */
+}
+
+#search form input{
+    /* border: 1px solid blue; */
+    border-radius: 20px;
+}
+
+#price-tag {
+    position: absolute;
+    padding: 0 25px;
+    top: 8px;
+    left: 8px;
+}
+
+li span {
+    font-weight: bold;
+}
+
+/* INDEX.PHP - END */
+
+
+/* BOTTOM NAVBAR - START */
+
+.bi{
+    fill: white;
+}
+
+/* BOTTOM NAVBAR - END */
