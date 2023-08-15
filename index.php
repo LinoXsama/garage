@@ -23,46 +23,82 @@
     <div class="container mt-2">
         <form class="d-flex justify-content-around">
 
-            <div class="">
-                <label class="d-inline-block">Kilométrage</label>
-                <input 
-                    type="range"
-                    min="0"
-                    max="100"
-                    step="1"
-                    value="0"
-                    class="d-block mb-2 custom-slider"
-                />
-                <span class="">177 220 km - 267 220 km</span>
-                <button class="reset-btn">Réinitialiser</button>
+            <div style="border: 1px solid crimson">
+                <label class="d-block">Kilométrage</label>
+                <div class="d-flex">
+                    <input 
+                        type="range"
+                        min="0"
+                        max="100"
+                        step="1"
+                        value="100"
+                        class="d-inline-block"
+                    />
+                    <input 
+                        type="range"
+                        min="0"
+                        max="100"
+                        step="1"
+                        value="0"
+                        class="d-inline-block"
+                    />
+                </div>
+                <div class="ctn d-flex justify-content-between">
+                    <span class="">177 220 km - 267 220 km</span>
+                    <button class="">Réinitialiser</button>
+                </div>
             </div>
 
-            <div class="">
-                <label class="d-inline-block">Prix</label>
-                <input 
-                    type="range"
-                    min="0"
-                    max="100"
-                    step="1"
-                    value="0"
-                    class="d-block mr-5"
-                />
-                <span class="ml-5">177 220 km - 267 220 km</span>
-                <button class="reset-btn">Réinitialiser</button>
+            <div class="" style="border: 1px solid crimson">
+                <label class="d-block">Prix</label>
+                <div class="d-flex">
+                    <input 
+                        type="range"
+                        min="0"
+                        max="100"
+                        step="1"
+                        value="100"
+                        class="d-inline-block"
+                    />
+                    <input 
+                        type="range"
+                        min="0"
+                        max="100"
+                        step="1"
+                        value="0"
+                        class="d-inline-block"
+                    />
+                </div>
+                <div class="ctn d-flex justify-content-between">
+                    <span class="">4 790 € - 9 190 €</span>
+                    <button class="">Réinitialiser</button>
+                </div>
             </div>
 
-            <div class="">
-                <label class="d-inline-block">Année</label>
-                <input 
-                    type="range"
-                    min="0"
-                    max="100"
-                    step="1"
-                    value="0"
-                    class="d-block mr-5"
-                />
-                <span class="ml-5">177 220 km - 267 220 km</span>
-                <button class="reset-btn">Réinitialiser</button>
+            <div class="" style="border: 1px solid crimson">
+                <label class="d-block">Années</label>
+                <div class="d-flex">
+                    <input 
+                        type="range"
+                        min="0"
+                        max="100"
+                        step="1"
+                        value="100"
+                        class="d-inline-block"
+                    />
+                    <input 
+                        type="range"
+                        min="0"
+                        max="100"
+                        step="1"
+                        value="0"
+                        class="d-inline-block"
+                    />
+                </div>
+                <div class="ctn d-flex justify-content-between">
+                    <span class="">177 220 km - 267 220 km</span>
+                    <button class="">Réinitialiser</button>
+                </div>
             </div>
 
         </form>
@@ -295,3 +331,4 @@
 </main>
 
 <?php require_once 'templates/footer.php'; ?>
+

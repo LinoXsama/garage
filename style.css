@@ -21,16 +21,18 @@ li span {
     font-weight: bold;
 }
 
-.custom-slider::webkit-slider-thumb {
-    width: 100%;
+.ctn {
+    gap: 20px;
 }
 /* INDEX.PHP - END */
 
 
 /* BOTTOM NAVBAR - START */
 
-.bi{
-    fill: white;
-}
+    .bi{
+        fill: white;
+    }
 
 /* BOTTOM NAVBAR - END */
+
+
