@@ -67,7 +67,7 @@
     function does_password_match(object $conn, string $email, string $password): bool {
     // VERSION 1.2
 
-        $query = "SELECT hashed_password FROM crud WHERE email = ?";
+        $query = "SELECT pwd_hash FROM crud WHERE email = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("s", $email);
         $stmt->execute();

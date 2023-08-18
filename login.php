@@ -11,6 +11,7 @@ require_once 'check_login.php';
 session_start();
 $_SESSION['email'] = $_SESSION['password'] = '';
 
+
 $login_errors = array(
     'empty_email' => '',
     'invalid_email' => '',
@@ -24,6 +25,8 @@ $login_errors = array(
 
 if (isset($_POST['login'])) {
 
+    $email_status = $password_status = false;
+    
     $_SESSION['email'] = htmlspecialchars($_POST['email']);
     $_SESSION['password'] = htmlspecialchars($_POST['password']);
 
