@@ -84,7 +84,7 @@ if (isset($_POST['signup']))
     }
     elseif(is_password_invalid($_SESSION['password']))
     {
-        $signup_errors['invalid_password'] = "L'adresse mail doit comporter au moins 8 caractères pouvant être des lettres minuscules, majuscules ainsi que des caractères spéciaux !";
+        $signup_errors['invalid_password'] = "Le mot de passe doit comporter au moins 8 caractères pouvant être des lettres minuscules, majuscules ainsi que des caractères spéciaux !";
     }
     elseif($_SESSION['password'] != $_SESSION['cf_password']) 
     {
@@ -180,7 +180,7 @@ if (isset($_POST['signup']))
                                 </div>
 
                                 <div class="form-group mb-3 text-center">
-                                    <button class="btn btn-primary" type="submit" name="signup" value="SIGNUP">SE CONNECTER</button>
+                                    <button class="btn btn-primary" type="submit" name="signup" value="SIGNUP">CREER LE COMPTE</button>
                                 </div>
 
                             </form>
