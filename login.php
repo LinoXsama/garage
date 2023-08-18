@@ -52,7 +52,6 @@ if (isset($_POST['login'])) {
     }
 }
 
-
 ?>
 
 <main>
@@ -63,7 +62,7 @@ if (isset($_POST['login'])) {
                 <div class="col-md-8">
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5>Connexion</h5>
+                            <h5 class="text-center">Connexion</h5>
                         </div>
                         <div class="card-body">
                             <form action="login.php" method="POST">
@@ -80,8 +79,8 @@ if (isset($_POST['login'])) {
 
                                         ?>
                                     </p>
-                                    <label for="em">Email</label>
-                                    <input class="form-control" type="text" id="em" name="email" value="<?php echo $_SESSION['email']; ?>">
+                                    <label for="em" class="mb-1">Email</label>
+                                    <input class="form-control" type="text" id="em" name="email" placeholder="example@gmail.com" value="<?php echo $_SESSION['email']; ?>">
                                 </div>
 
                                 <div class="form-group mb-3">
@@ -96,11 +95,11 @@ if (isset($_POST['login'])) {
 
                                         ?>
                                     </p>
-                                    <label for="tl">Mot de passe</label>
+                                    <label for="tl" class="mb-1">Mot de passe</label>
                                     <input class="form-control" type="password" id="tl" name="password" value="<?php echo $_SESSION['password']; ?>">
                                 </div>
 
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-3 text-center">
                                     <button class="btn btn-primary" type="submit" name="login" value="Login">S'INSCRIRE</button>
                                 </div>
 

@@ -28,7 +28,7 @@ function is_password_invalid(string $password): bool
 
 function does_email_exist(object $db_conn, string $user_email): bool {
 
-    $query = "SELECT email FROM users WHERE email = ?";                    
+    $query = "SELECT email FROM crud WHERE email = ?";                    
     $stmt = $db_conn->prepare($query);
     $stmt -> bind_param("s", $user_email);                                 
     $stmt -> execute();
@@ -41,7 +41,7 @@ function does_email_exist(object $db_conn, string $user_email): bool {
 
 }
 
-function user_registration(object $db_conn, string $user_email, string $password): array 
+function user_registration(object $db_conn, string $fname, string $lname, string $user_email, string $password): array 
 {
 
     $data = array
@@ -51,16 +51,18 @@ function user_registration(object $db_conn, string $user_email, string $password
             'qe' => '',
             'return' => ''
         );
+    
+    $userType = "admin";
 
-        $pwd_hash = password_hash($password, PASSWORD_DEFAULT);
+    $pwd_hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $query = "INSERT INTO users(email, hashed_password) VALUES(?, ?)";
-        $data['qp'] = $stmt = $db_conn->prepare($query);
-        $data['qb'] = $stmt->bind_param("ss", $user_email, $pwd_hash);
-        $data['qe'] = $stmt->execute();
+    $query = "INSERT INTO crud(first_name, last_name, email, password, pwd_hash, user_type) VALUES(?, ?, ?, ?, ?, ?)";
+    $data['qp'] = $stmt = $db_conn->prepare($query);
+    $data['qb'] = $stmt->bind_param("ssssss", $fname, $lname, $user_email, $password, $pwd_hash, $userType);
+    $data['qe'] = $stmt->execute();
 
-        $data['return'] = $data['qp'] && $data['qb'] && $data['qe'];
+    $data['return'] = $data['qp'] && $data['qb'] && $data['qe'];
 
-        return $data;
+    return $data;
 
 }

@@ -67,7 +67,7 @@
     function does_password_match(object $conn, string $email, string $password): bool {
     // VERSION 1.2
 
-        $query = "SELECT hashed_password FROM users WHERE email = ?";
+        $query = "SELECT hashed_password FROM crud WHERE email = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -112,7 +112,7 @@
 
     function check_user_type(object $db_conn, string $email): string {
 
-        $query = "SELECT user_type FROM users WHERE email = ?";
+        $query = "SELECT user_type FROM crud WHERE email = ?";
         $stmt = $db_conn->prepare($query);
         $stmt->bind_param("s", $email);
         $stmt->execute();

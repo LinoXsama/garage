@@ -1,3 +1,4 @@
+
 <?php
     $page_title = 'Signup page';
 ?>
@@ -15,6 +16,8 @@
     // Ces variables servent à stocker l'email et le mot de passe du formulaire
     $_SESSION['email'] = '';
     $_SESSION['password'] = '';
+    $_SESSION['lname'] = '';
+    $_SESSION['fname'] = '';
 
     // Tableau contenant les différents variables qui serviront 
     // à afficher les erreurs à l'utilisateur 
@@ -44,6 +47,8 @@ if (isset($_POST['signup']))
 {
     // Récupérer les informations du formulaire signup de manière sécurisée 
 
+    $_SESSION['lname'] = htmlspecialchars($_POST['last_name']);
+    $_SESSION['fname'] = htmlspecialchars($_POST['first_name']);
     $_SESSION['email'] = htmlspecialchars($_POST['email']);
     $_SESSION['password'] = htmlspecialchars($_POST['password']);
     $_SESSION['cf_password'] = htmlspecialchars($_POST['confirm_password']);
@@ -91,7 +96,7 @@ if (isset($_POST['signup']))
 
     if($email_status && $password_status) 
     {
-        $registration_status = user_registration($conn, $_SESSION['email'], $_SESSION['$password']);
+        $registration_status = user_registration($conn, $_SESSION['fname'], $_SESSION['lname'], $_SESSION['email'], $_SESSION['password']);
 
         if($registration_status['return']) 
         {
@@ -107,7 +112,6 @@ if (isset($_POST['signup']))
 
 ?>
 
-
 <main>
 
     <div class="py-5">
@@ -116,12 +120,18 @@ if (isset($_POST['signup']))
                 <div class="col-md-8">
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5 class="text-align">Créer un compte</h5>
+                            <h5 class="text-align text-center">Créer un compte administrateur</h5>
                         </div>
                         <div class="card-body">
                             <form action="signup.php" method="POST">
 
                                 <div class="form-group mb-3">
+
+                                    <label for="nom" class="mb-1">Nom</label>
+                                    <input id="nom" class="form-control" type="text" name="last_name" placeholder="Alexandre" value="<?= $_SESSION['lname']; ?>" required>
+
+                                    <label for="prenom" class="mb-1">Prénom</label>
+                                    <input id="prenom" class="form-control" type="text" name="first_name" placeholder="Legrand" value="<?= $_SESSION['fname']; ?>" required>
 
                                     <?php
                                         if($signup_errors['connection_error']) {
@@ -140,8 +150,8 @@ if (isset($_POST['signup']))
                                         }
                                     ?>
                     
-                                    <label for="em">Enter your email</label>
-                                    <input id="em" class="form-control" type="text" name="email" value="">
+                                    <label for="em" class="mb-1">Enter your email</label>
+                                    <input id="em" class="form-control" type="text" name="email" placeholder="example@gmail.com" value="<?=$_SESSION['email']; ?>">
 
                                 </div>
 
@@ -155,7 +165,7 @@ if (isset($_POST['signup']))
                                             } 
                                         ?>
                                     </p>
-                                    <label for="pwd">Enter your password</label>
+                                    <label for="pwd" class="mb-1">Enter your password</label>
                                     <input id="pwd" class="form-control" type="password" name="password" value="">
                                 </div>
 
@@ -165,12 +175,12 @@ if (isset($_POST['signup']))
                                             echo '<p class="text-danger">'. $signup_errors['confirmed_password'] .'</p>';
                                         }
                                     ?>
-                                    <label for="confirm_pwd">Confirm your password</label>
+                                    <label for="confirm_pwd" class="mb-1">Confirm your password</label>
                                     <input id="confirm_pwd" class="form-control" type="password" name="confirm_password" value="">
                                 </div>
 
-                                <div class="form-group mb-3">
-                                    <button class="btn btn-primary" type="submit" name="signup" value="Signup">SE CONNECTER</button>
+                                <div class="form-group mb-3 text-center">
+                                    <button class="btn btn-primary" type="submit" name="signup" value="SIGNUP">SE CONNECTER</button>
                                 </div>
 
                             </form>
