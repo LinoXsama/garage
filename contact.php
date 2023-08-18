@@ -22,7 +22,8 @@
                         <div class="card-body">
                             <form action="contact.php" method="POST">
                                 <div class="form-group my-3 mx-3" >
-                                    <input type="text" name="NAME" placeholder="Vos nom et prénom" class="form-control my-3">
+                                    <input 
+                                        type="text" name="NAME" placeholder="Vos nom et prénom" class="form-control my-3">
                                     <input type="text" name="EMAIL" placeholder="Votre adresse email" class="form-control mb-3">
                                     <input type="text" name="PHONE" placeholder="Votre numéro de téléphone" class="form-control">
 
