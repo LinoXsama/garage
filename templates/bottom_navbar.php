@@ -22,9 +22,10 @@
                 <div class="col-2">
                     <h5>Section</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Accueil</a></li>
+                        <li class="nav-item mb-2"><a href="index.php" class="nav-link p-0 text-light">Accueil</a></li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Services</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Contactez-nous</a></li>
+                        <li class="nav-item mb-2"><a href="cars.php" class="nav-link p-0 text-light">Nos véhicules</a></li>
+                        <li class="nav-item mb-2"><a href="contact.php" class="nav-link p-0 text-light">Contactez-nous</a></li>
                     </ul>
                 </div>
                 
