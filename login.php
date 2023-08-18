@@ -1,5 +1,5 @@
 <?php
-$page_title = 'login page';
+$page_title = 'Connexion';
 ?>
 
 <?php
