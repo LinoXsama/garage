@@ -12,10 +12,12 @@
     <div id="search" class="container mt-4 d-flex justify-content-center">
         <form role="search">
             <input
-                type="search"
+                id="search-bar"
                 class="form-control form-control-dark"
+                type="search"
                 placeholder="Chercher un véhicule"
                 aria-label="Search"
+                onkeyup="search()"
             />
         </form>
     </div>
@@ -23,7 +25,7 @@
     <div class="container mt-2">
         <form class="d-flex justify-content-around">
 
-            <div style="border: 1px solid crimson">
+            <div class="" style="border: 1px solid crimson">
                 <label class="d-block">Kilométrage</label>
                 <div class="d-flex">
                     <input 
@@ -69,6 +71,7 @@
                         class="d-inline-block"
                     />
                 </div>
+
                 <div class="ctn d-flex justify-content-between">
                     <span class="">4 790 € - 9 190 €</span>
                     <button class="">Réinitialiser</button>
@@ -108,7 +111,7 @@
 
         <div class="row row-cols-1 row-cols-md-3 g-4 pb-4">
 
-            <div class="col">
+            <div class="car col">
                 <div class="card h-100 shadow custom-card">
                     <span class="btn btn-dark" id="price-tag">10 000 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
@@ -132,12 +135,12 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="car col">
                 <div class="card h-100 shadow custom-card">
                     <span class="btn btn-dark" id="price-tag">10 000 €</span>
                     <img src="img/v4.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
-                        <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
+                        <h4 class="card-title">Ferrari Stellar 1996 100 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
@@ -156,12 +159,12 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="car col">
                 <div class="card h-100 shadow custom-card">
                     <span class="btn btn-dark" id="price-tag">140 441 €</span>
                     <img src="img/v5.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
-                        <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
+                        <h4 class="card-title">BMW i5 2018 120 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
@@ -180,7 +183,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="car col">
                 <div class="card h-100 shadow custom-card">
                     <span class="btn btn-dark" id="price-tag">140 441 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
@@ -204,7 +207,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="car col">
                 <div class="card h-100 shadow custom-card">
                     <span class="btn btn-dark" id="price-tag">140 441 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
@@ -228,7 +231,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="car col">
                 <div class="card h-100 shadow custom-card">
                     <span class="btn btn-dark" id="price-tag">140 441 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
@@ -252,7 +255,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="car col">
                 <div class="card h-100 shadow custom-card">
                     <span class="btn btn-dark" id="price-tag">10 000 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
@@ -276,7 +279,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="car col">
                 <div class="card h-100 shadow custom-card">
                     <span class="btn btn-dark" id="price-tag">140 441 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
@@ -300,7 +303,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="car col">
                 <div class="card h-100 shadow custom-card">
                     <span class="btn btn-dark" id="price-tag">140 441 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
