@@ -14,8 +14,9 @@
 
 // result.innerHTML = localStorage.getItem('data');
 
-// Fonctions de la page cars.php - START
+// FONCTIONS DE LA PAGE cars.php - START
 
+// FONCTION QUI CONTROLE LA BARRE DE RECHERCHE
 const search = () => 
 {
     const search_bar = document.getElementById("search-bar").value.toUpperCase();
@@ -41,6 +42,7 @@ const search = () =>
     }
 }
 
+// FONCTION QUI CONTROLE LA RECHERCHE VIA UNE PLAGE DE DONNEES VIA L'INPUT DU TYPE RANGE
 const search_slider = () => {
 
     const km_slider_1 = document.getElementById("km-slider-1").value;
@@ -73,4 +75,4 @@ const search_slider = () => {
 
 }
 
-// Fonctions de la page cars.php - END
+// FONCTIONS DE LA PAGE cars.php - END
