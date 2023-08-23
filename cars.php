@@ -124,7 +124,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage">122500 </span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage">177220 </span>km</span></li>
                             
                         </ul>
                     </div>
@@ -148,7 +148,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage">125800 </span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage">267220 </span>km</span></li>
                             
                         </ul>
                     </div>

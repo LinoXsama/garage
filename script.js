@@ -42,12 +42,13 @@ const search = () =>
     }
 }
 
-// FONCTION QUI CONTROLE LA RECHERCHE VIA UNE PLAGE DE DONNEES VIA L'INPUT DU TYPE RANGE
+// FONCTION QUI CONTROLE LA RECHERCHE SELON UN INTERVALLE DE DONNEES VIA DES INPUTS DU TYPE RANGE
 const search_slider = () => {
 
     const km_slider_1 = document.getElementById("km-slider-1").value;
     const km_slider_2 = document.getElementById("km-slider-2").value;
     const kilometrages = document.getElementsByClassName("kilometrage");
+    const cars = document.getElementsByClassName("car");
     // console.log('[', km_slider_1, ';', km_slider_2, ']');
 
     for(let i = 0; kilometrages.length > i; i++)
@@ -59,15 +60,15 @@ const search_slider = () => {
             match.push(parseInt(kilometrages[j].innerHTML));
         }
 
-        for(let k = 0; match.length > k; k++)
+        for(let z = 0; match.length > z; z++)
         {
-            if(match[k] >= km_slider_1 && match[k] <= km_slider_2)
+            if(match[z] >= km_slider_1 && match[z] <= km_slider_2)
             {
-                match[k].style.display = "";
+                cars[z].style.display = "";
             }
-            else
+            else 
             {
-                match[k].style.display = "none"; 
+                cars[z].style.display = "none";
             }
         }
 
