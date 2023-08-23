@@ -17,7 +17,7 @@
                 type="search"
                 placeholder="Chercher un véhicule"
                 aria-label="Search"
-                onkeyup="search()"
+                oninput="search()"
             />
         </form>
     </div>
@@ -30,24 +30,28 @@
                 <div class="d-flex">
                     <input 
                         type="range"
-                        min="0"
-                        max="100"
+                        min="177220"
+                        max="222220"
                         step="1"
-                        value="100"
+                        value="177220"
+                        id="km-slider-1"
                         class="d-inline-block"
+                        oninput="search_slider()"
                     />
                     <input 
                         type="range"
-                        min="0"
-                        max="100"
+                        min="222221"
+                        max="267220"
                         step="1"
-                        value="0"
+                        value="267220"
+                        id="km-slider-2"
                         class="d-inline-block"
+                        oninput="search_slider()"
                     />
                 </div>
                 <div class="ctn d-flex justify-content-between">
-                    <span class="">177 220 km - 267 220 km</span>
-                    <button class="">Réinitialiser</button>
+                    <span><span id="min-price">177220</span> km - <span id="max-price">267220</span> km</span>
+                    <button>Réinitialiser</button>
                 </div>
             </div>
 
@@ -120,7 +124,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : </span>122 000 <span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage">122500 </span>km</span></li>
                             
                         </ul>
                     </div>
@@ -144,7 +148,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : </span>122 000 <span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage">125800 </span>km</span></li>
                             
                         </ul>
                     </div>
@@ -168,7 +172,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : </span>122 000 <span>km</span></li>
+                            <li><span >Kilométrage : <span class="kilometrage">80000 </span>km</span></li>
                             
                         </ul>
                     </div>
@@ -192,7 +196,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : </span>122 000 <span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage">75000 </span>km</span></li>
                             
                         </ul>
                     </div>
@@ -216,7 +220,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : </span>122 000 <span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage">113000 </span>km</span></li>
                             
                         </ul>
                     </div>
@@ -240,7 +244,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : </span>122 000 <span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage">54020 </span>km</span></li>
                             
                         </ul>
                     </div>
@@ -264,7 +268,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : </span>122 000 <span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage">54325 </span>km</span></li>
                             
                         </ul>
                     </div>
@@ -288,7 +292,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : </span>122 000 <span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage">25630 </span>km</span></li>
                             
                         </ul>
                     </div>
@@ -312,7 +316,7 @@
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : </span>122 000 <span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage">175430 </span>km</span></li>
                             
                         </ul>
                     </div>
