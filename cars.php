@@ -50,8 +50,8 @@
                     />
                 </div>
                 <div class="ctn d-flex justify-content-between">
-                    <span><span id="min-price">177220</span> km - <span id="max-price">267220</span> km</span>
-                    <button>Réinitialiser</button>
+                    <span><span id="min-km">177220</span> km - <span id="max-km">267220</span> km</span>
+                    <button id="reset-km-button" onclick="reset_km_slider()">Réinitialiser</button>
                 </div>
             </div>
 

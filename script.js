@@ -49,7 +49,12 @@ const search_slider = () => {
     const km_slider_2 = document.getElementById("km-slider-2").value;
     const kilometrages = document.getElementsByClassName("kilometrage");
     const cars = document.getElementsByClassName("car");
-    // console.log('[', km_slider_1, ';', km_slider_2, ']');
+
+    const min = document.getElementById("min-km");
+    min.textContent = km_slider_1;
+
+    const max = document.getElementById("max-km");
+    max.textContent = km_slider_2;
 
     for(let i = 0; kilometrages.length > i; i++)
     {
@@ -60,20 +65,47 @@ const search_slider = () => {
             match.push(parseInt(kilometrages[j].innerHTML));
         }
 
-        for(let z = 0; match.length > z; z++)
+        for(let k = 0; match.length > k; k++)
         {
-            if(match[z] >= km_slider_1 && match[z] <= km_slider_2)
+            if(match[k] >= km_slider_1 && match[k] <= km_slider_2)
             {
-                cars[z].style.display = "";
+                cars[k].style.display = "";
             }
             else 
             {
-                cars[z].style.display = "none";
+                cars[k].style.display = "none";
             }
         }
-
     }
 
+};
+
+const reset_km_slider = () => {
+    document.addEventListener('DOMContentLoaded', function() {
+        event.preventDefault();
+        const km_slider_1 = document.getElementById("km-slider-1");
+        const km_slider_2 = document.getElementById("km-slider-2");
+
+        km_slider_1.value = 222220;
+        km_slider_2.value = 267220;
+    });
 }
 
 // FONCTIONS DE LA PAGE cars.php - END
+
+// NOTE POUR UN EVENTUEL USAGE FUTURE: AUTRE MANIERE DE RECUPERER LES DONNEES D'UNE 
+// NODE LIST GENEREE PAR getElementsByClassName() SOUS FORME DE TABLEAU
+
+// let kilometrages = document.getElementsByClassName("kilometrage");
+// let data = Array.from(kilometrages);
+
+// for(let element of data)
+// {
+//     console.log(element.innerHTML);
+// }
+
+// const min = document.getElementById("min-price").innerHTML;
+// console.log(min);
+
+console.log('hello');
+
