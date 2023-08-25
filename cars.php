@@ -8,7 +8,7 @@
 ?>
 
 <main>
-
+    <!-- BARRE DE RECHERCHE - START -->
     <div id="search" class="container mt-4 d-flex justify-content-center">
         <form role="search">
             <input
@@ -17,11 +17,13 @@
                 type="search"
                 placeholder="Cherchez par marque, modèle, année de sortie, nombre de chevaux"
                 aria-label="Search"
-                oninput="search()"
+                oninput="search_bar()"
             />
         </form>
     </div>
+    <!-- BARRE DE RECHERCHE - END -->
 
+    <!-- FILTRES DE RECHERCHE PAR CRITERES : KILOMETRAGE, PRIX, ANNEES - START -->
     <div class="container mt-2">
         <form class="d-flex justify-content-around">
 
@@ -36,7 +38,7 @@
                         value="177220"
                         id="km-slider-1"
                         class="d-inline-block"
-                        oninput="search_slider()"
+                        oninput="search_sliders()"
                     />
                     <input 
                         type="range"
@@ -46,7 +48,7 @@
                         value="267220"
                         id="km-slider-2"
                         class="d-inline-block"
-                        oninput="search_slider()"
+                        oninput="search_sliders()"
                     />
                 </div>
                 <div class="ctn d-flex justify-content-between">
@@ -60,23 +62,23 @@
                 <div class="d-flex">
                     <input 
                         type="range"
-                        min="0"
-                        max="100"
+                        min="4790"
+                        max="6990"
                         step="1"
-                        value="100"
+                        value="4790"
                         id="price-slider-1"
                         class="d-inline-block"
-                        oninput="search_slider()"
+                        oninput="search_sliders()"
                     />
                     <input 
                         type="range"
-                        min="0"
-                        max="100"
+                        min="6991"
+                        max="9190"
                         step="1"
-                        value="0"
+                        value="9190"
                         id="price-slider-2"
                         class="d-inline-block"
-                        oninput="search_slider()"
+                        oninput="search_sliders()"
                     />
                 </div>
 
@@ -99,7 +101,7 @@
                         value="2001"
                         id="year-slider-1"
                         class="d-inline-block"
-                        oninput="search_slider()"
+                        oninput="search_sliders()"
                     />
                     <input 
                         type="range"
@@ -109,7 +111,7 @@
                         value="2010"
                         id="year-slider-2"
                         class="d-inline-block"
-                        oninput="search_slider()"
+                        oninput="search_sliders()"
                     />
                 </div>
                 <div class="ctn d-flex justify-content-between">
@@ -122,6 +124,7 @@
 
         </form>
     </div>
+    <!-- FILTRES DE RECHERCHE PAR CRITERES : KILOMETRAGE, PRIX, ANNEES - END -->
 
     <div id="cars-container" class="container mt-4 mb-4 pt-4">
 
@@ -129,14 +132,14 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark" id="price-tag">10 000 €</span>
+                    <span class="btn btn-dark price" id="price-tag">10000 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage">177220 </span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage-tag">177220</span> km</span></li>
                             
                         </ul>
                     </div>
@@ -153,20 +156,20 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark" id="price-tag">10 000 €</span>
+                    <span class="btn btn-dark price" id="price-tag">15000 €</span>
                     <img src="img/v4.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">Ferrari Stellar 1996 100 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage">267220 </span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage-tag">267220</span> km</span></li>
                             
                         </ul>
                     </div>
                     <div class="card-footer custom-footer">
                         <div class="float-start">
-                            <h4 class="custom-highlight">10 000 €</h4>
+                            <h4 class="custom-highlight">15000 €</h4>
                         </div>
                         <div class="float-end">
                             <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
@@ -177,14 +180,14 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark" id="price-tag">140 441 €</span>
+                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
                     <img src="img/v5.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">BMW i5 2018 120 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span >Kilométrage : <span class="kilometrage">80000 </span>km</span></li>
+                            <li><span >Kilométrage : <span class="kilometrage-tag">80000</span> km</span></li>
                             
                         </ul>
                     </div>
@@ -201,14 +204,14 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark" id="price-tag">140 441 €</span>
+                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">Mitsubishi Elantra 2016 120 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage">75000 </span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage-tag">75000</span> km</span></li>
                             
                         </ul>
                     </div>
@@ -225,14 +228,14 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark" id="price-tag">140 441 €</span>
+                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage">113000 </span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage-tag">113000</span> km</span></li>
                             
                         </ul>
                     </div>
@@ -249,14 +252,14 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark" id="price-tag">140 441 €</span>
+                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage">54020 </span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage-tag">54020</span> km</span></li>
                             
                         </ul>
                     </div>
@@ -273,14 +276,14 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark" id="price-tag">10 000 €</span>
+                    <span class="btn btn-dark price" id="price-tag">10000 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage">54325 </span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage-tag">54325</span> km</span></li>
                             
                         </ul>
                     </div>
@@ -297,14 +300,14 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark" id="price-tag">140 441 €</span>
+                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage">25630 </span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage-tag">25630</span> km</span></li>
                             
                         </ul>
                     </div>
@@ -321,14 +324,14 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark" id="price-tag">140 441 €</span>
+                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
                         <ul class="card-text list-unstyled">
                             <li><span>Année : </span>2016</li>
                             <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage">175430 </span>km</span></li>
+                            <li><span>Kilométrage : <span class="kilometrage-tag">175430</span> km</span></li>
                             
                         </ul>
                     </div>

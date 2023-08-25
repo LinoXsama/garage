@@ -17,7 +17,7 @@
 // FONCTIONS DE LA PAGE cars.php - START
 
 // FONCTION QUI CONTROLE LA BARRE DE RECHERCHE
-const search = () => 
+const search_bar = () => 
 {
     const search_bar = document.getElementById("search-bar").value.toUpperCase();
     const cars = document.getElementsByClassName("car");
@@ -42,8 +42,8 @@ const search = () =>
     }
 };
 
-// FONCTION QUI CONTROLE LA RECHERCHE SELON UN INTERVALLE DE DONNEES VIA DES INPUTS DU TYPE RANGE
-const search_slider = () => {
+// FONCTION QUI CONTROLE LA RECHERCHE PAR FILTRES : KILOMETRAGE, PRIX ET ANNEES
+const search_sliders = () => {
 
     // year range inputs - START
     const year_slider_1 = document.getElementById("year-slider-1").value;
@@ -75,23 +75,27 @@ const search_slider = () => {
     max_km.textContent = km_slider_2;
     // km range inputs - END
 
-    const kilometrages = document.getElementsByClassName("kilometrage");
+    const kilometrages = document.getElementsByClassName("kilometrage-tag");
+    const prices = document.getElementsByClassName("price");
     const cars = document.getElementsByClassName("car");
 
     for(let i = 0; kilometrages.length > i; i++)
     {
-        let match = [];
+        let match_km = [];
+        let match_price = [];
 
         for(let j = 0; kilometrages.length > j; j++)
         {
-            match.push(parseInt(kilometrages[j].innerHTML));
+            match_km.push(parseInt(kilometrages[j].innerHTML));
+            // match_price.push(parseInt(prices[j].innerHTML));
         }
 
-        for(let k = 0; match.length > k; k++)
+        for(let k = 0; match_km.length > k; k++)
         {
-            if(match[k] >= km_slider_1 && match[k] <= km_slider_2)
+            if(match_km[k] >= km_slider_1 && match_km[k] <= km_slider_2)
             {
                 cars[k].style.display = "";
+                // console.log(match_price[k]);
             }
             else 
             {
@@ -119,12 +123,25 @@ const reset_km_slider = () => {
 // NOTE POUR UN EVENTUEL USAGE FUTURE: AUTRE MANIERE DE RECUPERER LES DONNEES D'UNE 
 // NODE LIST GENEREE PAR getElementsByClassName() SOUS FORME DE TABLEAU
 
-// let kilometrages = document.getElementsByClassName("kilometrage");
-// let data = Array.from(kilometrages);
+// let prices = document.getElementsByClassName("price");
+// let price_data = Array.from(prices);
 
-// for(let element of data)
+// let cars = document.getElementsByClassName("car");
+// let cars_data = Array.from(cars);
+
+// for(let element of price_data)
 // {
-//     console.log(element.innerHTML);
+//     let price = parseInt(element.innerHTML);
+
+//     if(price >= 10000 && price <= 140441)
+//     {
+//         console.log(price);
+//     }
+// }
+
+// for(let element of cars_data)
+// {
+//     console.log(element);
 // }
 
 // const min = document.getElementById("min-price").innerHTML;
