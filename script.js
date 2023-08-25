@@ -17,6 +17,7 @@
 // FONCTIONS DE LA PAGE cars.php - START
 
 // FONCTION QUI CONTROLE LA BARRE DE RECHERCHE
+
 const search_bar = () => 
 {
     const search_bar = document.getElementById("search-bar").value.toUpperCase();
@@ -40,6 +41,12 @@ const search_bar = () =>
             }
         }
     }
+};
+
+// FONCTION QUI VERIFIE QU'UN NOMBRE EST COMPRIS DANS UN INTERVALLE FERME
+// isb signifie "is between" = est compris entre
+const isb = (value, limit1, limit2) => {
+    return (value >= limit1 && value <= limit2);
 };
 
 // FONCTION QUI CONTROLE LA RECHERCHE PAR FILTRES : KILOMETRAGE, PRIX ET ANNEES
@@ -87,12 +94,12 @@ const search_sliders = () => {
         for(let j = 0; kilometrages.length > j; j++)
         {
             match_km.push(parseInt(kilometrages[j].innerHTML));
-            // match_price.push(parseInt(prices[j].innerHTML));
+            match_price.push(parseInt(prices[j].innerHTML));
         }
 
         for(let k = 0; match_km.length > k; k++)
         {
-            if(match_km[k] >= km_slider_1 && match_km[k] <= km_slider_2)
+            if(isb(match_km[k], km_slider_1, km_slider_2) && isb(match_price[k], price_slider_1, price_slider_2))
             {
                 cars[k].style.display = "";
                 // console.log(match_price[k]);
@@ -115,8 +122,7 @@ const reset_km_slider = () => {
         km_slider_1.value = 222220;
         km_slider_2.value = 267220;
     });
-
-}
+};
 
 // FONCTIONS DE LA PAGE cars.php - END
 
@@ -146,3 +152,5 @@ const reset_km_slider = () => {
 
 // const min = document.getElementById("min-price").innerHTML;
 // console.log(min);
+
+

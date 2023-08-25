@@ -52,7 +52,9 @@
                     />
                 </div>
                 <div class="ctn d-flex justify-content-between">
-                    <span><span id="min-km">177220</span> km - <span id="max-km">267220</span> km</span>
+                    <span>
+                        <span id="min-km">177220</span> km - <span id="max-km">267220</span> km
+                    </span>
                     <button id="reset-km-button" onclick="reset_km_slider()">Réinitialiser</button>
                 </div>
             </div>
@@ -132,7 +134,7 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">10000 €</span>
+                    <span class="btn btn-dark price" id="price-tag">9190 €</span>
                     <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
@@ -145,7 +147,7 @@
                     </div>
                     <div class="card-footer custom-footer">
                         <div class="float-start">
-                            <h4 class="custom-highlight">10 000 €</h4>
+                            <h4 class="custom-highlight">9190 €</h4>
                         </div>
                         <div class="float-end">
                             <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
@@ -156,7 +158,7 @@
 
             <div class="car col">
                 <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">15000 €</span>
+                    <span class="btn btn-dark price" id="price-tag">5000 €</span>
                     <img src="img/v4.jpg" alt="" class="card-img-top w-100 custom-bg">
                     <div class="card-body">
                         <h4 class="card-title">Ferrari Stellar 1996 100 CH</h4>
@@ -169,7 +171,7 @@
                     </div>
                     <div class="card-footer custom-footer">
                         <div class="float-start">
-                            <h4 class="custom-highlight">15000 €</h4>
+                            <h4 class="custom-highlight">5000 €</h4>
                         </div>
                         <div class="float-end">
                             <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
@@ -193,7 +195,7 @@
                     </div>
                     <div class="card-footer custom-footer">
                         <div class="float-start">
-                            <h4 class="custom-highlight">140 441 €</h4>
+                            <h4 class="custom-highlight">140441 €</h4>
                         </div>
                         <div class="float-end">
                             <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
@@ -217,7 +219,7 @@
                     </div>
                     <div class="card-footer custom-footer">
                         <div class="float-start">
-                            <h4 class="custom-highlight">140 441 €</h4>
+                            <h4 class="custom-highlight">140441 €</h4>
                         </div>
                         <div class="float-end">
                             <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
@@ -241,7 +243,7 @@
                     </div>
                     <div class="card-footer custom-footer">
                         <div class="float-start">
-                            <h4 class="custom-highlight">140 441 €</h4>
+                            <h4 class="custom-highlight">140441 €</h4>
                         </div>
                         <div class="float-end">
                             <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
@@ -265,7 +267,7 @@
                     </div>
                     <div class="card-footer custom-footer">
                         <div class="float-start">
-                            <h4 class="custom-highlight">140 441 €</h4>
+                            <h4 class="custom-highlight">140441 €</h4>
                         </div>
                         <div class="float-end">
                             <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
@@ -289,7 +291,7 @@
                     </div>
                     <div class="card-footer custom-footer">
                         <div class="float-start">
-                            <h4 class="custom-highlight">140 441 €</h4>
+                            <h4 class="custom-highlight">140441 €</h4>
                         </div>
                         <div class="float-end">
                             <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
@@ -313,7 +315,7 @@
                     </div>
                     <div class="card-footer custom-footer">
                         <div class="float-start">
-                            <h4 class="custom-highlight">140 441 €</h4>
+                            <h4 class="custom-highlight">140441 €</h4>
                         </div>
                         <div class="float-end">
                             <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
@@ -337,7 +339,7 @@
                     </div>
                     <div class="card-footer custom-footer">
                         <div class="float-start">
-                            <h4 class="custom-highlight">140 441 €</h4>
+                            <h4 class="custom-highlight">140441 €</h4>
                         </div>
                         <div class="float-end">
                             <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
