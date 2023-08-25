@@ -40,26 +40,48 @@ const search = () =>
             }
         }
     }
-}
+};
 
 // FONCTION QUI CONTROLE LA RECHERCHE SELON UN INTERVALLE DE DONNEES VIA DES INPUTS DU TYPE RANGE
 const search_slider = () => {
 
+    // year range inputs - START
+    const year_slider_1 = document.getElementById("year-slider-1").value;
+    const min_year = document.getElementById("min-year");
+    min_year.textContent = year_slider_1;
+
+    const year_slider_2 = document.getElementById("year-slider-2").value;
+    const max_year = document.getElementById("max-year");
+    max_year.textContent = year_slider_2;
+    // year range inputs - END
+
+    // price range inputs - START
+    const price_slider_1 = document.getElementById("price-slider-1").value;
+    const min_price = document.getElementById("min-price");
+    min_price.textContent = price_slider_1;
+    
+    const price_slider_2 = document.getElementById("price-slider-2").value;
+    const max_price = document.getElementById("max-price");
+    max_price.textContent = price_slider_2;
+    // price range inputs - END
+
+    // km range inputs - START
     const km_slider_1 = document.getElementById("km-slider-1").value;
+    const min_km = document.getElementById("min-km");
+    min_km.textContent = km_slider_1;
+
     const km_slider_2 = document.getElementById("km-slider-2").value;
+    const max_km = document.getElementById("max-km");
+    max_km.textContent = km_slider_2;
+    // km range inputs - END
+
     const kilometrages = document.getElementsByClassName("kilometrage");
     const cars = document.getElementsByClassName("car");
-
-    const min = document.getElementById("min-km");
-    min.textContent = km_slider_1;
-
-    const max = document.getElementById("max-km");
-    max.textContent = km_slider_2;
 
     for(let i = 0; kilometrages.length > i; i++)
     {
         let match = [];
-        
+
         for(let j = 0; kilometrages.length > j; j++)
         {
             match.push(parseInt(kilometrages[j].innerHTML));
@@ -89,6 +111,7 @@ const reset_km_slider = () => {
         km_slider_1.value = 222220;
         km_slider_2.value = 267220;
     });
+
 }
 
 // FONCTIONS DE LA PAGE cars.php - END
@@ -106,6 +129,3 @@ const reset_km_slider = () => {
 
 // const min = document.getElementById("min-price").innerHTML;
 // console.log(min);
-
-console.log('hello');
-

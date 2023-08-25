@@ -15,7 +15,7 @@
                 id="search-bar"
                 class="form-control form-control-dark"
                 type="search"
-                placeholder="Chercher un véhicule"
+                placeholder="Cherchez par marque, modèle, année de sortie, nombre de chevaux"
                 aria-label="Search"
                 oninput="search()"
             />
@@ -64,7 +64,9 @@
                         max="100"
                         step="1"
                         value="100"
+                        id="price-slider-1"
                         class="d-inline-block"
+                        oninput="search_slider()"
                     />
                     <input 
                         type="range"
@@ -72,13 +74,17 @@
                         max="100"
                         step="1"
                         value="0"
+                        id="price-slider-2"
                         class="d-inline-block"
+                        oninput="search_slider()"
                     />
                 </div>
 
                 <div class="ctn d-flex justify-content-between">
-                    <span class="">4 790 € - 9 190 €</span>
-                    <button class="">Réinitialiser</button>
+                    <span>
+                        <span id="min-price">4790</span> € - <span id="max-price">9190</span> €
+                    </span>
+                    <button>Réinitialiser</button>
                 </div>
             </div>
 
@@ -87,24 +93,30 @@
                 <div class="d-flex">
                     <input 
                         type="range"
-                        min="0"
-                        max="100"
+                        min="2001"
+                        max="2005"
                         step="1"
-                        value="100"
+                        value="2001"
+                        id="year-slider-1"
                         class="d-inline-block"
+                        oninput="search_slider()"
                     />
                     <input 
                         type="range"
-                        min="0"
-                        max="100"
+                        min="2006"
+                        max="2010"
                         step="1"
-                        value="0"
+                        value="2010"
+                        id="year-slider-2"
                         class="d-inline-block"
+                        oninput="search_slider()"
                     />
                 </div>
                 <div class="ctn d-flex justify-content-between">
-                    <span class="">177 220 km - 267 220 km</span>
-                    <button class="">Réinitialiser</button>
+                    <span>
+                        <span id="min-year">2001</span> - <span id="max-year">2010</span>
+                    </span>
+                    <button>Réinitialiser</button>
                 </div>
             </div>
 
