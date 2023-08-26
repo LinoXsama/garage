@@ -5,6 +5,7 @@
 <?php
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
+    require_once 'functions.php';
 ?>
 
 <main>
@@ -132,221 +133,40 @@
 
         <div class="row row-cols-1 row-cols-md-3 g-4 pb-4">
 
-            <div class="car col">
-                <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">9190 €</span>
-                    <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
-                    <div class="card-body">
-                        <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
-                        <ul class="card-text list-unstyled">
-                            <li><span>Année : </span>2016</li>
-                            <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage-tag">177220</span> km</span></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="card-footer custom-footer">
-                        <div class="float-start">
-                            <h4 class="custom-highlight">9190 €</h4>
-                        </div>
-                        <div class="float-end">
-                            <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+                $cars = select('cars');
 
-            <div class="car col">
-                <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">5000 €</span>
-                    <img src="img/v4.jpg" alt="" class="card-img-top w-100 custom-bg">
-                    <div class="card-body">
-                        <h4 class="card-title">Ferrari Stellar 1996 100 CH</h4>
-                        <ul class="card-text list-unstyled">
-                            <li><span>Année : </span>2016</li>
-                            <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage-tag">267220</span> km</span></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="card-footer custom-footer">
-                        <div class="float-start">
-                            <h4 class="custom-highlight">5000 €</h4>
-                        </div>
-                        <div class="float-end">
-                            <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                while($row = mysqli_fetch_assoc($cars))
+                {
+            ?>
 
-            <div class="car col">
-                <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
-                    <img src="img/v5.jpg" alt="" class="card-img-top w-100 custom-bg">
-                    <div class="card-body">
-                        <h4 class="card-title">BMW i5 2018 120 CH</h4>
-                        <ul class="card-text list-unstyled">
-                            <li><span>Année : </span>2016</li>
-                            <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span >Kilométrage : <span class="kilometrage-tag">80000</span> km</span></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="card-footer custom-footer">
-                        <div class="float-start">
-                            <h4 class="custom-highlight">140441 €</h4>
+                <div class="car col">
+                    <div class="card h-100 shadow custom-card">
+                        <span class="btn btn-dark price" id="price-tag"><?= $row['cars_price']; ?> €</span>
+                        <img src="<?= $row['cars_image_path']; ?>" alt="" class="card-img-top w-100 custom-bg">
+                        <div class="card-body">
+                            <h4 class="card-title"><?= $row['cars_brand']; ?> <?= $row['cars_model']; ?> <?= $row['cars_release_year']; ?> <?= $row['cars_power']; ?> CH</h4>
+                            <ul class="card-text list-unstyled">
+                                <li><span>Année : </span><?= $row['cars_release_year']; ?></li>
+                                <li><span>Type de moteur : </span><?= $row['cars_engine_type']; ?></li>
+                                <li><span>Kilométrage : <span class="kilometrage-tag"><?= $row['cars_km']; ?></span> km</span></li>
+                                
+                            </ul>
                         </div>
-                        <div class="float-end">
-                            <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="car col">
-                <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
-                    <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
-                    <div class="card-body">
-                        <h4 class="card-title">Mitsubishi Elantra 2016 120 CH</h4>
-                        <ul class="card-text list-unstyled">
-                            <li><span>Année : </span>2016</li>
-                            <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage-tag">75000</span> km</span></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="card-footer custom-footer">
-                        <div class="float-start">
-                            <h4 class="custom-highlight">140441 €</h4>
-                        </div>
-                        <div class="float-end">
-                            <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
+                        <div class="card-footer custom-footer">
+                            <div class="float-start">
+                                <h4 class="custom-highlight"><?= $row['cars_price']; ?> €</h4>
+                            </div>
+                            <div class="float-end">
+                                <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="car col">
-                <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
-                    <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
-                    <div class="card-body">
-                        <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
-                        <ul class="card-text list-unstyled">
-                            <li><span>Année : </span>2016</li>
-                            <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage-tag">113000</span> km</span></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="card-footer custom-footer">
-                        <div class="float-start">
-                            <h4 class="custom-highlight">140441 €</h4>
-                        </div>
-                        <div class="float-end">
-                            <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="car col">
-                <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
-                    <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
-                    <div class="card-body">
-                        <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
-                        <ul class="card-text list-unstyled">
-                            <li><span>Année : </span>2016</li>
-                            <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage-tag">54020</span> km</span></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="card-footer custom-footer">
-                        <div class="float-start">
-                            <h4 class="custom-highlight">140441 €</h4>
-                        </div>
-                        <div class="float-end">
-                            <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="car col">
-                <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">10000 €</span>
-                    <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
-                    <div class="card-body">
-                        <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
-                        <ul class="card-text list-unstyled">
-                            <li><span>Année : </span>2016</li>
-                            <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage-tag">54325</span> km</span></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="card-footer custom-footer">
-                        <div class="float-start">
-                            <h4 class="custom-highlight">140441 €</h4>
-                        </div>
-                        <div class="float-end">
-                            <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="car col">
-                <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
-                    <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
-                    <div class="card-body">
-                        <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
-                        <ul class="card-text list-unstyled">
-                            <li><span>Année : </span>2016</li>
-                            <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage-tag">25630</span> km</span></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="card-footer custom-footer">
-                        <div class="float-start">
-                            <h4 class="custom-highlight">140441 €</h4>
-                        </div>
-                        <div class="float-end">
-                            <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="car col">
-                <div class="card h-100 shadow custom-card">
-                    <span class="btn btn-dark price" id="price-tag">140441 €</span>
-                    <img src="img/v3.jpg" alt="" class="card-img-top w-100 custom-bg">
-                    <div class="card-body">
-                        <h4 class="card-title">Porsche Elantra 2016 120 CH</h4>
-                        <ul class="card-text list-unstyled">
-                            <li><span>Année : </span>2016</li>
-                            <li><span>Type de moteur : </span>Diesel</li>
-                            <li><span>Kilométrage : <span class="kilometrage-tag">175430</span> km</span></li>
-                            
-                        </ul>
-                    </div>
-                    <div class="card-footer custom-footer">
-                        <div class="float-start">
-                            <h4 class="custom-highlight">140441 €</h4>
-                        </div>
-                        <div class="float-end">
-                            <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            <?php
+                }
+            ?>
 
         </div>
 
