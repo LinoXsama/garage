@@ -140,17 +140,17 @@
                 {
             ?>
 
+                <!-- Modèle de la fiche de présentation d'un véhicule - START -->
                 <div class="car col">
                     <div class="card h-100 shadow custom-card">
-                        <span class="btn btn-dark price" id="price-tag"><?= $row['cars_price']; ?> €</span>
+                        <span class="btn btn-dark" id="price-tag"><span class="price"><?= $row['cars_price']; ?></span> €</span>
                         <img src="<?= $row['cars_image_path']; ?>" alt="" class="card-img-top w-100 custom-bg">
                         <div class="card-body">
                             <h4 class="card-title"><?= $row['cars_brand']; ?> <?= $row['cars_model']; ?> <?= $row['cars_release_year']; ?> <?= $row['cars_power']; ?> CH</h4>
                             <ul class="card-text list-unstyled">
-                                <li><span>Année : </span><?= $row['cars_release_year']; ?></li>
+                                <li><span>Année : </span><span class="release-year"><?= $row['cars_release_year']; ?></span></li>
                                 <li><span>Type de moteur : </span><?= $row['cars_engine_type']; ?></li>
-                                <li><span>Kilométrage : <span class="kilometrage-tag"><?= $row['cars_km']; ?></span> km</span></li>
-                                
+                                <li><span>Kilométrage : <span class="kilometrage"><?= $row['cars_km']; ?></span> km</span></li>
                             </ul>
                         </div>
                         <div class="card-footer custom-footer">
@@ -163,6 +163,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Modèle de la fiche de présentation d'un véhicule - END -->
             
             <?php
                 }

@@ -82,27 +82,30 @@ const search_sliders = () => {
     max_km.textContent = km_slider_2;
     // km range inputs - END
 
-    const kilometrages = document.getElementsByClassName("kilometrage-tag");
+    const kilometrages = document.getElementsByClassName("kilometrage");
     const prices = document.getElementsByClassName("price");
+    const release_year = document.getElementsByClassName("release-year");
+
     const cars = document.getElementsByClassName("car");
 
     for(let i = 0; kilometrages.length > i; i++)
     {
         let match_km = [];
         let match_price = [];
+        let match_release_year = [];
 
         for(let j = 0; kilometrages.length > j; j++)
         {
             match_km.push(parseInt(kilometrages[j].innerHTML));
             match_price.push(parseInt(prices[j].innerHTML));
+            match_release_year.push(parseInt(release_year[j].innerHTML));
         }
 
         for(let k = 0; match_km.length > k; k++)
         {
-            if(isb(match_km[k], km_slider_1, km_slider_2) && isb(match_price[k], price_slider_1, price_slider_2))
+            if(isb(match_km[k], km_slider_1, km_slider_2) && isb(match_price[k], price_slider_1, price_slider_2) && isb(match_release_year[k], year_slider_1, year_slider_2))
             {
                 cars[k].style.display = "";
-                // console.log(match_price[k]);
             }
             else 
             {
@@ -132,8 +135,8 @@ const reset_km_slider = () => {
 // let prices = document.getElementsByClassName("price");
 // let price_data = Array.from(prices);
 
-// let cars = document.getElementsByClassName("car");
-// let cars_data = Array.from(cars);
+const release_year = document.getElementsByClassName("release-year");
+let cars_data = Array.from(release_year);
 
 // for(let element of price_data)
 // {
@@ -145,10 +148,12 @@ const reset_km_slider = () => {
 //     }
 // }
 
-// for(let element of cars_data)
-// {
-//     console.log(element);
-// }
+for(let element of cars_data)
+{
+    let year = element.innerHTML;
+
+    console.log(year);
+}
 
 // const min = document.getElementById("min-price").innerHTML;
 // console.log(min);
