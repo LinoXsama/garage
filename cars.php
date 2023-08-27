@@ -99,7 +99,7 @@
                     <input 
                         type="range"
                         min="2001"
-                        max="2005"
+                        max="2010"
                         step="1"
                         value="2001"
                         id="year-slider-1"
@@ -108,10 +108,10 @@
                     />
                     <input 
                         type="range"
-                        min="2006"
-                        max="2010"
+                        min="2011"
+                        max="2020"
                         step="1"
-                        value="2010"
+                        value="2020"
                         id="year-slider-2"
                         class="d-inline-block"
                         oninput="search_sliders()"
