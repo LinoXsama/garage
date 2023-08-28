@@ -44,8 +44,10 @@
                             </tr>
                         </thead>
                         <tbody>
+                            
                             <!-- AFFICHAGE DYNAMIQUE DES HORAIRES - START -->
                             <?php
+                                require_once 'functions.php';
                                 $days = select('schedules');
 
                                 while($row = mysqli_fetch_assoc($days))

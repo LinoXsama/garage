@@ -5,7 +5,6 @@
 <?php
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
-    require_once 'functions.php';
 ?>
 
 <?php
@@ -112,6 +111,7 @@
                 <h3 class="text-center mb-3" style="border: 1px solid crimson";>Liste des utilisateurs</h3>
 
                 <table class="table table-hover text-center" style="border: 1px solid crimson";>
+
                     <thead class="table-dark">
                         <tr>
                             <th>ID</th>
@@ -124,11 +124,15 @@
                     </thead>
 
                     <tbody>
-                        <?php
-                            // Récupération des données des employés depuis la base de données
-                            $data = select('crud', 'user_type', 'employee');
 
-                            while($row = mysqli_fetch_assoc($data))
+                        <?php
+                            // Récupération de la liste utilisateurs employés depuis la base de données
+
+                            require_once 'functions.php';
+                            
+                            $employees = select('crud', 'user_type', 'employee');
+
+                            while($row = mysqli_fetch_assoc($employees))
                             {
                         ?>
                                 <tr>
@@ -148,7 +152,9 @@
                         <?php
                             }
                         ?>
+
                     </tbody>
+
                 </table>
 
 </main>
