@@ -116,7 +116,7 @@ const search_sliders = () => {
 
 };
 
-const reset_km_slider = () => {
+const reset = () => {
     document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         const km_slider_1 = document.getElementById("km-slider-1");
@@ -135,9 +135,6 @@ const reset_km_slider = () => {
 // let prices = document.getElementsByClassName("price");
 // let price_data = Array.from(prices);
 
-const release_year = document.getElementsByClassName("release-year");
-let cars_data = Array.from(release_year);
-
 // for(let element of price_data)
 // {
 //     let price = parseInt(element.innerHTML);
@@ -148,12 +145,15 @@ let cars_data = Array.from(release_year);
 //     }
 // }
 
-for(let element of cars_data)
-{
-    let year = element.innerHTML;
+// let release_year = document.getElementsByClassName("release-year");
+// let cars_data = Array.from(release_year);
 
-    console.log(year);
-}
+// for(let element of cars_data)
+// {
+//     let year = element.innerHTML;
+
+//     console.log(year);
+// }
 
 // const min = document.getElementById("min-price").innerHTML;
 // console.log(min);

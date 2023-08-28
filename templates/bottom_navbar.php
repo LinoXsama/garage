@@ -44,48 +44,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">LUNDI</th>
-                                <td></td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">MARDI</th>
-                                <td></td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">MERCREDI</th>
-                                <td></td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">JEUDI</th>
-                                <td></td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">VENDREDI</th>
-                                <td></td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="text-info">SAMEDI</th>
-                                <td></td>
-                                <td>08:45 - 12:00</td>
-                                <td class="text-warning">Fermé</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="text-info">DIMANCHE</th>
-                                <td></td>
-                                <td class="text-warning">Fermé</td>
-                                <td></td>
-                            </tr>
+                            <!-- AFFICHAGE DYNAMIQUE DES HORAIRES - START -->
+                            <?php
+                                $days = select('schedules');
+
+                                while($row = mysqli_fetch_assoc($days))
+                                {
+                            ?>
+                                    <!-- MODELE D'UN LIGNE D'HORAIRE - START -->
+                                    <tr>
+                                        <th scope="row" class="<?= ($row['id'] === 6) ? 'text-info' : (($row['id'] === 7) ? 'text-warning' : '') ?>"><?= $row['day']; ?></th>
+                                        <td></td>
+                                        <td class="<?= ($row['id'] === 7 ? 'text-warning' : '') ?>"><?= $row['morning']; ?></td>
+                                        <td class="<?= ($row['id'] === 6) ? 'text-info' : (($row['id'] === 7) ? 'text-warning' : '') ?>"><?= $row['afternoon']; ?></td>
+                                    </tr>
+                                    <!-- MODELE D'UN LIGNE D'HORAIRE - END -->
+                            <?php 
+                                } 
+                            ?>    
+                            <!-- AFFICHAGE DYNAMIQUE DES HORAIRES - END -->
                         </tbody>
                     </table>
                 </div>

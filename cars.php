@@ -9,6 +9,7 @@
 ?>
 
 <main>
+
     <!-- BARRE DE RECHERCHE - START -->
     <div id="search" class="container mt-4 d-flex justify-content-center">
         <form role="search">
@@ -28,102 +29,49 @@
     <div class="container mt-2">
         <form class="d-flex justify-content-around">
 
-            <div class="" style="border: 1px solid crimson">
-                <label class="d-block">Kilométrage</label>
-                <div class="d-flex">
-                    <input 
-                        type="range"
-                        min="177220"
-                        max="222220"
-                        step="1"
-                        value="177220"
-                        id="km-slider-1"
-                        class="d-inline-block"
-                        oninput="search_sliders()"
-                    />
-                    <input 
-                        type="range"
-                        min="222221"
-                        max="267220"
-                        step="1"
-                        value="267220"
-                        id="km-slider-2"
-                        class="d-inline-block"
-                        oninput="search_sliders()"
-                    />
-                </div>
-                <div class="ctn d-flex justify-content-between">
-                    <span>
-                        <span id="min-km">177220</span> km - <span id="max-km">267220</span> km
-                    </span>
-                    <button id="reset-km-button" onclick="reset_km_slider()">Réinitialiser</button>
-                </div>
-            </div>
+            <?php
+                // GESTION DYNAMIQUE DES FILTRES 
+                $filters = select('sliders_filters');
 
-            <div class="" style="border: 1px solid crimson">
-                <label class="d-block">Prix</label>
-                <div class="d-flex">
-                    <input 
-                        type="range"
-                        min="4790"
-                        max="6990"
-                        step="1"
-                        value="4790"
-                        id="price-slider-1"
-                        class="d-inline-block"
-                        oninput="search_sliders()"
-                    />
-                    <input 
-                        type="range"
-                        min="6991"
-                        max="9190"
-                        step="1"
-                        value="9190"
-                        id="price-slider-2"
-                        class="d-inline-block"
-                        oninput="search_sliders()"
-                    />
-                </div>
-
-                <div class="ctn d-flex justify-content-between">
-                    <span>
-                        <span id="min-price">4790</span> € - <span id="max-price">9190</span> €
-                    </span>
-                    <button>Réinitialiser</button>
-                </div>
-            </div>
-
-            <div class="" style="border: 1px solid crimson">
-                <label class="d-block">Années</label>
-                <div class="d-flex">
-                    <input 
-                        type="range"
-                        min="2001"
-                        max="2010"
-                        step="1"
-                        value="2001"
-                        id="year-slider-1"
-                        class="d-inline-block"
-                        oninput="search_sliders()"
-                    />
-                    <input 
-                        type="range"
-                        min="2011"
-                        max="2020"
-                        step="1"
-                        value="2020"
-                        id="year-slider-2"
-                        class="d-inline-block"
-                        oninput="search_sliders()"
-                    />
-                </div>
-                <div class="ctn d-flex justify-content-between">
-                    <span>
-                        <span id="min-year">2001</span> - <span id="max-year">2010</span>
-                    </span>
-                    <button>Réinitialiser</button>
-                </div>
-            </div>
+                while($row = mysqli_fetch_assoc($filters))
+                {
+            ?>
+                    <!-- MODELE D'UN FILTRE - START -->
+                    <div style="border: 1px solid crimson">
+                        <label class="d-block"><?= $row['filters_name']; ?></label>
+                        <div class="d-flex">
+                            <input 
+                                type="range"
+                                min="<?= $row['sliders_min_value1']; ?>"
+                                max="<?= $row['sliders_max_value1']; ?>"
+                                step="1"
+                                value="<?= $row['sliders_default_value1']; ?>"
+                                id="<?= $row['sliders_id1']; ?>"
+                                class="d-inline-block"
+                                oninput="search_sliders()"
+                            />
+                            <input 
+                                type="range"
+                                min="<?= $row['sliders_min_value2']; ?>"
+                                max="<?= $row['sliders_max_value2']; ?>"
+                                step="1"
+                                value="<?= $row['sliders_default_value2']; ?>"
+                                id="<?= $row['sliders_id2']; ?>"
+                                class="d-inline-block"
+                                oninput="search_sliders()"
+                            />
+                        </div>
+                        <div class="ctn d-flex justify-content-between">
+                            <span>
+                                <span id="<?= $row['limit1']; ?>"><?= $row['sliders_min_value1']; ?></span> <?= $row['unit']; ?> - <span id="<?= $row['limit2']; ?>"><?= $row['sliders_max_value2']; ?></span> <?= $row['unit']; ?>
+                            </span>
+                            <button class="reset-button" value="<?= $row['button_value']; ?>" onclick="reset()">Réinitialiser</button>
+                        </div>
+                    </div>
+                    <!-- MODELE D'UN FILTRE - END -->
+            <?php
+                }
+            ?>
 
         </form>
     </div>
@@ -176,3 +124,4 @@
 </main>
 
 <?php require_once 'templates/footer.php'; ?>
+
