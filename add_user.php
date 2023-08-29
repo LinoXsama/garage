@@ -1,7 +1,10 @@
 <?php
+    $page_title = "Ajouter un nouvel utilisateur";
+?>
+
+<?php
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
-    require_once 'config/db_connect.php';
     require_once 'functions.php';
 ?>
 
@@ -36,7 +39,7 @@
 <main class="container">
 
     <div class="text-center mb-3 mt-3">
-        <h3>Ajouter un nouvel utilisateur</h3>
+        <h3><?= $page_title; ?></h3>
     </div>
 
     <div class="container d-flex justify-content-center mb-3">

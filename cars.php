@@ -37,7 +37,7 @@
                 {
             ?>
                     <!-- MODELE D'UN FILTRE - START -->
-                    <div style="border: 1px solid crimson">
+                    <div class="rb">
                         <label class="d-block"><?= $row['filters_name']; ?></label>
                         <div class="d-flex">
                             <input 

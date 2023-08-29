@@ -5,6 +5,7 @@
 <?php
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
+    require_once 'functions.php';
 ?>
 
 <?php
@@ -93,7 +94,7 @@
 
 <main>
 
-            <div class="container mt-3 mb-4" style="border: 1px solid red";>
+            <div class="container mt-3 mb-4">
 
             <?php
                 if(isset($_SESSION['msg']))
@@ -108,9 +109,9 @@
 
                 <a href="add_user.php" class="btn btn-dark mb-3">Ajouter un utilisateur</a>
 
-                <h3 class="text-center mb-3" style="border: 1px solid crimson";>Liste des utilisateurs</h3>
+                <h3 class="text-center mb-3">Liste des utilisateurs</h3>
 
-                <table class="table table-hover text-center" style="border: 1px solid crimson";>
+                <table class="table table-hover text-center">
 
                     <thead class="table-dark">
                         <tr>
@@ -128,8 +129,6 @@
                         <?php
                             // Récupération de la liste utilisateurs employés depuis la base de données
 
-                            require_once 'functions.php';
-                            
                             $employees = select('crud', 'user_type', 'employee');
 
                             while($row = mysqli_fetch_assoc($employees))

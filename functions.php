@@ -92,17 +92,18 @@
         return(($stmt->affected_rows) > 0);
     }
 
-    function test($TABLE, $COLONNE1, $VALEUR1)
-    {
-        if(insert($TABLE, $COLONNE1, $VALEUR1))
-        {
-            echo 'Success';
-        }
-        else {
-            echo 'Failure';
-        }
+    // FONCTION QUI TESTE LA FONCTION insert()
+    // function test($TABLE, $COLONNE1, $VALEUR1)
+    // {
+    //     if(insert($TABLE, $COLONNE1, $VALEUR1))
+    //     {
+    //         echo 'Success';
+    //     }
+    //     else {
+    //         echo 'Failure';
+    //     }
+    // }
 
-    }
+    // test('contacts', 'name', 'Lino');
 
-    test('contacts', 'name', 'Lino');
 ?>

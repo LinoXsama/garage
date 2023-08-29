@@ -35,4 +35,6 @@ li span {
 
 /* BOTTOM NAVBAR - END */
 
-
+.rb {
+    border: 1px solid red;
+}
