@@ -9,6 +9,18 @@
     require_once 'config/db_connect.php';
 ?>
 
+<?php
+    if(isset($_POST['CONTACT-FORM']))
+    {
+        $_SESSION['name'] = htmlspecialchars($_POST['NAME']);
+        $_SESSION['email'] = htmlspecialchars($_POST['EMAIL']);
+        $_SESSION['phone'] = htmlspecialchars($_POST['PHONE']);
+        $_SESSION['comment'] = htmlspecialchars($_POST['COMMENT']);
+
+        
+    }
+?>
+
 <main>
 
     <div class="py-5">
@@ -20,7 +32,9 @@
                             <h5 class="text-align text-center">Contactez-nous</h5>
                         </div>
                         <div class="card-body">
+
                             <form action="contact.php" method="POST">
+
                                 <div class="form-group my-3 mx-3" >
                                     <input type="text" name="NAME" placeholder="Vos nom et prénom" class="form-control my-3">
                                     <input type="text" name="EMAIL" placeholder="Votre adresse email" class="form-control mb-3">
@@ -29,10 +43,12 @@
                                     <textarea rows="4" name="COMMENT" placeholder="Rédigez votre message ici..." class="form-control my-3"></textarea>
                                     
                                     <div class="text-center my-4">
-                                        <button type="submit" name="SUBMIT" value="submit" class="btn btn-primary">SOUMETTRE</button>
+                                        <button type="submit" name="CONTACT-FORM" value="CONTACT" class="btn btn-primary">SOUMETTRE</button>
                                     </div>
                                 </div>
+
                             </form>
+
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'config/db_connect.php';
+    require_once 'functions.php';
 ?>
 
 <?php
@@ -11,15 +12,14 @@
 
         $fname = htmlspecialchars($_POST['first_name']);
         $lname = htmlspecialchars($_POST['last_name']);
-        $em = htmlspecialchars($_POST['email']);
+        $mail = htmlspecialchars($_POST['email']);
         $pwd = htmlspecialchars($_POST['password']);
         $hash = password_hash($pwd, PASSWORD_DEFAULT);
+        $ut = 'employee';
 
-        $query = "INSERT INTO `crud`(`first_name`, `last_name`, `email`, `password`, `pwd_hash`, `user_type`) VALUES ('$fname','$lname','$em', '$pwd', '$hash', 'employee')";
-        $stmt = $conn->prepare($query);
-        $stmt->execute();
+        $query_status = insert('crud', 'first_name', $fname, 'last_name', $lname, 'email', $mail, 'password', $pwd, 'pwd_hash', $hash, 'user_type', $ut);
 
-        if(($stmt->affected_rows) > 0)
+        if($query_status)
         {
             $_SESSION['msg'] = 'Utilisateur ajouté avec succès !';
             header('Location: admin_panel.php');
