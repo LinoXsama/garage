@@ -45,6 +45,8 @@
         $stmt->execute();
         $result = $stmt->get_result();
 
+        $stmt->close();
+
         if (($result->num_rows) > 0) {
             return $result;
         }
@@ -89,7 +91,11 @@
         $stmt = $conn->prepare($query);
         $stmt->execute();
 
-        return(($stmt->affected_rows) > 0);
+        $result = $stmt->affected_rows;
+
+        $stmt->close();
+
+        return($result > 0);
     }
 
     // FONCTION QUI TESTE LA FONCTION insert()
