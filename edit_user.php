@@ -8,7 +8,7 @@
 <?php
     session_start();
 
-    $id = intval($_GET['id']);
+    $id = $_GET['id'];
 
     if(isset($_POST['EDIT'])) 
     {
@@ -19,12 +19,9 @@
         $pwd = htmlspecialchars($_POST['password']);
         $hash = password_hash($pwd, PASSWORD_DEFAULT);
 
-        $query = "UPDATE $table SET `first_name` = ?, `last_name` = ?, `email` = ?, `password` = ?, `pwd_hash` = ? WHERE `id` = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("sssssi", $fname, $lname, $mail, $pwd, $hash, $id);
-        $stmt->execute();
+        $query_status = update($table, 'id', $id, 'first_name', $fname, 'last_name', $lname, 'email', $mail, 'password', $pwd, 'pwd_hash', $hash);
 
-        if(($stmt->affected_rows) > 0) 
+        if($query_status) 
         {
             $_SESSION['msg'] = 'Utilisateur ajouté avec succès !';
             $_SESSION['alert_type'] = 'warning';

@@ -306,65 +306,69 @@
 ?>
 
 <?php
-function update(string $table, string $condition, string $condition_value, string $targetted_column1, string $value1, ?string $targetted_column2 = null, ?string $value2 = null, ?string $targetted_column3 = null, ?string $value3 = null, ?string $targetted_column4 = null, ?string $value4 = null, ?string $targetted_column5 = null, ?string $value5 = null): bool
-    {
-        include 'config/db_connect.php';
+// function update(string $table, string $condition, string $condition_value, string $targetted_column1, string $value1, ?string $targetted_column2 = null, ?string $value2 = null, ?string $targetted_column3 = null, ?string $value3 = null, ?string $targetted_column4 = null, ?string $value4 = null, ?string $targetted_column5 = null, ?string $value5 = null): bool
+//     {
+//         include 'config/db_connect.php';
 
-        if($targetted_column2 === null || $value2 === null)
-        {
-            $query = "UPDATE $table SET $targetted_column1 = ? WHERE $condition = ?";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("ss", $value1, $condition_value);
+//         if($targetted_column2 === null || $value2 === null)
+//         {
+//             $query = "UPDATE $table SET $targetted_column1 = ? WHERE $condition = ?";
+//             $stmt = $conn->prepare($query);
+//             $stmt->bind_param("ss", $value1, $condition_value);
             
-        }
-        else if($targetted_column3 === null || $value3 === null)
-        {
-            $query = "UPDATE $table SET $targetted_column1 = ?, $targetted_column2 = ? WHERE $condition = ?";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("sss", $value1, $value2, $condition_value);
+//         }
+//         else if($targetted_column3 === null || $value3 === null)
+//         {
+//             $query = "UPDATE $table SET $targetted_column1 = ?, $targetted_column2 = ? WHERE $condition = ?";
+//             $stmt = $conn->prepare($query);
+//             $stmt->bind_param("sss", $value1, $value2, $condition_value);
             
-        }
-        else if($targetted_column4 === null || $value4 === null)
-        {
-            $query = "UPDATE $table SET $targetted_column1 = ?, $targetted_column2 = ?, $targetted_column3 = ? WHERE $condition = ?";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("ssss", $value1, $value2, $value3, $condition_value);
+//         }
+//         else if($targetted_column4 === null || $value4 === null)
+//         {
+//             $query = "UPDATE $table SET $targetted_column1 = ?, $targetted_column2 = ?, $targetted_column3 = ? WHERE $condition = ?";
+//             $stmt = $conn->prepare($query);
+//             $stmt->bind_param("ssss", $value1, $value2, $value3, $condition_value);
             
-        }
-        else if($targetted_column5 === null || $value5 === null)
-        {
-            $query = "UPDATE $table SET $targetted_column1 = ?, $targetted_column2 = ?, $targetted_column3 = ?, $targetted_column4 = ?, WHERE $condition = ?";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("sssss", $value1, $value2, $value3, $value4, $condition_value);
+//         }
+//         else if($targetted_column5 === null || $value5 === null)
+//         {
+//             $query = "UPDATE $table SET $targetted_column1 = ?, $targetted_column2 = ?, $targetted_column3 = ?, $targetted_column4 = ?, WHERE $condition = ?";
+//             $stmt = $conn->prepare($query);
+//             $stmt->bind_param("sssss", $value1, $value2, $value3, $value4, $condition_value);
         
-        }
-        else
-        {
-            $query = "UPDATE $table SET $targetted_column1 = ?, $targetted_column2 = ?, $targetted_column3 = ?, $targetted_column4 = ?, $targetted_column5 = ? WHERE $condition = ?";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("ssssss", $value1, $value2, $value3, $value4, $value5, $condition_value);
+//         }
+//         else
+//         {
+//             $query = "UPDATE $table SET $targetted_column1 = ?, $targetted_column2 = ?, $targetted_column3 = ?, $targetted_column4 = ?, $targetted_column5 = ? WHERE $condition = ?";
+//             $stmt = $conn->prepare($query);
+//             $stmt->bind_param("ssssss", $value1, $value2, $value3, $value4, $value5, $condition_value);
             
-        }
+//         }
 
-        if($stmt)
-        {
-            $stmt->execute();
+//         if($stmt)
+//         {
+//             $stmt->execute();
 
-            if(($stmt->affected_rows) > 0)
-            {
-                $stmt->close();
-                return true;
-            }
-            else {
-                $stmt->close();
-                return false;
-            }
-        }
-        else
-        {
-            return false;
-        }
-    }
+//             if(($stmt->affected_rows) > 0)
+//             {
+//                 $stmt->close();
+//                 return true;
+//             }
+//             else {
+//                 $stmt->close();
+//                 return false;
+//             }
+//         }
+//         else
+//         {
+//             return false;
+//         }
+//     }
+
+//     update('crud', 'id', '59', 'first_name', 'Julia', 'last_name', 'Roberts', 'email', 'julia.roberts@yahoo.fr', 'password', 'tatata', 'pwd_hash', 'qsdhqkjshdfkjhqsjdfh');
 
 ?>
+
+
 
