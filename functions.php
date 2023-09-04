@@ -1,26 +1,26 @@
 <!-- FONCTIONS DU FICHIER admin_panel.php -->
 
 <?php
-// Fonction qui récupère la liste des employés depuis la base de données
-// VERSION 1.0
+    // Fonction qui récupère la liste des employés depuis la base de données
+    // VERSION 1.0
 
-// function select(string $table, string $targetted_column, string $searched_value): object
-// {
-//     include 'config/db_connect.php';
+    // function select(string $table, string $targetted_column, string $searched_value): object
+    // {
+    //     include 'config/db_connect.php';
 
-//     // IMPORTANT : les noms de la table et de la colonne ne peuvent pas être utilisés
-//     // dynamiquement avec bind_param
-//     $query = "SELECT * FROM `$table` WHERE `$targetted_column` = ? ";
-//     $stmt = $conn->prepare($query);
-//     $stmt->bind_param("s", $searched_value);
-//     $stmt->execute();
+    //     // IMPORTANT : les noms de la table et de la colonne ne peuvent pas être utilisés
+    //     // dynamiquement avec bind_param
+    //     $query = "SELECT * FROM `$table` WHERE `$targetted_column` = ? ";
+    //     $stmt = $conn->prepare($query);
+    //     $stmt->bind_param("s", $searched_value);
+    //     $stmt->execute();
 
-//     $result = $stmt->get_result();
+    //     $result = $stmt->get_result();
 
-//     if (($result->num_rows) > 0) {
-//         return $result;
-//     }
-// }
+    //     if (($result->num_rows) > 0) {
+    //         return $result;
+    //     }
+    // }
 ?>
 
 <?php
@@ -115,6 +115,7 @@
 ?>
 
 <?php
+    // VERSION 1.0 
     function update(string $table, string $condition, string $condition_value, string $targetted_column1, string $value1, ?string $targetted_column2 = null, ?string $value2 = null, ?string $targetted_column3 = null, ?string $value3 = null, ?string $targetted_column4 = null, ?string $value4 = null, ?string $targetted_column5 = null, ?string $value5 = null): bool
     {
         include 'config/db_connect.php';
@@ -165,6 +166,38 @@
                 return true;
             }
             else {
+                $stmt->close();
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+?>
+
+<?php
+    // VERSION 1.0 
+    function delete(string $table, string $condition, string $value)
+    {
+        include 'config/db_connect.php';
+
+        $query = "DELETE FROM $table WHERE $condition = ?";
+        $conn->prepare($query);
+        $stmt->bind_param("s", $value);
+
+        if($stmt)
+        {
+            $stmt->execute();
+
+            if(($stmt->affected_rows) > 0)
+            {
+                $stmt->close();
+                return true;
+            }
+            else
+            {
                 $stmt->close();
                 return false;
             }

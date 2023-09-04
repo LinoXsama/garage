@@ -42,32 +42,42 @@
 
 <main class="container">
 
-    <div class="text-center mb-3 mt-3">
-        <h3><?= $page_title; ?></h3>
-    </div>
+    <div class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <h5 class="pt-2 text-align text-center">Ajouter un nouvel utilisateur</h5>
+                        </div>
+                        <div class="card-body">
 
-    <div class="container d-flex justify-content-center mb-3">
+                        <form action="add_user.php" method="POST" class="mt-3 mb-3">
 
-        <form action="add_user.php" method="POST" style="width: 50vw; min-width: 300px;" class="mt-3 mb-3">
+                            <label class="form-label">Nom</label>
+                            <input class="form-control" type="text" name="first_name" placeholder="Albert">
 
-            <label class="form-label">Nom</label>
-            <input class="form-control" type="text" name="first_name" placeholder="Alexandre">
+                            <label class="form-label">Prénom</label>
+                            <input class="form-control" type="text" name="last_name"placeholder="Einsten">
 
-            <label class="form-label">Prénom</label>
-            <input class="form-control" type="text" name="last_name"placeholder="Deschamps">
-            
-            <label class="form-label">Email</label>
-            <input class="form-control" type="email" name="email" placeholder="nom@example.com">
+                            <label class="form-label">Email</label>
+                            <input class="form-control" type="email" name="email" placeholder="nom@example.com">
 
-            <label class="form-label">Mot de passe</label>
-            <input class="form-control" type="password" name="password">
+                            <label class="form-label">Mot de passe</label>
+                            <input class="form-control" type="password" name="password">
 
-            <div class="mt-4">
-                <button type="submit" name="SAVE" value="save" class="btn btn-success">ENREGISTRER</button>
-                <a href="admin_panel.php" class="btn btn-danger">ANNULER</a>
+                            <div class="mt-4">
+                                <button type="submit" name="SAVE" value="save" class="btn btn-success">ENREGISTRER</button>
+                                <a href="admin_panel.php" class="btn btn-danger">ANNULER</a>
+                            </div>
+
+                        </form>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
-        
+        </div>
     </div>
 
 </main>

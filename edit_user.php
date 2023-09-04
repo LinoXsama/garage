@@ -1,36 +1,34 @@
 <?php
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
-    require_once 'config/db_connect.php';
     require_once 'functions.php';
 ?>
 
 <?php
     session_start();
 
-    $id = $_GET['id'];
+    $user_id = intval($_GET['id']);
 
     if(isset($_POST['EDIT'])) 
     {
-        $table = 'crud';
         $fname = htmlspecialchars($_POST['first_name']);
         $lname = htmlspecialchars($_POST['last_name']);
         $mail = htmlspecialchars($_POST['email']);
         $pwd = htmlspecialchars($_POST['password']);
         $hash = password_hash($pwd, PASSWORD_DEFAULT);
 
-        $query_status = update($table, 'id', $id, 'first_name', $fname, 'last_name', $lname, 'email', $mail, 'password', $pwd, 'pwd_hash', $hash);
+        $query_status = update('crud', 'id', $user_id, 'first_name', $fname, 'last_name', $lname, 'email', $mail, 'password', $pwd, 'pwd_hash', $hash);
 
-        if($query_status) 
+        if($query_status)
         {
             $_SESSION['msg'] = 'Utilisateur ajouté avec succès !';
             $_SESSION['alert_type'] = 'warning';
 
             header('Location: admin_panel.php');
         } 
-        else 
+        else
         {
-            $_SESSION['msg'] = "Échec de l'ajout de l'utilisateur";
+            $_SESSION['msg'] = "Échec de l'ajout de l'utilisateur !";
             $_SESSION['alert_type'] = 'danger';
 
             header('Location: admin_panel.php');
@@ -38,45 +36,49 @@
     }
 ?>
 
-<main class="container" style="border: 1px solid red;">
+<main class="container">
 
-    <div class="text-center mb-3 mt-3">
-        <h3>Modifier les données de l'utilisateur</h3>
-    </div>
+<div class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <h5 class="pt-2 text-align text-center">Modifier les données d'un utilisateur</h5>
+                        </div>
+                        <div class="card-body">
 
-    <span id="result"></span>
+                        <form action="edit_user.php?id=<?= $user_id; ?>" method="POST" class="mt-3 mb-3">
 
-    <div class="container d-flex justify-content-center mb-3">
+                            <?php
+                                $user = select('crud', 'id', $user_id);
 
-        <form action="edit_user.php?id=<?= $id; ?>" method="POST" style="width: 50vw; min-width: 300px;" class="mt-3 mb-3">
+                                $row = mysqli_fetch_assoc($user);
+                            ?>
 
-        <?php
-            $table = 'crud';
-            $column = 'id';
+                                <label class="form-label">Nom</label>
+                                <input class="form-control" type="text" name="first_name" placeholder="Alexandre" value="<?= $row['last_name']; ?>">
 
-            $user = select($table, $column, $id);
+                                <label class="form-label">Prénom</label>
+                                <input class="form-control" type="text" name="last_name" placeholder="Deschamps" value="<?= $row['first_name']; ?>">
 
-            $row = mysqli_fetch_assoc($user);
-        ?>
+                                <label class="form-label">Adresse email</label>
+                                <input class="form-control" type="email" name="email" placeholder="nom@example.com" value="<?= $row['email']; ?>">
 
-            <label class="form-label">Nom</label>
-            <input class="form-control" type="text" name="first_name" placeholder="Alexandre" value="<?= $row['last_name']; ?>">
+                                <label class="form-label">Mot de passe</label>
+                                <input class="form-control" type="text" name="password" value="<?= $row['password']; ?>">
 
-            <label class="form-label">Prénom</label>
-            <input class="form-control" type="text" name="last_name" placeholder="Deschamps" value="<?= $row['first_name']; ?>">
+                                <div class="mt-4">
+                                    <button type="submit" name="EDIT" value="edit" class="btn btn-success">ENREGISTRER</button>
+                                    <a href="admin_panel.php" class="btn btn-danger">ANNULER</a>
+                                </div>
+                        </form>
 
-            <label class="form-label">Adresse email</label>
-            <input class="form-control" type="email" name="email" placeholder="nom@example.com" value="<?= $row['email']; ?>">
-
-            <label class="form-label">Mot de passe</label>
-            <input class="form-control" type="text" name="password" value="<?= $row['password']; ?>">
-
-            <div class="mt-4">
-                <button type="submit" name="EDIT" value="edit" class="btn btn-success">ENREGISTRER</button>
-                <a href="admin_panel.php" class="btn btn-danger">ANNULER</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
-
+        </div>
     </div>
 
 </main>
