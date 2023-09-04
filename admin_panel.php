@@ -46,13 +46,9 @@
             <tbody>
 
                 <?php
-                    // Récupération de la liste utilisateurs employés depuis la base de données
+                    // Récupération de la liste des utilisateurs employés depuis la base de données
 
-                    $table = 'crud';
-                    $column = 'user_type';
-                    $ut = 'employee';
-
-                    $employees = select($table, $column, $ut);
+                    $employees = select('crud', 'user_type', 'employee');
 
                     while($row = mysqli_fetch_assoc($employees))
                     {
@@ -66,7 +62,7 @@
                             <td><?= $row['password']; ?></td>
                             <td>
                                 <!-- Fonts awesome Icons -->
-                                <a href="edit_user.php?id=<?= $row['id']; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3 edition"></i></a>
+                                <a href="edit_user.php?id=<?= $row['id']; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
 
                                 <!-- Fonts awesome Icons -->
                                 <a href="delete.php?id=<?= $row['id']; ?>" class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a>

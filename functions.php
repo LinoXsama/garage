@@ -24,8 +24,7 @@
 ?>
 
 <?php
-// VERSION 1.1
-
+    // VERSION 1.1
     function select(string $table, ?string $targetted_column = null, ?string $searched_value = null): object
     {
         include 'config/db_connect.php';
@@ -47,18 +46,17 @@
 
         $stmt->close();
 
-        if (($result->num_rows) > 0) {
+        if(($result->num_rows) > 0) 
+        {
             return $result;
         }
 
         return false;
     }
-
 ?>
 
 <?php
     // VERSION 1.0
-
     function insert(string $table, string $targetted_column_1, string $value_1, ?string $targetted_column_2 = null, ?string $value_2 = null, ?string $targetted_column_3 = null, ?string $value_3 = null, ?string $targetted_column_4 = null, ?string $value_4 = null, ?string $targetted_column_5 = null, ?string $value_5 = null, ?string $targetted_column_6 = null, ?string $value_6 = null): bool
     {
         include 'config/db_connect.php';
@@ -89,13 +87,26 @@
         }
 
         $stmt = $conn->prepare($query);
-        $stmt->execute();
 
-        $result = $stmt->affected_rows;
+        if($stmt)
+        {
+            $stmt->execute();
 
-        $stmt->close();
-
-        return($result > 0);
+            if(($stmt->affected_rows) > 0)
+            {
+                $stmt->close();
+                return true;
+            }
+            else
+            {
+                $stmt->close();
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
 
     // FONCTION QUI TESTE LA FONCTION insert()
@@ -111,7 +122,6 @@
     // }
 
     // test('contacts', 'name', 'Lino');
-
 ?>
 
 <?php
@@ -184,7 +194,7 @@
         include 'config/db_connect.php';
 
         $query = "DELETE FROM $table WHERE $condition = ?";
-        $conn->prepare($query);
+        $stmt = $conn->prepare($query);
         $stmt->bind_param("s", $value);
 
         if($stmt)

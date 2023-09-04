@@ -5,8 +5,6 @@
 ?>
 
 <?php
-    session_start();
-
     $user_id = intval($_GET['id']);
 
     if(isset($_POST['EDIT'])) 
@@ -19,10 +17,12 @@
 
         $query_status = update('crud', 'id', $user_id, 'first_name', $fname, 'last_name', $lname, 'email', $mail, 'password', $pwd, 'pwd_hash', $hash);
 
+        session_start();
+
         if($query_status)
         {
             $_SESSION['msg'] = 'Utilisateur ajouté avec succès !';
-            $_SESSION['alert_type'] = 'warning';
+            $_SESSION['alert_type'] = 'success';
 
             header('Location: admin_panel.php');
         } 

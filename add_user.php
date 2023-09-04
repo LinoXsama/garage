@@ -11,22 +11,20 @@
 <?php
     if(isset($_POST['SAVE']))
     {
-        session_start();
-
-        $table = 'crud';
         $fname = htmlspecialchars($_POST['first_name']);
         $lname = htmlspecialchars($_POST['last_name']);
         $mail = htmlspecialchars($_POST['email']);
         $pwd = htmlspecialchars($_POST['password']);
         $hash = password_hash($pwd, PASSWORD_DEFAULT);
-        $ut = 'employee';
 
-        $query_status = insert($table, 'first_name', $fname, 'last_name', $lname, 'email', $mail, 'password', $pwd, 'pwd_hash', $hash, 'user_type', $ut);
+        $query_status = insert('crud', 'first_name', $fname, 'last_name', $lname, 'email', $mail, 'password', $pwd, 'pwd_hash', $hash, 'user_type', 'employee');
+
+        session_start();
 
         if($query_status)
         {
             $_SESSION['msg'] = 'Utilisateur ajouté avec succès !';
-            $_SESSION['alert_type'] = 'warning';
+            $_SESSION['alert_type'] = 'success';
 
             header('Location: admin_panel.php');
         }
@@ -64,7 +62,7 @@
                             <input class="form-control" type="email" name="email" placeholder="nom@example.com">
 
                             <label class="form-label">Mot de passe</label>
-                            <input class="form-control" type="password" name="password">
+                            <input class="form-control" type="text" name="password">
 
                             <div class="mt-4">
                                 <button type="submit" name="SAVE" value="save" class="btn btn-success">ENREGISTRER</button>
