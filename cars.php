@@ -37,7 +37,7 @@
                 {
             ?>
                     <!-- MODELE D'UN FILTRE - START -->
-                    <div class="rb">
+                    <div>
                         <label class="d-block"><?= $row['filters_name']; ?></label>
                         <div class="d-flex">
                             <input 
@@ -91,19 +91,19 @@
                 <!-- Modèle de la fiche de présentation d'un véhicule - START -->
                 <div class="car col">
                     <div class="card h-100 shadow custom-card">
-                        <span class="btn btn-dark" id="price-tag"><span class="price"><?= $row['cars_price']; ?></span> €</span>
-                        <img src="<?= $row['cars_image_path']; ?>" alt="" class="card-img-top w-100 custom-bg">
+                        <span class="btn btn-dark" id="price-tag"><span class="price"><?= "{$row['cars_price']} "; ?></span>€</span>
+                        <img src="<?= $row['cars_image_path']; ?>" alt="" class="card-img-top w-100 custom-bg" />
                         <div class="card-body">
-                            <h4 class="card-title"><?= $row['cars_brand']; ?> <?= $row['cars_model']; ?> <?= $row['cars_release_year']; ?> <?= $row['cars_power']; ?> CH</h4>
+                            <h4 class="card-title"><?= "{$row['cars_brand']} {$row['cars_model']} {$row['cars_release_year']} {$row['cars_power']} "; ?>CH</h4>
                             <ul class="card-text list-unstyled">
                                 <li><span>Année : </span><span class="release-year"><?= $row['cars_release_year']; ?></span></li>
                                 <li><span>Type de moteur : </span><?= $row['cars_engine_type']; ?></li>
-                                <li><span>Kilométrage : <span class="kilometrage"><?= $row['cars_km']; ?></span> km</span></li>
+                                <li><span>Kilométrage : <span class="kilometrage"><?= "{$row['cars_km']} "; ?></span>km</span></li>
                             </ul>
                         </div>
                         <div class="card-footer custom-footer">
                             <div class="float-start">
-                                <h4 class="custom-highlight"><?= $row['cars_price']; ?> €</h4>
+                                <h4 class="custom-highlight"><?= "{$row['cars_price']} "; ?>€</h4>
                             </div>
                             <div class="float-end">
                                 <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>

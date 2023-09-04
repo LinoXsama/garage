@@ -7,17 +7,22 @@
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'config/db_connect.php';
+    require_once 'functions.php';
 ?>
 
 <?php
-    if(isset($_POST['CONTACT-FORM']))
+    if(isset($_POST['CONTACT_FORM']))
     {
+        session_start();
+
         $_SESSION['name'] = htmlspecialchars($_POST['NAME']);
         $_SESSION['email'] = htmlspecialchars($_POST['EMAIL']);
         $_SESSION['phone'] = htmlspecialchars($_POST['PHONE']);
         $_SESSION['comment'] = htmlspecialchars($_POST['COMMENT']);
 
-        
+        $table = 'contacts';
+
+        insert($table, 'name', $_SESSION['name'], 'email', $_SESSION['email'], 'phone', $_SESSION['phone'], 'msg', $_SESSION['comment']);
     }
 ?>
 
@@ -29,7 +34,7 @@
                 <div class="col-md-8">
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5 class="text-align text-center">Contactez-nous</h5>
+                            <h5 class="pt-2 text-align text-center">Contactez-nous</h5>
                         </div>
                         <div class="card-body">
 
@@ -43,7 +48,7 @@
                                     <textarea rows="4" name="COMMENT" placeholder="Rédigez votre message ici..." class="form-control my-3"></textarea>
                                     
                                     <div class="text-center my-4">
-                                        <button type="submit" name="CONTACT-FORM" value="CONTACT" class="btn btn-primary">SOUMETTRE</button>
+                                        <button type="submit" name="CONTACT_FORM" value="contact" class="btn btn-primary">SOUMETTRE</button>
                                     </div>
                                 </div>
 
