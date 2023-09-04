@@ -179,7 +179,7 @@
 
 <?php
     // VERSION 1.0 
-    function delete(string $table, string $condition, string $value)
+    function delete(string $table, string $condition, string $value): bool
     {
         include 'config/db_connect.php';
 
