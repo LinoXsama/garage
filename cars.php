@@ -92,7 +92,7 @@
                 <div class="car col">
                     <div class="card h-100 shadow custom-card">
                         <span class="btn btn-dark" id="price-tag"><span class="price"><?= "{$row['cars_price']} "; ?></span>€</span>
-                        <img src="<?= $row['cars_image_path']; ?>" alt="" class="card-img-top w-100 custom-bg" />
+                        <img src="<?= $row['cars_image_path']; ?>" alt="" class="card-img-top w-100 custom-bg gallery-item" />
                         <div class="card-body">
                             <h4 class="card-title"><?= "{$row['cars_brand']} {$row['cars_model']} {$row['cars_release_year']} {$row['cars_power']} "; ?>CH</h4>
                             <ul class="card-text list-unstyled">
@@ -106,7 +106,7 @@
                                 <h4 class="custom-highlight"><?= "{$row['cars_price']} "; ?>€</h4>
                             </div>
                             <div class="float-end">
-                                <button class="btn btn-dark rounded-3 custom-btn">DÉTAILS</button>
+                                <a href="#" class="btn btn-dark rounded-3 custom-btn">DÉTAILS</a>
                             </div>
                         </div>
                     </div>
@@ -120,6 +120,36 @@
         </div>
 
     </div>
+
+    <!-- MODAL - START -->
+        <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+        </button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="gallery-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Galérie d'images</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <img src="" alt="" class="modal-img" />
+                </div>
+
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+
+            </div>
+        </div>
+        </div>
+    <!-- MODAL - END -->
 
 </main>
 

@@ -1,4 +1,4 @@
-/* INDEX.PHP - START */
+/* CARS.PHP - START */
 
 #search form {
     width: 50%;
@@ -24,7 +24,16 @@ li span {
 .ctn {
     gap: 20px;
 }
-/* INDEX.PHP - END */
+
+.gallery-item {
+    cursor: pointer;
+}
+
+.modal-img {
+    width: 100%;
+}
+
+/* CARS.PHP - END */
 
 
 /* BOTTOM NAVBAR - START */
@@ -34,7 +43,3 @@ li span {
     }
 
 /* BOTTOM NAVBAR - END */
-
-.rb {
-    border: 1px solid red;
-}

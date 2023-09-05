@@ -1,18 +1,12 @@
-// document.addEventListener("click", function (e) 
-// {
-//     if(e.target.classList.contains("edition"))
-//     {
-//         let session = "$_SESSION['user_id'] = ";
-//         let user_id = e.target.id;
-//         data = session.concat(user_id, ';');
-//         // console.log(data);
-//         localStorage.setItem('data', data);
-//     }
-// })
-
-// let result = document.getElementById('result');
-
-// result.innerHTML = localStorage.getItem('data');
+document.addEventListener('click', function (e) {
+    if(e.target.classList.contains("gallery-item"))
+    {
+        const src = e.target.getAttribute("src");
+        document.querySelector(".modal-img").src = src;
+        const myModal = new bootstrap.Modal(document.getElementById('gallery-modal'));
+        myModal.show();
+    }
+});
 
 // FONCTIONS DE LA PAGE cars.php - START
 
@@ -157,5 +151,3 @@ const reset = () => {
 
 // const min = document.getElementById("min-price").innerHTML;
 // console.log(min);
-
-
