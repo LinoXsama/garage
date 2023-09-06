@@ -3,6 +3,10 @@ document.addEventListener("click", function (e) {
     {
         const src = e.target.getAttribute("src");
         document.querySelector(".modal-img").src = src;
+
+        const alt = e.target.getAttribute("alt");
+        document.querySelector(".modal-img").alt = alt;
+
         const myModal = new bootstrap.Modal(document.getElementById("gallery-modal"));
         myModal.show();
     }
