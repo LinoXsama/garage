@@ -138,13 +138,13 @@
                 </div>
 
                 <div class="modal-body">
-                    <img src="" alt="" class="modal-img" />
+                    <img src="" alt="" class="img-fluid modal-img" />
                 </div>
 
-                <!-- <div class="modal-footer">
+                <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
-                </div> -->
+                </div>
 
             </div>
         </div>
