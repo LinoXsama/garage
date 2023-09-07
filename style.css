@@ -2,11 +2,9 @@
 
 #search form {
     width: 50%;
-    /* border: 1px solid crimson; */
 }
 
 #search form input{
-    /* border: 1px solid blue; */
     border-radius: 20px;
 }
 
@@ -25,6 +23,10 @@ li span {
     gap: 20px;
 }
 
+.gallery-item {
+    cursor: pointer;
+}
+
 /* CARS.PHP - END */
 
 
@@ -34,4 +36,24 @@ li span {
         fill: white;
     }
 
+    #bottom-navbar {
+
+        
+    }
+
 /* BOTTOM NAVBAR - END */
+
+body {
+    height: 100vh;
+}
+
+/* .main {
+    min-height: 80% !important;
+    max-height: 100vh;
+}  */
+
+[data-target="#collapseOne"], [data-target="#collapseTwo"], [data-target="#collapseThree"] {
+    text-decoration: none;
+    cursor: pointer;
+    color: dodgerblue;
+}
