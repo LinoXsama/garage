@@ -52,7 +52,7 @@ body {
     max-height: 100vh;
 }  */
 
-[data-target="#collapseOne"], [data-target="#collapseTwo"], [data-target="#collapseThree"] {
+[data-target="#collapseOne"], [data-target="#collapseTwo"], [data-target="#collapseThree"], [data-target="#collapseFour"] {
     text-decoration: none;
     cursor: pointer;
     color: black !important;

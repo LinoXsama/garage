@@ -181,6 +181,7 @@
                                             <a class="collapsed d-flex justify-content-start" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><span class="material-symbols-outlined">comment</span>&nbsp;GESTION DES AVIS</a>
                                         </h5>
                                     </div>
+
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">
                                             <a href="#" class="btn btn-primary text-white">GÉRER LES AVIS</a>
@@ -239,6 +240,21 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="card">
+                                    <div class="card-header" id="headingFour">
+                                        <h5 class="mb-0">
+                                            <a class="collapsed d-flex justify-content-start" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><span class="material-symbols-outlined">comment</span>&nbsp;GESTION DES VEHICULES</a>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <a href="#" class="btn btn-primary text-white">GÉRER LES VEHICULES</a><br />
+                                            <a href="#" class="btn btn-primary text-white mt-2">GÉRER LA GALERIE D'IMAGES</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -248,7 +264,6 @@
         </div>
     </div>
 
-    
 </main>
 
 <?php require_once 'templates/footer.php'; ?>

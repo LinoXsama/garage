@@ -48,9 +48,9 @@ if (isset($_POST['login'])) {
 
     if ($email_status && $password_status) {
         if (check_user_type($conn, $_SESSION['email']) === 'admin') {
-            header('Location: admin_panel.php');
+            header('Location: admin_dashboard.php');
         } else {
-            header('Location: index.php');
+            header('Location: user_dashboard.php');
         }
     }
 }
