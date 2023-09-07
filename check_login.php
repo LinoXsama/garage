@@ -64,8 +64,10 @@
 
 <?php
 
-    function does_password_match(object $conn, string $email, string $password): bool {
+    function does_password_match(string $email, string $password): bool {
     // VERSION 1.2
+
+        include 'config/db_connect.php';
 
         $query = "SELECT pwd_hash FROM crud WHERE email = ?";
         $stmt = $conn->prepare($query);
@@ -110,17 +112,27 @@
 
 <?php
 
-    function check_user_type(object $db_conn, string $email): string {
+    function check_user_type(string $email): array 
+    {
+        include 'config/db_connect.php';
 
-        $query = "SELECT user_type FROM crud WHERE email = ?";
-        $stmt = $db_conn->prepare($query);
+        $data = array
+        (
+            'user_type' => '',
+            'id' => ''
+        );
+
+        $query = "SELECT user_type, id FROM crud WHERE email = ?";
+        $stmt = $conn->prepare($query);
         $stmt->bind_param("s", $email);
         $stmt->execute();
 
         $user = $stmt->get_result()->fetch_assoc();
 
-        return $user['user_type'];
+        $data['user_type'] = $user['user_type'];
+        $data['id'] = $user['id'];
 
+        return $data;
     }
 
 ?>

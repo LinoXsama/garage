@@ -4,6 +4,10 @@
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'functions.php';
+
+    session_start();
+
+    echo $_SESSION['user_id'];
 ?>
 
 <?php

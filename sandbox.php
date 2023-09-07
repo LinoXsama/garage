@@ -305,3 +305,28 @@
         // echo '<pre>';
 ?>
 
+<?php
+function check_user_type(string $email): array 
+{
+    include 'config/db_connect.php';
+
+    $data = array
+    (
+        'user_type' => '',
+        'id' => ''
+    );
+
+    $query = "SELECT user_type, id FROM crud WHERE email = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+
+    $user = $stmt->get_result()->fetch_assoc();
+
+    $data['user_type'] = $user['user_type'];
+    $data['id'] = $user['id'];
+
+    return $data;
+}
+
+?>
