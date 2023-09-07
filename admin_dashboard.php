@@ -1,4 +1,4 @@
-<?php $page_title = 'dashboard'; ?>
+<?php $page_title = 'admin'; ?>
 
 <?php
     require_once 'templates/header.php';
@@ -156,7 +156,7 @@
                 <div class="col-md-8">
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5 class="pt-2 text-align text-center">Administration du site</h5>
+                            <h5 class="pt-2 text-align text-center">ADMINISTRATION DU SITE</h5>
                         </div>
                         <div class="card-body">
 
@@ -164,37 +164,33 @@
                                 <div class="card">
                                     <div class="card-header" id="headingOne">
                                         <h5 class="mb-0">
-                                            <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            GESTION DES UTILISATEURS
-                                            </a>
+                                            <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="d-flex justify-content-start"><span class="material-symbols-outlined">group</span>&nbsp;GESTION DES UTILISATEURS</a>
                                         </h5>
                                     </div>
 
                                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                         <div class="card-body">
-                                            <a href="add_user.php">Ajouter un utilisateur</a><br />
-                                            <a href="admin_panel.php">Gérer les utilisateurs</a>
+                                            <a href="add_user.php" class="btn btn-success text-white">AJOUTER UN UTILISATEUR</a><br />
+                                            <a href="admin_panel.php" class="btn btn-primary text-white mt-2">GÉRER LES UTILISATEURS</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header" id="headingTwo">
                                         <h5 class="mb-0">
-                                            <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">GESTION DES AVIS</a>
+                                            <a class="collapsed d-flex justify-content-start" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><span class="material-symbols-outlined">comment</span>&nbsp;GESTION DES AVIS</a>
                                         </h5>
                                     </div>
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">
-                                            <a href="">Utilisateurs</a>
+                                            <a href="#" class="btn btn-primary text-white">GÉRER LES AVIS</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header" id="headingThree">
                                         <h5 class="mb-0">
-                                            <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            GESTION DES HORAIRES
-                                            </a>
+                                            <a class="collapsed d-flex justify-content-start" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><span class="material-symbols-outlined">today</span>&nbsp;GESTION DES HORAIRES</a>
                                         </h5>
                                     </div>
                                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
@@ -204,36 +200,36 @@
 
                                             <div class="form-group my-3 mx-3" >
 
-                                                <label>LUNDI</label>
+                                                <label class="btn btn-info">LUNDI</label>
                                                 <input type="text" name="monday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3">
                                                 <input type="text" name="monday-afternoon" placeholder="APRES-MIDI - Exemple : 14:00 - 18:00" class="form-control mb-3">
 
-                                                <label>MARDI</label>
+                                                <label class="btn btn-info">MARDI</label>
                                                 <input type="text" name="tuesday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3">
                                                 <input type="text" name="tuesday-afternoon" placeholder="APRES-MIDI - Exemple : 14:00 - 18:00" class="form-control my-3">
 
-                                                <label>MERCREDI</label>
+                                                <label class="btn btn-info">MERCREDI</label>
                                                 <input type="text" name="wednesday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3">
                                                 <input type="text" name="wednesday-afternoon" placeholder="APRES-MIDI - Exemple : 14:00 - 18:00" class="form-control my-3">
 
-                                                <label>JEUDI</label>
+                                                <label class="btn btn-info">JEUDI</label>
                                                 <input type="text" name="thursday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3">
                                                 <input type="text" name="thursday-afternoon" placeholder="APRES-MIDI - Exemple : 14:00 - 18:00" class="form-control my-3">
 
-                                                <label>VENDREDI</label>
+                                                <label class="btn btn-info">VENDREDI</label>
                                                 <input type="text" name="friday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3">
                                                 <input type="text" name="friday-afternoon" placeholder="APRES-MIDI - Exemple : 14:00 - 18:00" class="form-control my-3">
 
-                                                <label>SAMEDI</label>
+                                                <label class="btn btn-info">SAMEDI</label>
                                                 <input type="text" name="saturday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3">
-                                                <input type="text" name="saturday-afternoon" placeholder="APRES-MIDI - Exemple : 14:00 - 18:00" class="form-control my-3">
+                                                <input type="text" name="saturday-afternoon" placeholder="APRES-MIDI - Exemple : Fermé" class="form-control my-3">
 
-                                                <label>DIMANCHE</label>
-                                                <input type="text" name="sunday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3">
-                                                <input type="text" name="sunday-afternoon" placeholder="APRES-MIDI - Exemple : 14:00 - 18:00" class="form-control my-3">
+                                                <label class="btn btn-info">DIMANCHE</label>
+                                                <input type="text" name="sunday-morning" placeholder="MATINÉE - Exemple : Fermé" class="form-control my-3">
+                                                <input type="text" name="sunday-afternoon" placeholder="APRES-MIDI - Exemple : Fermé" class="form-control my-3">
 
                                                 <div class="text-center my-4">
-                                                    <button type="submit" name="SCHEDULES_UPDATE" value="schedules_update" class="btn btn-primary">SOUMETTRE</button>
+                                                    <button type="submit" name="SCHEDULES_UPDATE" value="schedules_update" class="btn btn-primary">ENREGISTRER</button>
                                                 </div>
 
                                             </div>

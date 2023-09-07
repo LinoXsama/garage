@@ -55,5 +55,5 @@ body {
 [data-target="#collapseOne"], [data-target="#collapseTwo"], [data-target="#collapseThree"] {
     text-decoration: none;
     cursor: pointer;
-    color: dodgerblue;
+    color: black !important;
 }
