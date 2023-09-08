@@ -70,7 +70,7 @@
                             <td><?= $row['password']; ?></td>
                             <td>
                                 <!-- Fonts awesome Icons -->
-                                <a href="transition.php?id=<?= $row['id']; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
+                                <a href="edit_user_transition.php?id=<?= $row['id']; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
 
                                 <!-- Fonts awesome Icons -->
                                 <span class="link-dark"><i id="<?= $row['id']; ?>" name="<?= "{$row['first_name']} {$row['last_name']}"; ?>" class="user-item fa-solid fa-trash fs-5"></i></span>
@@ -90,8 +90,8 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
 
-                        <div class="modal-header">
-                            <h5 class="modal-title">Confirmation de suppression</h5>
+                        <div class="modal-header bg-danger">
+                            <h5 class="modal-title text-white">Confirmation de suppression</h5>
                             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="modal-footer">
-                            <a class="delete-btn btn btn-danger">OUI</a>
+                            <a class="btn btn-danger delete-btn">OUI</a>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">NON</button>
                         </div>
 

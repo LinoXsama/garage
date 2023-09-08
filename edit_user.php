@@ -57,7 +57,7 @@
                 <div class="col-md-8">
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5 class="pt-2 text-align text-center">Modifier les données d'un utilisateur</h5>
+                            <h5 class="pt-2 text-align text-center">Modifier les données de l'utilisateur</h5>
                         </div>
                         <div class="card-body">
 
@@ -85,6 +85,7 @@
                                     <button type="submit" name="EDIT" value="edit" class="btn btn-success">ENREGISTRER</button>
                                     <a href="admin_panel.php" class="btn btn-danger">ANNULER</a>
                                 </div>
+
                         </form>
 
                         </div>
