@@ -5,11 +5,11 @@
 <?php
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
-    require_once 'check_login.php';
+    require_once 'functions.php';
 
     session_start();
-    $_SESSION['email'] = $_SESSION['password'] = '';
 
+    $_SESSION['email'] = $_SESSION['password'] = '';
 
     $login_errors = array(
         'empty_email' => '',
@@ -17,63 +17,65 @@
         'empty_password' => '',
         'incorrect_email_or_password' => ''
     );
-
 ?>
 
 <?php
-
-if (isset($_POST['LOGIN'])) 
-{
-    $email_status = $password_status = false;
-    
-    $_SESSION['email'] = htmlspecialchars($_POST['email']);
-    $_SESSION['password'] = htmlspecialchars($_POST['password']);
-
-    if (empty($_SESSION['email'])) 
+    // Vérification des données d'authentification de l'utilisateur
+    if(isset($_POST['LOGIN'])) 
     {
-        $login_errors['empty_email'] = "L'adresse mail n'a pas été renseignée !";
-    } 
-    elseif (is_email_invalid($_SESSION['email'])) 
-    {
-        $login_errors['invalid_email'] = "L'adresse mail est invalide";
-    } 
-    else 
-    {
-        $email_status = true;
-    }
+        $email_status = $password_status = false;
+        
+        $_SESSION['email'] = htmlspecialchars($_POST['email']);
+        $_SESSION['password'] = htmlspecialchars($_POST['password']);
 
-    if(empty($_SESSION['password'])) 
-    {
-        $login_errors['empty_password'] = "Le mot de passe n'a pas été renseigné !";
-    } 
-    elseif(!does_password_match($_SESSION['email'], $_SESSION['password'])) 
-    {
-        $login_errors['incorrect_email_or_password'] = "L'adresse mail ou le mot de passe est incorrect";
-    } 
-    else 
-    {
-        $password_status = true;
-    }
-
-    if ($email_status && $password_status) 
-    {
-        $user_data = array();
-
-        $user_data = check_user_type($_SESSION['email']);
-
-        $_SESSION['user_id'] = $user_data['id'];
-
-        if($user_data['user_type'] === 'admin') 
+        if (empty($_SESSION['email'])) 
         {
-            header('Location: admin_dashboard.php');
+            $login_errors['empty_email'] = "L'adresse mail n'a pas été renseignée !";
         } 
-        else if($user_data['user_type'] === 'employee') 
+        elseif (is_email_invalid($_SESSION['email'])) 
         {
-            header('Location: user_dashboard.php');
+            $login_errors['invalid_email'] = "L'adresse mail est invalide";
+        } 
+        else 
+        {
+            $email_status = true;
         }
-    }
-}
 
+        if(empty($_SESSION['password'])) 
+        {
+            $login_errors['empty_password'] = "Le mot de passe n'a pas été renseigné !";
+        } 
+        elseif(!does_password_match($_SESSION['email'], $_SESSION['password'])) 
+        {
+            $login_errors['incorrect_email_or_password'] = "L'adresse mail ou le mot de passe est incorrect";
+        } 
+        else 
+        {
+            $password_status = true;
+        }
+
+        if ($email_status && $password_status) 
+        {
+            $user_data = array();
+
+            $user_data = get_user_data($_SESSION['email']);
+
+            $_SESSION['user_id'] = $user_data['id'];
+
+            if($user_data['user_type'] === 'admin') 
+            {
+                header('Location: admin_dashboard.php');
+                exit;
+            } 
+            else if($user_data['user_type'] === 'employee') 
+            {
+                header('Location: user_dashboard.php');
+                exit;
+            }
+        }
+
+        unset($_POST['LOGIN']);
+    }
 ?>
 
 <main>

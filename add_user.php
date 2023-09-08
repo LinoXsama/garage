@@ -1,5 +1,15 @@
 <?php
     $page_title = "Ajouter un nouvel utilisateur";
+
+    session_start();
+
+    if(!isset($_SESSION['user_id']))
+    {
+        header('Location: login.php');
+        exit;
+    }
+    else
+    {
 ?>
 
 <?php
@@ -18,8 +28,6 @@
         $hash = password_hash($pwd, PASSWORD_DEFAULT);
 
         $query_status = insert('crud', 'first_name', $fname, 'last_name', $lname, 'email', $mail, 'password', $pwd, 'pwd_hash', $hash, 'user_type', 'employee');
-
-        session_start();
 
         if($query_status)
         {
@@ -82,3 +90,6 @@
 
 <?php include('templates/footer.php'); ?>
 
+<?php
+    }
+?>

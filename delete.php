@@ -1,6 +1,6 @@
-<?php require_once 'functions.php'; ?>
-
 <?php
+    require_once 'functions.php';
+
     if(isset($_GET['id']))
     {
         $user_id = intval($_GET['id']);

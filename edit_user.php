@@ -1,7 +1,19 @@
 <?php
+    $page_title = "Modifier les données d'un utilisateur";
+
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'functions.php';
+
+    session_start();
+
+    if(!isset($_SESSION['user_id']))
+    {
+        header('Location: login.php');
+        exit;
+    }
+    else
+    {
 ?>
 
 <?php
@@ -38,7 +50,7 @@
 
 <main class="container">
 
-<div class="py-5">
+    <div class="py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -84,3 +96,7 @@
 </main>
 
 <?php require_once 'templates/footer.php'; ?>
+
+<?php
+    }
+?>

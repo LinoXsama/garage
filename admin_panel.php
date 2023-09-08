@@ -1,5 +1,15 @@
 <?php
     $page_title = "Panneau d'administration";
+
+    session_start();
+
+    if(!isset($_SESSION['user_id']))
+    {
+        header('Location: login.php');
+        exit;
+    }
+    else
+    {
 ?>
 
 <?php
@@ -13,8 +23,6 @@
     <div class="container mt-3 mb-4">
 
         <?php
-            session_start();
-
             if(isset($_SESSION['msg']))
             {
                 echo
@@ -81,4 +89,6 @@
 
 <?php include('templates/footer.php'); ?>
 
-
+<?php
+    }
+?>

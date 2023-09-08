@@ -1,13 +1,21 @@
-<?php $page_title = 'user'; ?>
+<?php 
+    $page_title = 'Gestion des paramètres'; 
+
+    session_start();
+
+    if(!isset($_SESSION['user_id']))
+    {
+        header('Location: login.php');
+        exit;
+    }
+    else
+    {
+?>
 
 <?php
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'functions.php';
-
-    session_start();
-
-    echo $_SESSION['user_id'];
 ?>
 
 <main>
@@ -64,3 +72,7 @@
 </main>
 
 <?php require_once 'templates/footer.php'; ?>
+
+<?php
+    }
+?>

@@ -3,7 +3,7 @@
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
         <!-- LOGO DU GARAGE -->
-        <img src="config/logo2.png" alt="Logo Garage Vincent" class="logo-garage">&nbsp;&nbsp;
+        <img src="config/logo2.png" alt="Logo Garage Vincent">&nbsp;&nbsp;
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -13,9 +13,21 @@
         <li><a href="contact.php" class="nav-link px-2 text-white">Contactez-nous</a></li>
       </ul>
 
-      <!-- <div class="text-end">
-        <a href="login.php" class="btn btn-outline-light me-2">CONNEXION</a>
-      </div> -->
+      <div class="text-end">
+        <?php
+          $login_btn = '<a href="login.php" class="btn btn-outline-light me-2">CONNEXION</a>';
+          $logout_btn = '<a href="logout.php" class="btn btn-outline-light me-2">DECONNEXION</a>';
+
+          if(isset($_SESSION['user_id']))
+          {
+            echo $logout_btn;
+          }
+          else 
+          {
+            echo $login_btn;
+          }
+        ?>
+      </div>
     </div>
   </div>
 </header>
