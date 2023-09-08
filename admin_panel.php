@@ -28,7 +28,7 @@
                 echo
                 '<div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
                     '. $_SESSION['msg'] .'
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
                 </div>';
 
                 unset($_SESSION['msg']);
@@ -43,8 +43,8 @@
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Nom</th>
                     <th>Prénom</th>
+                    <th>Nom</th>
                     <th>Adresse email</th>
                     <th>Mot de passe</th>
                     <th>Actions</th>
@@ -64,8 +64,8 @@
 
                         <tr>
                             <td><?= $row['id']; ?></td>
-                            <td><?= $row['last_name']; ?></td>
                             <td><?= $row['first_name']; ?></td>
+                            <td><?= $row['last_name']; ?></td>
                             <td><?= $row['email']; ?></td>
                             <td><?= $row['password']; ?></td>
                             <td>
@@ -73,7 +73,7 @@
                                 <a href="transition.php?id=<?= $row['id']; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
 
                                 <!-- Fonts awesome Icons -->
-                                <a href="delete.php?id=<?= $row['id']; ?>" class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a>
+                                <span class="link-dark"><i id="<?= $row['id']; ?>" name="<?= "{$row['first_name']} {$row['last_name']}"; ?>" class="user-item fa-solid fa-trash fs-5"></i></span>
                             </td>
                         </tr>
 
@@ -84,6 +84,31 @@
             </tbody>
 
         </table>
+
+        <!-- MODAL POUR LA CONFIRMATION DE SUPPRESSION DE L'UTILISATEUR SELECTIONNE - START -->
+            <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title">Confirmation de suppression</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <p>Voulez-vous vraiment supprimer l'utilisateur <strong><span class="user-name"></span></strong> ?</p>
+                        </div>
+
+                        <div class="modal-footer">
+                            <a class="delete-btn btn btn-danger">OUI</a>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">NON</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        <!-- MODAL POUR LA CONFIRMATION DE SUPPRESSION DE L'UTILISATEUR SELECTIONNE - END -->
+
 
 </main>
 
