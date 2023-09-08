@@ -1,11 +1,12 @@
 <?php
     $page_title = "Modifier les données d'un utilisateur";
+    
+    session_start();
 
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'functions.php';
 
-    session_start();
 
     if(!isset($_SESSION['user_id']))
     {
@@ -17,7 +18,7 @@
 ?>
 
 <?php
-    $user_id = intval($_GET['id']);
+    $user_id = $_SESSION['user_to_edit'];
 
     if(isset($_POST['EDIT'])) 
     {
