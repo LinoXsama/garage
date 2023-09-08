@@ -133,18 +133,13 @@
                 <div class="modal-content">
 
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Galérie d'images</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Aperçu de la photo</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
 
                     <div class="modal-body">
                         <img src="" alt="" class="img-fluid modal-img" />
                     </div>
-
-                    <!-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div> -->
 
                 </div>
         </div>

@@ -52,8 +52,20 @@ body {
     max-height: 100vh;
 }  */
 
+/* admin_dashboard.php - START */
+
 [data-target="#collapseOne"], [data-target="#collapseTwo"], [data-target="#collapseThree"], [data-target="#collapseFour"] {
     text-decoration: none;
     cursor: pointer;
     color: black !important;
 }
+
+/* admin_dashboard.php - END */
+
+/* edit_user.php - START */
+
+.user-item {
+    cursor: pointer;
+}
+
+/* edit_user.php -END */

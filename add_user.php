@@ -59,11 +59,11 @@
                         <div class="card-body">
 
                         <form action="add_user.php" method="POST" class="mt-3 mb-3">
-
-                            <label class="form-label">Nom</label>
+                            
+                            <label class="form-label">Prénom</label>
                             <input class="form-control" type="text" name="first_name" placeholder="Albert">
 
-                            <label class="form-label">Prénom</label>
+                            <label class="form-label">Nom</label>
                             <input class="form-control" type="text" name="last_name"placeholder="Einsten">
 
                             <label class="form-label">Email</label>

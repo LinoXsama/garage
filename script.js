@@ -1,8 +1,18 @@
-document.addEventListener('DOMContentLoaded', function() 
-{
-    var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems);
+document.addEventListener("click", function (e) {
+    if(e.target.classList.contains("user-item"))
+    {
+        const user_to_delete = e.target.getAttribute("name");
+        document.querySelector(".user-name").innerHTML = user_to_delete;
+
+        const user_id_to_delete = e.target.getAttribute("id");
+        document.querySelector(".delete-btn").href = 'delete.php?id=' + user_id_to_delete;
+
+        const deleteModal = new bootstrap.Modal(document.getElementById("delete-modal"));
+        deleteModal.show();
+    }
 });
+
+
 
 document.addEventListener("click", function (e) {
     if(e.target.classList.contains("gallery-item"))
