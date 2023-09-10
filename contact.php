@@ -13,14 +13,14 @@
 <?php
     if(isset($_POST['CONTACT_FORM']))
     {
-        $_SESSION['name'] = htmlspecialchars($_POST['NAME']);
-        $_SESSION['email'] = htmlspecialchars($_POST['EMAIL']);
-        $_SESSION['phone'] = htmlspecialchars($_POST['PHONE']);
-        $_SESSION['comment'] = htmlspecialchars($_POST['COMMENT']);
+        $name = htmlspecialchars($_POST['NAME']);
+        $email = htmlspecialchars($_POST['EMAIL']);
+        $phone = htmlspecialchars($_POST['PHONE']);
+        $comment = htmlspecialchars($_POST['COMMENT']);
 
-        if(!empty($_SESSION['name']) & !empty($_SESSION['email']) & !empty($_SESSION['phone']) & !empty($_SESSION['comment']))
+        if(!empty($name) & !empty($email) & !empty($phone) & !empty($comment))
         {
-            insert('contacts', 'name', $_SESSION['name'], 'email', $_SESSION['email'], 'phone', $_SESSION['phone'], 'msg', $_SESSION['comment']);
+            insert('contacts', 'name', $name, 'email', $email, 'phone', $phone, 'msg', $comment);
         }
     }
 ?>

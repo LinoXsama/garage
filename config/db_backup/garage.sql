@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : mer. 06 sep. 2023 à 12:52
+-- Généré le : dim. 10 sep. 2023 à 20:49
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -36,25 +36,41 @@ CREATE TABLE `cars` (
   `cars_engine_type` varchar(15) NOT NULL,
   `cars_km` int(6) NOT NULL,
   `cars_price` int(5) NOT NULL,
-  `cars_image_path` varchar(30) NOT NULL,
-  `alt_text` varchar(35) NOT NULL
+  `cars_main_img` varchar(30) NOT NULL,
+  `cars_alt_text` varchar(35) NOT NULL,
+  `cars_transmission_type` varchar(30) NOT NULL,
+  `cars_doors_number` int(20) NOT NULL,
+  `cars_seats_material` varchar(20) NOT NULL,
+  `cars_color` varchar(15) NOT NULL,
+  `cars_warranty` varchar(20) NOT NULL,
+  `cars_equipment1` varchar(20) NOT NULL,
+  `cars_equipment2` varchar(20) NOT NULL,
+  `cars_equipment3` varchar(20) NOT NULL,
+  `cars_equipment4` varchar(20) NOT NULL,
+  `cars_equipment5` varchar(20) NOT NULL,
+  `cars_equipment6` varchar(20) NOT NULL,
+  `cars_equipment7` varchar(20) NOT NULL,
+  `cars_equipment8` varchar(20) NOT NULL,
+  `cars_gallery_img1` varchar(30) NOT NULL,
+  `cars_gallery_img2` varchar(30) NOT NULL,
+  `cars_gallery_img3` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `cars`
 --
 
-INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_image_path`, `alt_text`) VALUES
-(1, 'Renault', 'Clio', 2020, 120, 'Essence', 177220, 8500, 'img/clio4.jpg', 'Renault Clio 2020'),
-(2, 'Renault', 'Scenic', 2018, 100, 'Diesel', 267220, 5000, 'img/scenic4.jpg', 'Renault Scenic 2018'),
-(3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, 'img/v5.jpg', 'BMW i5 2010'),
-(4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, 'img/daciaDuster2021.jpg', 'Dacia Duster 2020'),
-(5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, 'img/v3.jpg', 'Peugeot 308 2020'),
-(6, 'Toyota', 'Camry', 2020, 120, 'Diesel', 190000, 6230, 'img/v3.jpg', 'Toyota Camry 2020'),
-(7, 'Nissan', 'Sentra', 2020, 120, 'Diesel', 183700, 7641, 'img/v3.jpg', 'Nissan Sentra 2020'),
-(8, 'Citroën ', 'C3', 2020, 120, 'Diesel', 235600, 8700, 'img/v3.jpg', 'Citroën C3 2020'),
-(9, 'Renault', 'Megane', 2020, 120, 'Diesel', 177221, 9020, 'img/v3.jpg', 'Renault Megane 2020'),
-(10, 'Opel', 'Ampera', 2020, 120, 'Électrique', 177225, 9020, 'img/v3.jpg', 'Opel Ampera 2020');
+INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_main_img`, `cars_alt_text`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_gallery_img1`, `cars_gallery_img2`, `cars_gallery_img3`) VALUES
+(1, 'Renault', 'Clio', 2020, 120, 'Essence', 177220, 8500, 'img/clio4.jpg', 'Renault Clio 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(2, 'Renault', 'Scenic', 2018, 100, 'Diesel', 267220, 5000, 'img/scenic4.jpg', 'Renault Scenic 2018', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, 'img/v5.jpg', 'BMW i5 2010', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, 'img/daciaDuster2021.jpg', 'Dacia Duster 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, 'img/v3.jpg', 'Peugeot 308 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(6, 'Toyota', 'Camry', 2020, 120, 'Diesel', 190000, 6230, 'img/v3.jpg', 'Toyota Camry 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(7, 'Nissan', 'Sentra', 2020, 120, 'Diesel', 183700, 7641, 'img/v3.jpg', 'Nissan Sentra 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(8, 'Citroën ', 'C3', 2020, 120, 'Diesel', 235600, 8700, 'img/v3.jpg', 'Citroën C3 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(9, 'Renault', 'Megane', 2020, 120, 'Diesel', 177221, 9020, 'img/v3.jpg', 'Renault Megane 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(10, 'Opel', 'Ampera', 2020, 120, 'Électrique', 177225, 9020, 'img/v3.jpg', 'Opel Ampera 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -67,18 +83,19 @@ CREATE TABLE `contacts` (
   `name` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `phone` varchar(14) NOT NULL,
-  `msg` text NOT NULL
+  `msg` text NOT NULL,
+  `car_id` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `contacts`
 --
 
-INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `msg`) VALUES
-(12, 'Sara', 'merlin.migan@gmail.com', '06 59 34 82 49', 'J\'ai apprécié'),
-(28, '', '', '', ''),
-(29, '', '', '', ''),
-(30, '', '', '', '');
+INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `msg`, `car_id`) VALUES
+(12, 'Sara', 'merlin.migan@gmail.com', '06 59 34 82 49', 'J\'ai apprécié', 0),
+(28, '', '', '', '', 0),
+(29, '', '', '', '', 0),
+(30, '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -103,8 +120,9 @@ CREATE TABLE `crud` (
 INSERT INTO `crud` (`id`, `first_name`, `last_name`, `email`, `password`, `pwd_hash`, `user_type`) VALUES
 (35, 'Alexandre', 'Legrand', 'exampleexample@gmail.com', 'tata_TATA_123', '$2y$10$MKOKDKfNWEjY.YBuyv59Ke8XjTIWe9NDvdSEQ1hfVK3Vg5e2f0irS', 'admin'),
 (36, 'James', 'Parker', 'james.parker@yahoo.fr', 'james_PARKER456', '$2y$10$UotuNYWPrKRpTCafS8d/HOl9HFo17ZQwDUeFwzTdJmJLQvIscBS0q', 'admin'),
-(59, 'Julia', 'Roberts', 'juju.roro@yahoo.fr', 'pipo_94_788', '$2y$10$mSSBvYqzSTZjd0r8Rr6xiuNF0m3l1ZvtCZaB1Jojvr.BaTqUuUSVy', 'employee'),
-(63, 'Hello', 'Kitty', 'hello.kitty@yahoo.fr', 'hello_meow_kitty_1990', '$2y$10$HSpjmFWs1evjUOtPck8B8Okwx5K3BCa4vbsAYwztQNfwln/yzcZoy', 'employee');
+(68, 'Julia', 'Roberts', 'juju.roro@yahoo.fr', 'pipo_94_7888', '$2y$10$qPbXP74Z5jf37QtZq4oN1.2J/JzIsEsTGRxpukA5Y.K2F5BSsjk8O', 'employee'),
+(70, 'Hardy', 'Heron', 'qsdfqdf@game.fr', 'dsfgsfgsdftgzertae444', '$2y$10$uq0P4CCVqHy8lBklLYHskuGkbJEoXN4HHpe.SnICpdu.hROlG8osC', 'employee'),
+(71, 'Hello', 'Kitty', 'hello.kitty@yahoo.fr', 'meow_meow_79', '$2y$10$pr6pBedVNSXeTxGHPqCAfuqvvBm0le4TUqDOW1Ki2oheeu6xWRto.', 'employee');
 
 -- --------------------------------------------------------
 
@@ -218,7 +236,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT pour la table `crud`
 --
 ALTER TABLE `crud`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT pour la table `schedules`

@@ -1,5 +1,5 @@
 <?php
-    $page_title = "Galérie d'images";
+    $page_title = "Détails";
     
     session_start();
 
@@ -94,14 +94,15 @@
     <?php
         if(isset($_POST['CONTACT_FORM']))
         {
-            $_SESSION['name'] = htmlspecialchars($_POST['NAME']);
-            $_SESSION['email'] = htmlspecialchars($_POST['EMAIL']);
-            $_SESSION['phone'] = htmlspecialchars($_POST['PHONE']);
-            $_SESSION['comment'] = htmlspecialchars($_POST['COMMENT']);
+            $name = htmlspecialchars($_POST['NAME']);
+            $email = htmlspecialchars($_POST['EMAIL']);
+            $phone = htmlspecialchars($_POST['PHONE']);
+            $comment = htmlspecialchars($_POST['COMMENT']);
+            $car_id = $_SESSION['car_to_detail'];
 
-            if(!empty($_SESSION['name']) & !empty($_SESSION['email']) & !empty($_SESSION['phone']) & !empty($_SESSION['comment']))
+            if(!empty($name) & !empty($email) & !empty($phone) & !empty($comment) & !empty($car_id))
             {
-                insert('contacts', 'name', $_SESSION['name'], 'email', $_SESSION['email'], 'phone', $_SESSION['phone'], 'msg', $_SESSION['comment']);
+                insert('contacts', 'name', $name, 'email', $email, 'phone', $phone, 'msg', $comment, 'car_id', $car_id);
             }
         }
     ?>
@@ -115,7 +116,7 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="contact.php" method="POST">
+                        <form action="details.php" method="POST">
 
                             <div class="form-group my-3 mx-3" >
                                 <input type="text" name="NAME" placeholder="Vos nom et prénom" class="form-control my-3">
