@@ -106,7 +106,7 @@
                                 <h4 class="custom-highlight"><?= "{$row['cars_price']} "; ?>€</h4>
                             </div>
                             <div class="float-end">
-                                <a href="#" class="btn btn-dark rounded-3 custom-btn">DÉTAILS</a>
+                                <a href="details_transition.php?car_id=<?= $row['cars_id']; ?>" class="btn btn-dark rounded-3 custom-btn">DÉTAILS</a>
                             </div>
                         </div>
                     </div>
