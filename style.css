@@ -69,3 +69,21 @@ body {
 }
 
 /* edit_user.php -END */
+
+/* gallery.php - START */
+
+.cars-gallery-item {
+    max-width: 100%;
+    padding: 6px;
+    width: 100%;
+}
+
+.gallery {
+    margin: 20px 80px;
+    padding: 20px 0;
+}
+
+.equipments {
+    font-weight: bold;
+}
+/* gallery.php - END */
