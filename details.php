@@ -7,8 +7,6 @@
     require_once 'templates/navbar.php';
     require_once 'functions.php';
 
-    echo $_SESSION['CAR_TO_DETAIL'];
-
     // if(!isset($_SESSION['user_id']))
     // {
     //     header('Location: login.php');

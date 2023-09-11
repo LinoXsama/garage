@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : dim. 10 sep. 2023 à 20:49
+-- Généré le : lun. 11 sep. 2023 à 15:59
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -41,36 +41,39 @@ CREATE TABLE `cars` (
   `cars_transmission_type` varchar(30) NOT NULL,
   `cars_doors_number` int(20) NOT NULL,
   `cars_seats_material` varchar(20) NOT NULL,
-  `cars_color` varchar(15) NOT NULL,
-  `cars_warranty` varchar(20) NOT NULL,
-  `cars_equipment1` varchar(20) NOT NULL,
-  `cars_equipment2` varchar(20) NOT NULL,
-  `cars_equipment3` varchar(20) NOT NULL,
-  `cars_equipment4` varchar(20) NOT NULL,
-  `cars_equipment5` varchar(20) NOT NULL,
-  `cars_equipment6` varchar(20) NOT NULL,
-  `cars_equipment7` varchar(20) NOT NULL,
-  `cars_equipment8` varchar(20) NOT NULL,
-  `cars_gallery_img1` varchar(30) NOT NULL,
-  `cars_gallery_img2` varchar(30) NOT NULL,
-  `cars_gallery_img3` varchar(30) NOT NULL
+  `cars_color` varchar(20) NOT NULL,
+  `cars_warranty` varchar(50) NOT NULL,
+  `cars_equipment1` varchar(50) NOT NULL,
+  `cars_equipment2` varchar(50) NOT NULL,
+  `cars_equipment3` varchar(50) NOT NULL,
+  `cars_equipment4` varchar(50) NOT NULL,
+  `cars_equipment5` varchar(50) NOT NULL,
+  `cars_equipment6` varchar(50) NOT NULL,
+  `cars_equipment7` varchar(50) NOT NULL,
+  `cars_equipment8` varchar(50) NOT NULL,
+  `cars_gallery_img1` varchar(50) NOT NULL,
+  `cars_gallery_img2` varchar(50) NOT NULL,
+  `cars_gallery_img3` varchar(50) NOT NULL,
+  `cars_alt_text_img1` varchar(35) NOT NULL,
+  `cars_alt_text_img2` varchar(35) NOT NULL,
+  `cars_alt_text_img3` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `cars`
 --
 
-INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_main_img`, `cars_alt_text`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_gallery_img1`, `cars_gallery_img2`, `cars_gallery_img3`) VALUES
-(1, 'Renault', 'Clio', 2020, 120, 'Essence', 177220, 8500, 'img/clio4.jpg', 'Renault Clio 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(2, 'Renault', 'Scenic', 2018, 100, 'Diesel', 267220, 5000, 'img/scenic4.jpg', 'Renault Scenic 2018', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, 'img/v5.jpg', 'BMW i5 2010', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, 'img/daciaDuster2021.jpg', 'Dacia Duster 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, 'img/v3.jpg', 'Peugeot 308 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(6, 'Toyota', 'Camry', 2020, 120, 'Diesel', 190000, 6230, 'img/v3.jpg', 'Toyota Camry 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(7, 'Nissan', 'Sentra', 2020, 120, 'Diesel', 183700, 7641, 'img/v3.jpg', 'Nissan Sentra 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(8, 'Citroën ', 'C3', 2020, 120, 'Diesel', 235600, 8700, 'img/v3.jpg', 'Citroën C3 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(9, 'Renault', 'Megane', 2020, 120, 'Diesel', 177221, 9020, 'img/v3.jpg', 'Renault Megane 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(10, 'Opel', 'Ampera', 2020, 120, 'Électrique', 177225, 9020, 'img/v3.jpg', 'Opel Ampera 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_main_img`, `cars_alt_text`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_gallery_img1`, `cars_gallery_img2`, `cars_gallery_img3`, `cars_alt_text_img1`, `cars_alt_text_img2`, `cars_alt_text_img3`) VALUES
+(1, 'Renault', 'Clio', 2020, 120, 'Essence', 177220, 8500, 'img/clio4.jpg', 'Renault Clio 2020', 'Automatique', 5, 'Cuir/Tissu', 'Bleu nuit', 'Étendue 12 mois', 'Radio', 'Écran tactile', '1 port USB + 1 prise', 'GPS', 'Climatisation automa', 'Détecteur d\'obstacle', 'Rétroviseurs extérie', 'Appui-tête AR réglab', 'img/peugeot308_2020_1.jpg', 'img/peugeot308_2020_2.jpg', 'img/daciaDuster2021.jpg', '', '', ''),
+(2, 'Renault', 'Scenic', 2018, 100, 'Diesel', 267220, 5000, 'img/scenic4.jpg', 'Renault Scenic 2018', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, 'img/v5.jpg', 'BMW i5 2010', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, 'img/daciaDuster2021.jpg', 'Dacia Duster 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, 'img/v3.jpg', 'Peugeot 308 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(6, 'Toyota', 'Camry', 2020, 120, 'Diesel', 190000, 6230, 'img/v3.jpg', 'Toyota Camry 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(7, 'Nissan', 'Sentra', 2020, 120, 'Diesel', 183700, 7641, 'img/v3.jpg', 'Nissan Sentra 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(8, 'Citroën ', 'C3', 2020, 120, 'Diesel', 235600, 8700, 'img/v3.jpg', 'Citroën C3 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(9, 'Renault', 'Megane', 2020, 120, 'Diesel', 177221, 9020, 'img/v3.jpg', 'Renault Megane 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(10, 'Opel', 'Ampera', 2020, 120, 'Électrique', 177225, 9020, 'img/v3.jpg', 'Opel Ampera 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -92,10 +95,9 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `msg`, `car_id`) VALUES
-(12, 'Sara', 'merlin.migan@gmail.com', '06 59 34 82 49', 'J\'ai apprécié', 0),
-(28, '', '', '', '', 0),
-(29, '', '', '', '', 0),
-(30, '', '', '', '', 0);
+(56, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'Je pense que votre site est super élégant :) !', 3),
+(76, 'sdfg', 'sdfgsdf', 'sdfgsdfg', 'sdfgsdf', 0),
+(77, 'sdfgsdfg', 'sdfg', 'sdfg', 'hello', 0);
 
 -- --------------------------------------------------------
 
@@ -230,7 +232,7 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT pour la table `crud`
