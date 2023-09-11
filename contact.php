@@ -2,14 +2,29 @@
 <?php
     $page_title = 'Contact';
 
-    session_start();
-
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'config/db_connect.php';
     require_once 'functions.php';
+
+    session_start();
 ?>
 
+<?php
+
+        if(isset($_SESSION['msg']))
+        {
+            echo
+                '<div class="container mt-3">
+                    <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+                '. $_SESSION['msg'] .'
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>';
+
+            unset($_SESSION['msg']);
+        }
+    ?>
 <main>
 
     <div class="py-5">
@@ -32,7 +47,7 @@
                                     <textarea rows="4" name="COMMENT" placeholder="Rédigez votre message ici..." class="form-control my-3"></textarea>
                                     
                                     <div class="text-center my-4">
-                                        <button type="submit" name="CONTACT_FORM" value="contact_form" class="btn btn-primary">SOUMETTRE</button>
+                                        <button type="submit" name="CONTACT_FORM" value="contact.php" class="btn btn-primary">SOUMETTRE</button>
                                     </div>
                                 </div>
 
