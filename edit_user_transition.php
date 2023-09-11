@@ -1,7 +1,9 @@
 <?php
     session_start();
 
-    $_SESSION['user_to_edit'] = intval($_GET['id']);
+    require_once 'config/db_connect.php';
+
+    $_SESSION['user_to_edit'] = $conn->real_escape_string($_GET['id']);
 
     header('Location: edit_user.php');
     exit;

@@ -1,8 +1,10 @@
 <?php
     session_start();
 
-    $_SESSION['car_to_detail'] = intval($_GET['car_id']);
+    require_once 'config/db_connect.php';
 
-    header('Location: detail.php');
+    $_SESSION['CAR_TO_DETAIL'] = $conn->real_escape_string($_GET['car_id']);
+
+    header('Location: details.php');
     exit;
 ?>
