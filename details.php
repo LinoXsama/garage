@@ -7,6 +7,7 @@
     require_once 'templates/navbar.php';
     require_once 'functions.php';
 
+    echo $_SESSION['CAR_TO_DETAIL'];
 
     // if(!isset($_SESSION['user_id']))
     // {
@@ -118,7 +119,7 @@
                                 <textarea rows="4" name="COMMENT" placeholder="Rédigez votre message ici..." class="form-control my-3"></textarea>
                                 
                                 <div class="text-center my-4">
-                                    <button type="submit" name="CONTACT_FORM" value="contact_form" class="btn btn-primary">SOUMETTRE</button>
+                                    <button type="submit" name="CONTACT_FORM" value="details.php" class="btn btn-primary">SOUMETTRE</button>
                                 </div>
                             </div>
 
