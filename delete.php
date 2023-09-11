@@ -1,9 +1,10 @@
 <?php
     require_once 'functions.php';
+    require_once 'config/db_connect.php';
 
     if(isset($_GET['id']))
     {
-        $user_id = intval($_GET['id']);
+        $user_id = $conn->real_escape_string(($_GET['id']));
 
         $query_status = delete('crud', 'id', $user_id);
 

@@ -87,3 +87,7 @@ body {
     font-weight: bold;
 }
 /* gallery.php - END */
+
+.msg-item{
+    cursor: pointer;
+}

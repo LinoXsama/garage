@@ -12,6 +12,23 @@ document.addEventListener("click", function (e) {
     }
 });
 
+document.addEventListener("click", function (e) {
+    if(e.target.classList.contains("msg-item"))
+    {
+        const msg_author = e.target.getAttribute("name");
+        document.querySelector(".msg-author").innerHTML = msg_author;
+
+        const msg_date = e.target.getAttribute("data-target");
+        document.querySelector(".msg-date").innerHTML = msg_date;
+
+        const msg_id = e.target.getAttribute("id");
+        document.querySelector(".msg-id").innerHTML = msg_id;
+        document.querySelector(".delete-btn").href = 'delete_msg.php?id=' + msg_id;
+
+        const deleteModal = new bootstrap.Modal(document.getElementById("msg-delete-modal"));
+        deleteModal.show();
+    }
+});
 
 
 document.addEventListener("click", function (e) {
