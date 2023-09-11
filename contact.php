@@ -10,21 +10,6 @@
     require_once 'functions.php';
 ?>
 
-<?php
-    if(isset($_POST['CONTACT_FORM']))
-    {
-        $name = htmlspecialchars($_POST['NAME']);
-        $email = htmlspecialchars($_POST['EMAIL']);
-        $phone = htmlspecialchars($_POST['PHONE']);
-        $comment = htmlspecialchars($_POST['COMMENT']);
-
-        if(!empty($name) & !empty($email) & !empty($phone) & !empty($comment))
-        {
-            insert('contacts', 'name', $name, 'email', $email, 'phone', $phone, 'msg', $comment);
-        }
-    }
-?>
-
 <main>
 
     <div class="py-5">
@@ -37,7 +22,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form action="contact.php" method="POST">
+                            <form action="traitement_formulaire.php" method="POST">
 
                                 <div class="form-group my-3 mx-3" >
                                     <input type="text" name="NAME" placeholder="Vos nom et prénom" class="form-control my-3">

@@ -20,15 +20,23 @@
 <main>
 
     <?php
-        if(isset($_SESSION['car_to_detail']))
+        if(isset($_SESSION['msg']))
         {
+            echo
+                '<div class="container mt-3">
+                    <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+                '. $_SESSION['msg'] .'
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>';
 
+            unset($_SESSION['msg']);
         }
     ?>
 
     <h4 class="text-center mt-3">Galérie d'images</h4>
 
-    <div class="gallery card shadow">
+    <div class="gallery">
         <div class="container-lg">
             <div class="row gy-4 row-cols-1 -row-cols-sm-2 row-cols-md-3">
                 <div class="col">
@@ -48,7 +56,7 @@
     <h4 class="text-center mb-3">Détails du véhicule</h4>
 
     <div class="container">
-        <div class="card ml-3 mr-3 mb-5">
+        <div class="card shadow ml-3 mr-3 mb-5">
     
         <h4 class="card-header">Opel Astra 2016 - 100 CH</h4>
 
@@ -90,33 +98,17 @@
         </div>
         </div>
     </div>
-    
-    <?php
-        if(isset($_POST['CONTACT_FORM']))
-        {
-            $name = htmlspecialchars($_POST['NAME']);
-            $email = htmlspecialchars($_POST['EMAIL']);
-            $phone = htmlspecialchars($_POST['PHONE']);
-            $comment = htmlspecialchars($_POST['COMMENT']);
-            $car_id = $_SESSION['car_to_detail'];
-
-            if(!empty($name) & !empty($email) & !empty($phone) & !empty($comment) & !empty($car_id))
-            {
-                insert('contacts', 'name', $name, 'email', $email, 'phone', $phone, 'msg', $comment, 'car_id', $car_id);
-            }
-        }
-    ?>
 
     <div class="container mb-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow">
                     <div class="card-header">
-                        <h5 class="pt-2 text-align text-center">Contactez-nous</h5>
+                        <h5 class="pt-2 text-align text-center">Intéressé(e) ? Contactez-nous !</h5>
                     </div>
                     <div class="card-body">
 
-                        <form action="details.php" method="POST">
+                        <form action="traitement_formulaire.php" method="POST">
 
                             <div class="form-group my-3 mx-3" >
                                 <input type="text" name="NAME" placeholder="Vos nom et prénom" class="form-control my-3">
