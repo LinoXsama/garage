@@ -5,7 +5,6 @@ session_start();
 require_once 'functions.php';
 require_once 'config/db_connect.php';
 
-
 if(isset($_POST['CONTACT_FORM']) & $_POST['CONTACT_FORM'] === 'details.php') 
 {
     $_SESSION['NAME'] = htmlspecialchars($conn->real_escape_string($_POST['NAME']));

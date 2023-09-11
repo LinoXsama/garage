@@ -86,7 +86,7 @@
                 <div class="col-md-8">
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5 class="text-center">Connexion</h5>
+                            <h5 class="pt-1 text-center">Connexion</h5>
                         </div>
                         <div class="card-body">
                             <form action="login.php" method="POST">

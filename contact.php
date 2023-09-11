@@ -33,7 +33,7 @@
                 <div class="col-md-8">
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5 class="pt-2 text-align text-center">Contactez-nous</h5>
+                            <h5 class="pt-1 text-center">Contactez-nous</h5>
                         </div>
                         <div class="card-body">
 

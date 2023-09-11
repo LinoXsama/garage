@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : lun. 11 sep. 2023 à 15:59
+-- Généré le : lun. 11 sep. 2023 à 20:22
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -64,7 +64,7 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_main_img`, `cars_alt_text`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_gallery_img1`, `cars_gallery_img2`, `cars_gallery_img3`, `cars_alt_text_img1`, `cars_alt_text_img2`, `cars_alt_text_img3`) VALUES
-(1, 'Renault', 'Clio', 2020, 120, 'Essence', 177220, 8500, 'img/clio4.jpg', 'Renault Clio 2020', 'Automatique', 5, 'Cuir/Tissu', 'Bleu nuit', 'Étendue 12 mois', 'Radio', 'Écran tactile', '1 port USB + 1 prise', 'GPS', 'Climatisation automa', 'Détecteur d\'obstacle', 'Rétroviseurs extérie', 'Appui-tête AR réglab', 'img/peugeot308_2020_1.jpg', 'img/peugeot308_2020_2.jpg', 'img/daciaDuster2021.jpg', '', '', ''),
+(1, 'Renault', 'Clio', 2020, 120, 'Essence', 177220, 8500, 'img/clio4.jpg', 'Renault Clio 2020', 'Automatique', 5, 'Cuir/Tissu', 'Bleu nuit', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', '1 port USB + 1 prise audio', 'GPS', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/peugeot308_2020_1.jpg', 'img/peugeot308_2020_2.jpg', 'img/daciaDuster2021.jpg', 'Peugeot 308 2020 img1', 'Peugeot 308 2020 img2', 'Peugeot 308 2020 img3'),
 (2, 'Renault', 'Scenic', 2018, 100, 'Diesel', 267220, 5000, 'img/scenic4.jpg', 'Renault Scenic 2018', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 (3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, 'img/v5.jpg', 'BMW i5 2010', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 (4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, 'img/daciaDuster2021.jpg', 'Dacia Duster 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
@@ -82,22 +82,23 @@ INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, 
 --
 
 CREATE TABLE `contacts` (
-  `id` int(11) NOT NULL,
+  `msg_id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `phone` varchar(14) NOT NULL,
   `msg` text NOT NULL,
-  `car_id` int(30) NOT NULL
+  `car_id` int(30) NOT NULL,
+  `msg_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `contacts`
 --
 
-INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `msg`, `car_id`) VALUES
-(56, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'Je pense que votre site est super élégant :) !', 3),
-(76, 'sdfg', 'sdfgsdf', 'sdfgsdfg', 'sdfgsdf', 0),
-(77, 'sdfgsdfg', 'sdfg', 'sdfg', 'hello', 0);
+INSERT INTO `contacts` (`msg_id`, `name`, `email`, `phone`, `msg`, `car_id`, `msg_date`) VALUES
+(56, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'Je pense que votre site est super élégant :) !', 3, '2023-09-11'),
+(78, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'Je suis intéressé par votre véhicule. Un rdv est-il possible lundi ?', 1, '2023-09-11'),
+(79, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'zertzer', 0, '2023-09-11');
 
 -- --------------------------------------------------------
 
@@ -198,7 +199,7 @@ ALTER TABLE `cars`
 -- Index pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`msg_id`);
 
 --
 -- Index pour la table `crud`
@@ -232,7 +233,7 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT pour la table `crud`

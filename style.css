@@ -76,6 +76,7 @@ body {
     max-width: 100%;
     padding: 6px;
     width: 100%;
+    cursor: pointer;
 }
 
 .gallery {
