@@ -25,9 +25,13 @@ if(isset($_SESSION['msg']))
 }
 ?>
 
+
 <h4 class="text-center mt-3 mb-3">Liste des véhicules</h4>
 
     <div class="container mt-3 mb-4">
+
+        <a href="add_cars.php" class="btn btn-dark mb-3">Ajouter un véhicule</a>
+
         <table class="table table-hover text-center">
 
             <thead class="table-dark">
@@ -57,17 +61,16 @@ if(isset($_SESSION['msg']))
                         <tr>
                             <td><?= $row['cars_id']; ?></td>
                             <td><?= $row['cars_brand']; ?></td>
-                            <td><?= $row['cars_brand']; ?></td>
-                            <td><?= $row['cars_owner']; ?></td>
-                            <td><?= $row['cars_price']; ?></td>
+                            <td><?= $row['cars_model']; ?></td>
+                            <td><span class="border-radius bg-primary py-1 px-1 text-white"><?= $row['cars_owner']; ?></span></td>
+                            <td><?= $row['cars_price']; ?> €</td>
                             <td><?= date('d/m/Y', strtotime($row['cars_post_date'])); ?></td>
-                            <td><?=  $row['cars_author']; ?></td>
-                            <td id="bg-peach"><?= $row['msg']; ?></td>
+                            <td><span class="border-radius bg-success py-1 px-1 text-white"><?= $row['cars_post_author']; ?></span></td>
                             <td>
-                                <a class="link-dark" href="comments_mg_transition.php?id=<?= $row['car_id']; ?>"><i class="fa-solid fa-eye fs-5"></i></a> &nbsp;;
+                                <a class="link-dark" href="vehicles_mg_transition.php?id=<?= $row['cars_id']; ?>"><i class="fa-solid fa-eye fs-5"></i></a> &nbsp;
     
                                 <!-- Fonts awesome Icons -->
-                                <span class="link-dark"><i id="<?= $row['cars_id']; ?>" name="<?= "{$row['cars_brand']} {$row['cars_model']}"; ?>" data-target="<?= date('d/m/Y', strtotime($row['msg_date'])); ?>" class="fa-solid fa-trash fs-5 msg-item"></i></span>
+                                <span class="link-dark"><i id="<?= $row['cars_id']; ?>" name="<?= "{$row['cars_brand']} {$row['cars_model']}"; ?>" data-target="<?= $row['cars_owner']; ?>" class="fa-solid fa-trash fs-5 cars-item"></i></span>
                             </td>
                         </tr>
 
@@ -79,7 +82,7 @@ if(isset($_SESSION['msg']))
 
         </table>
 
-        <div class="modal fade" id="msg-delete-modal" tabindex="-1" role="dialog">
+        <div class="modal fade" id="cars-delete-modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
 
@@ -89,7 +92,7 @@ if(isset($_SESSION['msg']))
                         </div>
 
                         <div class="modal-body">
-                            <p>Voulez-vous vraiment supprimer le message <strong>N°<span class="msg-id"></span></strong> de <strong><span class="msg-author"></span></strong> du <strong><span class="msg-date"></span></strong> ?</p>
+                            <p>Voulez-vous vraiment supprimer le véhicule <strong>N°<span class="cars-id"></span></strong> : <strong><span class="cars-name"></span></strong> de <strong><span class="cars-owner"></span></strong> ?</p>
                         </div>
 
                         <div class="modal-footer">
