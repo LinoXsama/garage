@@ -18,59 +18,22 @@
     require_once 'functions.php';
 ?>
 
-<?php
-    if(isset($_POST['ADD_CAR']))
-    {
-        require_once 'config/db_connect.php';
-
-        $cars_owner = htmlspecialchars($conn->real_escape_string($_POST['CARS_OWNER']));
-        $cars_brand_name = htmlspecialchars($conn->real_escape_string($_POST['CARS_BRAND_NAME']));
-        $cars_model_name = htmlspecialchars($conn->real_escape_string($_POST['CARS_MODEL_NAME']));
-        $cars_release_year = htmlspecialchars($conn->real_escape_string($_POST['CARS_RELEASE_YEAR']));
-        $cars_power = htmlspecialchars($conn->real_escape_string($_POST['CARS_POWER']));
-        $cars_engine_type = htmlspecialchars($conn->real_escape_string($_POST['CARS_ENGINE_TYPE']));
-        $cars_km = htmlspecialchars($conn->real_escape_string($_POST['CARS_KM']));
-        $cars_price = htmlspecialchars($conn->real_escape_string($_POST['CARS_PRICE']));
-        $cars_thumbnail_img = htmlspecialchars($conn->real_escape_string($_POST['CARS_THUMBNAIL_IMG']));
-        $cars_transmission_type = htmlspecialchars($conn->real_escape_string($_POST['CARS_TRANSMISSION_TYPE']));
-        $cars_doors_number = htmlspecialchars($conn->real_escape_string($_POST['CARS_DOORS_NUMBER']));
-        $cars_seats_material = htmlspecialchars($conn->real_escape_string($_POST['CARS_SEATS_MATERIAL']));
-        $cars_color = htmlspecialchars($conn->real_escape_string($_POST['CARS_COLOR']));
-        $cars_warranty = htmlspecialchars($conn->real_escape_string($_POST['CARS_WARRANTY']));
-        $cars_equipment1 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT1']));
-        $cars_equipment2 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT2']));
-        $cars_equipment3 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT3']));
-        $cars_equipment4 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT4']));
-        $cars_equipment5 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT5']));
-        $cars_equipment6 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT6']));
-        $cars_equipment7 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT7']));
-        $cars_equipment8 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT8']));
-
-        if(!empty($cars_owner) & !empty($cars_brand_name))
-        {
-
-        }
-
-        $query_status = insert();
-
-        if($query_status)
-        {
-            $_SESSION['msg'] = 'Utilisateur ajouté avec succès !';
-            $_SESSION['alert_type'] = 'success';
-
-            header('Location: admin_panel.php');
-        }
-        else
-        {
-            $_SESSION['msg'] = "Echec de l'ajout de l'utilisateur !";
-            $_SESSION['alert_type'] = 'danger';
-
-            header('Location: admin_panel.php');
-        }
-    }
-?>
-
 <main class="container">
+
+    <?php
+    if(isset($_SESSION['msg']))
+    {
+        echo
+            '<div class="container mt-3">
+                <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+            '. $_SESSION['msg'] .'
+            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>';
+
+        unset($_SESSION['msg']);
+    }
+    ?>
 
     <div class="py-5">
         <div class="container">
@@ -82,7 +45,7 @@
                         </div>
                         <div class="card-body">
 
-                        <form action="traitement_formulaire.php" method="POST" class="mt-3 mb-3">
+                        <form action="formulaire_add_cars.php" method="POST" class="mt-3 mb-3">
 
                             <label class="form-label">Nom du propriétaire</label>
                             <input class="form-control" type="text" name="CARS_OWNER" placeholder="Mercedes">
@@ -91,10 +54,10 @@
                             <input class="form-control" type="text" name="CARS_BRAND_NAME" placeholder="Mercedes">
 
                             <label class="form-label">Nom du modèle</label>
-                            <input class="form-control" type="text" name="CARS_MODEL_NAME"placeholder="Einsten">
+                            <input class="form-control" type="text" name="CARS_MODEL_NAME"placeholder="4 MATIC">
 
                             <label class="form-label">Année de mise en circulation</label>
-                            <input class="form-control" type="text" name="CARS_RELEASE_YEAR" placeholder="nom@example.com">
+                            <input class="form-control" type="text" name="CARS_RELEASE_YEAR" placeholder="2020">
 
                             <label class="form-label">Puissance</label>
                             <input class="form-control" type="text" name="CARS_POWER">
