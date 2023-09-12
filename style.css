@@ -97,3 +97,7 @@ body {
 .bg-peach {
     background-color: #FFCBA4 !important;
 }
+
+.border-radius {
+    border-radius: 5px;
+}

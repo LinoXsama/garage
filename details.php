@@ -104,37 +104,36 @@
         </div>
     </div>
 
-    <div class="container mb-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="pt-2 text-align text-center">Ce véhicule vous intéresse ? Contactez-nous !</h5>
-                    </div>
-                    <div class="card-body">
-
-                        <form action="traitement_formulaire.php" method="POST">
-
-                            <div class="form-group my-3 mx-3" >
-                                <input type="text" name="NAME" placeholder="Vos nom et prénom" class="form-control my-3">
-                                <input type="text" name="EMAIL" placeholder="Votre adresse email" class="form-control mb-3">
-                                <input type="text" name="PHONE" placeholder="Votre numéro de téléphone" class="form-control">
-
-                                <textarea rows="4" name="COMMENT" placeholder="Rédigez votre message ici..." class="form-control my-3"></textarea>
-                                
-                                <div class="text-center my-4">
-                                    <button type="submit" name="CONTACT_FORM" value="details.php" class="btn btn-primary">ENVOYER</button>
-                                </div>
+            <div class="container mb-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card shadow">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="pt-2 text-align text-center">Ce véhicule vous intéresse ? Contactez-nous !</h5>
                             </div>
+                            <div class="card-body">
 
-                        </form>
+                                <form action="traitement_formulaire.php" method="POST">
 
+                                    <div class="form-group my-3 mx-3" >
+                                        <input type="text" name="NAME" placeholder="Vos nom et prénom" class="form-control my-3">
+                                        <input type="text" name="EMAIL" placeholder="Votre adresse email" class="form-control mb-3">
+                                        <input type="text" name="PHONE" placeholder="Votre numéro de téléphone" class="form-control">
+
+                                        <textarea rows="4" name="COMMENT" placeholder="Rédigez votre message ici..." class="form-control my-3"></textarea>
+                                        
+                                        <div class="text-center my-4">
+                                            <button type="submit" name="CONTACT_FORM" value="details.php" class="btn btn-primary">ENVOYER</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
 
 </main>
 
