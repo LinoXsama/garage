@@ -23,9 +23,29 @@ document.addEventListener("click", function (e) {
 
         const msg_id = e.target.getAttribute("id");
         document.querySelector(".msg-id").innerHTML = msg_id;
+
         document.querySelector(".delete-btn").href = 'delete_msg.php?id=' + msg_id;
 
         const deleteModal = new bootstrap.Modal(document.getElementById("msg-delete-modal"));
+        deleteModal.show();
+    }
+});
+
+document.addEventListener("click", function (e) {
+    if(e.target.classList.contains("cars-item"))
+    {
+        const cars_id = e.target.getAttribute("id");
+        document.querySelector(".cars-id").innerHTML = cars_id;
+
+        const cars_name = e.target.getAttribute("name");
+        document.querySelector(".cars-name").innerHTML = cars_name;
+
+        const owner_name = e.target.getAttribute("data-target");
+        document.querySelector(".cars-owner").innerHTML = owner_name;
+    
+        document.querySelector(".delete-btn").href = 'delete_msg.php?id=' + cars_id;
+
+        const deleteModal = new bootstrap.Modal(document.getElementById("cars-delete-modal"));
         deleteModal.show();
     }
 });
