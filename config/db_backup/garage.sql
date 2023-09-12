@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : lun. 11 sep. 2023 à 20:22
+-- Généré le : mar. 12 sep. 2023 à 14:16
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -56,24 +56,27 @@ CREATE TABLE `cars` (
   `cars_gallery_img3` varchar(50) NOT NULL,
   `cars_alt_text_img1` varchar(35) NOT NULL,
   `cars_alt_text_img2` varchar(35) NOT NULL,
-  `cars_alt_text_img3` varchar(35) NOT NULL
+  `cars_alt_text_img3` varchar(35) NOT NULL,
+  `cars_post_date` date NOT NULL DEFAULT current_timestamp(),
+  `cars_post_author` varchar(30) NOT NULL,
+  `cars_owner` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `cars`
 --
 
-INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_main_img`, `cars_alt_text`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_gallery_img1`, `cars_gallery_img2`, `cars_gallery_img3`, `cars_alt_text_img1`, `cars_alt_text_img2`, `cars_alt_text_img3`) VALUES
-(1, 'Renault', 'Clio', 2020, 120, 'Essence', 177220, 8500, 'img/clio4.jpg', 'Renault Clio 2020', 'Automatique', 5, 'Cuir/Tissu', 'Bleu nuit', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', '1 port USB + 1 prise audio', 'GPS', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/peugeot308_2020_1.jpg', 'img/peugeot308_2020_2.jpg', 'img/daciaDuster2021.jpg', 'Peugeot 308 2020 img1', 'Peugeot 308 2020 img2', 'Peugeot 308 2020 img3'),
-(2, 'Renault', 'Scenic', 2018, 100, 'Diesel', 267220, 5000, 'img/scenic4.jpg', 'Renault Scenic 2018', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, 'img/v5.jpg', 'BMW i5 2010', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, 'img/daciaDuster2021.jpg', 'Dacia Duster 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, 'img/v3.jpg', 'Peugeot 308 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(6, 'Toyota', 'Camry', 2020, 120, 'Diesel', 190000, 6230, 'img/v3.jpg', 'Toyota Camry 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(7, 'Nissan', 'Sentra', 2020, 120, 'Diesel', 183700, 7641, 'img/v3.jpg', 'Nissan Sentra 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(8, 'Citroën ', 'C3', 2020, 120, 'Diesel', 235600, 8700, 'img/v3.jpg', 'Citroën C3 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(9, 'Renault', 'Megane', 2020, 120, 'Diesel', 177221, 9020, 'img/v3.jpg', 'Renault Megane 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(10, 'Opel', 'Ampera', 2020, 120, 'Électrique', 177225, 9020, 'img/v3.jpg', 'Opel Ampera 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_main_img`, `cars_alt_text`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_gallery_img1`, `cars_gallery_img2`, `cars_gallery_img3`, `cars_alt_text_img1`, `cars_alt_text_img2`, `cars_alt_text_img3`, `cars_post_date`, `cars_post_author`, `cars_owner`) VALUES
+(1, 'Renault', 'Clio', 2020, 120, 'Essence', 177220, 8500, 'img/clio4.jpg', 'Renault Clio 2020', 'Automatique', 5, 'Cuir/Tissu', 'Bleu nuit', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', '1 port USB + 1 prise audio', 'GPS', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/peugeot308_2020_1.jpg', 'img/peugeot308_2020_2.jpg', 'img/daciaDuster2021.jpg', 'Peugeot 308 2020 img1', 'Peugeot 308 2020 img2', 'Peugeot 308 2020 img3', '2023-09-12', 'James Spader', 'Merlin Pecan'),
+(2, 'Renault', 'Scenic', 2018, 100, 'Diesel', 267220, 5000, 'img/scenic4.jpg', 'Renault Scenic 2018', 'Manuelle', 5, 'Cuir', 'Jaune doré', 'Étendue 12 mois', 'Radio', 'Ecran tactile 9 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/scenic4_1.jpg', 'img/scenic4_2.jpg', 'img/scenic4_3.jpg', 'Renault Scenic 4 img1', 'Renault Scenic 4 img2', 'Renault Scenic 4 img3', '2023-09-12', 'Julia Smith', 'Merlin Pecan'),
+(3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, 'img/v5.jpg', 'BMW i5 2010', 'Automatique', 5, 'Cuir', 'Bleu sidéral', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/bmw_i5_1.jpg', 'img/bmw_i5_2.jpg', 'img/bmw_i5_3.jpg', 'BMW i5 image 1', 'BMW i5 image 2', 'BMW i5 image 3', '2023-09-12', 'John Navaro', 'Merlin Pecan'),
+(4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, 'img/daciaDuster2021.jpg', 'Dacia Duster 2020', 'Automatique', 5, 'Cuir/Tissu', 'Orange', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/duster_1.jpeg', 'img/duster_2.jpg', 'img/duster_3.jpg', 'Dacia Duster img 1', 'Dacia Duster img 2', 'Dacia Duster img 3', '2023-09-12', 'John Navaro', 'Merlin Pecan'),
+(5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, 'img/v3.jpg', 'Peugeot 308 2020', 'Automatique', 5, 'Cuir/Tissu', 'Bleu ciel', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/peugeot_308_1.jpg', 'img/peugeot_308_2.jpg', 'img/peugeot_308_3.jpg', 'Peugeot 308 image 1', 'Peugeot 308 image 2', 'Peugeot 308 image 3', '2023-09-12', 'Julia Smith', 'Merlin Pecan'),
+(6, 'Toyota', 'Camry', 2020, 120, 'Diesel', 190000, 6230, 'img/v3.jpg', 'Toyota Camry 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-09-12', '', ''),
+(7, 'Nissan', 'Sentra', 2020, 120, 'Diesel', 183700, 7641, 'img/v3.jpg', 'Nissan Sentra 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-09-12', '', ''),
+(8, 'Citroën ', 'C3', 2020, 120, 'Diesel', 235600, 8700, 'img/v3.jpg', 'Citroën C3 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-09-12', '', ''),
+(9, 'Renault', 'Megane', 2020, 120, 'Diesel', 177221, 9020, 'img/v3.jpg', 'Renault Megane 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-09-12', '', ''),
+(10, 'Opel', 'Ampera', 2020, 120, 'Électrique', 177225, 9020, 'img/v3.jpg', 'Opel Ampera 2020', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2023-09-12', '', '');
 
 -- --------------------------------------------------------
 
@@ -96,9 +99,8 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`msg_id`, `name`, `email`, `phone`, `msg`, `car_id`, `msg_date`) VALUES
-(56, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'Je pense que votre site est super élégant :) !', 3, '2023-09-11'),
 (78, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'Je suis intéressé par votre véhicule. Un rdv est-il possible lundi ?', 1, '2023-09-11'),
-(79, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'zertzer', 0, '2023-09-11');
+(82, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'fdgsdfgsdfg', 1, '2023-09-11');
 
 -- --------------------------------------------------------
 
@@ -233,7 +235,7 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT pour la table `crud`

@@ -63,7 +63,7 @@
     <div class="container">
         <div class="card shadow ml-3 mr-3 mb-5">
     
-        <h4 class="card-header"><?= "{$row['cars_brand']} {$row['cars_model']} - {$row['cars_power']}"; ?> CH</h4>
+        <h4 class="card-header bg-peach"><?= "{$row['cars_brand']} {$row['cars_model']} - {$row['cars_power']}"; ?> CH</h4>
 
         <div class="card-body">
 
@@ -108,7 +108,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow">
-                    <div class="card-header">
+                    <div class="card-header bg-primary text-white">
                         <h5 class="pt-2 text-align text-center">Ce véhicule vous intéresse ? Contactez-nous !</h5>
                     </div>
                     <div class="card-body">

@@ -25,7 +25,7 @@ if(isset($_SESSION['msg']))
 }
 ?>
 
-<h4 class="text-center mt-3 mb-3">Liste des messages</h4>
+<h4 class="text-center mt-3 mb-3">Liste des véhicules</h4>
 
     <div class="container mt-3 mb-4">
         <table class="table table-hover text-center">
@@ -33,12 +33,12 @@ if(isset($_SESSION['msg']))
             <thead class="table-dark">
                 <tr>
                     <th>N°</th>
-                    <th>Date</th>
-                    <th>Auteur</th>
-                    <th>Adresse email</th>
-                    <th>Téléphone</th>
-                    <th>Objet</th>
-                    <th>Message</th>
+                    <th>Marque</th>
+                    <th>Modèle</th>
+                    <th>Propriétaire</th>
+                    <th>Prix</th>
+                    <th>Ajouté le</th>
+                    <th>Ajouté par</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -48,30 +48,26 @@ if(isset($_SESSION['msg']))
                 <?php
                     // Récupération de la liste des messages
 
-                    $messages = select('contacts');
+                    $vehicles = select('cars');
 
-                    while($row = mysqli_fetch_assoc($messages))
+                    while($row = mysqli_fetch_assoc($vehicles))
                     {
                 ?>
 
                         <tr>
-                            <td><?= $row['msg_id']; ?></td>
-                            <td><?= date('d/m/Y', strtotime($row['msg_date'])); ?></td>
-                            <td><?= $row['name']; ?></td>
-                            <td><?= $row['email']; ?></td>
-                            <td><?= $row['phone']; ?></td>
-                            <td><?= ($row['car_id'] !== 0) ? 'VEHICULE' : 'INFORMATION'; ?></td>
-                            <td class="bg-peach"><?= $row['msg']; ?></td>
+                            <td><?= $row['cars_id']; ?></td>
+                            <td><?= $row['cars_brand']; ?></td>
+                            <td><?= $row['cars_brand']; ?></td>
+                            <td><?= $row['cars_owner']; ?></td>
+                            <td><?= $row['cars_price']; ?></td>
+                            <td><?= date('d/m/Y', strtotime($row['cars_post_date'])); ?></td>
+                            <td><?=  $row['cars_author']; ?></td>
+                            <td id="bg-peach"><?= $row['msg']; ?></td>
                             <td>
-                                <?php
-                                    if($row['car_id'] !== 0)
-                                    {
-                                        // Fonts awesome Icons
-                                        echo '<a class="link-dark" href="comments_mg_transition.php?id=' .$row['car_id']. '"' .'><i class="fa-solid fa-eye fs-5"></i></a>';
-                                    }
-                                ?>
+                                <a class="link-dark" href="comments_mg_transition.php?id=<?= $row['car_id']; ?>"><i class="fa-solid fa-eye fs-5"></i></a> &nbsp;;
+    
                                 <!-- Fonts awesome Icons -->
-                                &nbsp;<span class="link-dark"><i id="<?= $row['msg_id']; ?>" name="<?= $row['name']; ?>" data-target="<?= date('d/m/Y', strtotime($row['msg_date'])); ?>" class="fa-solid fa-trash fs-5 msg-item"></i></span>
+                                <span class="link-dark"><i id="<?= $row['cars_id']; ?>" name="<?= "{$row['cars_brand']} {$row['cars_model']}"; ?>" data-target="<?= date('d/m/Y', strtotime($row['msg_date'])); ?>" class="fa-solid fa-trash fs-5 msg-item"></i></span>
                             </td>
                         </tr>
 
