@@ -43,7 +43,7 @@ document.addEventListener("click", function (e) {
         const owner_name = e.target.getAttribute("data-target");
         document.querySelector(".cars-owner").innerHTML = owner_name;
     
-        document.querySelector(".delete-btn").href = 'delete_msg.php?id=' + cars_id;
+        document.querySelector(".delete-btn").href = 'delete_cars.php?id=' + cars_id;
 
         const deleteModal = new bootstrap.Modal(document.getElementById("cars-delete-modal"));
         deleteModal.show();

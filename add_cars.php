@@ -74,6 +74,15 @@
                             <label class="form-label">Image de la miniature</label>
                             <input class="form-control" type="text" name="CARS_THUMBNAIL_IMG">
 
+                            <label class="form-label">1ère image de la galérie</label>
+                            <input class="form-control" type="text" name="CARS_IMG1">
+
+                            <label class="form-label">1nde image de la galérie</label>
+                            <input class="form-control" type="text" name="CARS_IMG2">
+
+                            <label class="form-label">3ème image de la galérie</label>
+                            <input class="form-control" type="text" name="CARS_IMG3">
+
                             <label class="form-label">Type de transmission</label>
                             <input class="form-control" type="text" name="CARS_TRANSMISSION_TYPE">
 
