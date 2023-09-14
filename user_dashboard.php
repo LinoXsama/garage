@@ -40,7 +40,7 @@
 
                                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                         <div class="card-body">
-                                            <a href="#" class="btn btn-primary text-white">GÉRER LES AVIS</a>
+                                            <a href="comments_mg.php" class="btn btn-primary text-white">GÉRER LES AVIS</a>
                                         </div>
                                     </div>
                                 </div>
@@ -55,8 +55,8 @@
 
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">
-                                            <a href="#" class="btn btn-primary text-white">GÉRER LES VEHICULES</a><br />
-                                            <a href="#" class="btn btn-primary text-white mt-2">GÉRER LA GALERIE D'IMAGES</a>
+                                            <a href="cars_mg.php" class="btn btn-primary text-white">GÉRER LES VEHICULES</a><br />
+                                            <a href="upload_img.php" class="btn btn-primary text-white mt-2">GÉRER LA GALERIE D'IMAGES</a>
                                         </div>
                                     </div>
                                 </div>

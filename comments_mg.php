@@ -61,17 +61,17 @@ if(isset($_SESSION['msg']))
                             <td><?= $row['email']; ?></td>
                             <td><?= $row['phone']; ?></td>
                             <td><?= ($row['car_id'] !== 0) ? 'VEHICULE' : 'INFORMATION'; ?></td>
-                            <td class="bg-peach"><?= $row['msg']; ?></td>
+                            <td><span class="bg-primary text-white px-1 py-1 border-radius"><?= $row['msg']; ?></span></td>
                             <td>
                                 <?php
                                     if($row['car_id'] !== 0)
                                     {
                                         // Fonts awesome Icons
-                                        echo '<a class="link-dark" href="comments_mg_transition.php?id=' .$row['car_id']. '"' .'><i class="fa-solid fa-eye fs-5"></i></a>';
+                                        echo '<a class="link-dark" href="comments_mg_transition.php?id=' .$row['car_id']. '"' .'><i class="fa-solid fa-car fs-5"></i></a>';
                                     }
                                 ?>
                                 <!-- Fonts awesome Icons -->
-                                &nbsp;<span class="link-dark"><i id="<?= $row['msg_id']; ?>" name="<?= $row['name']; ?>" data-target="<?= date('d/m/Y', strtotime($row['msg_date'])); ?>" class="fa-solid fa-trash fs-5 msg-item"></i></span>
+                                &nbsp;&nbsp;<span class="link-dark"><i id="<?= $row['msg_id']; ?>" name="<?= $row['name']; ?>" data-target="<?= date('d/m/Y', strtotime($row['msg_date'])); ?>" class="fa-solid fa-trash fs-5 msg-item"></i></span>
                             </td>
                         </tr>
 

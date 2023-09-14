@@ -15,16 +15,22 @@
 
       <div class="text-end">
         <?php
-          $login_btn = '<a href="login.php" class="btn btn-outline-light me-2">CONNEXION</a>';
-          $logout_btn = '<a href="logout.php" class="btn btn-outline-light me-2">DECONNEXION</a>';
+          if(isset($_SESSION['user_id']) & ($_SESSION['USER_TYPE'] === 'admin'))
+          {
+            echo '<a href="admin_dashboard.php" class="btn btn-outline-light me-2">ADMINISTRATION</a>';
+          }
+          else if(isset($_SESSION['user_id']) & ($_SESSION['USER_TYPE'] === 'employee'))
+          {
+            echo '<a href="user_dashboard.php" class="btn btn-outline-light me-2">ADMINISTRATION</a>';
+          }
 
           if(isset($_SESSION['user_id']))
           {
-            echo $logout_btn;
+            echo '<a href="logout.php" class="btn btn-outline-light me-2">DECONNEXION</a>';
           }
           else 
           {
-            echo $login_btn;
+            echo '<a href="login.php" class="btn btn-outline-light me-2">CONNEXION</a>';
           }
         ?>
       </div>

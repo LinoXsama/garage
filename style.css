@@ -101,3 +101,7 @@ body {
 .border-radius {
     border-radius: 5px;
 }
+
+.border-radius {
+    border-radius: 5px !important;
+}

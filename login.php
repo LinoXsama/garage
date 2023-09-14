@@ -61,6 +61,7 @@
             $user_data = get_user_data($_SESSION['email']);
 
             $_SESSION['user_id'] = $user_data['id'];
+            $_SESSION['USER_TYPE'] = $user_data['user_type'];
 
             if($user_data['user_type'] === 'admin') 
             {
