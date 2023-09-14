@@ -68,6 +68,8 @@ if(isset($_SESSION['msg']))
                             <td><span class="border-radius bg-success py-1 px-1 text-white"><?= $row['cars_post_author']; ?></span></td>
                             <td>
                                 <a class="link-dark" href="vehicles_mg_transition.php?id=<?= $row['cars_id']; ?>"><i class="fa-solid fa-eye fs-5"></i></a> &nbsp;
+
+                                <a class="link-dark" href="edit_gallery_transition.php?id=<?= $row['cars_id']; ?>"><i class="fa-solid fa-image fs-5"></i></a> &nbsp;
     
                                 <!-- Fonts awesome Icons -->
                                 <span class="link-dark"><i id="<?= $row['cars_id']; ?>" name="<?= "{$row['cars_brand']} {$row['cars_model']}"; ?>" data-target="<?= $row['cars_owner']; ?>" class="fa-solid fa-trash fs-5 cars-item"></i></span>

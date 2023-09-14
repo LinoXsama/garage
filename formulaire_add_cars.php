@@ -16,10 +16,6 @@
         $cars_engine_type = htmlspecialchars($conn->real_escape_string($_POST['CARS_ENGINE_TYPE']));
         $cars_km = htmlspecialchars($conn->real_escape_string($_POST['CARS_KM']));
         $cars_price = htmlspecialchars($conn->real_escape_string($_POST['CARS_PRICE']));
-        $cars_thumbnail_img = htmlspecialchars($conn->real_escape_string($_POST['CARS_THUMBNAIL_IMG']));
-        $cars_img1 = htmlspecialchars($conn->real_escape_string($_POST['CARS_IMG1']));
-        $cars_img2 = htmlspecialchars($conn->real_escape_string($_POST['CARS_IMG2']));
-        $cars_img3 = htmlspecialchars($conn->real_escape_string($_POST['CARS_IMG3']));
         $cars_transmission_type = htmlspecialchars($conn->real_escape_string($_POST['CARS_TRANSMISSION_TYPE']));
         $cars_doors_number = htmlspecialchars($conn->real_escape_string($_POST['CARS_DOORS_NUMBER']));
         $cars_seats_material = htmlspecialchars($conn->real_escape_string($_POST['CARS_SEATS_MATERIAL']));
@@ -39,9 +35,9 @@
         $cars_img2_alt_text = "{$cars_brand_name} {$cars_model_name} image 2";
         $cars_img3_alt_text = "{$cars_brand_name} {$cars_model_name} image 3";
 
-        if(!empty($cars_owner) & !empty($cars_brand_name) & !empty($cars_model_name) & !empty($cars_release_year) & !empty($cars_power) & !empty($cars_engine_type) & !empty($cars_km) & !empty($cars_price) & !empty($cars_thumbnail_img) & !empty($cars_img1) & !empty($cars_img2) & !empty($cars_img3) & !empty($cars_transmission_type) & !empty($cars_doors_number) & !empty($cars_seats_material) & !empty($cars_color) & !empty($cars_warranty) & !empty($cars_equipment1) & !empty($cars_equipment2) & !empty($cars_equipment3) & !empty($cars_equipment4) & !empty($cars_equipment5) & !empty($cars_equipment6) & !empty($cars_equipment7) & !empty($cars_equipment8))
+        if(!empty($cars_owner) & !empty($cars_brand_name) & !empty($cars_model_name) & !empty($cars_release_year) & !empty($cars_power) & !empty($cars_engine_type) & !empty($cars_km) & !empty($cars_price) & !empty($cars_transmission_type) & !empty($cars_doors_number) & !empty($cars_seats_material) & !empty($cars_color) & !empty($cars_warranty) & !empty($cars_equipment1) & !empty($cars_equipment2) & !empty($cars_equipment3) & !empty($cars_equipment4) & !empty($cars_equipment5) & !empty($cars_equipment6) & !empty($cars_equipment7) & !empty($cars_equipment8))
         {
-            $query = "INSERT INTO `cars`(`cars_owner`,`cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_main_img`, `cars_gallery_img1`, `cars_gallery_img2`, `cars_gallery_img3`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_alt_text`, `cars_alt_text_img1`, `cars_alt_text_img2`, `cars_alt_text_img3`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO `cars`(`cars_owner`,`cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_alt_text`, `cars_alt_text_img1`, `cars_alt_text_img2`, `cars_alt_text_img3`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = $conn->prepare($query);
 
@@ -52,7 +48,7 @@
                 // $row = mysqli_fetch_assoc(select('crud', 'id', $user_id));
                 // $user = "{$row['first_name']} {$row['last_name']}";
 
-                $stmt->bind_param("sssssssssssssssssssssssssssss", $cars_owner, $cars_brand_name, $cars_model_name, $cars_release_year, $cars_power, $cars_engine_type, $cars_km, $cars_price, $cars_thumbnail_img, $cars_img1, $cars_img2, $cars_img3, $cars_transmission_type, $cars_doors_number, $cars_seats_material, $cars_color, $cars_warranty, $cars_equipment1, $cars_equipment2, $cars_equipment3, $cars_equipment4, $cars_equipment5, $cars_equipment6, $cars_equipment7, $cars_equipment8, $cars_thumbnail_alt_text, $cars_img1_alt_text, $cars_img2_alt_text, $cars_img3_alt_text);
+                $stmt->bind_param("sssssssssssssssssssssssss", $cars_owner, $cars_brand_name, $cars_model_name, $cars_release_year, $cars_power, $cars_engine_type, $cars_km, $cars_price, $cars_transmission_type, $cars_doors_number, $cars_seats_material, $cars_color, $cars_warranty, $cars_equipment1, $cars_equipment2, $cars_equipment3, $cars_equipment4, $cars_equipment5, $cars_equipment6, $cars_equipment7, $cars_equipment8, $cars_thumbnail_alt_text, $cars_img1_alt_text, $cars_img2_alt_text, $cars_img3_alt_text);
                 $stmt->execute();
 
                 if(($stmt->affected_rows) > 0)
