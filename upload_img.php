@@ -21,7 +21,7 @@
 
             <div class="row gy-4 row-cols-1 -row-cols-sm-2 row-cols-md-3">
                 <div class="col">
-                    <img src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="bg-warning cars-gallery-item shadow" />
+                    <img src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="cars-gallery-item shadow bg-warning" />
                 </div>
                 <div class="col">
                     <img src="<?= $row['cars_gallery_img1']; ?>" alt="<?= $row['cars_alt_text_img1']; ?>" class="cars-gallery-item shadow" />
