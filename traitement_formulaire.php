@@ -11,10 +11,11 @@ if(isset($_POST['CONTACT_FORM']) & $_POST['CONTACT_FORM'] === 'details.php')
     $_SESSION['EMAIL'] = htmlspecialchars($conn->real_escape_string($_POST['EMAIL']));
     $_SESSION['PHONE'] = htmlspecialchars($conn->real_escape_string($_POST['PHONE']));
     $_SESSION['COMMENT'] = $conn->real_escape_string($_POST['COMMENT']);
+    $_SESSION['RATING'] = $conn->real_escape_string($_POST['rating']);
 
-    if(!empty($_SESSION['NAME']) & !empty($_SESSION['EMAIL']) & !empty($_SESSION['PHONE']) & !empty($_SESSION['COMMENT']))
+    if(!empty($_SESSION['NAME']) & !empty($_SESSION['EMAIL']) & !empty($_SESSION['PHONE']) & !empty($_SESSION['COMMENT']) & !empty($_SESSION['RATING']))
     {
-        $query_status = insert('contacts', 'name', $_SESSION['NAME'], 'email', $_SESSION['EMAIL'], 'phone', $_SESSION['PHONE'], 'msg', $_SESSION['COMMENT'], 'car_id', $_SESSION['CAR_TO_DETAIL']);
+        $query_status = insert('contacts', 'name', $_SESSION['NAME'], 'email', $_SESSION['EMAIL'], 'phone', $_SESSION['PHONE'], 'msg', $_SESSION['COMMENT'], 'car_id', $_SESSION['CAR_TO_DETAIL'], 'rating', $_SESSION['RATING']);
         
         if($query_status)
         {
