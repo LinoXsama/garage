@@ -12,23 +12,23 @@
     if(isset($_POST['UPLOAD'])) 
     {  
         $allowed_ext = ['jpg', 'jpeg', 'png'];
-
+        
         $query_status1 = $query_status2 = $query_status3 = $query_status4 = false;
-
+        
         // THUMBNAIL - START
-            if(!empty($_FILES['CARS_THUMBNAIL_IMG']['name']))
+        if(!empty($_FILES['CARS_THUMBNAIL_IMG']['name']))
+        {
+            $thumbnail_name = $_FILES['CARS_THUMBNAIL_IMG']['name'];
+            $thumbnail_type = $_FILES['CARS_THUMBNAIL_IMG']['type'];
+            $thumbnail_TmpName = $_FILES['CARS_THUMBNAIL_IMG']['tmp_name'];
+            $thumbnail_error = $_FILES['CARS_THUMBNAIL_IMG']['error'];
+            $thumbnail_SizeInBytes = $_FILES['CARS_THUMBNAIL_IMG']['size'];
+            $thumbnail_ext = pathinfo($thumbnail_name, PATHINFO_EXTENSION);
+            
+            if(in_array($thumbnail_ext, $allowed_ext))
             {
-                $thumbnail_name = $_FILES['CARS_THUMBNAIL_IMG']['name'];
-                $thumbnail_type = $_FILES['CARS_THUMBNAIL_IMG']['type'];
-                $thumbnail_TmpName = $_FILES['CARS_THUMBNAIL_IMG']['tmp_name'];
-                $thumbnail_error = $_FILES['CARS_THUMBNAIL_IMG']['error'];
-                $thumbnail_SizeInBytes = $_FILES['CARS_THUMBNAIL_IMG']['size'];
-                $thumbnail_ext = pathinfo($thumbnail_name, PATHINFO_EXTENSION);
-
-                if(in_array($thumbnail_ext, $allowed_ext))
+                if($thumbnail_error === 0) 
                 {
-                    if($thumbnail_error === 0) 
-                    {
                         $fileSizeInMegaBytes = round($thumbnail_SizeInBytes / (1024 * 1024), 2);
 
                         if($fileSizeInMegaBytes <= 5) 
@@ -39,7 +39,7 @@
 
                             move_uploaded_file($thumbnail_TmpName, $file_destination);
 
-                            $query_status1 = update('cars', 'cars_id', 36, 'cars_main_img', $file_destination);
+                            $query_status1 = update('cars', 'cars_id', 37, 'cars_main_img', $file_destination);
 
                             if(!$query_status1)
                             {
@@ -91,7 +91,7 @@
 
                             move_uploaded_file($img1_TmpName, $file_destination);
 
-                            $query_status2 = update('cars', 'cars_id', 36, 'cars_gallery_img1', $file_destination);
+                            $query_status2 = update('cars', 'cars_id', 37, 'cars_gallery_img1', $file_destination);
 
                             if(!$query_status2)
                             {
@@ -143,7 +143,7 @@
         
                             move_uploaded_file($img2_TmpName, $file_destination);
         
-                            $query_status3 = update('cars', 'cars_id', 36, 'cars_gallery_img2', $file_destination);
+                            $query_status3 = update('cars', 'cars_id', 37, 'cars_gallery_img2', $file_destination);
         
                             if(!$query_status3)
                             {
@@ -195,7 +195,7 @@
 
                             move_uploaded_file($img3_TmpName, $file_destination);
 
-                            $query_status4 = update('cars', 'cars_id', 36, 'cars_gallery_img3', $file_destination);
+                            $query_status4 = update('cars', 'cars_id', 37, 'cars_gallery_img3', $file_destination);
 
                             if(!$query_status4)
                             {

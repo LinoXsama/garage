@@ -56,7 +56,6 @@
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">
                                             <a href="cars_mg.php" class="btn btn-primary text-white">GÉRER LES VEHICULES</a><br />
-                                            <a href="upload_img.php" class="btn btn-primary text-white mt-2">GÉRER LA GALERIE D'IMAGES</a>
                                         </div>
                                     </div>
                                 </div>

@@ -9,3 +9,5 @@
 
 <!-- SCRIPT JS personnalisé -->
 <script src="script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>

@@ -43,11 +43,6 @@
 
             if($stmt) 
             {
-                // $user_id = 35; utiliser session user_id à la place
-            
-                // $row = mysqli_fetch_assoc(select('crud', 'id', $user_id));
-                // $user = "{$row['first_name']} {$row['last_name']}";
-
                 $stmt->bind_param("sssssssssssssssssssssssss", $cars_owner, $cars_brand_name, $cars_model_name, $cars_release_year, $cars_power, $cars_engine_type, $cars_km, $cars_price, $cars_transmission_type, $cars_doors_number, $cars_seats_material, $cars_color, $cars_warranty, $cars_equipment1, $cars_equipment2, $cars_equipment3, $cars_equipment4, $cars_equipment5, $cars_equipment6, $cars_equipment7, $cars_equipment8, $cars_thumbnail_alt_text, $cars_img1_alt_text, $cars_img2_alt_text, $cars_img3_alt_text);
                 $stmt->execute();
 

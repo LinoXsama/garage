@@ -208,3 +208,21 @@ const reset = () => {
 
 // const min = document.getElementById("min-price").innerHTML;
 // console.log(min);
+
+$(function () 
+{
+    $(".rateYo").rateYo({
+        spacing: "6px"
+    });
+
+    $(".rateyo").rateYo().on("rateyo.change", function(e, data) {
+        var rating = data.rating;
+
+        $(this).parent().find('.score').text('score :' + $(this).attr('data-rateyo-score'));
+        $(this).parent().find('.result').text(rating);
+        $(this).parent().find('input[name=rating]').val(rating);
+
+        var noteSpan = $(this).parent().siblings('label').find('.note');
+        noteSpan.text(rating);
+    });
+});

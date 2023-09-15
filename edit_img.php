@@ -66,6 +66,8 @@
 <main>
 
     <?php
+    if(isset($_SESSION['CAR_ID']))
+    {
         $car = select('cars', 'cars_id', $_SESSION['CAR_ID']);
 
         $row = mysqli_fetch_assoc($car);
@@ -93,6 +95,10 @@
         </div>
 
     </div>
+
+    <?php
+    }
+    ?>
 
     <div class="py-5">
             <div class="container">

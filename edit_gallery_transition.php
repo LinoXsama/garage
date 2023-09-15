@@ -5,6 +5,6 @@
 
     $_SESSION['CAR_ID'] = $conn->real_escape_string($_GET['id']);
     
-    header('Location: upload_img.php');
+    header('Location: edit_img.php');
     exit;
 ?>
