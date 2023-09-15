@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : jeu. 14 sep. 2023 à 14:15
+-- Généré le : ven. 15 sep. 2023 à 23:29
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -72,7 +72,7 @@ INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, 
 (3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, 'img/v5.jpg', 'BMW i5 2010', 'Automatique', 5, 'Cuir', 'Bleu sidéral', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/bmw_i5_1.jpg', 'img/bmw_i5_2.jpg', 'img/bmw_i5_3.jpg', 'BMW i5 image 1', 'BMW i5 image 2', 'BMW i5 image 3', '2023-09-12', 'John Navaro', 'Merlin Pecan'),
 (4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, 'img/daciaDuster2021.jpg', 'Dacia Duster 2020', 'Automatique', 5, 'Cuir/Tissu', 'Orange', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/duster_1.jpeg', 'img/duster_2.jpg', 'img/duster_3.jpg', 'Dacia Duster img 1', 'Dacia Duster img 2', 'Dacia Duster img 3', '2023-09-12', 'John Navaro', 'Merlin Pecan'),
 (5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, 'img/v3.jpg', 'Peugeot 308 2020', 'Automatique', 5, 'Cuir/Tissu', 'Bleu ciel', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/peugeot_308_1.jpg', 'img/peugeot_308_2.jpg', 'img/peugeot_308_3.jpg', 'Peugeot 308 image 1', 'Peugeot 308 image 2', 'Peugeot 308 image 3', '2023-09-12', 'Julia Smith', 'Merlin Pecan'),
-(36, 'Toyota', 'RAV4', 2019, 85, 'Diesel', 4582, 3000, 'img/6502ee4c08c6e7.55165607.jpg', 'Toyota RAV4 miniature', 'Automatique', 5, 'Cuir', 'Rouge Cramasoi', 'Étendue sur 12 mois', 'Radio', 'GPS', 'Ecran tactile', '2 ports USB', 'Climatisation automatique', 'Radio', 'Radio', 'Radio', 'img/6502dade132232.04626613.jpg', 'img/6502ee4c0b79c0.67947438.jpg', 'img/6502e3f6af2db9.99617439.jpg', 'Toyota RAV4 image 1', 'Toyota RAV4 image 2', 'Toyota RAV4 image 3', '2023-09-13', '', 'Joan');
+(37, 'Renault', 'Twingo 3', 2019, 50, 'Essence', 2500, 2000, 'img/650422d23c0080.66042461.jpg', 'Renault Twingo 3 miniature', 'Manuelle', 5, 'Cuir/Tissu', 'Banane', 'Étendue sur 12 mois', 'Radio', 'Radio', 'Ecran tactile', '2 ports USB', 'Climatisation automatique', 'Radio', 'Radio', 'Radio', 'img/6504238956a995.38580149.jpg', 'img/650423a5116584.80368157.jpg', 'img/650423a51865f2.67529268.jpg', 'Renault Twingo 3 image 1', 'Renault Twingo 3 image 2', 'Renault Twingo 3 image 3', '2023-09-15', '', 'James');
 
 -- --------------------------------------------------------
 
@@ -87,16 +87,19 @@ CREATE TABLE `contacts` (
   `phone` varchar(14) NOT NULL,
   `msg` text NOT NULL,
   `car_id` int(30) NOT NULL,
-  `msg_date` date NOT NULL DEFAULT current_timestamp()
+  `msg_date` date NOT NULL DEFAULT current_timestamp(),
+  `rating` decimal(2,1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `contacts`
 --
 
-INSERT INTO `contacts` (`msg_id`, `name`, `email`, `phone`, `msg`, `car_id`, `msg_date`) VALUES
-(78, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'Je suis intéressé par votre véhicule. Un rdv est-il possible lundi ?', 1, '2023-09-11'),
-(82, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'fdgsdfgsdfg', 1, '2023-09-11');
+INSERT INTO `contacts` (`msg_id`, `name`, `email`, `phone`, `msg`, `car_id`, `msg_date`, `rating`) VALUES
+(82, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'fdgsdfgsdfg', 1, '2023-09-11', 0.0),
+(86, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'Hello hello', 2, '2023-09-15', 4.0),
+(87, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'dfqsf', 2, '2023-09-15', 1.0),
+(88, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'sdfhqskdjhf zhrisuhfiezrhiu\"\'&é\"\'( éihhsfddighsidufg', 2, '2023-09-15', 3.5);
 
 -- --------------------------------------------------------
 
@@ -225,13 +228,13 @@ ALTER TABLE `sliders_filters`
 -- AUTO_INCREMENT pour la table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `cars_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `cars_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT pour la table `crud`
