@@ -31,12 +31,12 @@
 
         if(isset($km3) & !empty($km3) & is_int($km3))
         {
-            update('sliders_filters', 'filters_name', 'Kilométrage', 'sliders_min_value2', $km3, 'sliders_default_value2', $km3);
+            update('sliders_filters', 'filters_name', 'Kilométrage', 'sliders_min_value2', $km3);
         }
 
         if(isset($km4) & !empty($km4) & is_int($km4))
         {
-            update('sliders_filters', 'filters_name', 'Kilométrage', 'sliders_max_value1', $km4);
+            update('sliders_filters', 'filters_name', 'Kilométrage', 'sliders_max_value2', $km4, 'sliders_default_value2', $km4);
         }
 
         // KM - END
@@ -55,12 +55,12 @@
 
         if(isset($price3) & !empty($price3) & is_int($price3))
         {
-            update('sliders_filters', 'filters_name', 'Prix', 'sliders_min_value2', $price3, 'sliders_default_value2', $price3);
+            update('sliders_filters', 'filters_name', 'Prix', 'sliders_min_value2', $price3);
         }
 
         if(isset($price4) & !empty($price4) & is_int($price4))
         {
-            update('sliders_filters', 'filters_name', 'Prix', 'sliders_max_value1', $price4);
+            update('sliders_filters', 'filters_name', 'Prix', 'sliders_max_value1', $price4, 'sliders_default_value2', $price4);
         }
 
         // PRICE - END
@@ -79,12 +79,12 @@
 
         if(isset($year3) & !empty($year3) & is_int($year3))
         {
-            update('sliders_filters', 'filters_name', 'Année', 'sliders_min_value2', $year3, 'sliders_default_value2', $year3);
+            update('sliders_filters', 'filters_name', 'Année', 'sliders_min_value2', $year3);
         }
 
         if(isset($year4) & !empty($year4) & is_int($year4))
         {
-            update('sliders_filters', 'filters_name', 'Année', 'sliders_max_value1', $year4);
+            update('sliders_filters', 'filters_name', 'Année', 'sliders_max_value1', $year4, 'sliders_default_value2', $year4);
         }
 
         // YEAR - END
