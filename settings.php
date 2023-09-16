@@ -19,38 +19,110 @@
 ?>
 
 <main class="container">
-
+    <!-- MESSAGES DE NOTIFICATIONS - START -->
     <?php
-        if(isset($_SESSION['SUCCESS_SETTINGS']))
-        {
-            foreach ($_SESSION['SUCCESS_SETTINGS'] as $success) {
-                echo '
-                    <div class="container mt-3">
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            '. $success .'
-                            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    </div>';
+        // GESTION DES MESSAGES DE SUCCESS - START
+            if(isset($_SESSION['SUCCESS_SETTINGS']))
+            {
+                foreach ($_SESSION['SUCCESS_SETTINGS'] as $success) {
+                    echo '
+                        <div class="container mt-3">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                '. $success .'
+                                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>';
+                }
+
+                unset($_SESSION['SUCCESS_SETTINGS']);
             }
+        // GESTION DES MESSAGES DE SUCCESS - END
 
-            unset($_SESSION['SUCCESS_SETTINGS']);
-        }
+        // GESTION DES MESSAGES D'ERREURS - START
+            if(isset($_SESSION['ERRORS_SETTINGS']))
+            {
+                foreach ($_SESSION['ERRORS_SETTINGS'] as $error) {
+                    echo '
+                        <div class="container mt-3">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                '. $error .'
+                                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>';
+                }
 
-        if(isset($_SESSION['ERRORS_SETTINGS']))
-        {
-            foreach ($_SESSION['ERRORS_SETTINGS'] as $errors) {
-                echo '
-                    <div class="container mt-3">
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            '. $errors .'
-                            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    </div>';
+                unset($_SESSION['ERRORS_SETTINGS']);
             }
+        // GESTION DES MESSAGES D'ERREURS - END
 
-            unset($_SESSION['ERRORS_SETTINGS']);
-        }
+        // GESTION DES PROBLEMES D'INCOHERENCES - START
+
+            // INCOHERENCE KM - START
+                if(isset($_SESSION['PROBLEMS_KM'])) 
+                {
+                    echo '<div class="container mt-3">';
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">';
+
+                    echo '<ul>';
+                    foreach ($_SESSION['PROBLEMS_KM'] as $problem) 
+                    {
+                        echo '<li>' .$problem. '</li>';
+                    }
+                    echo '<ul>';
+
+                        echo '<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>';
+                        echo '</div>';
+                    echo '</div>';
+                    
+                    unset($_SESSION['PROBLEMS_KM']); 
+                }
+            // INCOHERENCE KM - END
+
+            // INCOHERENCE PRIX - START
+                if(isset($_SESSION['PROBLEMS_PRICE'])) 
+                {
+                        echo '<div class="container mt-3">';
+                            echo '<div class="alert alert-info alert-dismissible fade show" role="alert">';
+
+                        echo '<ul>';
+                        foreach ($_SESSION['PROBLEMS_PRICE'] as $problem) 
+                        {
+                            echo '<li>' .$problem. '</li>';
+                        }
+                        echo '<ul>';
+
+                            echo '<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>';
+                            echo '</div>';
+                        echo '</div>';
+                    
+                    unset($_SESSION['PROBLEMS_PRICE']); 
+                }
+            // INCOHERENCE PRIX - END
+
+            // INCOHERENCE ANNEE - START
+                if(isset($_SESSION['PROBLEMS_YEAR'])) 
+                {
+                        echo '<div class="container mt-3">';
+                            echo '<div class="alert alert-secondary alert-dismissible fade show" role="alert">';
+
+                        echo '<ul>';
+                        foreach ($_SESSION['PROBLEMS_YEAR'] as $problem) 
+                        {
+                            echo '<li>' .$problem. '</li>';
+                        }
+                        echo '<ul>';
+
+                            echo '<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>';
+                            echo '</div>';
+                        echo '</div>';
+                    
+                    unset($_SESSION['PROBLEMS_YEAR']); 
+                }
+            // INCOHERENCE ANNEE - END
+
+        // GESTION DES PROBLEMES D'INCOHERENCES - END
     ?>
+    <!-- MESSAGES DE NOTIFICATIONS - END -->
 
     <div class="py-5">
         <div class="container">
