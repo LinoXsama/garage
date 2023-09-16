@@ -21,9 +21,9 @@
 <main class="container">
 
     <?php
-        if(isset($_SESSION['SUCCESS']))
+        if(isset($_SESSION['SUCCESS_SETTINGS']))
         {
-            foreach ($_SESSION['SUCCESS'] as $success) {
+            foreach ($_SESSION['SUCCESS_SETTINGS'] as $success) {
                 echo '
                     <div class="container mt-3">
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -33,15 +33,25 @@
                     </div>';
             }
 
-            unset($_SESSION['SUCCESS']);
+            unset($_SESSION['SUCCESS_SETTINGS']);
+        }
+
+        if(isset($_SESSION['ERRORS_SETTINGS']))
+        {
+            foreach ($_SESSION['ERRORS_SETTINGS'] as $errors) {
+                echo '
+                    <div class="container mt-3">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            '. $errors .'
+                            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>';
+            }
+
+            unset($_SESSION['ERRORS_SETTINGS']);
         }
     ?>
 
-    <?php
-        $KM = mysqli_fetch_assoc(select('sliders_filters', 'filters_name', 'Kilométrage'));
-        $PRICE = mysqli_fetch_assoc(select('sliders_filters', 'filters_name', 'Prix'));
-        $YEAR = mysqli_fetch_assoc(select('sliders_filters', 'filters_name', 'AnnéeS'));
-    ?>
     <div class="py-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -52,59 +62,65 @@
                         </div>
                         <div class="card-body">
 
+                        <?php
+                            $KM = mysqli_fetch_assoc(select('sliders_filters', 'filters_name', 'Kilométrage'));
+                            $PRICE = mysqli_fetch_assoc(select('sliders_filters', 'filters_name', 'Prix'));
+                            $YEAR = mysqli_fetch_assoc(select('sliders_filters', 'filters_name', 'Années'));
+                        ?>
+
                         <form action="settings_formulaire.php" method="POST" class="mt-3 mb-3">
 
-                            <strong><label>Valeur actuelle du critère : <?= $KM['sliders_min_value1']; ?></label></strong><br />
-                            <label class="form-label">Slider Km - limite 1</label>
-                            <input class="form-control" type="text" name="KM1" >
+                            <label class="form-label">KM slider 1 <strong><span class="text-success">min</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $KM['sliders_min_value1']; ?>)</label></strong>
+                            <input class="form-control" type="text" name="KM1">
                             
-                            <strong><label>Valeur actuelle du critère : <?= $KM['sliders_max_value1']; ?></label></strong><br />
-                            <label class="form-label">Slider Km - limite 2</label>
+                            <label class="form-label">KM slider 1 <strong><span class="text-danger">max</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $KM['sliders_max_value1']; ?></label>)</strong>
                             <input class="form-control" type="text" name="KM2" >
 
-                            <strong><label>Valeur actuelle du critère : <?= $KM['sliders_min_value2']; ?></label></strong><br />
-                            <label class="form-label">Slider Km - limite 3</label>
+                            <label class="form-label">KM slider 2 <strong><span class="text-success">min</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $KM['sliders_min_value2']; ?></label>)</strong>
                             <input class="form-control" type="text" name="KM3">
 
-                            <strong><label>Valeur actuelle du critère : <?= $KM['sliders_max_value2']; ?></label></strong><br />
-                            <label class="form-label">Slider Km - limite 4</label>
+                            <label class="form-label">KM slider 2 <strong><span class="text-danger">max</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $KM['sliders_max_value2']; ?></label>)</strong>
                             <input class="form-control" type="text" name="KM4" >
 
-                            <strong><label>Valeur actuelle du critère : <?= $PRICE['sliders_min_value1']; ?></label></strong><br />
-                            <label class="form-label">Slider Prix - limite 1</label>
+                            <label class="form-label">Prix slider 1 <strong><span class="text-success">min</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $PRICE['sliders_min_value1']; ?></label>)</strong>
                             <input class="form-control" type="text" name="PRICE1">
 
-                            <strong><label>Valeur actuelle du critère : <?= $PRICE['sliders_max_value1']; ?></label></strong><br />
-                            <label class="form-label">Slider Prix - limite 2</label>
+                            <label class="form-label">Prix slider 1 <strong><span class="text-danger">max</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $PRICE['sliders_max_value1']; ?></label>)</strong>
                             <input class="form-control" type="text" name="PRICE2">
 
-                            <strong><label>Valeur actuelle du critère : <?= $PRICE['sliders_min_value2']; ?></label></strong><br />
-                            <label class="form-label">Slider Prix - limite 3</label>
+                            <label class="form-label">Prix slider 2 <strong><span class="text-success">min</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $PRICE['sliders_min_value2']; ?></label>)</strong>
                             <input class="form-control" type="text" name="PRICE3">
 
-                            <strong><label>Valeur actuelle du critère : <?= $PRICE['sliders_max_value2']; ?></label></strong><br />
-                            <label class="form-label">Slider Prix - limite 4</label>
+                            <label class="form-label">Prix slider 2 <strong><span class="text-danger">max</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $PRICE['sliders_max_value2']; ?></label>)</strong>
                             <input class="form-control" type="text" name="PRICE4">
 
-                            <strong><label>Valeur actuelle du critère : <?= $YEAR['sliders_min_value1']; ?></label></strong><br />
-                            <label class="form-label">Slider Année - limite 1</label>
+                            <label class="form-label">Année slider 1 <strong><span class="text-success">min</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $YEAR['sliders_min_value1']; ?></label>)</strong>
                             <input class="form-control" type="text" name="YEAR1">
 
-                            <strong><label>Valeur actuelle du critère : <?= $YEAR['sliders_max_value1']; ?></label></strong><br />
-                            <label class="form-label">Slider Année - limite 2</label>
+                            <label class="form-label">Année slider 1 <strong><span class="text-danger">max</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $YEAR['sliders_max_value1']; ?></label>)</strong>
                             <input class="form-control" type="text" name="YEAR2">
 
-                            <strong><label>Valeur actuelle du critère : <?= $YEAR['sliders_min_value2']; ?></label></strong><br />
-                            <label class="form-label">Slider Année - limite 3</label>
+                            <label class="form-label">Année slider 2 <strong><span class="text-success">min</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $YEAR['sliders_min_value2']; ?></label>)</strong>
                             <input class="form-control" type="text" name="YEAR3">
 
-                            <strong><label>Valeur actuelle du critère : <?= $YEAR['sliders_max_value2']; ?></label></strong><br />
-                            <label class="form-label">Slider Année - limite 4</label>
+                            <label class="form-label">Année slider 2 <strong><span class="text-danger">max</span></strong></label>
+                            <strong><label>(Valeur actuelle du critère : <?= $YEAR['sliders_max_value2']; ?></label>)</strong>
                             <input class="form-control" type="text" name="YEAR4">
 
                             <div class="mt-4">
                                 <button type="submit" name="SETTINGS" class="btn btn-success">ENREGISTRER</button>
-                                <a href="cars_mg.php" class="btn btn-danger">ANNULER</a>
+                                <a href="#" class="btn btn-danger">ANNULER</a>
                             </div>
 
                         </form>
