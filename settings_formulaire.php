@@ -6,9 +6,6 @@
 
     $_SESSION['SUCCESS_SETTINGS'] = array();
     $_SESSION['ERRORS_SETTINGS'] = array();
-    $_SESSION['PROBLEMS_KM'] = array();
-    $_SESSION['PROBLEMS_PRICE'] = array();
-    $_SESSION['PROBLEMS_YEAR'] = array();
 ?>
 
 <?php
@@ -27,118 +24,175 @@
         $year3 = htmlspecialchars($conn->real_escape_string($_POST['YEAR3']));
         $year4 = htmlspecialchars($conn->real_escape_string($_POST['YEAR4']));
 
-        if(isset($km1) || isset($km2) || isset($km3) || isset($km4) || isset($price1) || isset($price2) || isset($price3) || isset($price4) || isset($year1) || isset($year2) || isset($year3) || isset($year4)) 
-        {
-            // VERIFICATION DE LA COHERENCE DU CRITERE KILOMETRAGE - START
-                if(!empty($km1) && !empty($km2) && !empty($km3) && !empty($km4))
+        // VERIFICATION DE LA COHERENCE DU CRITERE KILOMETRAGE - START
+                if(!empty($km1) && !empty($km2))
                 {
                     if($km1 >= $km2)
                     {
                         $_SESSION['PROBLEMS_KM']['KM1_KM2'] = 'INCOHÉRENCE - KILOMÉTRAGE: Le minimum du slider 1 ne peut pas être supérieur ou égal au maximum de ce même slider';
                     }
+                }
 
+                if(!empty($km1) && !empty($km3))
+                {
                     if($km1 >= $km3)
                     {
                         $_SESSION['PROBLEMS_KM']['KM1_KM3'] = 'INCOHÉRENCE - KILOMÉTRAGE: Le minimum du slider 1 ne peut pas être supérieur ou égal au minimum du slider 2';
                     }
+                }
 
+                if(!empty($km1) && !empty($km4))
+                {
                     if($km1 >= $km4)
                     {
                         $_SESSION['PROBLEMS_KM']['KM1_KM4'] = 'INCOHÉRENCE - KILOMÉTRAGE: Le minimum du slider 1 ne peut pas être supérieur ou égal au maximum du slider 2';
                     }
+                }
 
+                if(!empty($km2) && !empty($km3))
+                {
                     if($km2 >= $km3)
                     {
                         $_SESSION['PROBLEMS_KM']['KM2_KM3'] = 'INCOHÉRENCE - KILOMÉTRAGE: Le maximum du slider 1 ne peut pas être supérieur ou égal au minimum du slider 2';
                     }
+                }
 
+                if(!empty($km2) && !empty($km4))
+                {
                     if($km2 >= $km4)
                     {
                         $_SESSION['PROBLEMS_KM']['KM2_KM4'] = 'INCOHÉRENCE - KILOMÉTRAGE: Le maximum du slider 1 ne peut pas être supérieur ou égal au maximum du slider 2';
                     }
+                }
 
+                if(!empty($km3) && !empty($km4))
+                {
                     if($km3 >= $km4)
                     {
                         $_SESSION['PROBLEMS_KM']['KM3_KM4'] = 'INCOHÉRENCE - KILOMÉTRAGE: Le minimum du slider 2 ne peut pas être supérieur ou égal au maximum de ce même slider';
                     }
-
                 }
-            // VERIFICATION DE LA COHERENCE DU CRITERE KILOMETRAGE - END
 
-            // VERIFICATION DE LA COHERENCE DU CRITERE PRIX - START
-                if(!empty($price1) || !empty($price2) || !empty($price3) || !empty($price4))
+                if(empty($year1) && empty($year2) && empty($year3) && empty($year4))
+                {
+                    $_SESSION['PROBLEMS_KM']['EMPTY'] = 'VIDE - KILOMÉTRAGE: Vous devez saisir au moins une valeur afin de soumettre le formulaire !';
+                }
+        // VERIFICATION DE LA COHERENCE DU CRITERE KILOMETRAGE - END
+
+        // VERIFICATION DE LA COHERENCE DU CRITERE PRIX - START
+                if(!empty($price1) && !empty($price2))
                 {
                     if($price1 >= $price2)
                     {
                         $_SESSION['PROBLEMS_PRICE']['PRICE1_PRICE2'] = 'INCOHÉRENCE - PRIX: Le minimum du slider 1 ne peut pas être supérieur ou égal au maximum de ce même slider';
                     }
+                }
 
+                if(!empty($price1) && !empty($price3))
+                {
                     if($price1 >= $price3)
                     {
                         $_SESSION['PROBLEMS_PRICE']['PRICE1_PRICE3'] = 'INCOHÉRENCE - PRIX: Le minimum du slider 1 ne peut pas être supérieur ou égal au minimum du slider 2';
                     }
+                }
 
+                if(!empty($price1) && !empty($price4))
+                {
                     if($price1 >= $price4)
                     {
                         $_SESSION['PROBLEMS_PRICE']['PRICE1_PRICE4'] = 'INCOHÉRENCE - PRIX: Le minimum du slider 1 ne peut pas être supérieur ou égal au maximum du slider 2';
                     }
+                }
 
+                if(!empty($price2) && !empty($price3))
+                {
                     if($price2 >= $price3)
                     {
                         $_SESSION['PROBLEMS_PRICE']['PRICE2_PRICE3'] = 'INCOHÉRENCE - PRIX: Le maximum du slider 1 ne peut pas être supérieur ou égal au minimum du slider 2';
                     }
+                }
 
+                if(!empty($price2) && !empty($price4))
+                {
                     if($price2 >= $price4)
                     {
                         $_SESSION['PROBLEMS_PRICE']['PRICE2_PRICE4'] = 'INCOHÉRENCE - PRIX: Le maximum du slider 1 ne peut pas être supérieur ou égal au maximum du slider 2';
                     }
+                }
 
+                if(!empty($price3) && !empty($price4))
+                {
                     if($price3 >= $price4)
                     {
                         $_SESSION['PROBLEMS_PRICE']['PRICE3_PRICE4'] = 'INCOHÉRENCE - PRIX: Le minimum du slider 2 ne peut pas être supérieur ou égal au maximum de ce même slider';
                     }
                 }
-            // VERIFICATION DE LA COHERENCE DU CRITERE PRIX - END
 
-            // VERIFICATION DE LA COHERENCE DU CRITERE ANNÉE - START
-                if(!empty($year1) || !empty($year2) || !empty($year3) || !empty($year4))
+                if(empty($price1) && empty($price2) && empty($price3) && empty($price4))
+                {
+                    $_SESSION['PROBLEMS_PRICE']['EMPTY'] = 'VIDE - PRIX: Vous devez saisir au moins une valeur afin de soumettre le formulaire !';
+                }
+        // VERIFICATION DE LA COHERENCE DU CRITERE PRIX - END
+
+        // VERIFICATION DE LA COHERENCE DU CRITERE ANNÉE - START
+                if(!empty($year1) && !empty($year2))
                 {
                     if($year1 >= $year2)
                     {
                         $_SESSION['PROBLEMS_YEAR']['YEAR1_YEAR2'] = 'INCOHÉRENCE - ANNÉE: Le minimum du slider 1 ne peut pas être supérieur ou égal au maximum de ce même slider';
                     }
+                }
 
+                if(!empty($year1) && !empty($year3))
+                {
                     if($year1 >= $year3)
                     {
                         $_SESSION['PROBLEMS_YEAR']['YEAR1_YEAR3'] = 'INCOHÉRENCE - ANNÉE : Le minimum du slider 1 ne peut pas être supérieur ou égal au minimum du slider 2';
                     }
+                }
 
+                if(!empty($year1) && !empty($year4))
+                {
                     if($year1 >= $year4)
                     {
                         $_SESSION['PROBLEMS_YEAR']['YEAR1_YEAR4'] = 'INCOHÉRENCE - ANNÉE : Le minimum du slider 1 ne peut pas être supérieur ou égal au maximum du slider 2';
                     }
+                }
 
+                if(!empty($year2) && !empty($year3))
+                {
                     if($year2 >= $year3)
                     {
                         $_SESSION['PROBLEMS_YEAR']['YEAR2_YEAR3'] = 'INCOHÉRENCE - ANNÉE : Le maximum du slider 1 ne peut pas être supérieur ou égal au minimum du slider 2';
                     }
+                }
 
+                if(!empty($year2) && !empty($year4))
+                {
                     if($year2 >= $year4)
                     {
                         $_SESSION['PROBLEMS_YEAR']['YEAR2_YEAR4'] = 'INCOHÉRENCE - ANNÉE : Le maximum du slider 1 ne peut pas être supérieur ou égal au maximum du slider 2';
                     }
+                }
 
+                if(!empty($year3) && !empty($year4))
+                {
                     if($year3 >= $year4)
                     {
                         $_SESSION['PROBLEMS_YEAR']['YEAR3_YEAR4'] = 'INCOHÉRENCE - ANNÉE : Le minimum du slider 2 ne peut pas être supérieur ou égal au maximum de ce même slider';
                     }
                 }
-            // VERIFICATION DE LA COHERENCE DU CRITERE ANNÉE - END
 
-            if(!isset($_SESSION['PROBLEMS_KM']))
-            {
+                if(empty($year1) && empty($year2) && empty($year3) && empty($year4))
+                {
+                    $_SESSION['PROBLEMS_YEAR']['EMPTY'] = 'VIDE - ANNÉE : Vous devez saisir au moins une valeur afin de soumettre le formulaire !';
+                }
+        // VERIFICATION DE LA COHERENCE DU CRITERE ANNÉE - END
+
+        if(!isset($_SESSION['PROBLEMS_KM']))
+        {
                 // KM - START
-                    if(isset($km1) && !empty($km1))
+                    if(!empty($km1))
                     {
         
                         $query_km1 = update('sliders_filters', 'filters_name', 'Kilométrage', 'sliders_min_value1', $km1, 'sliders_default_value1', $km1);
@@ -153,7 +207,7 @@
                         }
                     }
         
-                    if(isset($km2) & !empty($km2))
+                    if(!empty($km2))
                     {
                         $query_km2 = update('sliders_filters', 'filters_name', 'Kilométrage', 'sliders_max_value1', $km2);
         
@@ -167,7 +221,7 @@
                         }
                     }
         
-                    if(isset($km3) & !empty($km3))
+                    if(!empty($km3))
                     {
                         $query_km3 = update('sliders_filters', 'filters_name', 'Kilométrage', 'sliders_min_value2', $km3);
         
@@ -181,7 +235,7 @@
                         }
                     }
         
-                    if(isset($km4) & !empty($km4))
+                    if(!empty($km4))
                     {
                         $query_km4 = update('sliders_filters', 'filters_name', 'Kilométrage', 'sliders_max_value2', $km4, 'sliders_default_value2', $km4);
         
@@ -195,12 +249,12 @@
                         }
                     }
                 // KM - END
-            }
+        }
 
-            if(!isset($_SESSION['PROBLEMS_PRICE']))
-            {
-                // PRICE - START
-                    if(isset($price1) && !empty($price1))
+        if(!isset($_SESSION['PROBLEMS_PRICE']))
+        {
+            // PRICE - START
+                    if(!empty($price1))
                     {
                         $query_price1 = update('sliders_filters', 'filters_name', 'Prix', 'sliders_min_value1', $price1, 'sliders_default_value1', $price1);
         
@@ -214,7 +268,7 @@
                         }
                     }
         
-                    if(isset($price2) & !empty($price2))
+                    if(!empty($price2))
                     {
                         $query_price2 = update('sliders_filters', 'filters_name', 'Prix', 'sliders_max_value1', $price2);
         
@@ -228,7 +282,7 @@
                         }
                     }
         
-                    if(isset($price3) & !empty($price3))
+                    if(!empty($price3))
                     {
                         $query_price3 = update('sliders_filters', 'filters_name', 'Prix', 'sliders_min_value2', $price3);
         
@@ -242,7 +296,7 @@
                         }
                     }
         
-                    if(isset($price4) & !empty($price4))
+                    if(!empty($price4))
                     {
                         $query_price4 = update('sliders_filters', 'filters_name', 'Prix', 'sliders_max_value1', $price4, 'sliders_default_value2', $price4);
         
@@ -255,13 +309,13 @@
                             $_SESSION['ERRORS_SETTINGS']['PRICE4'] = "Prix limite 4 n'a pas pu être mise à jour !";
                         }
                     }
-                // PRICE - END
-            }
+            // PRICE - END
+        }
 
-            if(!isset($_SESSION['PROBLEMS_YEAR']))
-            {
-                // YEAR - START
-                    if(isset($year1) && !empty($year1))
+        if(!isset($_SESSION['PROBLEMS_YEAR']))
+        {
+            // YEAR - START
+                    if(!empty($year1))
                     {
                         $query_year1 = update('sliders_filters', 'filters_name', 'Année', 'sliders_min_value1', $year1, 'sliders_default_value1', $year1);
         
@@ -275,7 +329,7 @@
                         }
                     }
         
-                    if(isset($year2) & !empty($year2))
+                    if(!empty($year2))
                     {
                         $query_year2 = update('sliders_filters', 'filters_name', 'Année', 'sliders_max_value1', $year2);
         
@@ -289,7 +343,7 @@
                         }
                     }
         
-                    if(isset($year3) & !empty($year3))
+                    if(!empty($year3))
                     {
                         $query_year3 = update('sliders_filters', 'filters_name', 'Année', 'sliders_min_value2', $year3);
         
@@ -303,7 +357,7 @@
                         }
                     }
         
-                    if(isset($year4) & !empty($year4))
+                    if(!empty($year4))
                     {
                         $query_year4 = update('sliders_filters', 'filters_name', 'Année', 'sliders_max_value1', $year4, 'sliders_default_value2', $year4);
         
@@ -316,11 +370,12 @@
                             $_SESSION['ERRORS_SETTINGS']['YEAR4'] = "Année limite 4 n'a pas pu être mise à jour !";
                         }
                     }
-                // YEAR - END
-            }
+            // YEAR - END
         }
+        
 
         header('Location: settings.php');
         exit;
     }
 ?>
+
