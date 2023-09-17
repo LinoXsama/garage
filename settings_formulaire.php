@@ -3,9 +3,6 @@
     require_once 'functions.php';
 
     session_start();
-
-    $_SESSION['SUCCESS_SETTINGS'] = array();
-    $_SESSION['ERRORS_SETTINGS'] = array();
 ?>
 
 <?php

@@ -21,36 +21,44 @@
 <!-- MESSAGES DE NOTIFICATIONS - START -->
 <?php
     // GESTION DES MESSAGES DE SUCCESS - START
-        if(isset($_SESSION['SUCCESS_SETTINGS']))
+        if(isset($_SESSION['SUCCESS_SETTINGS'])) 
         {
-            foreach ($_SESSION['SUCCESS_SETTINGS'] as $success) {
-                echo '
-                    <div class="container mt-3">
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            '. $success .'
-                            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    </div>';
-            }
+            echo '<div class="container mt-3">';
+                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
 
-            unset($_SESSION['SUCCESS_SETTINGS']);
+            echo '<ul>';
+            foreach ($_SESSION['SUCCESS_SETTINGS'] as $success) 
+            {
+                echo '<li>' .$success. '</li>';
+            }
+            echo '<ul>';
+
+                echo '<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>';
+                echo '</div>';
+            echo '</div>';
+            
+            unset($_SESSION['SUCCESS_SETTINGS']); 
         }
     // GESTION DES MESSAGES DE SUCCESS - END
 
     // GESTION DES MESSAGES D'ERREURS - START
-        if(isset($_SESSION['ERRORS_SETTINGS']))
+        if(isset($_SESSION['ERRORS_SETTINGS'])) 
         {
-            foreach ($_SESSION['ERRORS_SETTINGS'] as $error) {
-                echo '
-                    <div class="container mt-3">
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            '. $error .'
-                            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    </div>';
-            }
+            echo '<div class="container mt-3">';
+                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
 
-            unset($_SESSION['ERRORS_SETTINGS']);
+            echo '<ul>';
+            foreach ($_SESSION['ERRORS_SETTINGS'] as $error) 
+            {
+                echo '<li>' .$error. '</li>';
+            }
+            echo '<ul>';
+
+                echo '<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>';
+                echo '</div>';
+            echo '</div>';
+            
+            unset($_SESSION['ERRORS_SETTINGS']); 
         }
     // GESTION DES MESSAGES D'ERREURS - END
 
@@ -143,57 +151,45 @@
 
                         <form action="settings_formulaire.php" method="POST" class="mt-3 mb-3">
 
-                            <label class="form-label">KM slider 1 <strong><span class="text-success">min</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $KM['sliders_min_value1']; ?>)</label></strong>
-                            <input class="form-control" type="text" name="KM1">
+                            <strong><label>Valeur actuelle du critère : <?= $KM['sliders_min_value1']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="KM1" placeholder="KILOMÉTRAGE - Entrez le minimum du slider 1">
                             
-                            <label class="form-label">KM slider 1 <strong><span class="text-danger">max</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $KM['sliders_max_value1']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="KM2" >
+                            <strong><label>Valeur actuelle du critère : <?= $KM['sliders_max_value1']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="KM2" placeholder="KILOMÉTRAGE - Entrez le maximum du slider 1">
 
-                            <label class="form-label">KM slider 2 <strong><span class="text-success">min</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $KM['sliders_min_value2']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="KM3">
+                            <strong><label>Valeur actuelle du critère : <?= $KM['sliders_min_value2']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="KM3" placeholder="KILOMÉTRAGE - Entrez le minimum du slider 2">
 
-                            <label class="form-label">KM slider 2 <strong><span class="text-danger">max</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $KM['sliders_max_value2']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="KM4" >
+                            <strong><label>Valeur actuelle du critère : <?= $KM['sliders_max_value2']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="KM4" placeholder="KILOMÉTRAGE - Entrez le maximum du slider 2">
 
-                            <label class="form-label">Prix slider 1 <strong><span class="text-success">min</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $PRICE['sliders_min_value1']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="PRICE1">
+                            <strong><label>Valeur actuelle du critère : <?= $PRICE['sliders_min_value1']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="PRICE1" placeholder="PRIX - Entrez le minimum du slider 1">
 
-                            <label class="form-label">Prix slider 1 <strong><span class="text-danger">max</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $PRICE['sliders_max_value1']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="PRICE2">
+                            <strong><label>Valeur actuelle du critère : <?= $PRICE['sliders_max_value1']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="PRICE2" placeholder="PRIX - Entrez le maximum du slider 1">
 
-                            <label class="form-label">Prix slider 2 <strong><span class="text-success">min</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $PRICE['sliders_min_value2']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="PRICE3">
+                            <strong><label>Valeur actuelle du critère : <?= $PRICE['sliders_min_value2']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="PRICE3" placeholder="PRIX - Entrez le minimum du slider 2">
 
-                            <label class="form-label">Prix slider 2 <strong><span class="text-danger">max</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $PRICE['sliders_max_value2']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="PRICE4">
+                            <strong><label>Valeur actuelle du critère : <?= $PRICE['sliders_max_value2']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="PRICE4" placeholder="PRIX - Entrez le maximum du slider 2">
 
-                            <label class="form-label">Année slider 1 <strong><span class="text-success">min</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $YEAR['sliders_min_value1']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="YEAR1">
+                            <strong><label>Valeur actuelle du critère : <?= $YEAR['sliders_min_value1']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="YEAR1" placeholder="ANNÉE - Entrez le minimum du slider 1">
 
-                            <label class="form-label">Année slider 1 <strong><span class="text-danger">max</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $YEAR['sliders_max_value1']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="YEAR2">
+                            <strong><label>Valeur actuelle du critère : <?= $YEAR['sliders_max_value1']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="YEAR2" placeholder="ANNÉE - Entrez le maximum du slider 1">
 
-                            <label class="form-label">Année slider 2 <strong><span class="text-success">min</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $YEAR['sliders_min_value2']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="YEAR3">
+                            <strong><label>Valeur actuelle du critère : <?= $YEAR['sliders_min_value2']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="YEAR3" placeholder="ANNÉE - Entrez le minimum du slider 2">
 
-                            <label class="form-label">Année slider 2 <strong><span class="text-danger">max</span></strong></label>
-                            <strong><label>(Valeur actuelle du critère : <?= $YEAR['sliders_max_value2']; ?></label>)</strong>
-                            <input class="form-control" type="text" name="YEAR4">
+                            <strong><label>Valeur actuelle du critère : <?= $YEAR['sliders_max_value2']; ?></label></strong>
+                            <input class="mt-1 mb-1 form-control" type="text" name="YEAR4" placeholder="ANNÉE - Entrez le maximum du slider 2">
 
                             <div class="mt-4">
                                 <button type="submit" name="SETTINGS" class="btn btn-success">ENREGISTRER</button>
-                                <a href="#" class="btn btn-danger">ANNULER</a>
+                                <a href="#" class="btn btn-danger">RETOUR</a>
                             </div>
 
                         </form>
