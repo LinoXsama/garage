@@ -108,38 +108,32 @@ body {
     }
 }
 
+/* TABLEAU RESPONSIF NOTAMMENT POUR admin_panel.php, cars_mg.php et comments_mg.php - START*/
 @media(max-width: 767px)
 {
-    /* .table-cars-mg th {
-        display: none;
-        padding: 0.5rem 1rem;
-    }
-
-    .table-cars-mg td {
-        display: block;
-    } */
-
-    .table-cars-mg thead {
+    .custom-table thead {
         display: none;
     }
 
-    .table-cars-mg, .table-cars-mg tbody, .table-cars-mg tr, .table-cars-mg td {
+    .custom-table, .custom-table tbody, .custom-table tr, .custom-table td {
         display: block;
         width: 100%;
     }
 
-    .table-cars-mg tr {
+    .custom-table tr {
         margin-bottom: 15px;
+        border-radius: 2px solid black;
     }
     
-    .table-cars-mg td {
+    .custom-table td {
         text-align: right;
         padding: left;
         text-align: right;
         position: relative;
+        
     }
 
-    .table-cars-mg td::before {
+    .custom-table td::before {
         content: attr(data-label);
         position: absolute;
         left: 0;
@@ -150,6 +144,7 @@ body {
         text-align: left;
     }
 }
+/* TABLEAU RESPONSIF NOTAMMENT POUR admin_panel.php, cars_mg.php et comments_mg.php - END */
 
 
 @media(max-width: 316px)

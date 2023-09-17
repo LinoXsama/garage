@@ -11,30 +11,29 @@
 <main>
 
 <?php
-if(isset($_SESSION['msg']))
-{
-    echo
-        '<div class="container mt-3">
-            <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
-        '. $_SESSION['msg'] .'
-        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>';
+    if(isset($_SESSION['msg']))
+    {
+        echo
+            '<div class="container mt-3">
+                <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+            '. $_SESSION['msg'] .'
+            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>';
 
-    unset($_SESSION['msg']);
-}
+        unset($_SESSION['msg']);
+    }
 ?>
 
-
-<h4 class="text-center mt-3 mb-3 responsive-font">Liste des véhicules</h4>
+<h4 class="text-center mt-3 mb-3">Liste des véhicules</h4>
 
     <div class="container mt-3 mb-4">
 
         <a href="add_cars.php" class="btn btn-dark mb-3 responsive-font">Ajouter un véhicule</a>
 
-        <table class="table-cars-mg table table-hover text-center table-striped">
+        <table class="table table-hover text-center table-striped custom-table">
 
-            <thead class=" table-dark">
+            <thead class="table-dark">
                 <tr>
                     <th>N°</th>
                     <th>Marque</th>

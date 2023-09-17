@@ -28,7 +28,7 @@ if(isset($_SESSION['msg']))
 <h4 class="text-center mt-3 mb-3">Liste des messages</h4>
 
     <div class="container mt-3 mb-4">
-        <table class="table table-hover text-center">
+        <table class="custom-table table table-hover text-center table-striped">
 
             <thead class="table-dark">
                 <tr>
@@ -55,14 +55,14 @@ if(isset($_SESSION['msg']))
                 ?>
 
                         <tr>
-                            <td><?= $row['msg_id']; ?></td>
-                            <td><?= date('d/m/Y', strtotime($row['msg_date'])); ?></td>
-                            <td><?= $row['name']; ?></td>
-                            <td><?= $row['email']; ?></td>
-                            <td><?= $row['phone']; ?></td>
-                            <td><?= ($row['car_id'] !== 0) ? 'VEHICULE' : 'INFORMATION'; ?></td>
-                            <td><span class="bg-primary text-white px-1 py-1 border-radius"><?= $row['msg']; ?></span></td>
-                            <td>
+                            <td data-label="ID" class="responsive-font"><?= $row['msg_id']; ?></td>
+                            <td data-label="Posté le" class="responsive-font"><?= date('d/m/Y', strtotime($row['msg_date'])); ?></td>
+                            <td data-label="Auteur" class="responsive-font"><?= $row['name']; ?></td>
+                            <td data-label="Email" class="responsive-font"><?= $row['email']; ?></td>
+                            <td data-label="Téléphone" class="responsive-font"><?= $row['phone']; ?></td>
+                            <td data-label="Objet" class="responsive-font"><?= ($row['car_id'] !== 0) ? 'VEHICULE' : 'INFORMATION'; ?></td>
+                            <td data-label="Message" class="responsive-font"><span class="bg-primary text-white px-1 py-1 border-radius"><?= $row['msg']; ?></span></td>
+                            <td data-label="Actions" class="responsive-font">
                                 <?php
                                     if($row['car_id'] !== 0)
                                     {

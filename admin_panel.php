@@ -38,10 +38,7 @@
         <a href="add_user.php" class="btn btn-dark mb-3">Ajouter un utilisateur</a>
         <h3 class="text-center mb-3">Liste des utilisateurs</h3>
 
-       
-            <div class="">
-
-            <table class="table-responsive table table-hover table-striped">
+            <table class="custom-table table-responsive table table-hover table-striped">
 
                 <thead class="table-dark">
                     <tr>
@@ -87,8 +84,6 @@
                 </tbody>
 
             </table>
-        </div>
-      
 
         <!-- MODAL POUR LA CONFIRMATION DE SUPPRESSION DE L'UTILISATEUR SELECTIONNE - START -->
             <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog">
