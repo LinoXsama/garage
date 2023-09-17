@@ -36,21 +36,11 @@ li span {
         fill: white;
     }
 
-    #bottom-navbar {
-
-        
-    }
-
 /* BOTTOM NAVBAR - END */
 
 body {
     height: 100vh;
 }
-
-/* .main {
-    min-height: 80% !important;
-    max-height: 100vh;
-}  */
 
 /* admin_dashboard.php - START */
 
@@ -106,3 +96,22 @@ body {
     border-radius: 5px !important;
 }
 
+table {
+    width : 100% !important;
+}
+
+.wrapper{
+    width: min(900px, 100% - 3rem);
+    margin-inline: auto;
+}
+
+#bottom-navbar {
+    
+}
+
+/* @media (max-width: 650px)
+{
+    td {
+        display: block;
+    }
+} */

@@ -1,4 +1,4 @@
-<footer id="bottom-navbar">
+<footer id="bottom-navbar" class="bg-dark">
     <!-- Icônes des réseaux sociaux disponibles -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -15,13 +15,12 @@
         </symbol>
     </svg>
 
-    <div class="bg-dark">
 
         <div class="container text-light">
 
             <div class="py-5">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-md-4 col-lg-2">
                         <h5>Navigation</h5>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2"><a href="index.php" class="nav-link p-0 text-light">Accueil</a></li>
@@ -31,64 +30,68 @@
                         </ul>
                     </div>
                     
-                    <div class="col-3 d-flex align-items-center">
+                    <div class="col-md-8 col-lg-3">
                         <h5>Nos horaires d'ouverture : </h5>
                     </div>
 
                     <div class="col">
-                        <table class="table table-dark">
-                            <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Matinée</th>
-                                    <th scope="col">Après-midi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                
-                                <!-- AFFICHAGE DYNAMIQUE DES HORAIRES - START -->
-                                <?php
-                                    require_once 'functions.php';
-                                    $days = select('schedules');
+                        <div class="table-responsive">
+                            <table class="table table-dark ">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col">Matinée</th>
+                                        <th scope="col">Après-midi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <!-- AFFICHAGE DYNAMIQUE DES HORAIRES - START -->
+                                    <?php
+                                        require_once 'functions.php';
+                                        $days = select('schedules');
 
-                                    while($row = mysqli_fetch_assoc($days))
-                                    {
-                                ?>
-                                        <!-- MODELE D'UN LIGNE D'HORAIRE - START -->
-                                        <tr>
-                                            <th scope="row" class="<?= ($row['id'] === 6) ? 'text-info' : (($row['id'] === 7) ? 'text-warning' : '') ?>"><?= $row['day']; ?></th>
-                                            <td></td>
-                                            <td class="<?= ($row['id'] === 7 ? 'text-warning' : '') ?>"><?= $row['morning']; ?></td>
-                                            <td class="<?= ($row['id'] === 6) ? 'text-info' : (($row['id'] === 7) ? 'text-warning' : '') ?>"><?= $row['afternoon']; ?></td>
-                                        </tr>
-                                        <!-- MODELE D'UN LIGNE D'HORAIRE - END -->
-                                <?php 
-                                    } 
-                                ?>    
-                                <!-- AFFICHAGE DYNAMIQUE DES HORAIRES - END -->
-                            </tbody>
-                        </table>
+                                        while($row = mysqli_fetch_assoc($days))
+                                        {
+                                    ?>
+                                            <!-- MODELE D'UN LIGNE D'HORAIRE - START -->
+                                            <tr>
+                                                <th scope="row" class="<?= ($row['id'] === 6) ? 'text-info' : (($row['id'] === 7) ? 'text-warning' : '') ?>"><?= $row['day']; ?></th>
+                                                <td></td>
+                                                <td class="<?= ($row['id'] === 7 ? 'text-warning' : '') ?>"><?= $row['morning']; ?></td>
+                                                <td class="<?= ($row['id'] === 6) ? 'text-info' : (($row['id'] === 7) ? 'text-warning' : '') ?>"><?= $row['afternoon']; ?></td>
+                                            </tr>
+                                            <!-- MODELE D'UN LIGNE D'HORAIRE - END -->
+                                    <?php 
+                                        } 
+                                    ?>    
+                                    <!-- AFFICHAGE DYNAMIQUE DES HORAIRES - END -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
-                    <div class="d-flex justify-content-center py-4 my-4 border-top">
-                        <p>&copy; 2023 Garage Vincent Parrot</p>
-                        <ul class="list-unstyled d-flex">
-                            <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
-                                        <use xlink:href="#twitter" />
-                                    </svg></a></li>
-                            <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
-                                        <use xlink:href="#instagram" />
-                                    </svg></a></li>
-                            <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
-                                        <use xlink:href="#facebook" />
-                                    </svg></a></li>
-                        </ul>
+                    <div class="col-md-12 col-lg-7">
+                        <div class="d-flex justify-content-center align-items-center h-100 py-4 my-4 border-top">
+                            <p>&copy; 2023 Garage Vincent Parrot</p>
+                            <ul class="list-unstyled d-flex">
+                                <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
+                                            <use xlink:href="#twitter" />
+                                        </svg></a></li>
+                                <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
+                                            <use xlink:href="#instagram" />
+                                        </svg></a></li>
+                                <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
+                                            <use xlink:href="#facebook" />
+                                        </svg></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             
         </div>
 
-    </div>
+
 </footer>
