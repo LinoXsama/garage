@@ -44,7 +44,7 @@ body {
 
 /* admin_dashboard.php - START */
 
-[data-target="#collapseOne"], [data-target="#collapseTwo"], [data-target="#collapseThree"], [data-target="#collapseFour"] {
+[data-target="#collapseOne"], [data-target="#collapseTwo"], [data-target="#collapseThree"], [data-target="#collapseFour"], [data-target="#collapseFive"] {
     text-decoration: none;
     cursor: pointer;
     color: black !important;
@@ -68,6 +68,13 @@ body {
     width: 100%;
     height: 100%;
     cursor: pointer;
+    object-fit: cover;
+}
+
+.custom-img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -150,7 +157,7 @@ body {
 @media(max-width: 316px)
 {
     .ctm-btn {
-        margin-top : 5px;
+        margin-top : 8px;
     }
 }
 

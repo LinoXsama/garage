@@ -54,27 +54,27 @@
                 <div class="col-md-8">
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5 class="pt-2 text-align text-center">Ajouter un nouvel utilisateur</h5>
+                            <h5 class="pt-2 text-align text-center responsive-font">Ajouter un nouvel utilisateur</h5>
                         </div>
                         <div class="card-body">
 
                         <form action="add_user.php" method="POST" class="mt-3 mb-3">
                             
-                            <label class="form-label">Prénom</label>
+                            <label class="form-label responsive-font">Prénom</label>
                             <input class="form-control" type="text" name="first_name" placeholder="Albert">
 
-                            <label class="form-label">Nom</label>
+                            <label class="form-label responsive-font">Nom</label>
                             <input class="form-control" type="text" name="last_name"placeholder="Einsten">
 
-                            <label class="form-label">Email</label>
+                            <label class="form-label responsive-font">Email</label>
                             <input class="form-control" type="email" name="email" placeholder="nom@example.com">
 
-                            <label class="form-label">Mot de passe</label>
+                            <label class="form-label responsive-font">Mot de passe</label>
                             <input class="form-control" type="text" name="password">
 
                             <div class="mt-4">
-                                <button type="submit" name="SAVE" value="save" class="btn btn-success">ENREGISTRER</button>
-                                <a href="admin_panel.php" class="btn btn-danger">ANNULER</a>
+                                <a type="submit" name="SAVE" value="save" class="btn btn-success responsive-font">ENREGISTRER</a>
+                                <a href="admin_panel.php" class="btn btn-danger ctm-btn responsive-font">RETOUR</a>
                             </div>
 
                         </form>

@@ -11,8 +11,9 @@
 <main>
 
     <!-- BARRE DE RECHERCHE - START -->
-    <div id="search" class="container mt-4 d-flex justify-content-center">
-        <form role="search">
+    <div id="search" class="container mt-4">
+        <div class="row justify-content-center">
+        <form role="search" class="input-group">
             <input
                 id="search-bar"
                 class="form-control form-control-dark"
@@ -22,12 +23,13 @@
                 oninput="search_bar()"
             />
         </form>
+        </div>
     </div>
     <!-- BARRE DE RECHERCHE - END -->
 
     <!-- FILTRES DE RECHERCHE PAR CRITERES : KILOMETRAGE, PRIX, ANNEES - START -->
     <div class="container mt-2">
-        <form class="d-flex justify-content-around">
+        <form class="row row-cols-1 row-cols-md-3">
 
             <?php
                 // GESTION DYNAMIQUE DES FILTRES 
@@ -37,8 +39,8 @@
                 {
             ?>
                     <!-- MODELE D'UN FILTRE - START -->
-                    <div>
-                        <label class="d-block"><?= $row['filters_name']; ?></label>
+                    <div class="col mb-3">
+                        <label class="d-block responsive-font"><?= $row['filters_name']; ?></label>
                         <div class="d-flex">
                             <input 
                                 type="range"
@@ -63,7 +65,7 @@
                         </div>
                         <div class="ctn d-flex justify-content-between">
                             <span>
-                                <span id="<?= $row['limit1']; ?>"><?= $row['sliders_min_value1']; ?></span> <?= $row['unit']; ?> - <span id="<?= $row['limit2']; ?>"><?= $row['sliders_max_value2']; ?></span> <?= $row['unit']; ?>
+                                <span class="responsive-font" id="<?= $row['limit1']; ?>"><?= $row['sliders_min_value1']; ?></span> <?= $row['unit']; ?> - <span class="responsive-font" id="<?= $row['limit2']; ?>"><?= $row['sliders_max_value2']; ?></span> <?= $row['unit']; ?>
                             </span>
                             <button class="reset-button" value="<?= $row['button_value']; ?>" onclick="reset()">Réinitialiser</button>
                         </div>
@@ -77,7 +79,7 @@
     </div>
     <!-- FILTRES DE RECHERCHE PAR CRITERES : KILOMETRAGE, PRIX, ANNEES - END -->
 
-    <div id="cars-container" class="container mt-4 mb-4 pt-4">
+    <div id="cars-container" class="container mt-2 mb-4 pt-4">
 
         <div class="row row-cols-1 row-cols-md-3 g-4 pb-4">
 
@@ -91,8 +93,8 @@
                 <!-- Modèle de la fiche de présentation d'un véhicule - START -->
                 <div class="car col">
                     <div class="card h-100 shadow custom-card">
-                        <span class="btn btn-dark" id="price-tag"><span class="price"><?= "{$row['cars_price']} "; ?></span>€</span>
-                        <img src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="card-img-top w-100 custom-bg gallery-item" />
+                        <span class="btn btn-dark responsive-font" id="price-tag"><span class="price"><?= "{$row['cars_price']} "; ?></span>€</span>
+                        <img src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="card-img-top custom-img custom-bg gallery-item" />
                         <div class="card-body">
                             <h4 class="card-title"><?= "{$row['cars_brand']} {$row['cars_model']} {$row['cars_release_year']} {$row['cars_power']} "; ?>CH</h4>
                             <ul class="card-text list-unstyled">
@@ -106,7 +108,7 @@
                                 <h4 class="custom-highlight"><?= "{$row['cars_price']} "; ?>€</h4>
                             </div>
                             <div class="float-end">
-                                <a href="details_transition.php?car_id=<?= $row['cars_id']; ?>" class="btn btn-dark rounded-3 custom-btn">DÉTAILS</a>
+                                <a href="details_transition.php?car_id=<?= $row['cars_id']; ?>" class="btn btn-dark rounded-3 custom-btn responsive-font">DÉTAILS</a>
                             </div>
                         </div>
                     </div>

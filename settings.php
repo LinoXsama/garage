@@ -189,7 +189,7 @@
 
                             <div class="mt-4">
                                 <button type="submit" name="SETTINGS" class="btn btn-success">ENREGISTRER</button>
-                                <a href="#" class="btn btn-danger">RETOUR</a>
+                                <a href="admin_dashboard.php" class="btn btn-danger">RETOUR</a>
                             </div>
 
                         </form>

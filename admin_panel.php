@@ -35,19 +35,19 @@
             }
         ?>
 
-        <a href="add_user.php" class="btn btn-dark mb-3">Ajouter un utilisateur</a>
-        <h3 class="text-center mb-3">Liste des utilisateurs</h3>
+<h3 class="text-center mb-3">Liste des utilisateurs</h3>
+<a href="add_user.php" class="btn btn-dark mb-3 responsive-font">Ajouter un utilisateur</a>
 
             <table class="custom-table table-responsive table table-hover table-striped">
 
                 <thead class="table-dark">
                     <tr>
-                        <th data-label="ID">ID</th>
-                        <th data-label="Prénom">Prénom</th>
-                        <th data-label="Nom">Nom</th>
-                        <th data-label="Email">Adresse email</th>
-                        <th data-label="Password">Mot de passe</th>
-                        <th data-label="Actions">Actions</th>
+                        <th>ID</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Adresse email</th>
+                        <th>Mot de passe</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
 
@@ -63,12 +63,12 @@
                     ?>
 
                             <tr>
-                                <td><?= $row['id']; ?></td>
-                                <td><?= $row['first_name']; ?></td>
-                                <td><?= $row['last_name']; ?></td>
-                                <td><?= $row['email']; ?></td>
-                                <td><?= $row['password']; ?></td>
-                                <td>
+                                <td data-label="ID" class="responsive-font"><?= $row['id']; ?></td>
+                                <td data-label="Prénom" class="responsive-font"><?= $row['first_name']; ?></td>
+                                <td data-label="Nom" class="responsive-font"><?= $row['last_name']; ?></td>
+                                <td data-label="Email" class="responsive-font"><?= $row['email']; ?></td>
+                                <td data-label="Password" class="responsive-font"><?= $row['password']; ?></td>
+                                <td data-label="Actions">
                                     <!-- Fonts awesome Icons -->
                                     <a href="edit_user_transition.php?id=<?= $row['id']; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
 

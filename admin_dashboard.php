@@ -222,6 +222,20 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="card">
+                                    <div class="card-header" id="headingFive">
+                                        <h5 class="mb-0">
+                                            <a class="collapsed d-flex justify-content-start responsive-font" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"><span class="material-symbols-outlined hide-icons">settings</span>&nbsp;CRITÈRES DE RECHERCHE</a>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <a href="settings.php" class="btn btn-primary text-white responsive-font">MODIFIER LES CRITÈRES</a><br />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>

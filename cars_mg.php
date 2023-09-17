@@ -31,7 +31,7 @@
 
         <a href="add_cars.php" class="btn btn-dark mb-3 responsive-font">Ajouter un véhicule</a>
 
-        <table class="table table-hover text-center table-striped custom-table">
+        <table class="table table-hover text-center table-striped custom-table table-responsive">
 
             <thead class="table-dark">
                 <tr>
@@ -86,17 +86,17 @@
                     <div class="modal-content">
 
                         <div class="modal-header bg-danger">
-                            <h5 class="modal-title text-white">Confirmation de suppression</h5>
+                            <h5 class="modal-title text-white responsive-font">Confirmation de suppression</h5>
                             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                         </div>
 
                         <div class="modal-body">
-                            <p>Voulez-vous vraiment supprimer le véhicule <strong>N°<span class="cars-id"></span></strong> : <strong><span class="cars-name"></span></strong> de <strong><span class="cars-owner"></span></strong> ?</p>
+                            <p class="responsive-font">Voulez-vous vraiment supprimer le véhicule <strong>N°<span class="cars-id"></span></strong> : <strong><span class="cars-name"></span></strong> de <strong><span class="cars-owner"></span></strong> ?</p>
                         </div>
 
                         <div class="modal-footer">
-                            <a class="btn btn-danger delete-btn">OUI</a>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">NON</button>
+                            <a class="btn btn-danger delete-btn responsive-font">OUI</a>
+                            <a type="button" class="btn btn-secondary responsive-font" data-dismiss="modal">NON</a>
                         </div>
 
                     </div>

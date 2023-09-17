@@ -37,6 +37,33 @@
 
         if(!empty($cars_owner) & !empty($cars_brand_name) & !empty($cars_model_name) & !empty($cars_release_year) & !empty($cars_power) & !empty($cars_engine_type) & !empty($cars_km) & !empty($cars_price) & !empty($cars_transmission_type) & !empty($cars_doors_number) & !empty($cars_seats_material) & !empty($cars_color) & !empty($cars_warranty) & !empty($cars_equipment1) & !empty($cars_equipment2) & !empty($cars_equipment3) & !empty($cars_equipment4) & !empty($cars_equipment5) & !empty($cars_equipment6) & !empty($cars_equipment7) & !empty($cars_equipment8))
         {
+            $KM = mysqli_fetch_assoc(select('sliders_filters', 'filters_name', 'Kilométrage'));
+            $PRICE = mysqli_fetch_assoc(select('sliders_filters', 'filters_name', 'Prix'));
+            $YEAR = mysqli_fetch_assoc(select('sliders_filters', 'filters_name', 'Années'));
+
+            // VERIFIER SI LE VEHICULE A ENREGISTRER EST BIEN COMPRIS DANS LES INTERVALES DES 3 CRITERES : KM, PRICE, ANNEE - START
+                if(!isb($cars_km, $KM['sliders_min_value1'], $KM['sliders_max_value2']) || !isb($cars_price, $PRICE['sliders_min_value1'], $PRICE['sliders_max_value2']) || !isb($cars_release_year, $YEAR['sliders_min_value1'], $YEAR['sliders_max_value2']))
+                {
+                    if(!isb($cars_km, $KM['sliders_min_value1'], $KM['sliders_max_value2']))
+                    {
+                        $_SESSION['ERRORS_ADD_CARS']['KM'] = "KILOMETRAGE: Le kilométrage doit être compris entre {$KM['sliders_min_value1']} et {$KM['sliders_max_value2']}. Vous avez entré $cars_km";
+                    }
+
+                    if(!isb($cars_price, $PRICE['sliders_min_value1'], $PRICE['sliders_max_value2']))
+                    {
+                        $_SESSION['ERRORS_ADD_CARS']['PRICE'] = "PRIX: Le prix doit être compris entre {$PRICE['sliders_min_value1']} et {$PRICE['sliders_max_value2']}. Vous avez entré $cars_price";
+                    }
+                    
+                    if(!isb($cars_release_year, $YEAR['sliders_min_value1'], $YEAR['sliders_max_value2']))
+                    {
+                        $_SESSION['ERRORS_ADD_CARS']['YEAR'] = "ANNEE : L'année doit être comprise entre {$YEAR['sliders_min_value1']} et {$YEAR['sliders_max_value2']}. Vous avez entré $cars_release_year";
+                    }
+
+                    header('Location: add_cars.php');
+                    exit;
+                }
+            // VERIFIER SI LE VEHICULE A ENREGISTRER EST BIEN COMPRIS DANS LES INTERVALES DES 3 CRITERES : KM, PRICE, ANNEE - END
+
             $query = "INSERT INTO `cars`(`cars_owner`,`cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_alt_text`, `cars_alt_text_img1`, `cars_alt_text_img2`, `cars_alt_text_img3`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = $conn->prepare($query);

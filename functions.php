@@ -219,6 +219,14 @@
     }
 ?>
 
+<?php
+    // VERSION 1.0 
+    function isb(int $value, int $limit1, int $limit2) : bool // FONCTION IS BETWEEN : VERIFIE QU'UN NOMBRE SE TROUVE DANS UN INTERVALLE FERME
+    {
+        return ($value >= $limit1 && $value <= $limit2);
+    }
+?>
+
 <!-- FONCTIONS GLOBALES DU SITE - END -->
 
 <!-- FONCTIONS DE LA PAGE login.php - START -->
