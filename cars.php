@@ -49,7 +49,7 @@
                                 step="1"
                                 value="<?= $row['sliders_default_value1']; ?>"
                                 id="<?= $row['sliders_id1']; ?>"
-                                class="d-inline-block"
+                                class="d-inline-block sliders"
                                 oninput="search_sliders()"
                             />
                             <input 
@@ -59,15 +59,15 @@
                                 step="1"
                                 value="<?= $row['sliders_default_value2']; ?>"
                                 id="<?= $row['sliders_id2']; ?>"
-                                class="d-inline-block"
+                                class="d-inline-block sliders"
                                 oninput="search_sliders()"
                             />
                         </div>
-                        <div class="ctn d-flex justify-content-between">
+                        <div class="ctn">
                             <span>
                                 <span class="responsive-font" id="<?= $row['limit1']; ?>"><?= $row['sliders_min_value1']; ?></span> <?= $row['unit']; ?> - <span class="responsive-font" id="<?= $row['limit2']; ?>"><?= $row['sliders_max_value2']; ?></span> <?= $row['unit']; ?>
                             </span>
-                            <button class="reset-button" value="<?= $row['button_value']; ?>" onclick="reset()">Réinitialiser</button>
+                            &nbsp;&nbsp;<button class="reset-button mt-1" value="<?= $row['button_value']; ?>" oninput="reset()"></button>
                         </div>
                     </div>
                     <!-- MODELE D'UN FILTRE - END -->

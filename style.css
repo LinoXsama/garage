@@ -170,4 +170,23 @@ body {
     .hide-icons {
         display: none;
     }
+
+    .sliders {
+        width: 6rem;
+    }
+}
+
+.reset-button {
+    width: 30px; /* Largeur du bouton (ajustez selon vos besoins) */
+    height: 30px; /* Hauteur du bouton (ajustez selon vos besoins) */
+    background-color: #007bff; /* Couleur de fond du bouton */
+    border: none; /* Supprime les bordures */
+    border-radius: 50%; /* Définit la forme circulaire en utilisant le rayon de bordure */
+    color: #fff; /* Couleur du texte du bouton */
+    font-size: 18px; /* Taille de la police du texte */
+    text-align: center; /* Centre le texte horizontalement */
+    line-height: 100px; /* Centre le texte verticalement */
+    text-decoration: none; /* Supprime les décorations de lien par défaut */
+    display: inline-block; /* Permet au bouton de s'afficher comme un bloc en ligne */
+    cursor: pointer; /* Change le curseur en main au survol */
 }
