@@ -103,18 +103,6 @@ body {
     border-radius: 5px !important;
 }
 
-@media(max-width: 650px)
-{
-    .table-bottom-navbar th {
-        display: none;
-        padding: 0.5rem 1rem;
-    }
-
-    .table-bottom-navbar td {
-        display: block;
-    }
-}
-
 /* TABLEAU RESPONSIF NOTAMMENT POUR admin_panel.php, cars_mg.php et comments_mg.php - START*/
 @media(max-width: 767px)
 {
@@ -153,13 +141,28 @@ body {
 }
 /* TABLEAU RESPONSIF NOTAMMENT POUR admin_panel.php, cars_mg.php et comments_mg.php - END */
 
+/* RESPONSIVITE DE LA TABLE DES HORAIRES DE bottom_navbar.php - START */
+@media(max-width: 650px)
+{
+    .table-bottom-navbar th {
+        display: none;
+        padding: 0.5rem 1rem;
+    }
 
+    .table-bottom-navbar td {
+        display: block;
+    }
+}
+/* RESPONSIVITE DE LA TABLE DES HORAIRES DE bottom_navbar.php - END */
+
+/* AJOUTE UN PADDING TOP A CERTAINS ELEMENTS EN VERSION MOBILE - START */
 @media(max-width: 316px)
 {
     .ctm-btn {
         margin-top : 8px;
     }
 }
+/* AJOUTE UN PADDING  CERTAIN BOUTONS EN VERSION MOBILE - END */
 
 @media(max-width: 377px)
 {
@@ -172,21 +175,34 @@ body {
     }
 
     .sliders {
-        width: 6rem;
+        width: 5rem;
+    }
+
+    #search form {
+        width: 100%;
     }
 }
 
+@media(max-width: 991px)
+{
+    .sliders {
+        width : 5rem;
+    }
+}
+
+
+/* BOUTON DE REINITIALISATION DES SLIDERS */
 .reset-button {
-    width: 30px; /* Largeur du bouton (ajustez selon vos besoins) */
-    height: 30px; /* Hauteur du bouton (ajustez selon vos besoins) */
-    background-color: #007bff; /* Couleur de fond du bouton */
-    border: none; /* Supprime les bordures */
-    border-radius: 50%; /* Définit la forme circulaire en utilisant le rayon de bordure */
-    color: #fff; /* Couleur du texte du bouton */
-    font-size: 18px; /* Taille de la police du texte */
-    text-align: center; /* Centre le texte horizontalement */
-    line-height: 100px; /* Centre le texte verticalement */
-    text-decoration: none; /* Supprime les décorations de lien par défaut */
-    display: inline-block; /* Permet au bouton de s'afficher comme un bloc en ligne */
-    cursor: pointer; /* Change le curseur en main au survol */
+    width: 30px; 
+    height: 30px; 
+    background-color: #007bff; 
+    border: none; 
+    border-radius: 50%; 
+    color: #fff; 
+    font-size: 18px; 
+    text-align: center; 
+    line-height: 100px; 
+    text-decoration: none; 
+    display: inline-block; 
+    cursor: pointer; 
 }

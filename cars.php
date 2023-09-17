@@ -13,16 +13,16 @@
     <!-- BARRE DE RECHERCHE - START -->
     <div id="search" class="container mt-4">
         <div class="row justify-content-center">
-        <form role="search" class="input-group">
-            <input
-                id="search-bar"
-                class="form-control form-control-dark"
-                type="search"
-                placeholder="Cherchez par marque, modèle, année de sortie, nombre de chevaux"
-                aria-label="Search"
-                oninput="search_bar()"
-            />
-        </form>
+            <form role="search" class="input-group">
+                <input
+                    id="search-bar"
+                    class="form-control form-control-dark"
+                    type="search"
+                    placeholder="Cherchez par marque, modèle, année de sortie, nombre de chevaux"
+                    aria-label="Search"
+                    oninput="search_bar()"
+                />
+            </form>
         </div>
     </div>
     <!-- BARRE DE RECHERCHE - END -->
@@ -67,7 +67,7 @@
                             <span>
                                 <span class="responsive-font" id="<?= $row['limit1']; ?>"><?= $row['sliders_min_value1']; ?></span> <?= $row['unit']; ?> - <span class="responsive-font" id="<?= $row['limit2']; ?>"><?= $row['sliders_max_value2']; ?></span> <?= $row['unit']; ?>
                             </span>
-                            &nbsp;&nbsp;<button class="reset-button mt-1" value="<?= $row['button_value']; ?>" oninput="reset()"></button>
+                            &nbsp;&nbsp;<button class="reset-button mt-1" onclick="reset()"></button>
                         </div>
                     </div>
                     <!-- MODELE D'UN FILTRE - END -->
@@ -98,9 +98,9 @@
                         <div class="card-body">
                             <h4 class="card-title"><?= "{$row['cars_brand']} {$row['cars_model']} {$row['cars_release_year']} {$row['cars_power']} "; ?>CH</h4>
                             <ul class="card-text list-unstyled">
-                                <li><span>Année : </span><span class="release-year"><?= $row['cars_release_year']; ?></span></li>
-                                <li><span>Type de moteur : </span><?= $row['cars_engine_type']; ?></li>
-                                <li><span>Kilométrage : <span class="kilometrage"><?= "{$row['cars_km']} "; ?></span>km</span></li>
+                                <li class="responsive-font"><span>Année : </span><span class="release-year"><?= $row['cars_release_year']; ?></span></li>
+                                <li class="responsive-font"><span>Type de moteur : </span><?= $row['cars_engine_type']; ?></li>
+                                <li class="responsive-font"><span>Kilométrage : <span class="kilometrage"><?= "{$row['cars_km']} "; ?></span>km</span></li>
                             </ul>
                         </div>
                         <div class="card-footer custom-footer">
