@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="col">
-                        <div class="table-responsive">
+                        <div class="table-bottom-navbar table-responsive">
                             <table class="table table-dark ">
                                 <thead>
                                     <tr>

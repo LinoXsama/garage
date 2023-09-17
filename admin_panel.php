@@ -39,9 +39,9 @@
         <h3 class="text-center mb-3">Liste des utilisateurs</h3>
 
        
-            <div class="table-responsive">
+            <div class="">
 
-            <table class="table table-hover custom-table">
+            <table class="table-responsive table table-hover table-striped">
 
                 <thead class="table-dark">
                     <tr>

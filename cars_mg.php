@@ -26,15 +26,15 @@ if(isset($_SESSION['msg']))
 ?>
 
 
-<h4 class="text-center mt-3 mb-3">Liste des véhicules</h4>
+<h4 class="text-center mt-3 mb-3 responsive-font">Liste des véhicules</h4>
 
     <div class="container mt-3 mb-4">
 
-        <a href="add_cars.php" class="btn btn-dark mb-3">Ajouter un véhicule</a>
+        <a href="add_cars.php" class="btn btn-dark mb-3 responsive-font">Ajouter un véhicule</a>
 
-        <table class="table table-hover text-center">
+        <table class="table-cars-mg table table-hover text-center table-striped">
 
-            <thead class="table-dark">
+            <thead class=" table-dark">
                 <tr>
                     <th>N°</th>
                     <th>Marque</th>
@@ -58,13 +58,13 @@ if(isset($_SESSION['msg']))
                 ?>
 
                         <tr>
-                            <td><?= $row['cars_id']; ?></td>
-                            <td><?= $row['cars_brand']; ?></td>
-                            <td><?= $row['cars_model']; ?></td>
-                            <td><span class="border-radius bg-primary py-1 px-1 text-white"><?= $row['cars_owner']; ?></span></td>
-                            <td><?= $row['cars_price']; ?> €</td>
-                            <td><?= date('d/m/Y', strtotime($row['cars_post_date'])); ?></td>
-                            <td>
+                            <td data-label="ID"><?= $row['cars_id']; ?></td>
+                            <td data-label="Marque"><?= $row['cars_brand']; ?></td>
+                            <td data-label="Modèle"><?= $row['cars_model']; ?></td>
+                            <td data-label="Proprio"><span class="border-radius bg-primary py-1 px-1 text-white responsive-font"><?= $row['cars_owner']; ?></span></td>
+                            <td data-label="Prix"><?= $row['cars_price']; ?> €</td>
+                            <td data-label="Ajouté le"><?= date('d/m/Y', strtotime($row['cars_post_date'])); ?></td>
+                            <td data-label="Actions">
                                 <a class="link-dark" href="vehicles_mg_transition.php?id=<?= $row['cars_id']; ?>"><i class="fa-solid fa-car fs-5"></i></a> &nbsp;
 
                                 <a class="link-dark" href="edit_gallery_transition.php?id=<?= $row['cars_id']; ?>"><i class="fa-solid fa-image fs-5"></i></a> &nbsp;
