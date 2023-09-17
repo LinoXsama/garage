@@ -96,22 +96,19 @@ body {
     border-radius: 5px !important;
 }
 
-table {
-    width : 100% !important;
-}
-
-.wrapper{
-    width: min(900px, 100% - 3rem);
-    margin-inline: auto;
-}
-
-#bottom-navbar {
-    
-}
-
-/* @media (max-width: 650px)
+@media (max-width: 650px)
 {
+    th {
+        display: none;
+        padding: 0.5rem 1rem;
+    }
+
     td {
         display: block;
     }
-} */
+
+    .ctm-btn {
+        margin-top : 5px;
+    }
+}
+

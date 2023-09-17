@@ -57,7 +57,7 @@
                                     ?>
                                             <!-- MODELE D'UN LIGNE D'HORAIRE - START -->
                                             <tr>
-                                                <th scope="row" class="<?= ($row['id'] === 6) ? 'text-info' : (($row['id'] === 7) ? 'text-warning' : '') ?>"><?= $row['day']; ?></th>
+                                                <td scope="row" class="<?= ($row['id'] === 6) ? 'text-info' : (($row['id'] === 7) ? 'text-warning' : '') ?>"><?= $row['day']; ?></td>
                                                 <td></td>
                                                 <td class="<?= ($row['id'] === 7 ? 'text-warning' : '') ?>"><?= $row['morning']; ?></td>
                                                 <td class="<?= ($row['id'] === 6) ? 'text-info' : (($row['id'] === 7) ? 'text-warning' : '') ?>"><?= $row['afternoon']; ?></td>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12 col-lg-7">
+                    <div class="col-md-12 col-lg-12">
                         <div class="d-flex justify-content-center align-items-center h-100 py-4 my-4 border-top">
                             <p>&copy; 2023 Garage Vincent Parrot</p>
                             <ul class="list-unstyled d-flex">
