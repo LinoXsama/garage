@@ -10,7 +10,7 @@
     require_once 'functions.php';
 ?>
 
-<main style="height: 80%; overflow-y: auto;">
+<main class="main-services">
 
     <div class="container mt-5">
         <div class="row">
