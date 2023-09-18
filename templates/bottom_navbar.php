@@ -74,7 +74,7 @@
 
                     <div class="col-md-12 col-lg-12">
                         <div class="d-flex justify-content-center align-items-center h-100 py-4 my-4 border-top">
-                            <p>&copy; 2023 Garage Vincent Parrot</p>
+                            <p class="">&copy; 2023 Garage Vincent Parrot <span class="d-flex"><span class="material-symbols-outlined">call</span>&nbsp; 06 12 12 12 13</span></p>
                             <ul class="list-unstyled d-flex">
                                 <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
                                             <use xlink:href="#twitter" />

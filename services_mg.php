@@ -1,7 +1,15 @@
 <?php
-    $page_title = "Gestion des demandes";
+    $page_title = "Gestion des services";
     
     session_start();
+
+    if(!isset($_SESSION['user_id']))
+    {
+        header('Location: login.php');
+        exit;
+    }
+    else
+    {
 
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
@@ -122,3 +130,7 @@
 </main>
 
 <?php require_once 'templates/footer.php'; ?>
+
+<?php 
+    } 
+?>

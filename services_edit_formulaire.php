@@ -46,7 +46,7 @@
             }
             else
             {
-                $_SESSION['MSG_EDIT_SERVICES'] = "Une erreur est survenue. Le service n'a pas pu être modifié !";
+                $_SESSION['MSG_EDIT_SERVICES'] = "Une erreur est survenue. Le service n'a pas pu être modifié ! ";
                 $_SESSION['alert_type'] = 'danger';
             }
 

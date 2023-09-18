@@ -2,7 +2,7 @@
     $page_title = "Accueil";
 
     require_once 'templates/header.php';
-    require_once 'templates/navbar.php';
+    require_once 'templates/navbar_visitor.php';
     require_once 'functions.php';
 ?>
 

@@ -30,8 +30,6 @@
 
         $query_status = update('crud', 'id', $user_id, 'first_name', $fname, 'last_name', $lname, 'email', $mail, 'password', $pwd, 'pwd_hash', $hash);
 
-        session_start();
-
         if($query_status)
         {
             $_SESSION['msg'] = 'Utilisateur a bien été modifié !';

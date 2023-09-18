@@ -20,34 +20,6 @@
           <li class="nav-item"><a href="contact.php" class="nav-link px-2 text-white">Contactez-nous</a></li>
         </ul>
       </div>
-
-        <div class="ml-auto">
-          <?php
-            if(isset($_SESSION['user_id']))
-            {
-              if($_SESSION['USER_TYPE'] === 'admin')
-              {
-                echo '<a href="admin_dashboard.php" class="btn btn-outline-light btn-sm me-2">ADMINISTRATION</a>';
-              }
-            }
-            
-            if(isset($_SESSION['user_id']))
-            {
-              if($_SESSION['USER_TYPE'] === 'employee')
-              {
-                echo '<a href="user_dashboard.php" class="btn btn-outline-light btn-sm me-2">ADMINISTRATION</a>';
-              }
-            }
-            if(isset($_SESSION['user_id']))
-            {
-              echo '<a href="logout.php" class="btn btn-outline-light btn-sm me-2 ctm-btn">DECONNEXION</a>';
-            }
-            else
-            {
-              echo '<a href="login.php" class="btn btn-outline-light btn-sm me-2">CONNEXION</a>';
-            }
-          ?>
-        </div>
       </nav>
 
       <!-- Menu coulissant pour écrans de petite taille -->

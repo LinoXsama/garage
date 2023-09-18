@@ -3,6 +3,10 @@
 
     session_start();
 
+    require_once 'templates/header.php';
+    require_once 'templates/navbar.php';
+    require_once 'functions.php';
+
     if(!isset($_SESSION['user_id']))
     {
         header('Location: login.php');
@@ -13,37 +17,18 @@
 ?>
 
 <?php
-    require_once 'templates/header.php';
-    require_once 'templates/navbar.php';
-    require_once 'functions.php';
-?>
+if(isset($_SESSION['msg']))
+{
+    echo
+        '<div class="container mt-3">
+            <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+        '. $_SESSION['msg'] .'
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>';
 
-<?php
-    if(isset($_POST['SAVE']))
-    {
-        $fname = htmlspecialchars($_POST['first_name']);
-        $lname = htmlspecialchars($_POST['last_name']);
-        $mail = htmlspecialchars($_POST['email']);
-        $pwd = htmlspecialchars($_POST['password']);
-        $hash = password_hash($pwd, PASSWORD_DEFAULT);
-
-        $query_status = insert('crud', 'first_name', $fname, 'last_name', $lname, 'email', $mail, 'password', $pwd, 'pwd_hash', $hash, 'user_type', 'employee');
-
-        if($query_status)
-        {
-            $_SESSION['msg'] = 'Utilisateur ajouté avec succès !';
-            $_SESSION['alert_type'] = 'success';
-
-            header('Location: admin_panel.php');
-        }
-        else
-        {
-            $_SESSION['msg'] = "Echec de l'ajout de l'utilisateur !";
-            $_SESSION['alert_type'] = 'danger';
-
-            header('Location: admin_panel.php');
-        }
-    }
+    unset($_SESSION['msg']);
+}
 ?>
 
 <main class="container">
@@ -58,7 +43,7 @@
                         </div>
                         <div class="card-body">
 
-                        <form action="add_user.php" method="POST" class="mt-3 mb-3">
+                        <form action="add_user_formulaire.php" method="POST" class="mt-3 mb-3">
                             
                             <label class="form-label responsive-font">Prénom</label>
                             <input class="form-control" type="text" name="first_name" placeholder="Albert">
@@ -73,7 +58,7 @@
                             <input class="form-control" type="text" name="password">
 
                             <div class="mt-4">
-                                <a type="submit" name="SAVE" value="save" class="btn btn-success responsive-font">ENREGISTRER</a>
+                                <button type="submit" name="SAVE" class="btn btn-success responsive-font">ENREGISTRER</button>
                                 <a href="admin_panel.php" class="btn btn-danger ctm-btn responsive-font">RETOUR</a>
                             </div>
 

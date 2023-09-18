@@ -3,6 +3,14 @@
     
     session_start();
 
+    if(!isset($_SESSION['user_id']))
+    {
+        header('Location: login.php');
+        exit;
+    }
+    else
+    {
+
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'functions.php';
@@ -28,6 +36,9 @@ if(isset($_SESSION['msg']))
 <h4 class="text-center mt-3 mb-3">Liste des messages</h4>
 
     <div class="container mt-3 mb-4">
+
+    <a href="contact_user.php" class="btn btn-dark mb-3 responsive-font">Ajouter un message</a>
+
         <table class="custom-table table table-hover text-center table-striped">
 
             <thead class="table-dark">
@@ -40,6 +51,7 @@ if(isset($_SESSION['msg']))
                     <th>Objet</th>
                     <th>Message</th>
                     <th>Publication</th>
+                    <th>Note</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -77,6 +89,7 @@ if(isset($_SESSION['msg']))
 
                                 <input type="submit" name="PUBLICATION">
                             </form>
+                            <td data-label="Note" class="responsive-font"><?= $row['rating']; ?> / 5</td>
                             </td>
                             <td data-label="Actions" class="responsive-font">
                                 <?php
@@ -125,3 +138,7 @@ if(isset($_SESSION['msg']))
 </main>
 
 <?php require_once 'templates/footer.php'; ?>
+
+<?php
+    } 
+ ?>

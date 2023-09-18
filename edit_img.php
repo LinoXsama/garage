@@ -1,6 +1,14 @@
 <?php 
     session_start();
 
+    if(!isset($_SESSION['user_id']))
+    {
+        header('Location: login.php');
+        exit;
+    }
+    else
+    {
+
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'functions.php';
@@ -138,3 +146,7 @@
 </main>
 
 <?php include('templates/footer.php'); ?>
+
+<?php 
+    } 
+?>

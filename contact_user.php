@@ -1,13 +1,21 @@
 
 <?php
-    $page_title = 'Contact-nous';
+    $page_title = 'Contact User';
 
-    require_once 'templates/header.php';
-    require_once 'templates/navbar_visitor.php';
-    
-    require_once 'functions.php';
+    if(!isset($_SESSION['user_id']))
+    {
+        header('Location: login.php');
+        exit;
+    }
+    else
+    {
 
     session_start();
+    require_once 'templates/header.php';
+    require_once 'templates/navbar.php';
+    require_once 'config/db_connect.php';
+    require_once 'functions.php';
+
 ?>
 
 <?php
@@ -25,6 +33,7 @@
             unset($_SESSION['msg']);
         }
     ?>
+    
 <main>
 
     <div class="py-5">
@@ -60,7 +69,7 @@
                                         </div>
                                         
                                     <div class="text-center my-4">
-                                        <button type="submit" name="CONTACT_FORM" value="contact.php" class="btn btn-primary">SOUMETTRE</button>
+                                        <button type="submit" name="CONTACT_FORM" value="contact_user.php" class="btn btn-primary">SOUMETTRE</button>
                                     </div>
                                 </div>
 
@@ -76,3 +85,7 @@
 </main>
 
 <?php include('templates/footer.php'); ?>
+
+<?php
+    }
+ ?>

@@ -1,5 +1,5 @@
 <?php
-    $page_title = "Panneau d'administration";
+    $page_title = "Gestion des utilisateurs";
 
     session_start();
 

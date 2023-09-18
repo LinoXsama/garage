@@ -2,13 +2,13 @@
 
     session_start();
 
-    // if(!isset($_SESSION['user_id']))
-    // {
-    //     header('Location: login.php');
-    //     exit;
-    // }
-    // else
-    // {
+    if(!isset($_SESSION['user_id']))
+    {
+        header('Location: login.php');
+        exit;
+    }
+    else
+    {
 ?>
 
 <?php
@@ -100,5 +100,5 @@
 <?php include('templates/footer.php'); ?>
 
 <?php
-    // }
+    }
 ?>

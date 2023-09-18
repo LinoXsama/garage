@@ -4,16 +4,9 @@
     session_start();
 
     require_once 'templates/header.php';
-    require_once 'templates/navbar.php';
+    require_once 'templates/navbar_visitor.php';
     require_once 'functions.php';
 
-    // if(!isset($_SESSION['user_id']))
-    // {
-    //     header('Location: login.php');
-    //     exit;
-    // }
-    // else
-    // {
 ?>
 
 <main>
@@ -104,6 +97,11 @@
         </div>
     </div>
 
+    <?php 
+    if(!isset($_SESSION['user_id']))
+    {
+    ?>
+
             <div class="container mb-5">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
@@ -148,10 +146,11 @@
                 </div>
             </div>
 
+    <?php
+    }
+    ?>
+
 </main>
 
 <?php require_once 'templates/footer.php'; ?>
 
-<?php
-    // }
-?>
