@@ -198,7 +198,7 @@
                                                 <input type="text" name="sunday-afternoon" placeholder="APREM - Exemple : Fermé" class="form-control my-3 fs-6">
 
                                                 <div class=" my-4">
-                                                    <a type="submit" name="SCHEDULES_UPDATE" value="schedules_update" class="btn btn-primary responsive-font">ENREGISTRER</a>
+                                                    <button type="submit" name="SCHEDULES_UPDATE" value="schedules_update" class="btn btn-primary responsive-font">ENREGISTRER</button>
                                                 </div>
 
                                             </div>
