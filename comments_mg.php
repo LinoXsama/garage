@@ -39,6 +39,7 @@ if(isset($_SESSION['msg']))
                     <th>Téléphone</th>
                     <th>Objet</th>
                     <th>Message</th>
+                    <th>Publication</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -62,6 +63,21 @@ if(isset($_SESSION['msg']))
                             <td data-label="Téléphone" class="responsive-font"><?= $row['phone']; ?></td>
                             <td data-label="Objet" class="responsive-font"><?= ($row['car_id'] !== 0) ? 'VEHICULE' : 'INFORMATION'; ?></td>
                             <td data-label="Message" class="responsive-font"><span class="bg-primary text-white px-1 py-1 border-radius"><?= $row['msg']; ?></span></td>
+                            <td>
+                            <form action="publication_formulaire.php" method="POST">
+                                <label">OUI</label>
+                                <input type="radio" name="STATUS" value="OUI" <?= (isset($row['publication']) && $row['publication'] === 'OUI') ? 'checked' : '' ?>>
+
+                                <label>NON</label>
+                                <input type="radio" name="STATUS" value="NON" <?= (isset($row['publication']) && $row['publication'] === 'NON') ? 'checked' : '' ?>>
+                                
+                                <input type="hidden" name="MSG_ID" value="<?= $row['msg_id']; ?>">
+                                <input type="hidden" name="AUTHOR" value="<?= $row['name']; ?>">
+                                <input type="hidden" name="MSG_DATE" value="<?= $row['msg_date']; ?>">
+
+                                <input type="submit" name="PUBLICATION">
+                            </form>
+                            </td>
                             <td data-label="Actions" class="responsive-font">
                                 <?php
                                     if($row['car_id'] !== 0)

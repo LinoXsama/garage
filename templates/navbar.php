@@ -15,7 +15,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a href="index.php" class="nav-link px-2 text-secondary">Accueil</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Services</a></li>
+          <li class="nav-item"><a href="services.php" class="nav-link px-2 text-white">Services</a></li>
           <li class="nav-item"><a href="cars.php" class="nav-link px-2 text-white">Nos véhicules</a></li>
           <li class="nav-item"><a href="contact.php" class="nav-link px-2 text-white">Contactez-nous</a></li>
         </ul>

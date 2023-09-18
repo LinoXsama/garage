@@ -1,5 +1,4 @@
 <?php
-    require_once 'config/db_connect.php';
     require_once 'functions.php';
 
     session_start();
@@ -8,8 +7,8 @@
 <?php
     if(isset($_POST['EDIT_SERVICES']))
     {
-        $service_name = htmlspecialchars($conn->real_escape_string($_POST['SERVICE_NAME']));
-        $service_description = htmlspecialchars($conn->real_escape_string($_POST['SERVICE_DESCRIPTION']));
+        $service_name = $_POST['SERVICE_NAME'];
+        $service_description = $_POST['SERVICE_DESCRIPTION'];
 
         if(empty($service_name) || empty($service_description))
         {

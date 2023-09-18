@@ -46,6 +46,19 @@
 
                                     <textarea rows="4" name="COMMENT" placeholder="Rédigez votre message ici..." class="form-control my-3"></textarea>
                                     
+                                    <label>Qu'avez vous pensé de nos services ? <strong><span class="note"></span> / 5</strong></label>
+                                        <div class="container d-flex justify-content-center">
+                                            <div 
+                                                class="rateyo" 
+                                                id="rating"
+                                                data-rateyo-rating="1"
+                                                data-rateyo-score="1">
+                                            </div>
+                                            
+                                            <span class="result" style="display:none"></span>
+                                            <input type="hidden" name="rating">
+                                        </div>
+                                        
                                     <div class="text-center my-4">
                                         <button type="submit" name="CONTACT_FORM" value="contact.php" class="btn btn-primary">SOUMETTRE</button>
                                     </div>

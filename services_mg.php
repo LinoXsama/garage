@@ -10,48 +10,48 @@
 
 <main>
 
-<?php
-    if(isset($_SESSION['MSG_ADD_SERVICES']))
-    {
-        echo
-            '<div class="container mt-3">
-                <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
-            '. $_SESSION['MSG_ADD_SERVICES'] .'
-            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                </div>
-            </div>';
+    <?php
+        if(isset($_SESSION['MSG_ADD_SERVICES']))
+        {
+            echo
+                '<div class="container mt-3">
+                    <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+                '. $_SESSION['MSG_ADD_SERVICES'] .'
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>';
 
-        unset($_SESSION['MSG_ADD_SERVICES']);
-    }
+            unset($_SESSION['MSG_ADD_SERVICES']);
+        }
 
-    if(isset($_SESSION['MSG_EDIT_SERVICES']))
-    {
-        echo
-            '<div class="container mt-3">
-                <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
-            '. $_SESSION['MSG_EDIT_SERVICES'] .'
-            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                </div>
-            </div>';
+        if(isset($_SESSION['MSG_EDIT_SERVICES']))
+        {
+            echo
+                '<div class="container mt-3">
+                    <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+                '. $_SESSION['MSG_EDIT_SERVICES'] .'
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>';
 
-        unset($_SESSION['MSG_EDIT_SERVICES']);
-    }
+            unset($_SESSION['MSG_EDIT_SERVICES']);
+        }
 
-    if(isset($_SESSION['msg']))
-    {
-        echo
-            '<div class="container mt-3">
-                <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
-            '. $_SESSION['msg'] .'
-            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                </div>
-            </div>';
+        if(isset($_SESSION['msg']))
+        {
+            echo
+                '<div class="container mt-3">
+                    <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+                '. $_SESSION['msg'] .'
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>';
 
-        unset($_SESSION['msg']);
-    }
-?>
+            unset($_SESSION['msg']);
+        }
+    ?>
 
-<h4 class="text-center mt-3 mb-3">Liste des services</h4>
+    <h4 class="text-center mt-3 mb-3">Liste des services</h4>
 
     <div class="container mt-3 mb-4">
 
@@ -106,7 +106,7 @@
                         </div>
 
                         <div class="modal-body">
-                            <p class="responsive-font">Voulez-vous vraiment supprimer le service </strong><span class="service-name"></span></strong> ?</p>
+                            <p class="responsive-font">Voulez-vous vraiment supprimer le service <strong><span class="service-name"></span></strong> ?</p>
                         </div>
 
                         <div class="modal-footer">

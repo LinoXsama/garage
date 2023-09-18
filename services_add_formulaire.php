@@ -56,8 +56,6 @@
                 header('Location: services_mg.php');
                 exit;
             }
-
-            
         }
     }
 ?>
