@@ -193,6 +193,18 @@ body {
     }
 }
 
+/* PAGE index.php >> Page d'accueil - START */
+.main-index {
+    height: 90%;
+}
+
+@media(max-width: 991px)
+{
+    .main-index {
+        height : auto;
+    }
+}
+/* PAGE index.php >> Page d'accueil - END */
 
 /* BOUTON DE REINITIALISATION DES SLIDERS - START */
 .reset-button {
@@ -210,3 +222,4 @@ body {
     cursor: pointer; 
 }
 /* BOUTON DE REINITIALISATION DES SLIDERS - END */
+
