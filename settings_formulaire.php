@@ -12,13 +12,17 @@
         $km2 = htmlspecialchars($conn->real_escape_string($_POST['KM2']));
         $km3 = htmlspecialchars($conn->real_escape_string($_POST['KM3']));
         $km4 = htmlspecialchars($conn->real_escape_string($_POST['KM4']));
+
         $price1 = htmlspecialchars($conn->real_escape_string($_POST['PRICE1']));
         $price2 = htmlspecialchars($conn->real_escape_string($_POST['PRICE2']));
         $price3 = htmlspecialchars($conn->real_escape_string($_POST['PRICE3']));
+        
         $price4 = htmlspecialchars($conn->real_escape_string($_POST['PRICE4']));
+
         $year1 = htmlspecialchars($conn->real_escape_string($_POST['YEAR1']));
         $year2 = htmlspecialchars($conn->real_escape_string($_POST['YEAR2']));
         $year3 = htmlspecialchars($conn->real_escape_string($_POST['YEAR3']));
+        
         $year4 = htmlspecialchars($conn->real_escape_string($_POST['YEAR4']));
 
         // VERIFICATION DE LA COHERENCE DU CRITERE KILOMETRAGE - START
@@ -70,7 +74,7 @@
                     }
                 }
 
-                if(empty($year1) && empty($year2) && empty($year3) && empty($year4))
+                if(empty($km1) && empty($km2) && empty($km3) && empty($km4))
                 {
                     $_SESSION['PROBLEMS_KM']['EMPTY'] = 'VIDE - KILOMÉTRAGE: Vous devez saisir au moins une valeur afin de soumettre le formulaire !';
                 }
