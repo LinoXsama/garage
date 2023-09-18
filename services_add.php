@@ -16,13 +16,13 @@
     require_once 'templates/navbar.php';
 ?>
 
-<main style="height: 90%;" class="container">
+<main class="container">
     <!-- GESTION DES MESSAGES D'ERREURS - START -->
         <?php
             if(isset($_SESSION['ERRORS_ADD_SERVICES'])) 
             {
                 echo '<div class="container mt-3">';
-                    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
+                    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">';
 
                 echo '<ul>';
                 foreach ($_SESSION['ERRORS_ADD_SERVICES'] as $error) 
@@ -37,6 +37,19 @@
                 
                 unset($_SESSION['ERRORS_ADD_SERVICES']); 
             }
+
+            if(isset($_SESSION['EMPTY_ADD_SERVICES']))
+            {
+                echo
+                    '<div class="container mt-3">
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    '. $_SESSION['EMPTY_ADD_SERVICES'] .'
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>';
+
+                unset($_SESSION['EMPTY_ADD_SERVICES']);
+            }
         ?>
     <!-- GESTION DES MESSAGES D'ERREURS - END -->
 
@@ -50,7 +63,7 @@
                         </div>
                         <div class="card-body">
 
-                        <form action="services_formulaire.php" method="POST" class="mt-3 mb-3">
+                        <form action="services_add_formulaire.php" method="POST" class="mt-3 mb-3">
 
                             <label class="form-label responsive-font">Nom du service</label>
                             <input class="form-control" type="text" name="SERVICE_NAME" placeholder="Ex : Réparation">
@@ -60,7 +73,7 @@
 
                             <div class="mt-4">
                                 <button type="submit" name="ADD_SERVICES" class="btn btn-success responsive-font">ENREGISTRER</button>
-                                <a href="" class="btn btn-danger ctm-btn responsive-font">RETOUR</a>
+                                <a href="services_mg.php" class="btn btn-danger ctm-btn responsive-font">RETOUR</a>
                             </div>
 
                         </form>

@@ -72,6 +72,23 @@ document.addEventListener("click", function (e) {
 });
 // MODAL D'AFFICHAGE D'UN VEHICULE SUR LA PAGE cars.php - END
 
+// MODAL D'AFFICHAGE D'UN SERVICE - START
+document.addEventListener("click", function (e) {
+    if(e.target.classList.contains("service-item"))
+    {
+        const service_id = e.target.getAttribute("id");
+
+        const service_name = e.target.getAttribute("name");
+        document.querySelector(".service-name").innerHTML = service_name;
+
+        document.querySelector(".delete-btn").href = 'services_delete.php?id=' + service_id;
+
+        const myModal = new bootstrap.Modal(document.getElementById("service-delete-modal"));
+        myModal.show();
+    }
+});
+// MODAL D'AFFICHAGE D'UN SERVICE - END
+
 // FONCTIONS DE LA PAGE cars.php - START
 
     // FONCTION QUI CONTROLE LA BARRE DE RECHERCHE
