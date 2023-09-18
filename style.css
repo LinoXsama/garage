@@ -1,3 +1,5 @@
+
+
 /* CARS.PHP - START */
 
 #search form {
@@ -78,6 +80,7 @@ body {
     object-fit: cover;
 }
 
+
 .gallery {
     padding: 20px 0;
 }
@@ -156,7 +159,7 @@ body {
 /* RESPONSIVITE DE LA TABLE DES HORAIRES DE bottom_navbar.php - END */
 
 /* AJOUTE UN PADDING TOP A CERTAINS ELEMENTS EN VERSION MOBILE - START */
-@media(max-width: 316px)
+@media(max-width: 276px)
 {
     .ctm-btn {
         margin-top : 8px;
@@ -191,7 +194,7 @@ body {
 }
 
 
-/* BOUTON DE REINITIALISATION DES SLIDERS */
+/* BOUTON DE REINITIALISATION DES SLIDERS - START */
 .reset-button {
     width: 30px; 
     height: 30px; 
@@ -206,3 +209,4 @@ body {
     display: inline-block; 
     cursor: pointer; 
 }
+/* BOUTON DE REINITIALISATION DES SLIDERS - END */
