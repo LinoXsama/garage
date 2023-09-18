@@ -23,6 +23,32 @@
 
         unset($_SESSION['MSG_ADD_SERVICES']);
     }
+
+    if(isset($_SESSION['MSG_EDIT_SERVICES']))
+    {
+        echo
+            '<div class="container mt-3">
+                <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+            '. $_SESSION['MSG_EDIT_SERVICES'] .'
+            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>';
+
+        unset($_SESSION['MSG_EDIT_SERVICES']);
+    }
+
+    if(isset($_SESSION['msg']))
+    {
+        echo
+            '<div class="container mt-3">
+                <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+            '. $_SESSION['msg'] .'
+            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>';
+
+        unset($_SESSION['msg']);
+    }
 ?>
 
 <h4 class="text-center mt-3 mb-3">Liste des services</h4>

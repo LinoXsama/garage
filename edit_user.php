@@ -34,14 +34,14 @@
 
         if($query_status)
         {
-            $_SESSION['msg'] = 'Utilisateur ajouté avec succès !';
+            $_SESSION['msg'] = 'Utilisateur a bien été modifié !';
             $_SESSION['alert_type'] = 'success';
 
             header('Location: admin_panel.php');
         } 
         else
         {
-            $_SESSION['msg'] = "Échec de l'ajout de l'utilisateur !";
+            $_SESSION['msg'] = "Échec de la modification de l'utilisateur !";
             $_SESSION['alert_type'] = 'danger';
 
             header('Location: admin_panel.php');
