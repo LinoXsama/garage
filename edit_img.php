@@ -164,7 +164,7 @@
                         <div class="modal-content">
 
                             <div class="modal-header bg-danger">
-                                <h5 class="modal-title text-white responsive-font">Confirmation la suppression de l'image</h5>
+                                <h5 class="modal-title text-white responsive-font">Confirmez-vous la suppression de l'image ?</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                             </div>
 

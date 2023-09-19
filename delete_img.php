@@ -39,7 +39,7 @@
             {
                 if(unlink($path)) 
                 {
-                    $query_status = update('cars', 'cars_id',  $car_id, 'cars_gallery_img2', '', 'cars_alt_text_img1', '');
+                    $query_status = update('cars', 'cars_id',  $car_id, 'cars_gallery_img2', '', 'cars_alt_text_img2', '');
                 } 
             }
         }
@@ -53,9 +53,6 @@
                 } 
             }
         }
-        
-
-        
 
         if($query_status)
         {

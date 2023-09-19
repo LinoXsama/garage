@@ -28,6 +28,8 @@
 
     <h4 class="text-center mt-3">Galérie d'images</h4>
 
+    
+
     <div class="gallery">
         <div class="container-lg">
 
