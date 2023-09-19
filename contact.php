@@ -11,7 +11,6 @@
 ?>
 
 <?php
-
         if(isset($_SESSION['msg']))
         {
             echo
@@ -24,8 +23,9 @@
 
             unset($_SESSION['msg']);
         }
-    ?>
-<main>
+?>
+
+<main id="main-contact">
 
     <div class="py-5">
         <div class="container">
@@ -46,7 +46,7 @@
 
                                     <textarea rows="4" name="COMMENT" placeholder="Rédigez votre message ici..." class="form-control my-3"></textarea>
                                     
-                                    <label>Qu'avez vous pensé de nos services ? <strong><span class="note"></span> / 5</strong></label>
+                                    <label class="responsive-font">Qu'avez vous pensé de nos services ? <strong><span class="note"></span> / 5</strong></label>
                                         <div class="container d-flex justify-content-center">
                                             <div 
                                                 class="rateyo" 
@@ -60,7 +60,7 @@
                                         </div>
                                         
                                     <div class="text-center my-4">
-                                        <button type="submit" name="CONTACT_FORM" value="contact.php" class="btn btn-primary">SOUMETTRE</button>
+                                        <button type="submit" name="CONTACT_FORM" value="contact.php" class="btn btn-primary responsive-font">SOUMETTRE</button>
                                     </div>
                                 </div>
 

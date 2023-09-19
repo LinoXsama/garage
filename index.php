@@ -6,14 +6,14 @@
     require_once 'functions.php';
 ?>
 
-<main>
+<main id="main-index">
 
-    <div class="container mt-4 mb-4">
+    <div>
     
         <h2 class="text-center pb-2">Bienvenue au Garage V.Parrot</h2>
 
         <div class="container  d-flex justify-content-center">
-            <div>
+            <div class="pb-4">
                 <p>
                     Au Garage V.Parrot, nous sommes fiers de vous offrir des services automobiles exceptionnels depuis de 
                     15 ans. Notre équipe de professionnels expérimentés est dédiée à fournir des solutions de 
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <h2 class="text-center pb-2" style="font-style:italic;">Nos clients témoignent !</h2>
+        <h2 class="text-center pb-2 text-primary italic">Nos clients témoignent !</h2>
 
         <div class="container mt-5 ">
             <div class="row">
@@ -62,8 +62,9 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><?= $row['name']; ?></h5>
+                        <h5 class="card-title italic"><?= $row['name']; ?></h5>
                         <p class="card-text"><?= $row['msg']; ?></p>
+                        <strong><p class="card-text">Note attribuée: <span class="text-success"><?= $row['rating']; ?> / 5</span></p></strong>
                     </div>
                 </div>
             </div>
@@ -74,8 +75,6 @@
             </div>
         </div>
     </div>
-
-
 
 </main>
 

@@ -8,7 +8,7 @@
     require_once 'functions.php';
 ?>
 
-<main>
+<main id="main-cars">
 
     <!-- BARRE DE RECHERCHE - START -->
     <div id="search" class="container mt-4">

@@ -79,9 +79,9 @@
     }
 ?>
 
-<main style="height: 80%">
+<main id="main-login">
 
-    <div class="py-5">
+    <div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">

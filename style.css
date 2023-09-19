@@ -280,3 +280,34 @@ body {
 }
 /* BOUTON DE REINITIALISATION DES SLIDERS - END */
 
+.italic {
+    font-style:italic;
+}
+
+/* ESPACEMENT DU CONTENU DES PAGES - START */
+
+#main-login {
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+}
+
+#main-services {
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+}
+
+#main-cars {
+    padding-bottom: 5rem;
+}
+
+#main-index {
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+}
+
+#main-contact {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+/* ESPACEMENT DU CONTENU DES PAGES - END */

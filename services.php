@@ -10,7 +10,7 @@
     require_once 'functions.php';
 ?>
 
-<main class="main-services">
+<main id="main-services">
 
     <div class="container mt-5">
         <div class="row">
