@@ -16,7 +16,7 @@
     require_once 'functions.php';
 ?>
 
-<main>
+<main class="main-comments-mg mb-5">
 
 <?php
 if(isset($_SESSION['msg']))
@@ -39,7 +39,7 @@ if(isset($_SESSION['msg']))
 
     <a href="contact_user.php" class="btn btn-dark mb-3 responsive-font">Ajouter un message</a>
 
-        <table class="custom-table table table-hover text-center table-striped">
+        <table class="comments-mg-table custom-table table table-hover text-center table-striped">
 
             <thead class="table-dark">
                 <tr>
@@ -74,7 +74,7 @@ if(isset($_SESSION['msg']))
                             <td data-label="Email" class="responsive-font"><?= $row['email']; ?></td>
                             <td data-label="Téléphone" class="responsive-font"><?= $row['phone']; ?></td>
                             <td data-label="Objet" class="responsive-font"><?= ($row['car_id'] !== 0) ? 'VEHICULE' : 'INFORMATION'; ?></td>
-                            <td data-label="Message" class="responsive-font"><span class="bg-primary text-white px-1 py-1 border-radius"><?= $row['msg']; ?></span></td>
+                            <td data-label="Message" class="responsive-font"><span class="message-content bg-primary text-white px-1 py-1 border-radius"><?= $row['msg']; ?></span></td>
                             <td>
                             <form action="publication_formulaire.php" method="POST">
                                 <label">OUI</label>

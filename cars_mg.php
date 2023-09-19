@@ -77,7 +77,7 @@
                                 <a class="link-dark" href="edit_gallery_transition.php?id=<?= $row['cars_id']; ?>"><i class="fa-solid fa-image fs-5"></i></a> &nbsp;
     
                                 <!-- Fonts awesome Icons -->
-                                <span class="link-dark"><i id="<?= $row['cars_id']; ?>" name="<?= "{$row['cars_brand']} {$row['cars_model']}"; ?>" data-target="<?= $row['cars_owner']; ?>" class="fa-solid fa-trash fs-5 cars-item"></i></span>
+                                <span class="link-dark"><i id="<?= $row['cars_id']; ?>" name="<?= "{$row['cars_brand']} {$row['cars_model']}"; ?>" data-target="<?= $row['cars_owner']; ?>" class="fa-solid fa-trash fs-5 cars-item cp"></i></span>
                             </td>
                         </tr>
 

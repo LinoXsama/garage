@@ -1,8 +1,9 @@
 <?php
+    session_start();
+    
     require_once 'config/db_connect.php';
     require_once 'functions.php';
 
-    session_start();
 
     $_SESSION['ERRORS'] = array();
     $_SESSION['SUCCESS'] = array();
@@ -39,7 +40,7 @@
 
                             move_uploaded_file($thumbnail_TmpName, $file_destination);
 
-                            $query_status1 = update('cars', 'cars_id', 37, 'cars_main_img', $file_destination);
+                            $query_status1 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_main_img', $file_destination);
 
                             if(!$query_status1)
                             {
@@ -91,7 +92,7 @@
 
                             move_uploaded_file($img1_TmpName, $file_destination);
 
-                            $query_status2 = update('cars', 'cars_id', 37, 'cars_gallery_img1', $file_destination);
+                            $query_status2 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_gallery_img1', $file_destination);
 
                             if(!$query_status2)
                             {
@@ -143,7 +144,7 @@
         
                             move_uploaded_file($img2_TmpName, $file_destination);
         
-                            $query_status3 = update('cars', 'cars_id', 37, 'cars_gallery_img2', $file_destination);
+                            $query_status3 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_gallery_img2', $file_destination);
         
                             if(!$query_status3)
                             {
@@ -195,7 +196,7 @@
 
                             move_uploaded_file($img3_TmpName, $file_destination);
 
-                            $query_status4 = update('cars', 'cars_id', 37, 'cars_gallery_img3', $file_destination);
+                            $query_status4 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_gallery_img3', $file_destination);
 
                             if(!$query_status4)
                             {
@@ -233,7 +234,7 @@
             $_SESSION['EMPTY_FORM'] = "Vous devez choisir au moins une image à enregistrer !";
         }
 
-        header("Location: upload_img.php");
+        header("Location: edit_img.php");
         exit;
     }
 ?>

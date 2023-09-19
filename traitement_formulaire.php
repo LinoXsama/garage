@@ -13,15 +13,16 @@ if(isset($_POST['CONTACT_FORM']) & $_POST['CONTACT_FORM'] === 'details.php')
     $_SESSION['COMMENT'] = $_POST['COMMENT'];
     $_SESSION['RATING'] = $_POST['rating'];
     $PUBLICATION = 'NON';
+    $car_id = $_SESSION['CAR_TO_DETAIL'];
 
-    if(!empty($_SESSION['NAME']) && !empty($_SESSION['EMAIL']) && !empty($_SESSION['PHONE']) && !empty($_SESSION['COMMENT']) && !empty($_SESSION['RATING']))
+    if(!empty($_SESSION['NAME']) && !empty($_SESSION['EMAIL']) && !empty($_SESSION['PHONE']) && !empty($_SESSION['COMMENT']) && !empty($_SESSION['RATING']) && !empty($car_id))
     {
-        $query = "INSERT INTO `contacts`(`name`, `email`, `phone`, `msg`, `rating`, `publication`) VALUES(?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO `contacts`(`name`, `email`, `phone`, `msg`, `rating`, `publication`, `car_id`) VALUES(?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($query);
 
         if($stmt) 
         {    
-            $stmt->bind_param("ssssss", $_SESSION['NAME'], $_SESSION['EMAIL'], $_SESSION['PHONE'], $_SESSION['COMMENT'], $_SESSION['RATING'], $PUBLICATION);
+            $stmt->bind_param("sssssss", $_SESSION['NAME'], $_SESSION['EMAIL'], $_SESSION['PHONE'], $_SESSION['COMMENT'], $_SESSION['RATING'], $PUBLICATION, $car_id);
             $stmt->execute();
         
             if($stmt->affected_rows > 0) 

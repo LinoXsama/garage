@@ -38,13 +38,13 @@
         ?>
             <div class="row gy-4 row-cols-1 -row-cols-sm-2 row-cols-md-3">
                 <div class="col">
-                    <img src="<?= $row['cars_gallery_img1']; ?>" alt="<?= $row['cars_alt_text_img1']; ?>" class="cars-gallery-item shadow" />
+                    <img src="<?= $row['cars_gallery_img1']; ?>" alt="<?= $row['cars_alt_text_img1']; ?>" class="cars-gallery-item shadow detail-item" />
                 </div>
                 <div class="col">
-                    <img src="<?= $row['cars_gallery_img2']; ?>" alt="<?= $row['cars_alt_text_img2']; ?>" class="cars-gallery-item shadow" />
+                    <img src="<?= $row['cars_gallery_img2']; ?>" alt="<?= $row['cars_alt_text_img2']; ?>" class="cars-gallery-item shadow detail-item" />
                 </div>
                 <div class="col">
-                    <img src="<?= $row['cars_gallery_img3']; ?>" alt="<?= $row['cars_alt_text_img3']; ?>" class="cars-gallery-item shadow" />
+                    <img src="<?= $row['cars_gallery_img3']; ?>" alt="<?= $row['cars_alt_text_img3']; ?>" class="cars-gallery-item shadow detail-item" />
                 </div>
             </div>
         </div>
@@ -97,11 +97,6 @@
         </div>
     </div>
 
-    <?php 
-    if(!isset($_SESSION['user_id']))
-    {
-    ?>
-
             <div class="container mb-5">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
@@ -146,9 +141,24 @@
                 </div>
             </div>
 
-    <?php
-    }
-    ?>
+            <!-- MODAL D'APERCU DES IMAGES - START -->
+                <div class="modal fade" id="detail-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-header bg-primary text-white">
+                                <h5 class="modal-title" id="exampleModalLabel">Aperçu de la photo</h5>
+                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <img src="" alt="" class="img-fluid detail-img" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        <!-- MODAL D'APERCU DES IMAGES - END -->
 
 </main>
 

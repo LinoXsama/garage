@@ -2,6 +2,7 @@
 <?php
     $page_title = 'Contact User';
 
+    session_start();
     if(!isset($_SESSION['user_id']))
     {
         header('Location: login.php');
@@ -10,7 +11,6 @@
     else
     {
 
-    session_start();
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'config/db_connect.php';

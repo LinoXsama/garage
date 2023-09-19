@@ -106,6 +106,10 @@ body {
     border-radius: 5px !important;
 }
 
+.cp {
+    cursor: pointer;
+}
+
 /* TABLEAU RESPONSIF NOTAMMENT POUR admin_panel.php, cars_mg.php et comments_mg.php - START*/
 @media(max-width: 767px)
 {
@@ -144,6 +148,44 @@ body {
 }
 /* TABLEAU RESPONSIF NOTAMMENT POUR admin_panel.php, cars_mg.php et comments_mg.php - END */
 
+/* TABLEAU DE LA PAGE comments_mg.php - START*/
+@media(max-width: 1018px)
+{
+    .comments-mg-table thead {
+        display: none;
+    }
+
+    .comments-mg-table, .comments-mg-table tbody, .comments-mg-table tr, .comments-mg-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .comments-mg-table tr {
+        margin-bottom: 15px;
+        border-radius: 2px solid black;
+    }
+    
+    .comments-mg-table td {
+        text-align: right;
+        padding: left;
+        text-align: right;
+        position: relative;
+        
+    }
+
+    .comments-mg-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+/* TABLEAU DE LA PAGE comments_mg.php - END*/
+
 /* RESPONSIVITE DE LA TABLE DES HORAIRES DE bottom_navbar.php - START */
 @media(max-width: 650px)
 {
@@ -167,6 +209,7 @@ body {
 }
 /* AJOUTE UN PADDING  CERTAIN BOUTONS EN VERSION MOBILE - END */
 
+/* GESTION RESPONSIVE DE LA POLICE, DE LA BARRE DE RECHERCHE ET NON AFFICHAGE DES ICONES SUR LES DASHBOARDS ADMIN ET USER - START*/
 @media(max-width: 377px)
 {
     .responsive-font {
@@ -185,17 +228,24 @@ body {
         width: 100%;
     }
 }
+/* GESTION RESPONSIVE DE LA POLICE, DE LA BARRE DE RECHERCHE ET NON AFFICHAGE DES ICONES SUR LES DASHBOARDS ADMIN ET USER - END*/
 
+/* GESTION RESPONSIVE DES SLIDERS DES CRITERES DE RECHERCHE DE cars.php - START */
 @media(max-width: 991px)
 {
     .sliders {
         width : 5rem;
     }
 }
+/* GESTION RESPONSIVE DES SLIDERS DES CRITERES DE RECHERCHE DE cars.php - END */
 
 /* PAGE index.php >> Page d'accueil - START */
 .main-index {
     height: 90%;
+}
+
+.main-comments-mg {
+    height: 100%;
 }
 
 @media(max-width: 991px)
@@ -204,9 +254,14 @@ body {
         height : auto;
     }
 
-  
+    .main-comments-mg {
+        height: auto;
+    }
+
 }
 /* PAGE index.php >> Page d'accueil - END */
+
+
 
 /* BOUTON DE REINITIALISATION DES SLIDERS - START */
 .reset-button {

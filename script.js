@@ -72,7 +72,7 @@ document.addEventListener("click", function (e) {
 });
 // MODAL D'AFFICHAGE D'UN VEHICULE SUR LA PAGE cars.php - END
 
-// MODAL D'AFFICHAGE D'UN SERVICE - START
+// MODAL DE LA CONFIRMATION DE SUPPRESSION D'UN SERVICE - START
 document.addEventListener("click", function (e) {
     if(e.target.classList.contains("service-item"))
     {
@@ -87,7 +87,23 @@ document.addEventListener("click", function (e) {
         myModal.show();
     }
 });
-// MODAL D'AFFICHAGE D'UN SERVICE - END
+// MODAL DE LA CONFIRMATION DE SUPPRESSION D'UN SERVICE - END
+
+// MODAL D'APERCU D'UN VEHICULE SUR LA PAGE details.php - START
+document.addEventListener("click", function (e) {
+    if(e.target.classList.contains("detail-item"))
+    {
+        const src = e.target.getAttribute("src");
+        document.querySelector(".detail-img").src = src;
+
+        const alt = e.target.getAttribute("alt");
+        document.querySelector(".detail-img").alt = alt;
+
+        const myModal = new bootstrap.Modal(document.getElementById("detail-modal"));
+        myModal.show();
+    }
+});
+// MODAL D'APERCU D'UN VEHICULE SUR LA PAGE details.php - END
 
 // FONCTIONS DE LA PAGE cars.php - START
 
