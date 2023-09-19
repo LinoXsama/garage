@@ -116,7 +116,7 @@
     }
 ?>
 
-<main>
+<main id="main-admin-dashboard">
 
     <div class="py-5">
         <div class="container">

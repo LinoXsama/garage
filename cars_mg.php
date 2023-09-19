@@ -16,7 +16,7 @@
     require_once 'functions.php';
 ?>
 
-<main>
+<main id="main-cars-mg">
 
 <?php
     if(isset($_SESSION['msg']))
@@ -64,7 +64,7 @@
                     {
                 ?>
 
-                        <tr>
+                        <tr class="table-warning">
                             <td data-label="ID"><?= $row['cars_id']; ?></td>
                             <td data-label="Marque"><?= $row['cars_brand']; ?></td>
                             <td data-label="Modèle"><?= $row['cars_model']; ?></td>

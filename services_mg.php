@@ -16,7 +16,7 @@
     require_once 'functions.php';
 ?>
 
-<main>
+<main id="main-services-mg">
     <!-- GESTTION DES NOTIFICATIONS - STATRT -->
         <?php
             if(isset($_SESSION['MSG_ADD_SERVICES']))
@@ -66,7 +66,7 @@
 
         <a href="services_add.php" class="btn btn-dark mb-3 responsive-font">Ajouter un service</a>
 
-        <table class="table table-hover text-center table-striped custom-table table-responsive">
+        <table class="table table-hover table-striped text-center custom-table table-responsive">
 
             <thead class="table-dark">
                 <tr>
@@ -87,8 +87,8 @@
                 ?>
 
                         <tr>
-                            <td data-label="Nom"><?= $row['service_name']; ?></td>
-                            <td data-label="Description"><?= $row['service_description']; ?></td>
+                            <td class="table-primary" data-label="Nom"><?= $row['service_name']; ?></td>
+                            <td class="table-warning" data-label="Description"><?= $row['service_description']; ?></td>
                             <td data-label="Actions">
                                 <a class="link-dark" href="services_edit_transition.php?id=<?= $row['service_id']; ?>"><i class="fa-solid fa-edit fs-5"></i></a> &nbsp;
     
@@ -110,7 +110,7 @@
                     <div class="modal-content">
 
                         <div class="modal-header bg-danger">
-                            <h5 class="modal-title text-white responsive-font">Confirmation de suppression</h5>
+                            <h5 class="modal-title text-white responsive-font2">Confirmation de suppression</h5>
                             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -131,6 +131,7 @@
 </main>
 
 <?php require_once 'templates/footer.php'; ?>
+
 
 <?php 
     } 

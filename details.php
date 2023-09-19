@@ -9,14 +9,14 @@
 
 ?>
 
-<main>
+<main id="main-details">
 
     <?php
         if(isset($_SESSION['msg']))
         {
             echo
-                '<div class="container mt-3">
-                    <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+                '<div class="container">
+                    <div class=" responsive-font alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
                 '. $_SESSION['msg'] .'
                 <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
                     </div>
@@ -27,8 +27,6 @@
     ?>
 
     <h4 class="text-center mt-3">Galérie d'images</h4>
-
-    
 
     <div class="gallery">
         <div class="container-lg">

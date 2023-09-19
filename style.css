@@ -207,13 +207,25 @@ body {
         margin-top : 8px;
     }
 }
+
+@media(max-width: 316px)
+{
+    .ctm-btn2 {
+        margin-top : 8px;
+    }
+}
 /* AJOUTE UN PADDING  CERTAIN BOUTONS EN VERSION MOBILE - END */
+
 
 /* GESTION RESPONSIVE DE LA POLICE, DE LA BARRE DE RECHERCHE ET NON AFFICHAGE DES ICONES SUR LES DASHBOARDS ADMIN ET USER - START*/
 @media(max-width: 377px)
 {
     .responsive-font {
         font-size: 0.9rem;
+    }
+
+    .responsive-font2 {
+        font-size: 1rem;
     }
 
     .hide-icons {
@@ -257,10 +269,12 @@ body {
     .main-comments-mg {
         height: auto;
     }
-
 }
 /* PAGE index.php >> Page d'accueil - END */
 
+#bottom-navbar {
+    height: 80%;
+}
 
 
 /* BOUTON DE REINITIALISATION DES SLIDERS - START */
@@ -280,34 +294,86 @@ body {
 }
 /* BOUTON DE REINITIALISATION DES SLIDERS - END */
 
-.italic {
+.italic 
+{
     font-style:italic;
 }
 
 /* ESPACEMENT DU CONTENU DES PAGES - START */
 
-#main-login {
+#main-login,
+#main-services 
+{
     padding-top: 4rem;
     padding-bottom: 10rem;
 }
 
-#main-services {
-    padding-top: 4rem;
-    padding-bottom: 10rem;
-}
-
-#main-cars {
+#main-cars 
+{
     padding-bottom: 5rem;
 }
 
-#main-index {
+#main-index 
+{
     padding-top: 4rem;
     padding-bottom: 8rem;
 }
 
-#main-contact {
+#main-contact,
+#main-details 
+{
     padding-top: 2rem;
     padding-bottom: 4rem;
 }
+
+#main-admin-dashboard
+{
+    padding-top: 2rem;
+    padding-bottom: 9rem;
+}
+
+#main-add-user
+{
+    padding-bottom: 4rem;
+}
+
+#main-admin-panel 
+{
+    padding-top: 2rem;
+    padding-bottom: 16rem;
+}
+
+#main-comments-mg
+{
+    padding-top: 2rem;
+    padding-bottom: 16rem;
+}
+
+#main-cars-mg 
+{
+    padding-top: 2rem;
+    padding-bottom: 16rem;
+}
+
+#main-services-mg {
+    padding-top: 2rem;
+    padding-bottom: 16rem;
+}
+
+@media(max-width: 741px)
+{
+    #main-admin-panel,
+    #main-comments-mg,
+    #main-cars-mg,
+    #main-services-mg 
+    {
+    padding-top: 0;
+    padding-bottom: 0;
+    }
+}
+
+
+
+
 
 /* ESPACEMENT DU CONTENU DES PAGES - END */

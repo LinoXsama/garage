@@ -16,7 +16,7 @@
     require_once 'functions.php';
 ?>
 
-<main class="main-comments-mg mb-5">
+<main id="main-comments-mg">
 
 <?php
 if(isset($_SESSION['msg']))

@@ -40,7 +40,7 @@
             }
             if(isset($_SESSION['user_id']))
             {
-              echo '<a href="logout.php" class="btn btn-outline-light btn-sm me-2 ctm-btn">DECONNEXION</a>';
+              echo '<a href="logout.php" class="btn btn-outline-light btn-sm me-2 ctm-btn2">DECONNEXION</a>';
             }
             else
             {

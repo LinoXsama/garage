@@ -17,21 +17,21 @@
 ?>
 
 <?php
-if(isset($_SESSION['msg']))
-{
-    echo
-        '<div class="container mt-3">
-            <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
-        '. $_SESSION['msg'] .'
-        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>';
+    if(isset($_SESSION['msg']))
+    {
+        echo
+            '<div class="container mt-3">
+                <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+            '. $_SESSION['msg'] .'
+            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>';
 
-    unset($_SESSION['msg']);
-}
+        unset($_SESSION['msg']);
+    }
 ?>
 
-<main class="container">
+<main id="main-add-user" class="container">
 
     <div class="py-5">
         <div class="container">
@@ -39,7 +39,7 @@ if(isset($_SESSION['msg']))
                 <div class="col-md-8">
                     <div class="card shadow">
                         <div class="card-header">
-                            <h5 class="pt-2 text-align text-center responsive-font">Ajouter un nouvel utilisateur</h5>
+                            <h5 class="pt-2 text-align text-center">Ajouter un nouvel utilisateur</h5>
                         </div>
                         <div class="card-body">
 
