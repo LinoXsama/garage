@@ -88,29 +88,32 @@
             </tbody>
 
         </table>
+            
+        <!-- MODAL DE LA CONFIRMATION DE SUPPRESSION D'UN VEHICULE - START -->
+            <div class="modal fade" id="cars-delete-modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
 
-        <div class="modal fade" id="cars-delete-modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
+                            <div class="modal-header bg-danger">
+                                <h5 class="modal-title text-white responsive-font">Confirmation de suppression</h5>
+                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                            </div>
 
-                        <div class="modal-header bg-danger">
-                            <h5 class="modal-title text-white responsive-font">Confirmation de suppression</h5>
-                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                            <div class="modal-body">
+                                <p class="responsive-font">Voulez-vous vraiment supprimer le véhicule <strong>N°<span class="cars-id"></span></strong> : <strong><span class="cars-name"></span></strong> de <strong><span class="cars-owner"></span></strong> ?</p>
+                            </div>
+
+                            <div class="modal-footer">
+                                <a class="btn btn-danger delete-btn responsive-font">OUI</a>
+                                <a type="button" class="btn btn-secondary responsive-font" data-dismiss="modal">NON</a>
+                            </div>
+
                         </div>
-
-                        <div class="modal-body">
-                            <p class="responsive-font">Voulez-vous vraiment supprimer le véhicule <strong>N°<span class="cars-id"></span></strong> : <strong><span class="cars-name"></span></strong> de <strong><span class="cars-owner"></span></strong> ?</p>
-                        </div>
-
-                        <div class="modal-footer">
-                            <a class="btn btn-danger delete-btn responsive-font">OUI</a>
-                            <a type="button" class="btn btn-secondary responsive-font" data-dismiss="modal">NON</a>
-                        </div>
-
                     </div>
                 </div>
             </div>
-    </div>
+        <!-- MODAL DE LA CONFIRMATION DE SUPPRESSION D'UN VEHICULE - END -->
+
 
 </main>
 

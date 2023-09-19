@@ -14,62 +14,77 @@
     require_once 'functions.php';
 ?>
 
-<?php
-        if(isset($_SESSION['IMG_SUCCESS_ALL']))
-        {
-            echo
-                '<div class="container mt-3">
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                '. $_SESSION['IMG_SUCCESS'] .'
-                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                </div>';
-
-            unset($_SESSION['IMG_SUCCESS_ALL']);
-        }
-
-        if(isset($_SESSION['EMPTY_FORM']))
-        {  
-            echo 
-                '<div class="container mt-3">
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        '. $_SESSION['EMPTY_FORM'] .'
-                        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                </div>';
-            unset($_SESSION['EMPTY_FORM']);
-        }
-
-        if(isset($_SESSION['ERRORS']))
-        {
-            foreach ($_SESSION['ERRORS'] as $error) {
-                echo '
-                    <div class="container mt-3">
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            '. $error .'
-                            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    </div>';
-            }
-
-            unset($_SESSION['ERRORS']);
-        }
-
-        if(isset($_SESSION['SUCCESS']))
-        {
-            foreach ($_SESSION['SUCCESS'] as $success) {
-                echo '
-                    <div class="container mt-3">
+<!-- GESTION DES NOTIFICATIONS - START -->
+    <?php
+            if(isset($_SESSION['IMG_SUCCESS_ALL']))
+            {
+                echo
+                    '<div class="container mt-3">
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            '. $success .'
+                    '. $_SESSION['IMG_SUCCESS_ALL'] .'
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>';
+
+                unset($_SESSION['IMG_SUCCESS_ALL']);
+            }
+
+            if(isset($_SESSION['EMPTY_FORM']))
+            {  
+                echo 
+                    '<div class="container mt-3">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            '. $_SESSION['EMPTY_FORM'] .'
                             <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
                         </div>
                     </div>';
+                unset($_SESSION['EMPTY_FORM']);
             }
 
-            unset($_SESSION['SUCCESS']);
-        }
-?>
+            if(isset($_SESSION['ERRORS']))
+            {
+                foreach ($_SESSION['ERRORS'] as $error) {
+                    echo '
+                        <div class="container mt-3">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                '. $error .'
+                                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>';
+                }
+
+                unset($_SESSION['ERRORS']);
+            }
+
+            if(isset($_SESSION['SUCCESS']))
+            {
+                foreach ($_SESSION['SUCCESS'] as $success) {
+                    echo '
+                        <div class="container mt-3">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                '. $success .'
+                                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>';
+                }
+
+                unset($_SESSION['SUCCESS']);
+            }
+
+            if(isset($_SESSION['msg']))
+            {
+                echo
+                    '<div class="container mt-3">
+                        <div class="alert alert-'. $_SESSION['alert_type'] .' alert-dismissible fade show" role="alert">
+                    '. $_SESSION['msg'] .'
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>';
+        
+                unset($_SESSION['msg']);
+            }
+    ?>
+<!-- GESTION DES NOTIFICATIONS - END -->
 
 <main>
 
@@ -88,16 +103,16 @@
 
             <div class="row gy-4 row-cols-1 -row-cols-sm-2 row-cols-md-3">
                 <div class="col">
-                    <img src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="cars-gallery-item shadow bg-warning" />
+                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="cars-gallery-item shadow bg-warning deletable-img" />
                 </div>
                 <div class="col">
-                    <img src="<?= $row['cars_gallery_img1']; ?>" alt="<?= $row['cars_alt_text_img1']; ?>" class="cars-gallery-item shadow" />
+                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_gallery_img1']; ?>" alt="<?= $row['cars_alt_text_img1']; ?>" class="cars-gallery-item shadow deletable-img" />
                 </div>
                 <div class="col">
-                    <img src="<?= $row['cars_gallery_img2']; ?>" alt="<?= $row['cars_alt_text_img2']; ?>" class="cars-gallery-item shadow" />
+                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_gallery_img2']; ?>" alt="<?= $row['cars_alt_text_img2']; ?>" class="cars-gallery-item shadow deletable-img" />
                 </div>
                 <div class="col">
-                    <img src="<?= $row['cars_gallery_img3']; ?>" alt="<?= $row['cars_alt_text_img3']; ?>" class="cars-gallery-item shadow" />
+                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_gallery_img3']; ?>" alt="<?= $row['cars_alt_text_img3']; ?>" class="cars-gallery-item shadow deletable-img" />
                 </div>
             </div>
         </div>
@@ -142,6 +157,31 @@
                 </div>
             </div>
     </div>
+
+    <!-- MODAL DE LA CONFIRMATION DE SUPPRESSION D'UNE IMAGE - START -->
+    <div class="modal fade" id="img-delete-modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-header bg-danger">
+                                <h5 class="modal-title text-white responsive-font">Confirmation la suppression de l'image</h5>
+                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <img src="" alt="" class="img-fluid delete-preview-img" />
+                            </div>
+
+                            <div class="modal-footer">
+                                <a class="btn btn-danger delete-btn responsive-font">OUI</a>
+                                <a type="button" class="btn btn-secondary responsive-font" data-dismiss="modal">NON</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- MODAL DE LA CONFIRMATION DE SUPPRESSION D'UNE IMAGE - END -->
 
 </main>
 

@@ -31,9 +31,9 @@
         $cars_equipment8 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT8']));
 
         $cars_thumbnail_alt_text = "{$cars_brand_name} {$cars_model_name} miniature";
-        $cars_img1_alt_text = "{$cars_brand_name} {$cars_model_name} image 1";
-        $cars_img2_alt_text = "{$cars_brand_name} {$cars_model_name} image 2";
-        $cars_img3_alt_text = "{$cars_brand_name} {$cars_model_name} image 3";
+        $cars_img1_alt_text = "{$cars_brand_name} {$cars_model_name} image1";
+        $cars_img2_alt_text = "{$cars_brand_name} {$cars_model_name} image2";
+        $cars_img3_alt_text = "{$cars_brand_name} {$cars_model_name} image3";
 
         if(!empty($cars_owner) & !empty($cars_brand_name) & !empty($cars_model_name) & !empty($cars_release_year) & !empty($cars_power) & !empty($cars_engine_type) & !empty($cars_km) & !empty($cars_price) & !empty($cars_transmission_type) & !empty($cars_doors_number) & !empty($cars_seats_material) & !empty($cars_color) & !empty($cars_warranty) & !empty($cars_equipment1) & !empty($cars_equipment2) & !empty($cars_equipment3) & !empty($cars_equipment4) & !empty($cars_equipment5) & !empty($cars_equipment6) & !empty($cars_equipment7) & !empty($cars_equipment8))
         {

@@ -5,8 +5,7 @@
     require_once 'functions.php';
 
 
-    $_SESSION['ERRORS'] = array();
-    $_SESSION['SUCCESS'] = array();
+    
 ?>
 
 <?php
@@ -34,7 +33,7 @@
 
                         if($fileSizeInMegaBytes <= 5) 
                         {
-                            $fileNewName = uniqid('', true) . '.' . $thumbnail_ext;
+                            $fileNewName = uniqid('', true) . '.' . 'miniature' . '.' . $thumbnail_ext;
 
                             $file_destination = 'img/' . $fileNewName;
 
@@ -86,7 +85,7 @@
 
                         if($fileSizeInMegaBytes <= 5)
                         {
-                            $fileNewName = uniqid('', true) . '.' . $img1_ext;
+                            $fileNewName = uniqid('', true) . '.' . 'image1' . '.' . $img1_ext;
 
                             $file_destination = 'img/' . $fileNewName;
 
@@ -138,7 +137,7 @@
         
                         if($fileSizeInMegaBytes <= 5) 
                         {
-                            $fileNewName = uniqid('', true) . '.' . $img2_ext;
+                            $fileNewName = uniqid('', true) . '.' . 'image2' . '.' .$img2_ext;
         
                             $file_destination = 'img/' . $fileNewName;
         
@@ -190,7 +189,7 @@
 
                         if($fileSizeInMegaBytes <= 5) 
                         {
-                            $fileNewName = uniqid('', true) . '.' . $img3_ext;
+                            $fileNewName = uniqid('', true) . '.' . 'image3' . '.'. $img3_ext;
 
                             $file_destination = 'img/' . $fileNewName;
 
@@ -226,6 +225,8 @@
 
         if($query_status1 & $query_status2 & $query_status3 & $query_status4)
         {
+            unset($_SESSION['SUCCESS']);
+        
             $_SESSION['IMG_SUCCESS_ALL'] = 'Toutes les images ont bien été importées !';
         }
 

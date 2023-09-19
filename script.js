@@ -36,24 +36,24 @@ document.addEventListener("click", function (e) {
 // MODAL DE SUPPRESSION D'UN COMMENTAIRES - END
 
 // MODAL DE SUPPRESSION D'UN VEHICULE - START
-document.addEventListener("click", function (e) {
-    if(e.target.classList.contains("cars-item"))
-    {
-        const cars_id = e.target.getAttribute("id");
-        document.querySelector(".cars-id").innerHTML = cars_id;
+    document.addEventListener("click", function (e) {
+        if(e.target.classList.contains("cars-item"))
+        {
+            const cars_id = e.target.getAttribute("id");
+            document.querySelector(".cars-id").innerHTML = cars_id;
 
-        const cars_name = e.target.getAttribute("name");
-        document.querySelector(".cars-name").innerHTML = cars_name;
+            const cars_name = e.target.getAttribute("name");
+            document.querySelector(".cars-name").innerHTML = cars_name;
 
-        const owner_name = e.target.getAttribute("data-target");
-        document.querySelector(".cars-owner").innerHTML = owner_name;
-    
-        document.querySelector(".delete-btn").href = 'delete_cars.php?id=' + cars_id;
+            const owner_name = e.target.getAttribute("data-target");
+            document.querySelector(".cars-owner").innerHTML = owner_name;
+        
+            document.querySelector(".delete-btn").href = 'delete_cars.php?id=' + cars_id;
 
-        const deleteModal = new bootstrap.Modal(document.getElementById("cars-delete-modal"));
-        deleteModal.show();
-    }
-});
+            const deleteModal = new bootstrap.Modal(document.getElementById("cars-delete-modal"));
+            deleteModal.show();
+        }
+    });
 // MODAL DE SUPPRESSION D'UN VEHICULE - END
 
 // MODAL D'AFFICHAGE D'UN VEHICULE SUR LA PAGE cars.php - START
@@ -104,6 +104,28 @@ document.addEventListener("click", function (e) {
     }
 });
 // MODAL D'APERCU D'UN VEHICULE SUR LA PAGE details.php - END
+
+// MODAL DE SUPPRESSION D'UNE IMAGE - START
+document.addEventListener("click", function (e) {
+    if(e.target.classList.contains("deletable-img"))
+    {
+        const path = e.target.getAttribute("src");
+        const alt_text = e.target.getAttribute("alt");
+        
+        document.querySelector(".delete-preview-img").src = path;
+        document.querySelector(".delete-preview-img").alt = alt_text;
+
+        const car_id = e.target.getAttribute("id");
+    
+        document.querySelector(".delete-btn").href = 'delete_img.php?id=' + car_id + '&alt_text=' + alt_text + '&path=' + path;
+
+        // document.querySelector(".t1").innerHTML = path;
+
+        const deleteModal = new bootstrap.Modal(document.getElementById("img-delete-modal"));
+        deleteModal.show();
+    }
+});
+// MODAL DE SUPPRESSION D'UNE IMAGE - END
 
 // FONCTIONS DE LA PAGE cars.php - START
 
