@@ -18,7 +18,7 @@
     require_once 'functions.php';
 ?>
 
-<main>
+<main id="main-user-dashboard">
 
     <div class="py-5">
         <div class="container">

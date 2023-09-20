@@ -16,7 +16,7 @@
     require_once 'templates/navbar.php';
 ?>
 
-<main class="container">
+<main id="main-services-add" class="container">
     <!-- GESTION DES MESSAGES D'ERREURS - START -->
         <?php
             if(isset($_SESSION['ERRORS_ADD_SERVICES'])) 
@@ -78,7 +78,7 @@
 
                         </form>
 
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>

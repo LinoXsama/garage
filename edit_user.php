@@ -67,10 +67,11 @@
                                 $row = mysqli_fetch_assoc($user);
                             ?>
 
-                                <label class="form-label">Nom</label>
+                                
+                                <label class="form-label">Prénom</label>
                                 <input class="form-control" type="text" name="first_name" placeholder="Alexandre" value="<?= $row['last_name']; ?>">
 
-                                <label class="form-label">Prénom</label>
+                                <label class="form-label">Nom</label>
                                 <input class="form-control" type="text" name="last_name" placeholder="Deschamps" value="<?= $row['first_name']; ?>">
 
                                 <label class="form-label">Adresse email</label>
