@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : mar. 19 sep. 2023 à 09:35
+-- Généré le : mer. 20 sep. 2023 à 19:05
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -29,36 +29,36 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cars` (
   `cars_id` int(20) NOT NULL,
-  `cars_brand` varchar(20) NOT NULL,
-  `cars_model` varchar(20) NOT NULL,
-  `cars_release_year` int(4) NOT NULL,
-  `cars_power` int(3) NOT NULL,
-  `cars_engine_type` varchar(15) NOT NULL,
-  `cars_km` int(6) NOT NULL,
-  `cars_price` int(5) NOT NULL,
+  `cars_brand` varchar(100) NOT NULL,
+  `cars_model` varchar(100) NOT NULL,
+  `cars_release_year` int(10) NOT NULL,
+  `cars_power` int(10) NOT NULL,
+  `cars_engine_type` varchar(20) NOT NULL,
+  `cars_km` int(20) NOT NULL,
+  `cars_price` int(20) NOT NULL,
   `cars_main_img` varchar(120) NOT NULL,
-  `cars_alt_text` varchar(70) NOT NULL,
+  `cars_alt_text` varchar(100) NOT NULL,
   `cars_transmission_type` varchar(30) NOT NULL,
   `cars_doors_number` int(20) NOT NULL,
-  `cars_seats_material` varchar(20) NOT NULL,
+  `cars_seats_material` varchar(60) NOT NULL,
   `cars_color` varchar(20) NOT NULL,
-  `cars_warranty` varchar(50) NOT NULL,
-  `cars_equipment1` varchar(50) NOT NULL,
-  `cars_equipment2` varchar(50) NOT NULL,
-  `cars_equipment3` varchar(50) NOT NULL,
-  `cars_equipment4` varchar(50) NOT NULL,
-  `cars_equipment5` varchar(50) NOT NULL,
-  `cars_equipment6` varchar(50) NOT NULL,
-  `cars_equipment7` varchar(50) NOT NULL,
-  `cars_equipment8` varchar(50) NOT NULL,
+  `cars_warranty` varchar(100) NOT NULL,
+  `cars_equipment1` varchar(100) NOT NULL,
+  `cars_equipment2` varchar(100) NOT NULL,
+  `cars_equipment3` varchar(100) NOT NULL,
+  `cars_equipment4` varchar(100) NOT NULL,
+  `cars_equipment5` varchar(100) NOT NULL,
+  `cars_equipment6` varchar(100) NOT NULL,
+  `cars_equipment7` varchar(100) NOT NULL,
+  `cars_equipment8` varchar(100) NOT NULL,
   `cars_gallery_img1` varchar(120) NOT NULL,
   `cars_gallery_img2` varchar(120) NOT NULL,
   `cars_gallery_img3` varchar(120) NOT NULL,
-  `cars_alt_text_img1` varchar(40) NOT NULL,
-  `cars_alt_text_img2` varchar(40) NOT NULL,
-  `cars_alt_text_img3` varchar(40) NOT NULL,
+  `cars_alt_text_img1` varchar(100) NOT NULL,
+  `cars_alt_text_img2` varchar(100) NOT NULL,
+  `cars_alt_text_img3` varchar(100) NOT NULL,
   `cars_post_date` date NOT NULL DEFAULT current_timestamp(),
-  `cars_owner` varchar(35) NOT NULL
+  `cars_owner` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -66,11 +66,11 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_main_img`, `cars_alt_text`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_gallery_img1`, `cars_gallery_img2`, `cars_gallery_img3`, `cars_alt_text_img1`, `cars_alt_text_img2`, `cars_alt_text_img3`, `cars_post_date`, `cars_owner`) VALUES
-(1, 'Renault', 'Clio', 2020, 120, 'Essence', 177220, 8500, 'img/65094a381f6943.68752579.miniature.jpg', '', 'Automatique', 5, 'Cuir/Tissu', 'Bleu nuit', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', '1 port USB + 1 prise audio', 'GPS', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/65094a4917cf84.54650031.image1.jpg', 'img/65094a71bd4a89.18642553.image2.jpg', 'img/65094aaa808ad2.23455359.image3.jpg', 'Peugeot 308 2020 image1', '', 'Peugeot 308 2020 image3', '2023-09-12', 'Merlin Pecan'),
-(2, 'Renault', 'Scenic', 2018, 100, 'Diesel', 267220, 5000, 'img/65094b4eac6e48.47446853.miniature.jpg', '', 'Manuelle', 5, 'Cuir', 'Jaune doré', 'Étendue 12 mois', 'Radio', 'Ecran tactile 9 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/scenic4_1.jpg', 'img/scenic4_2.jpg', 'img/scenic4_3.jpg', 'Renault Scenic 4 image1', 'Renault Scenic 4 image2', 'Renault Scenic 4 image3', '2023-09-12', 'Merlin Pecan'),
-(3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, 'img/65094cab5d1b86.17781437.miniature.jpg', '', 'Automatique', 5, 'Cuir', 'Bleu sidéral', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/65094d3172f8f4.83660699.image1.jpg', 'img/65094dc2a5b8a8.77384788.image2.jpg', 'img/65094de68056a1.93393315.image3.jpg', '', 'BMW i5 image2', '', '2023-09-12', 'Merlin Pecan'),
-(4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, 'img/daciaDuster2021.jpg', 'Dacia Duster 2020 miniature', 'Automatique', 5, 'Cuir/Tissu', 'Orange', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/duster_1.jpeg', 'img/duster_2.jpg', 'img/65090206cf7861.73944246.jpg', 'Dacia Duster image1', 'Dacia Duster image2', 'Dacia Duster image3', '2023-09-12', 'Merlin Pecan'),
-(5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, 'img/v3.jpg', 'Peugeot 308 2020 miniature', 'Automatique', 5, 'Cuir/Tissu', 'Bleu ciel', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/peugeot_308_1.jpg', 'img/peugeot_308_2.jpg', 'img/peugeot_308_3.jpg', 'Peugeot 308 image1', 'Peugeot 308 image2', 'Peugeot 308 image3', '2023-09-12', 'Merlin Pecan');
+(1, 'Renault', 'Clio', 2020, 120, 'Essence', 177220, 8500, 'img/650b256cdfaaa.miniature.jpg', 'Renault Clio 650b256cdfaaa miniature', 'Automatique', 5, 'Cuir/Tissu', 'Bleu nuit', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', '1 port USB + 1 prise audio', 'GPS', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', 'img/650b259812871.image1.jpg', 'img/650b25a484cda.image2.jpg', 'img/650b25bca1e77.image3.jpg', 'Renault Clio 650b259812871 image1', 'Renault Clio 650b25a484cda image2', 'Renault Clio 650b25bca1e77 image3', '2023-09-12', 'Merlin Pecan'),
+(2, 'Renault', 'Scenic', 2018, 100, 'Diesel', 267220, 5000, '', '', 'Manuelle', 5, 'Cuir', 'Jaune doré', 'Étendue 12 mois', 'Radio', 'Ecran tactile 9 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', '', '', '', '', '', '', '2023-09-12', 'Merlin Pecan'),
+(3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, '', '', 'Automatique', 5, 'Cuir', 'Bleu sidéral', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', '', '', '', '', '', '', '2023-09-12', 'Merlin Pecan'),
+(4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, '', '', 'Automatique', 5, 'Cuir/Tissu', 'Orange', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', '', '', '', '', '', '', '2023-09-12', 'Merlin Pecan'),
+(5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, '', '', 'Automatique', 5, 'Cuir/Tissu', 'Bleu ciel', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', '', '', '', '', '', '', '2023-09-12', 'Merlin Pecan');
 
 -- --------------------------------------------------------
 
@@ -96,7 +96,8 @@ CREATE TABLE `contacts` (
 
 INSERT INTO `contacts` (`msg_id`, `name`, `email`, `phone`, `msg`, `car_id`, `msg_date`, `rating`, `publication`) VALUES
 (99, 'James Bond', 'james.spader@gmail.com', '0999999999', 'J\'ai beaucoup apprécié la rapidité de votre prestation', 0, '2023-09-18', 3.8, 'OUI'),
-(102, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'Vous êtes sans doute le meilleur garage de Montpellier ', 0, '2023-09-19', 5.0, 'OUI');
+(102, 'Merlin Migan', 'merlin.migan@gmail.com', '0659348249', 'Vous êtes sans doute le meilleur garage de Montpellier ', 0, '2023-09-19', 5.0, 'OUI'),
+(110, 'James Spader', 'james.spader@gmail.com', '0707070707', 'Rapide et super professionnel. Je recommande vivement', 0, '2023-09-19', 5.0, 'OUI');
 
 -- --------------------------------------------------------
 
@@ -121,8 +122,9 @@ CREATE TABLE `crud` (
 INSERT INTO `crud` (`id`, `first_name`, `last_name`, `email`, `password`, `pwd_hash`, `user_type`) VALUES
 (35, 'Alexandre', 'Legrand', 'exampleexample@gmail.com', 'tata_TATA_123', '$2y$10$MKOKDKfNWEjY.YBuyv59Ke8XjTIWe9NDvdSEQ1hfVK3Vg5e2f0irS', 'admin'),
 (36, 'James', 'Parker', 'james.parker@yahoo.fr', 'james_PARKER456', '$2y$10$UotuNYWPrKRpTCafS8d/HOl9HFo17ZQwDUeFwzTdJmJLQvIscBS0q', 'admin'),
-(68, 'Juliaa', 'Roberts', 'juju.roro@yahoo.fr', 'pipo_94_7888', '$2y$10$0U6VkT7MMWRR16YmGrh8e.5kYOIgXlsRViiOs7RhrCLlSyF9llFg6', 'employee'),
-(71, 'Hello', 'Kitty', 'hello.kitty@yahoo.fr', 'meow_meow_79', '$2y$10$pr6pBedVNSXeTxGHPqCAfuqvvBm0le4TUqDOW1Ki2oheeu6xWRto.', 'employee');
+(68, 'Roberts', 'Juliaa', 'juju.roro@yahoo.fr', 'pipo_94_7888', '$2y$10$S9WarKB5on56BA72fH3T6uBmeqBpdbFqyfjKg5SjJOheyUHDuVpg2', 'employee'),
+(71, 'Hello', 'Kitty', 'hello.kitty@yahoo.fr', 'meow_meow_79', '$2y$10$pr6pBedVNSXeTxGHPqCAfuqvvBm0le4TUqDOW1Ki2oheeu6xWRto.', 'employee'),
+(79, 'Bruce', 'Wayne', 'batman@gotham.fr', 'jokerIsNotAMatch@éà$â:;,_', '$2y$10$AA6oXlcFiB4YFIUgAx11AuWK1gMsU/hSFVHuTMKr.AHhllYTJrzwC', 'employee');
 
 -- --------------------------------------------------------
 
@@ -259,13 +261,13 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT pour la table `crud`
 --
 ALTER TABLE `crud`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT pour la table `schedules`
@@ -277,7 +279,7 @@ ALTER TABLE `schedules`
 -- AUTO_INCREMENT pour la table `services`
 --
 ALTER TABLE `services`
-  MODIFY `service_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `service_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT pour la table `sliders_filters`
