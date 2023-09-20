@@ -8,6 +8,7 @@
     require_once 'templates/navbar.php';
     require_once 'config/db_connect.php';
     require_once 'check_signup.php';
+    // require_once 'functions.php';
 ?>
 
 <?php
@@ -66,7 +67,7 @@ if (isset($_POST['signup']))
     {
         $signup_errors['invalid_email'] = "L'adresse mail est invalide";
     }
-    elseif (does_email_exist($conn, $_SESSION['email'])) {
+    elseif (does_email_exist($_SESSION['email'])) {
         $signup_errors['email_already_exists'] = "L'adresse mail existe déjà";
     }
     else {
@@ -96,7 +97,7 @@ if (isset($_POST['signup']))
 
     if($email_status && $password_status) 
     {
-        $registration_status = user_registration($conn, $_SESSION['fname'], $_SESSION['lname'], $_SESSION['email'], $_SESSION['password']);
+        $registration_status = user_registration($_SESSION['fname'], $_SESSION['lname'], $_SESSION['email'], $_SESSION['password']);
 
         if($registration_status['return']) 
         {
