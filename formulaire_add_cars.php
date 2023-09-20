@@ -30,11 +30,6 @@
         $cars_equipment7 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT7']));
         $cars_equipment8 = htmlspecialchars($conn->real_escape_string($_POST['CARS_EQUIPMENT8']));
 
-        $cars_thumbnail_alt_text = "{$cars_brand_name} {$cars_model_name} miniature";
-        $cars_img1_alt_text = "{$cars_brand_name} {$cars_model_name} image1";
-        $cars_img2_alt_text = "{$cars_brand_name} {$cars_model_name} image2";
-        $cars_img3_alt_text = "{$cars_brand_name} {$cars_model_name} image3";
-
         if(!empty($cars_owner) & !empty($cars_brand_name) & !empty($cars_model_name) & !empty($cars_release_year) & !empty($cars_power) & !empty($cars_engine_type) & !empty($cars_km) & !empty($cars_price) & !empty($cars_transmission_type) & !empty($cars_doors_number) & !empty($cars_seats_material) & !empty($cars_color) & !empty($cars_warranty) & !empty($cars_equipment1) & !empty($cars_equipment2) & !empty($cars_equipment3) & !empty($cars_equipment4) & !empty($cars_equipment5) & !empty($cars_equipment6) & !empty($cars_equipment7) & !empty($cars_equipment8))
         {
             $KM = mysqli_fetch_assoc(select('sliders_filters', 'filters_name', 'Kilométrage'));
@@ -64,13 +59,13 @@
                 }
             // VERIFIER SI LE VEHICULE A ENREGISTRER EST BIEN COMPRIS DANS LES INTERVALES DES 3 CRITERES : KM, PRICE, ANNEE - END
 
-            $query = "INSERT INTO `cars`(`cars_owner`,`cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`, `cars_alt_text`, `cars_alt_text_img1`, `cars_alt_text_img2`, `cars_alt_text_img3`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO `cars`(`cars_owner`,`cars_brand`, `cars_model`, `cars_release_year`, `cars_power`, `cars_engine_type`, `cars_km`, `cars_price`, `cars_transmission_type`, `cars_doors_number`, `cars_seats_material`, `cars_color`, `cars_warranty`, `cars_equipment1`, `cars_equipment2`, `cars_equipment3`, `cars_equipment4`, `cars_equipment5`, `cars_equipment6`, `cars_equipment7`, `cars_equipment8`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = $conn->prepare($query);
 
             if($stmt) 
             {
-                $stmt->bind_param("sssssssssssssssssssssssss", $cars_owner, $cars_brand_name, $cars_model_name, $cars_release_year, $cars_power, $cars_engine_type, $cars_km, $cars_price, $cars_transmission_type, $cars_doors_number, $cars_seats_material, $cars_color, $cars_warranty, $cars_equipment1, $cars_equipment2, $cars_equipment3, $cars_equipment4, $cars_equipment5, $cars_equipment6, $cars_equipment7, $cars_equipment8, $cars_thumbnail_alt_text, $cars_img1_alt_text, $cars_img2_alt_text, $cars_img3_alt_text);
+                $stmt->bind_param("sssssssssssssssssssss", $cars_owner, $cars_brand_name, $cars_model_name, $cars_release_year, $cars_power, $cars_engine_type, $cars_km, $cars_price, $cars_transmission_type, $cars_doors_number, $cars_seats_material, $cars_color, $cars_warranty, $cars_equipment1, $cars_equipment2, $cars_equipment3, $cars_equipment4, $cars_equipment5, $cars_equipment6, $cars_equipment7, $cars_equipment8);
                 $stmt->execute();
 
                 if(($stmt->affected_rows) > 0)
