@@ -5,6 +5,6 @@
 
     $_SESSION['CAR_TO_DETAIL'] = $conn->real_escape_string($_GET['id']);
     
-    header('Location: details.php');
+    header('Location: details_admin.php');
     exit;
 ?>

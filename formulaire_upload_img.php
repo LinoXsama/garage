@@ -3,9 +3,6 @@
     
     require_once 'config/db_connect.php';
     require_once 'functions.php';
-
-
-    
 ?>
 
 <?php
@@ -14,17 +11,21 @@
         $allowed_ext = ['jpg', 'jpeg', 'png'];
         
         $query_status1 = $query_status2 = $query_status3 = $query_status4 = false;
+
+        $car = select('cars', 'cars_id', $_SESSION['CAR_ID']);
+        $row = mysqli_fetch_assoc($car);
+
+        $cars_name = "{$row['cars_brand']} {$row['cars_model']}";
         
         // THUMBNAIL - START
         if(!empty($_FILES['CARS_THUMBNAIL_IMG']['name']))
         {
             $thumbnail_name = $_FILES['CARS_THUMBNAIL_IMG']['name'];
-            $thumbnail_type = $_FILES['CARS_THUMBNAIL_IMG']['type'];
             $thumbnail_TmpName = $_FILES['CARS_THUMBNAIL_IMG']['tmp_name'];
             $thumbnail_error = $_FILES['CARS_THUMBNAIL_IMG']['error'];
             $thumbnail_SizeInBytes = $_FILES['CARS_THUMBNAIL_IMG']['size'];
             $thumbnail_ext = pathinfo($thumbnail_name, PATHINFO_EXTENSION);
-            
+
             if(in_array($thumbnail_ext, $allowed_ext))
             {
                 if($thumbnail_error === 0) 
@@ -33,13 +34,17 @@
 
                         if($fileSizeInMegaBytes <= 5) 
                         {
-                            $fileNewName = uniqid('', true) . '.' . 'miniature' . '.' . $thumbnail_ext;
+                            $img_uniqid = uniqid();
+
+                            $fileNewName = $img_uniqid . '.' . 'miniature' . '.' . $thumbnail_ext;
 
                             $file_destination = 'img/' . $fileNewName;
 
                             move_uploaded_file($thumbnail_TmpName, $file_destination);
 
-                            $query_status1 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_main_img', $file_destination);
+                            $img_alt_text = "{$cars_name} {$img_uniqid} miniature";
+
+                            $query_status1 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_main_img', $file_destination, 'cars_alt_text', $img_alt_text);
 
                             if(!$query_status1)
                             {
@@ -71,7 +76,6 @@
             if(!empty($_FILES['CARS_IMG1']['name']))
             {
                 $img1_name = $_FILES['CARS_IMG1']['name'];
-                $img1_type = $_FILES['CARS_IMG1']['type'];
                 $img1_TmpName = $_FILES['CARS_IMG1']['tmp_name'];
                 $img1_error = $_FILES['CARS_IMG1']['error'];
                 $img1_SizeInBytes = $_FILES['CARS_IMG1']['size'];
@@ -85,13 +89,17 @@
 
                         if($fileSizeInMegaBytes <= 5)
                         {
-                            $fileNewName = uniqid('', true) . '.' . 'image1' . '.' . $img1_ext;
+                            $img_uniqid = uniqid();
+
+                            $fileNewName = $img_uniqid . '.' . 'image1' . '.' . $img1_ext;
 
                             $file_destination = 'img/' . $fileNewName;
 
                             move_uploaded_file($img1_TmpName, $file_destination);
 
-                            $query_status2 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_gallery_img1', $file_destination);
+                            $img_alt_text = "{$cars_name} {$img_uniqid} image1";
+
+                            $query_status2 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_gallery_img1', $file_destination, 'cars_alt_text_img1', $img_alt_text);
 
                             if(!$query_status2)
                             {
@@ -123,7 +131,6 @@
             if(!empty($_FILES['CARS_IMG2']['name']))
             {
                 $img2_name = $_FILES['CARS_IMG2']['name'];
-                $img2_type = $_FILES['CARS_IMG2']['type'];
                 $img2_TmpName = $_FILES['CARS_IMG2']['tmp_name'];
                 $img2_error = $_FILES['CARS_IMG2']['error'];
                 $img2_SizeInBytes = $_FILES['CARS_IMG2']['size'];
@@ -137,13 +144,17 @@
         
                         if($fileSizeInMegaBytes <= 5) 
                         {
-                            $fileNewName = uniqid('', true) . '.' . 'image2' . '.' .$img2_ext;
+                            $img_uniqid = uniqid();
+
+                            $fileNewName = $img_uniqid . '.' . 'image2' . '.' .$img2_ext;
         
                             $file_destination = 'img/' . $fileNewName;
         
                             move_uploaded_file($img2_TmpName, $file_destination);
+
+                            $img_alt_text = "{$cars_name} {$img_uniqid} image2";
         
-                            $query_status3 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_gallery_img2', $file_destination);
+                            $query_status3 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_gallery_img2', $file_destination, 'cars_alt_text_img2', $img_alt_text);
         
                             if(!$query_status3)
                             {
@@ -175,7 +186,6 @@
             if(!empty($_FILES['CARS_IMG3']['name']))
             {
                 $img3_name = $_FILES['CARS_IMG3']['name'];
-                $img3_type = $_FILES['CARS_IMG3']['type'];
                 $img3_TmpName = $_FILES['CARS_IMG3']['tmp_name'];
                 $img3_error = $_FILES['CARS_IMG3']['error'];
                 $img3_SizeInBytes = $_FILES['CARS_IMG3']['size'];
@@ -189,13 +199,17 @@
 
                         if($fileSizeInMegaBytes <= 5) 
                         {
-                            $fileNewName = uniqid('', true) . '.' . 'image3' . '.'. $img3_ext;
+                            $img_uniqid = uniqid();
+
+                            $fileNewName = $img_uniqid . '.' . 'image3' . '.'. $img3_ext;
 
                             $file_destination = 'img/' . $fileNewName;
 
                             move_uploaded_file($img3_TmpName, $file_destination);
 
-                            $query_status4 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_gallery_img3', $file_destination);
+                            $img_alt_text = "{$cars_name} {$img_uniqid} image3";
+
+                            $query_status4 = update('cars', 'cars_id', $_SESSION['CAR_ID'], 'cars_gallery_img3', $file_destination, 'cars_alt_text_img3', $img_alt_text);
 
                             if(!$query_status4)
                             {
