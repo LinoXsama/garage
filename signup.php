@@ -7,8 +7,8 @@
     require_once 'templates/header.php';
     require_once 'templates/navbar.php';
     require_once 'config/db_connect.php';
-    require_once 'check_signup.php';
-    // require_once 'functions.php';
+    // require_once 'check_signup.php';
+    require_once 'functions.php';
 ?>
 
 <?php

@@ -2,6 +2,8 @@
 
     session_start();
 
+    $page_title = 'Modifier un service';
+
     if(!isset($_SESSION['user_id']))
     {
         header('Location: login.php');

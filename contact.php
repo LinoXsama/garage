@@ -1,6 +1,6 @@
 
 <?php
-    $page_title = 'Contact-nous';
+    $page_title = 'Contactez-nous';
 
     require_once 'templates/header.php';
     require_once 'templates/navbar_visitor.php';

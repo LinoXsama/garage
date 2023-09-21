@@ -1,5 +1,5 @@
 <?php
-
+    $page_title = 'Ajouter un service';
     session_start();
 
     if(!isset($_SESSION['user_id']))

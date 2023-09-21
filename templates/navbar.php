@@ -23,7 +23,8 @@
 
         <div class="ml-auto">
           <?php
-            if(isset($_SESSION['user_id']))
+            
+            if(isset($_SESSION['user_id'])) 
             {
               if($_SESSION['USER_TYPE'] === 'admin')
               {

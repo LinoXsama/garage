@@ -1,6 +1,6 @@
 
 <?php
-    $page_title = 'Contact User';
+    $page_title = 'Contact interne';
 
     session_start();
     if(!isset($_SESSION['user_id']))

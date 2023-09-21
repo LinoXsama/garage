@@ -1,6 +1,8 @@
 <?php 
     session_start();
 
+    $page_title = "Ajouter des images"
+
     if(!isset($_SESSION['user_id']))
     {
         header('Location: login.php');

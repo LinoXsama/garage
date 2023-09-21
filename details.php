@@ -1,5 +1,5 @@
 <?php
-    $page_title = "Détails";
+    $page_title = "Détails du véhicule";
     
     session_start();
 
