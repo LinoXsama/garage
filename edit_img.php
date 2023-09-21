@@ -105,16 +105,16 @@
 
             <div class="row gy-4 row-cols-1 -row-cols-sm-2 row-cols-md-3">
                 <div class="col">
-                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="cars-gallery-item shadow bg-warning deletable-img" />
+                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="cars-gallery-item cp shadow bg-warning deletable-img" />
                 </div>
                 <div class="col">
-                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_gallery_img1']; ?>" alt="<?= $row['cars_alt_text_img1']; ?>" class="cars-gallery-item shadow deletable-img" />
+                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_gallery_img1']; ?>" alt="<?= $row['cars_alt_text_img1']; ?>" class="cars-gallery-item cp shadow deletable-img" />
                 </div>
                 <div class="col">
-                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_gallery_img2']; ?>" alt="<?= $row['cars_alt_text_img2']; ?>" class="cars-gallery-item shadow deletable-img" />
+                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_gallery_img2']; ?>" alt="<?= $row['cars_alt_text_img2']; ?>" class="cars-gallery-item cp shadow deletable-img" />
                 </div>
                 <div class="col">
-                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_gallery_img3']; ?>" alt="<?= $row['cars_alt_text_img3']; ?>" class="cars-gallery-item shadow deletable-img" />
+                    <img id="<?= $row['cars_id']; ?>" src="<?= $row['cars_gallery_img3']; ?>" alt="<?= $row['cars_alt_text_img3']; ?>" class="cars-gallery-item cp shadow deletable-img" />
                 </div>
             </div>
         </div>

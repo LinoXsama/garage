@@ -1,6 +1,8 @@
+body {
+    height: 100vh;
+}
 
-
-/* CARS.PHP - START */
+/* page cars.php - START */
 
 #search form {
     width: 50%;
@@ -25,44 +27,33 @@ li span {
     gap: 20px;
 }
 
-.gallery-item {
-    cursor: pointer;
-}
-
-/* CARS.PHP - END */
+/* page cars.php - END */
 
 
-/* BOTTOM NAVBAR - START */
+/* page bottom_navbar.php - START */
 
     .bi{
         fill: white;
     }
 
-/* BOTTOM NAVBAR - END */
+/* page bottom_navbar.php - END */
 
-body {
-    height: 100vh;
-}
+/* admin_dashboard.php et user_dashboard.php - START */
 
-/* admin_dashboard.php - START */
-
-[data-target="#collapseOne"], [data-target="#collapseTwo"], [data-target="#collapseThree"], [data-target="#collapseFour"], [data-target="#collapseFive"] {
+[data-target="#collapseOne"], 
+[data-target="#collapseTwo"], 
+[data-target="#collapseThree"], 
+[data-target="#collapseFour"], 
+[data-target="#collapseFive"] 
+{
     text-decoration: none;
     cursor: pointer;
     color: black !important;
 }
 
-/* admin_dashboard.php - END */
+/* admin_dashboard.php et user_dashboard.php - END */
 
-/* edit_user.php - START */
-
-.user-item {
-    cursor: pointer;
-}
-
-/* edit_user.php -END */
-
-/* gallery.php - START */
+/* details.php et details_admin.php - START */
 
 .cars-gallery-item {
     max-width: 100%;
@@ -80,7 +71,6 @@ body {
     object-fit: cover;
 }
 
-
 .gallery {
     padding: 20px 0;
 }
@@ -88,11 +78,7 @@ body {
 .equipments {
     font-weight: bold;
 }
-/* gallery.php - END */
-
-.msg-item{
-    cursor: pointer;
-}
+/* details.php et details_admin.php - END */
 
 .bg-peach {
     background-color: #FFCBA4 !important;
@@ -186,7 +172,7 @@ body {
 }
 /* TABLEAU DE LA PAGE comments_mg.php - END*/
 
-/* RESPONSIVITE DE LA TABLE DES HORAIRES DE bottom_navbar.php - START */
+/* RESPONSIF DE LA TABLE DES HORAIRES DE bottom_navbar.php - START */
 @media(max-width: 650px)
 {
     .table-bottom-navbar th {
@@ -295,7 +281,6 @@ body {
 }
 
 /* ESPACEMENT DU CONTENU DES PAGES - START */
-
 #main-login,
 #main-services 
 {
@@ -370,5 +355,4 @@ body {
     margin-bottom: 0;
     }
 }
-
 /* ESPACEMENT DU CONTENU DES PAGES - END */

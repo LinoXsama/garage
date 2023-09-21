@@ -100,7 +100,7 @@ if(isset($_SESSION['msg']))
                                     }
                                 ?>
                                 <!-- Fonts awesome Icons -->
-                                &nbsp;&nbsp;<span class="link-dark"><i id="<?= $row['msg_id']; ?>" name="<?= $row['name']; ?>" data-target="<?= date('d/m/Y', strtotime($row['msg_date'])); ?>" class="fa-solid fa-trash fs-5 msg-item"></i></span>
+                                &nbsp;&nbsp;<span class="link-dark"><i id="<?= $row['msg_id']; ?>" name="<?= $row['name']; ?>" data-target="<?= date('d/m/Y', strtotime($row['msg_date'])); ?>" class="fa-solid fa-trash fs-5 msg-item cp"></i></span>
                             </td>
                         </tr>
 

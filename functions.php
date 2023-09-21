@@ -1,29 +1,6 @@
 <!-- FONCTIONS GLOBALES DU SITE - START -->
 
 <?php
-    // Fonction qui récupère la liste des employés depuis la base de données
-    // VERSION 1.0
-
-    // function select(string $table, string $targetted_column, string $searched_value): object
-    // {
-    //     include 'config/db_connect.php';
-
-    //     // IMPORTANT : les noms de la table et de la colonne ne peuvent pas être utilisés
-    //     // dynamiquement avec bind_param
-    //     $query = "SELECT * FROM `$table` WHERE `$targetted_column` = ? ";
-    //     $stmt = $conn->prepare($query);
-    //     $stmt->bind_param("s", $searched_value);
-    //     $stmt->execute();
-
-    //     $result = $stmt->get_result();
-
-    //     if (($result->num_rows) > 0) {
-    //         return $result;
-    //     }
-    // }
-?>
-
-<?php
     // VERSION 1.1
     function select(string $table, ?string $targetted_column = null, ?string $searched_value = null): object
     {
@@ -109,19 +86,6 @@
         }
     }
 
-    // FONCTION QUI TESTE LA FONCTION insert()
-    // function test($TABLE, $COLONNE1, $VALEUR1)
-    // {
-    //     if(insert($TABLE, $COLONNE1, $VALEUR1))
-    //     {
-    //         echo 'Success';
-    //     }
-    //     else {
-    //         echo 'Failure';
-    //     }
-    // }
-
-    // test('contacts', 'name', 'Lino');
 ?>
 
 <?php
@@ -230,69 +194,6 @@
 <!-- FONCTIONS GLOBALES DU SITE - END -->
 
 <!-- FONCTIONS DE LA PAGE login.php - START -->
-
-<?php
-
-    // function does_password_match(object $db_conn, string $email, string $password) {
-    // // VERSION 1.0
-    
-    //     $query = "SELECT email FROM users WHERE email = ?";
-    //     $stmt = $db_conn->prepare($query);
-    //     $stmt->bind_param("s", $email);
-    //     $stmt->execute();
-    
-    //     $stmt->store_result();
-    
-    //     if(($stmt->num_rows) > 0) {
-    
-    //         $query = "SELECT hashed_password FROM users WHERE email = ?";
-    //         $stmt = $db_conn->prepare($query);
-    //         $stmt->bind_param("s", $email);
-    //         $stmt->execute();
-    
-    //         $user = $stmt->get_result()->fetch_assoc();
-    
-    //         if(password_verify($password, $user['hashed_password'])) {
-    //             return true;
-    //         }
-
-    //     }
-    //     return false;
-    
-    // }
-
-?>
-
-<?php
-
-    // function does_password_match(object $conn, string $email, string $password): bool {
-
-    // VERSION 1.1 : bug à la ligne : user = $stmt->get_result()->fetch_assoc(); 
-    // Je peux en déduire qu'on ne peut pas utiliser store_result() et get_result() 
-    // sur un même objet de requête préparée. Dans la version 1.0 $stmt est utilisé
-    // pour stocker deux objets de requêtes préparées différents.
-
-    //     $query = "SELECT hashed_password FROM users WHERE email = ?";
-    //     $stmt = $conn->prepare($query);
-    //     $stmt->bind_param("s", $email);
-    //     $stmt->execute();
-
-    //     $stmt->store_result();
-
-    //     if(($stmt->num_rows) > 0) {
-
-    //         $user = $stmt->get_result()->fetch_assoc();
-
-    //         if(password_verify($password, $user['hashed_password'])) {
-    //             return true;
-    //         }
-
-    //     }
-
-    //     return false;
-    // }
-
-?>
 
 <?php
 

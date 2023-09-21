@@ -73,7 +73,7 @@
                                     <a href="edit_user_transition.php?id=<?= $row['id']; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
 
                                     <!-- Fonts awesome Icons -->
-                                    <span class="link-dark"><i id="<?= $row['id']; ?>" name="<?= "{$row['first_name']} {$row['last_name']}"; ?>" class="user-item fa-solid fa-trash fs-5"></i></span>
+                                    <span class="link-dark"><i id="<?= $row['id']; ?>" name="<?= "{$row['first_name']} {$row['last_name']}"; ?>" class="user-item cp fa-solid fa-trash fs-5"></i></span>
                                 </td>
                             </tr>
 

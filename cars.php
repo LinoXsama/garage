@@ -94,7 +94,7 @@
                 <div class="car col">
                     <div class="card h-100 shadow custom-card">
                         <span class="btn btn-dark responsive-font" id="price-tag"><span class="price"><?= "{$row['cars_price']} "; ?></span>€</span>
-                        <img src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="card-img-top custom-img custom-bg gallery-item" />
+                        <img src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="card-img-top custom-img custom-bg gallery-item cp" />
                         <div class="card-body">
                             <h4 class="card-title"><?= "{$row['cars_brand']} {$row['cars_model']} {$row['cars_release_year']} {$row['cars_power']} "; ?>CH</h4>
                             <ul class="card-text list-unstyled">

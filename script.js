@@ -14,7 +14,7 @@ document.addEventListener("click", function (e) {
 });
 // MODAL DE SUPPRESSION D'UN UTILISATEUR - END
 
-// MODAL DE SUPPRESSION D'UN COMMENTAIRES - START
+// MODAL DE SUPPRESSION D'UN COMMENTAIRE - START
 document.addEventListener("click", function (e) {
     if(e.target.classList.contains("msg-item"))
     {
@@ -33,7 +33,7 @@ document.addEventListener("click", function (e) {
         deleteModal.show();
     }
 });
-// MODAL DE SUPPRESSION D'UN COMMENTAIRES - END
+// MODAL DE SUPPRESSION D'UN COMMENTAIRE - END
 
 // MODAL DE SUPPRESSION D'UN VEHICULE - START
     document.addEventListener("click", function (e) {
@@ -89,7 +89,7 @@ document.addEventListener("click", function (e) {
 });
 // MODAL DE LA CONFIRMATION DE SUPPRESSION D'UN SERVICE - END
 
-// MODAL D'APERCU D'UN VEHICULE SUR LA PAGE details.php - START
+// MODAL D'APERCU D'UN VEHICULE SUR les pages details.php et details_admin.php- START
 document.addEventListener("click", function (e) {
     if(e.target.classList.contains("detail-item"))
     {
@@ -243,51 +243,24 @@ document.addEventListener("click", function (e) {
     };
     // FONCTION QUI RENITIALISE LES SLIDERS DE RECHERCES - END
 
+    // SYSTEME DE NOTATION RATEYO - START
+    $(function () 
+    {
+        $(".rateYo").rateYo({
+            spacing: "6px"
+        });
+
+        $(".rateyo").rateYo().on("rateyo.change", function(e, data) {
+            var rating = data.rating;
+
+            $(this).parent().find('.score').text('score :' + $(this).attr('data-rateyo-score'));
+            $(this).parent().find('.result').text(rating);
+            $(this).parent().find('input[name=rating]').val(rating);
+
+            var noteSpan = $(this).parent().siblings('label').find('.note');
+            noteSpan.text(rating);
+        });
+    });
+    // SYSTEME DE NOTATION RATEYO - END
+
 // FONCTIONS DE LA PAGE cars.php - END
-
-// NOTE POUR UN EVENTUEL USAGE FUTURE: AUTRE MANIERE DE RECUPERER LES DONNEES D'UNE 
-// NODE LIST GENEREE PAR getElementsByClassName() SOUS FORME DE TABLEAU
-
-// let prices = document.getElementsByClassName("price");
-// let price_data = Array.from(prices);
-
-// for(let element of price_data)
-// {
-//     let price = parseInt(element.innerHTML);
-
-//     if(price >= 10000 && price <= 140441)
-//     {
-//         console.log(price);
-//     }
-// }
-
-// let release_year = document.getElementsByClassName("release-year");
-// let cars_data = Array.from(release_year);
-
-// for(let element of cars_data)
-// {
-//     let year = element.innerHTML;
-
-//     console.log(year);
-// }
-
-// const min = document.getElementById("min-price").innerHTML;
-// console.log(min);
-
-$(function () 
-{
-    $(".rateYo").rateYo({
-        spacing: "6px"
-    });
-
-    $(".rateyo").rateYo().on("rateyo.change", function(e, data) {
-        var rating = data.rating;
-
-        $(this).parent().find('.score').text('score :' + $(this).attr('data-rateyo-score'));
-        $(this).parent().find('.result').text(rating);
-        $(this).parent().find('input[name=rating]').val(rating);
-
-        var noteSpan = $(this).parent().siblings('label').find('.note');
-        noteSpan.text(rating);
-    });
-});
