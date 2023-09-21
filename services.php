@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title"><?= $row['service_name']; ?></h5>
-                        <p class="card-text"><?= $row['service_description']; ?></p>
+                        <p class="card-text roboto"><?= $row['service_description']; ?></p>
                     </div>
                 </div>
             </div>

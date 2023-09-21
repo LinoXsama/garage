@@ -138,8 +138,7 @@
 
                                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                         <div class="card-body">
-                                            <a href="add_user.php" class="btn btn-success text-white responsive-font">AJOUTER UN UTILISATEUR</a><br />
-                                            <a href="admin_panel.php" class="btn btn-primary text-white mt-2 responsive-font">GÉRER LES UTILISATEURS</a>
+                                            <a href="admin_panel.php" class="btn btn-primary text-white mt-2 responsive-font roboto">GÉRER LES UTILISATEURS</a>
                                         </div>
                                     </div>
                                 </div>
@@ -152,7 +151,7 @@
 
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">
-                                            <a href="comments_mg.php" class="btn btn-primary text-white responsive-font">GÉRER LES AVIS</a>
+                                            <a href="comments_mg.php" class="btn btn-primary text-white responsive-font roboto">GÉRER LES AVIS</a>
                                         </div>
                                     </div>
                                 </div>
@@ -169,36 +168,36 @@
 
                                             <div class="form-group">
 
-                                                <label class="btn btn-info responsive-font">LUNDI</label>
-                                                <input type="text" name="monday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3">
-                                                <input type="text" name="monday-afternoon" placeholder="APREM - Exemple : 14:00 - 18:00" class="form-control mb-3 fs-6">
+                                                <label class="btn btn-info responsive-font roboto">LUNDI</label>
+                                                <input type="text" name="monday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 roboto">
+                                                <input type="text" name="monday-afternoon" placeholder="APREM - Exemple : 14:00 - 18:00" class="form-control mb-3 fs-6 roboto">
 
-                                                <label class="btn btn-info responsive-font">MARDI</label>
-                                                <input type="text" name="tuesday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 fs-6">
-                                                <input type="text" name="tuesday-afternoon" placeholder="APREM - Exemple : 14:00 - 18:00" class="form-control my-3 fs-6">
+                                                <label class="btn btn-info responsive-font roboto">MARDI</label>
+                                                <input type="text" name="tuesday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 fs-6 roboto">
+                                                <input type="text" name="tuesday-afternoon" placeholder="APREM - Exemple : 14:00 - 18:00" class="form-control my-3 fs-6 roboto">
 
-                                                <label class="btn btn-info responsive-font">MERCREDI</label>
-                                                <input type="text" name="wednesday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 fs-6">
-                                                <input type="text" name="wednesday-afternoon" placeholder="APREM - Exemple : 14:00 - 18:00" class="form-control my-3 fs-6">
+                                                <label class="btn btn-info responsive-font roboto">MERCREDI</label>
+                                                <input type="text" name="wednesday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 fs-6 roboto">
+                                                <input type="text" name="wednesday-afternoon" placeholder="APREM - Exemple : 14:00 - 18:00" class="form-control my-3 fs-6 roboto">
 
-                                                <label class="btn btn-info responsive-font">JEUDI</label>
-                                                <input type="text" name="thursday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 fs-6">
-                                                <input type="text" name="thursday-afternoon" placeholder="APREM - Exemple : 14:00 - 18:00" class="form-control my-3 fs-6">
+                                                <label class="btn btn-info responsive-font roboto">JEUDI</label>
+                                                <input type="text" name="thursday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 fs-6 roboto">
+                                                <input type="text" name="thursday-afternoon" placeholder="APREM - Exemple : 14:00 - 18:00" class="form-control my-3 fs-6 roboto">
 
-                                                <label class="btn btn-info responsive-font">VENDREDI</label>
-                                                <input type="text" name="friday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 fs-6">
-                                                <input type="text" name="friday-afternoon" placeholder="APREM - Exemple : 14:00 - 18:00" class="form-control my-3 fs-6">
+                                                <label class="btn btn-info responsive-font roboto">VENDREDI</label>
+                                                <input type="text" name="friday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 fs-6 roboto">
+                                                <input type="text" name="friday-afternoon" placeholder="APREM - Exemple : 14:00 - 18:00" class="form-control my-3 fs-6 roboto">
 
-                                                <label class="btn btn-info responsive-font">SAMEDI</label>
-                                                <input type="text" name="saturday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 fs-6">
-                                                <input type="text" name="saturday-afternoon" placeholder="APREM - Exemple : Fermé" class="form-control my-3 fs-6">
+                                                <label class="btn btn-info responsive-font roboto">SAMEDI</label>
+                                                <input type="text" name="saturday-morning" placeholder="MATINÉE - Exemple : 08:45 - 12:00" class="form-control my-3 fs-6 roboto">
+                                                <input type="text" name="saturday-afternoon" placeholder="APREM - Exemple : Fermé" class="form-control my-3 fs-6 roboto">
 
-                                                <label class="btn btn-info responsive-font">DIMANCHE</label>
-                                                <input type="text" name="sunday-morning" placeholder="MATINÉE - Exemple : Fermé" class="form-control my-3 fs-6">
-                                                <input type="text" name="sunday-afternoon" placeholder="APREM - Exemple : Fermé" class="form-control my-3 fs-6">
+                                                <label class="btn btn-info responsive-font roboto">DIMANCHE</label>
+                                                <input type="text" name="sunday-morning" placeholder="MATINÉE - Exemple : Fermé" class="form-control my-3 fs-6 roboto">
+                                                <input type="text" name="sunday-afternoon" placeholder="APREM - Exemple : Fermé" class="form-control my-3 fs-6 roboto">
 
                                                 <div class=" my-4">
-                                                    <button type="submit" name="SCHEDULES_UPDATE" value="schedules_update" class="btn btn-primary responsive-font">ENREGISTRER</button>
+                                                    <button type="submit" name="SCHEDULES_UPDATE" value="schedules_update" class="btn btn-primary responsive-font roboto">ENREGISTRER</button>
                                                 </div>
 
                                             </div>
@@ -212,13 +211,13 @@
                                 <div class="card">
                                     <div class="card-header" id="headingFour">
                                         <h5 class="mb-0">
-                                            <a class="collapsed d-flex justify-content-start responsive-font" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><span class="material-symbols-outlined hide-icons">comment</span>&nbsp;GESTION DES VEHICULES</a>
+                                            <a class="collapsed d-flex justify-content-start responsive-font " data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><span class="material-symbols-outlined hide-icons">comment</span>&nbsp;GESTION DES VEHICULES</a>
                                         </h5>
                                     </div>
 
                                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                                         <div class="card-body">
-                                            <a href="cars_mg.php" class="btn btn-primary text-white responsive-font">GÉRER LES VEHICULES</a><br />
+                                            <a href="cars_mg.php" class="btn btn-primary text-white responsive-font roboto">GÉRER LES VEHICULES</a><br />
                                         </div>
                                     </div>
                                 </div>

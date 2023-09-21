@@ -2,6 +2,10 @@ body {
     height: 100vh;
 }
 
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* page cars.php - START */
 
 #search form {

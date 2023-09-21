@@ -93,7 +93,7 @@
                                 <a class="link-dark" href="services_edit_transition.php?id=<?= $row['service_id']; ?>"><i class="fa-solid fa-edit fs-5"></i></a> &nbsp;
     
                                 <!-- Fonts awesome Icons -->
-                                <span class="link-dark"><i id="<?= $row['service_id']; ?>" name="<?= $row['service_name']; ?>" class="fa-solid fa-trash fs-5 service-item"></i></span>
+                                <span class="link-dark"><i id="<?= $row['service_id']; ?>" name="<?= $row['service_name']; ?>" class="fa-solid fa-trash fs-5 service-item cp"></i></span>
                             </td>
                         </tr>
 

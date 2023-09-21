@@ -4,7 +4,7 @@
 
 <?php
     require_once 'templates/header.php';
-    require_once 'templates/navbar.php';
+    require_once 'templates/navbar_visitor.php';
     require_once 'functions.php';
 
     session_start();
@@ -121,7 +121,7 @@
                                         ?>
                                     </p>
                                     <label for="em" class="mb-1">Email</label>
-                                    <input class="form-control" type="text" id="em" name="email" placeholder="example@gmail.com" value="<?php echo $_SESSION['email']; ?>">
+                                    <input class="form-control roboto" type="text" id="em" name="email" placeholder="example@gmail.com" value="<?php echo $_SESSION['email']; ?>">
                                 </div>
 
                                 <div class="form-group mb-3">
@@ -141,7 +141,7 @@
                                 </div>
 
                                 <div class="form-group mb-3 text-center">
-                                    <button class="btn btn-primary" type="submit" name="LOGIN" value="login">SE CONNECTER</button>
+                                    <button class="btn btn-primary roboto" type="submit" name="LOGIN" value="login">SE CONNECTER</button>
                                 </div>
 
                             </form>

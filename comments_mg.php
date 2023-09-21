@@ -37,7 +37,7 @@ if(isset($_SESSION['msg']))
 
     <div class="container mt-3 mb-4">
 
-    <a href="contact_user.php" class="btn btn-dark mb-3 responsive-font">Ajouter un message</a>
+    <a href="contact_user.php" class="btn btn-dark mb-3 responsive-font roboto">Ajouter un message</a>
 
         <table class="comments-mg-table custom-table table table-hover text-center table-striped">
 
@@ -67,7 +67,7 @@ if(isset($_SESSION['msg']))
                     {
                 ?>
 
-                        <tr>
+                        <tr class="roboto">
                             <td data-label="ID" class="responsive-font"><?= $row['msg_id']; ?></td>
                             <td data-label="Posté le" class="responsive-font"><?= date('d/m/Y', strtotime($row['msg_date'])); ?></td>
                             <td data-label="Auteur" class="responsive-font"><?= $row['name']; ?></td>

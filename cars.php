@@ -16,7 +16,7 @@
             <form role="search" class="input-group">
                 <input
                     id="search-bar"
-                    class="form-control form-control-dark"
+                    class="form-control form-control-dark roboto"
                     type="search"
                     placeholder="Cherchez par marque, modèle, année de sortie, nombre de chevaux"
                     aria-label="Search"
@@ -40,7 +40,7 @@
             ?>
                     <!-- MODELE D'UN FILTRE - START -->
                     <div class="col mb-3">
-                        <label class="d-block responsive-font"><?= $row['filters_name']; ?></label>
+                        <label class="d-block responsive-font "><?= $row['filters_name']; ?></label>
                         <div class="d-flex">
                             <input 
                                 type="range"
@@ -65,7 +65,7 @@
                         </div>
                         <div class="ctn">
                             <span>
-                                <span class="responsive-font" id="<?= $row['limit1']; ?>"><?= $row['sliders_min_value1']; ?></span> <?= $row['unit']; ?> - <span class="responsive-font" id="<?= $row['limit2']; ?>"><?= $row['sliders_max_value2']; ?></span> <?= $row['unit']; ?>
+                                <span class="responsive-font roboto" id="<?= $row['limit1']; ?>"><?= $row['sliders_min_value1']; ?></span> <?= $row['unit']; ?> - <span class="responsive-font roboto" id="<?= $row['limit2']; ?>"><?= $row['sliders_max_value2']; ?></span> <?= $row['unit']; ?>
                             </span>
                             &nbsp;&nbsp;<button class="reset-button mt-1" onclick="reset()"></button>
                         </div>
@@ -98,9 +98,9 @@
                         <div class="card-body">
                             <h4 class="card-title"><?= "{$row['cars_brand']} {$row['cars_model']} {$row['cars_release_year']} {$row['cars_power']} "; ?>CH</h4>
                             <ul class="card-text list-unstyled">
-                                <li class="responsive-font"><span>Année : </span><span class="release-year"><?= $row['cars_release_year']; ?></span></li>
-                                <li class="responsive-font"><span>Type de moteur : </span><?= $row['cars_engine_type']; ?></li>
-                                <li class="responsive-font"><span>Kilométrage : <span class="kilometrage"><?= "{$row['cars_km']} "; ?></span>km</span></li>
+                                <li class="responsive-font roboto"><span>Année : </span><span class="release-year"><?= $row['cars_release_year']; ?></span></li>
+                                <li class="responsive-font roboto"><span>Type de moteur : </span><?= $row['cars_engine_type']; ?></li>
+                                <li class="responsive-font roboto"><span>Kilométrage : <span class="kilometrage"><?= "{$row['cars_km']} "; ?></span>km</span></li>
                             </ul>
                         </div>
                         <div class="card-footer custom-footer">

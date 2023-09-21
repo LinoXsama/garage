@@ -40,13 +40,13 @@
                             <form action="traitement_formulaire.php" method="POST">
 
                                 <div class="form-group my-3 mx-3" >
-                                    <input type="text" name="NAME" placeholder="Vos nom et prénom" class="form-control my-3">
-                                    <input type="text" name="EMAIL" placeholder="Votre adresse email" class="form-control mb-3">
-                                    <input type="text" name="PHONE" placeholder="Votre numéro de téléphone" class="form-control">
+                                    <input type="text" name="NAME" placeholder="Vos nom et prénom" class="form-control my-3 roboto">
+                                    <input type="text" name="EMAIL" placeholder="Votre adresse email" class="form-control mb-3 roboto">
+                                    <input type="text" name="PHONE" placeholder="Votre numéro de téléphone" class="form-control roboto">
 
-                                    <textarea rows="4" name="COMMENT" placeholder="Rédigez votre message ici..." class="form-control my-3"></textarea>
+                                    <textarea rows="4" name="COMMENT" placeholder="Rédigez votre message ici..." class="form-control my-3 roboto" style="resize: none;"></textarea>
                                     
-                                    <label class="responsive-font">Qu'avez vous pensé de nos services ? <strong><span class="note"></span> / 5</strong></label>
+                                    <label class="responsive-font roboto">Qu'avez vous pensé de nos services ? <strong><span class="note"></span> / 5</strong></label>
                                         <div class="container d-flex justify-content-center">
                                             <div 
                                                 class="rateyo" 
@@ -60,7 +60,7 @@
                                         </div>
                                         
                                     <div class="text-center my-4">
-                                        <button type="submit" name="CONTACT_FORM" value="contact.php" class="btn btn-primary responsive-font">SOUMETTRE</button>
+                                        <button type="submit" name="CONTACT_FORM" value="contact.php" class="btn btn-primary responsive-font roboto">SOUMETTRE</button>
                                     </div>
                                 </div>
 

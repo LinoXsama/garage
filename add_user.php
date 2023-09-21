@@ -45,21 +45,21 @@
 
                         <form action="add_user_formulaire.php" method="POST" class="mt-3 mb-3">
                             
-                            <label class="form-label responsive-font">Prénom</label>
-                            <input class="form-control" type="text" name="first_name" placeholder="Albert">
+                            <label class="form-label responsive-font roboto">Prénom</label>
+                            <input class="form-control roboto" type="text" name="first_name" placeholder="Albert">
 
-                            <label class="form-label responsive-font">Nom</label>
-                            <input class="form-control" type="text" name="last_name"placeholder="Einsten">
+                            <label class="form-label responsive-font roboto">Nom</label>
+                            <input class="form-control roboto" type="text" name="last_name"placeholder="Einsten">
 
-                            <label class="form-label responsive-font">Email</label>
-                            <input class="form-control" type="email" name="email" placeholder="nom@example.com">
+                            <label class="form-label responsive-font roboto">Email</label>
+                            <input class="form-control roboto" type="email" name="email" placeholder="nom@example.com">
 
-                            <label class="form-label responsive-font">Mot de passe</label>
-                            <input class="form-control" type="text" name="password">
+                            <label class="form-label responsive-font roboto">Mot de passe</label>
+                            <input class="form-control roboto" type="text" name="password">
 
                             <div class="mt-4">
-                                <button type="submit" name="SAVE" class="btn btn-success responsive-font">ENREGISTRER</button>
-                                <a href="admin_panel.php" class="btn btn-danger ctm-btn responsive-font">RETOUR</a>
+                                <button type="submit" name="SAVE" class="btn btn-success responsive-font roboto">ENREGISTRER</button>
+                                <a href="admin_panel.php" class="btn btn-danger ctm-btn responsive-font roboto">RETOUR</a>
                             </div>
 
                         </form>

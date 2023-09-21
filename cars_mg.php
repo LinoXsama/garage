@@ -37,7 +37,7 @@
 
     <div class="container mt-3 mb-4">
 
-        <a href="add_cars.php" class="btn btn-dark mb-3 responsive-font">Ajouter un véhicule</a>
+        <a href="add_cars.php" class="btn btn-dark mb-3 responsive-font roboto">Ajouter un véhicule</a>
 
         <table class="table table-hover text-center table-striped custom-table table-responsive">
 
@@ -64,7 +64,7 @@
                     {
                 ?>
 
-                        <tr class="table-warning">
+                        <tr class="table-warning roboto">
                             <td data-label="ID"><?= $row['cars_id']; ?></td>
                             <td data-label="Marque"><?= $row['cars_brand']; ?></td>
                             <td data-label="Modèle"><?= $row['cars_model']; ?></td>
@@ -100,12 +100,12 @@
                             </div>
 
                             <div class="modal-body">
-                                <p class="responsive-font">Voulez-vous vraiment supprimer le véhicule <strong>N°<span class="cars-id"></span></strong> : <strong><span class="cars-name"></span></strong> de <strong><span class="cars-owner"></span></strong> ?</p>
+                                <p class="responsive-font roboto">Voulez-vous vraiment supprimer le véhicule <strong>N°<span class="cars-id"></span></strong> : <strong><span class="cars-name"></span></strong> de <strong><span class="cars-owner"></span></strong> ?</p>
                             </div>
 
                             <div class="modal-footer">
-                                <a class="btn btn-danger delete-btn responsive-font">OUI</a>
-                                <a type="button" class="btn btn-secondary responsive-font" data-dismiss="modal">NON</a>
+                                <a class="btn btn-danger delete-btn responsive-font roboto">OUI</a>
+                                <a type="button" class="btn btn-secondary responsive-font roboto" data-dismiss="modal">NON</a>
                             </div>
 
                         </div>

@@ -12,7 +12,7 @@
     
         <h2 class="text-center pb-2">Bienvenue au Garage V.Parrot</h2>
 
-        <div class="container  d-flex justify-content-center">
+        <div class="container  d-flex justify-content-center roboto">
             <div class="pb-4">
                 <p>
                     Au Garage V.Parrot, nous sommes fiers de vous offrir des services automobiles exceptionnels depuis de 
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <h2 class="text-center pb-2 text-primary italic">Nos clients témoignent !</h2>
+        <h2 class="text-center pb-2 text-primary">Nos clients témoignent !</h2>
 
         <div class="container mt-5 ">
             <div class="row">
@@ -63,7 +63,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title italic"><?= $row['name']; ?></h5>
-                        <p class="card-text"><?= $row['msg']; ?></p>
+                        <p class="card-text roboto"><?= $row['msg']; ?></p>
                         <strong><p class="card-text">Note attribuée: <span class="text-success"><?= $row['rating']; ?> / 5</span></p></strong>
                     </div>
                 </div>

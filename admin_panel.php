@@ -36,7 +36,8 @@
         ?>
 
 <h3 class="text-center mb-3">Liste des utilisateurs</h3>
-<a href="add_user.php" class="btn btn-dark mb-3 responsive-font">Ajouter un utilisateur</a>
+
+<a href="add_user.php" class="btn btn-dark mb-3 responsive-font roboto">Ajouter un utilisateur</a>
 
             <table class="custom-table table-responsive table-striped table table-hover table-striped">
 
@@ -62,7 +63,7 @@
                         {
                     ?>
 
-                            <tr class="table-primary">
+                            <tr class="table-primary roboto">
                                 <td data-label="ID" class="responsive-font"><?= $row['id']; ?></td>
                                 <td data-label="Prénom" class="responsive-font"><?= $row['first_name']; ?></td>
                                 <td data-label="Nom" class="responsive-font"><?= $row['last_name']; ?></td>
@@ -96,12 +97,12 @@
                         </div>
 
                         <div class="modal-body">
-                            <p class="responsive-font">Voulez-vous vraiment supprimer l'utilisateur <strong><span class="user-name"></span></strong> ?</p>
+                            <p class="responsive-font roboto">Voulez-vous vraiment supprimer l'utilisateur <strong><span class="user-name"></span></strong> ?</p>
                         </div>
 
                         <div class="modal-footer">
-                            <a class="responsive-font btn btn-danger delete-btn">OUI</a>
-                            <button type="button" class="responsive-font btn btn-secondary" data-dismiss="modal">NON</button>
+                            <a class="responsive-font btn btn-danger delete-btn roboto">OUI</a>
+                            <button type="button" class="responsive-font btn btn-secondary roboto" data-dismiss="modal">NON</button>
                         </div>
 
                     </div>
