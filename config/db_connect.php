@@ -4,33 +4,21 @@
     $db_user_pwd = 'test123';
     $db_name = 'garage';
 ?>
-
 <!-- via mysqli -->
-<?php
-    // SIMPLE WAY TO CONNECT TO A DB
-
-    // $conn = new mysqli($db_host_name, $db_user_name, $db_user_pwd, $db_name);
-
-    // if(!$conn) {
-    //     echo "Erreur de connexion à la base de données $db_name :" . mysqli_connect_error();
-    // }
-?>
 
 <?php
-    // BEST WAY TO MANAGE DB CONNECTION STATUS
-    try {
-
+    try 
+    {
         $conn = new mysqli($db_host_name, $db_user_name, $db_user_pwd, $db_name);
 
-        if($conn->connect_errno) {
+        if($conn->connect_errno) 
+        {
             throw new Exception('Erreur de connexion à la base de donnée');
         }
-
     }
-    catch (Exception $e) {
-
+    catch (Exception $e) 
+    {
         echo 'Une erreur est survenue : ' . $e->getMessage();
-
     }
 
 ?>
@@ -50,7 +38,3 @@
     //     }
 
 ?>
-
-
-
-

@@ -79,26 +79,27 @@
     }
 ?>
 
-<?php
-    // NOTIFICATION A AFFICHER EN CAS DE REUSSITE DE LA CREATION DE L'UTILISATEUR - START
-    if(isset($_SESSION['SIGNUP_SUCCESS']))
-    {
-        echo
-            '<div class="container mt-3">
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-            '. $_SESSION['SIGNUP_SUCCESS'] .'
-            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                </div>
-            </div>';
-
-        unset($_SESSION['SIGNUP_SUCCESS']);
-    }
-    // NOTIFICATION A AFFICHER EN CAS DE REUSSITE DE LA CREATION DE L'UTILISATEUR - END
-?>
 <main id="main-login">
 
     <div>
         <div class="container">
+
+        <?php
+            // NOTIFICATION A AFFICHER EN CAS DE REUSSITE DE LA CREATION DE L'UTILISATEUR - START
+                if(isset($_SESSION['SIGNUP_SUCCESS']))
+                {
+                    echo
+                        '<div class="container mt-3">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        '. $_SESSION['SIGNUP_SUCCESS'] .'
+                        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>';
+
+                    unset($_SESSION['SIGNUP_SUCCESS']);
+                }
+            // NOTIFICATION A AFFICHER EN CAS DE REUSSITE DE LA CREATION DE L'UTILISATEUR - END
+        ?>
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card shadow">

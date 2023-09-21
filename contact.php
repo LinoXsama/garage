@@ -2,12 +2,12 @@
 <?php
     $page_title = 'Contactez-nous';
 
+    session_start();
     require_once 'templates/header.php';
     require_once 'templates/navbar_visitor.php';
     
     require_once 'functions.php';
 
-    session_start();
 ?>
 
 <?php

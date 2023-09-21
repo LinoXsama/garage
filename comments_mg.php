@@ -87,7 +87,7 @@ if(isset($_SESSION['msg']))
                                 <input type="hidden" name="AUTHOR" value="<?= $row['name']; ?>">
                                 <input type="hidden" name="MSG_DATE" value="<?= $row['msg_date']; ?>">
 
-                                <input type="submit" name="PUBLICATION">
+                                <input type="submit" name="PUBLICATION" value="MAJ">
                             </form>
                             <td data-label="Note" class="responsive-font"><?= $row['rating']; ?> / 5</td>
                             </td>

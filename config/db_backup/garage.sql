@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : mer. 20 sep. 2023 à 19:05
+-- Généré le : jeu. 21 sep. 2023 à 17:41
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -70,7 +70,9 @@ INSERT INTO `cars` (`cars_id`, `cars_brand`, `cars_model`, `cars_release_year`, 
 (2, 'Renault', 'Scenic', 2018, 100, 'Diesel', 267220, 5000, '', '', 'Manuelle', 5, 'Cuir', 'Jaune doré', 'Étendue 12 mois', 'Radio', 'Ecran tactile 9 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', '', '', '', '', '', '', '2023-09-12', 'Merlin Pecan'),
 (3, 'BMW', 'i5', 2010, 120, 'Diesel', 180000, 6550, '', '', 'Automatique', 5, 'Cuir', 'Bleu sidéral', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', '', '', '', '', '', '', '2023-09-12', 'Merlin Pecan'),
 (4, 'Dacia', 'Duster', 2020, 120, 'Diesel', 180000, 7423, '', '', 'Automatique', 5, 'Cuir/Tissu', 'Orange', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', '', '', '', '', '', '', '2023-09-12', 'Merlin Pecan'),
-(5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, '', '', 'Automatique', 5, 'Cuir/Tissu', 'Bleu ciel', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', '', '', '', '', '', '', '2023-09-12', 'Merlin Pecan');
+(5, 'Peugeot', '308', 2020, 120, 'Diesel', 180000, 8530, '', '', 'Automatique', 5, 'Cuir/Tissu', 'Bleu ciel', 'Étendue 12 mois', 'Radio', 'Écran tactile 7 pouces', 'GPS', '2 ports USB + 1 prise audio + 1 port carte SD', 'Climatisation automatique', 'Détecteur d\'obstacle', 'Rétroviseurs extérieurs réglables électriquement', 'Appui-tête AR réglable', '', '', '', '', '', '', '2023-09-12', 'Merlin Pecan'),
+(43, 'Toyota', 'Camry', 2019, 80, 'Diesel', 177300, 6500, '', '', 'Automatique', 5, 'Cuir/Tissu', 'Rouge Cramasoi', 'Étendue sur 12 mois', 'Radio', 'Radio', 'Ecran tactile', '2 ports USB', 'Climatisation automatique', 'Radio', 'Radio', 'Radio', '', '', '', '', '', '', '2023-09-20', 'Paul Smithh'),
+(44, 'Toyota', 'Vectra', 2020, 120, 'Diesel', 177221, 9000, '', '', 'Automatique', 5, 'Cuir/Tissu', 'Rouge Cramasoi', 'Étendue sur 12 mois', 'Radio', 'GPS', 'Ecran tactile', '2 ports USB', 'Climatisation automatique ', 'Radio', 'Radio', 'Radio', '', '', '', '', '', '', '2023-09-20', 'John Cena');
 
 -- --------------------------------------------------------
 
@@ -122,9 +124,12 @@ CREATE TABLE `crud` (
 INSERT INTO `crud` (`id`, `first_name`, `last_name`, `email`, `password`, `pwd_hash`, `user_type`) VALUES
 (35, 'Alexandre', 'Legrand', 'exampleexample@gmail.com', 'tata_TATA_123', '$2y$10$MKOKDKfNWEjY.YBuyv59Ke8XjTIWe9NDvdSEQ1hfVK3Vg5e2f0irS', 'admin'),
 (36, 'James', 'Parker', 'james.parker@yahoo.fr', 'james_PARKER456', '$2y$10$UotuNYWPrKRpTCafS8d/HOl9HFo17ZQwDUeFwzTdJmJLQvIscBS0q', 'admin'),
-(68, 'Roberts', 'Juliaa', 'juju.roro@yahoo.fr', 'pipo_94_7888', '$2y$10$S9WarKB5on56BA72fH3T6uBmeqBpdbFqyfjKg5SjJOheyUHDuVpg2', 'employee'),
-(71, 'Hello', 'Kitty', 'hello.kitty@yahoo.fr', 'meow_meow_79', '$2y$10$pr6pBedVNSXeTxGHPqCAfuqvvBm0le4TUqDOW1Ki2oheeu6xWRto.', 'employee'),
-(79, 'Bruce', 'Wayne', 'batman@gotham.fr', 'jokerIsNotAMatch@éà$â:;,_', '$2y$10$AA6oXlcFiB4YFIUgAx11AuWK1gMsU/hSFVHuTMKr.AHhllYTJrzwC', 'employee');
+(79, 'Bruce', 'Wayne', 'batman@gotham.fr', 'jokerIsNotAMatch@éà$â:;,_', '$2y$10$AA6oXlcFiB4YFIUgAx11AuWK1gMsU/hSFVHuTMKr.AHhllYTJrzwC', 'employee'),
+(84, 'Rocket', 'Giovanni', 'team.rocket@rocket.jp', 'Ex_serris_60205947', '$2y$10$i3g7QxoKVfBTLGLXzxc.ueQb65hB7PxKzKZGe63LZMkl9HZvMthou', 'admin'),
+(86, 'qsdfqsdf', 'qsdfqsdfsqdf', 'slavikzaya@gmail.com', 'Ex_serris_60205947', '$2y$10$HX0YvOjyfhF7RZbSNjHT8uEp05Y7RJvMTDZ23d2eLhwECU9rPUtoq', 'admin'),
+(87, 'Merlin', 'Migan', 'merlin.migan@gmail.com', 'Ex_serris_60205947', '$2y$10$hd5SSlQpbI1UHrRgCAE4KutJtu6af0yfdO8y6jA1Em.agQMXvyJl2', 'admin'),
+(88, 'gsdfg', 'gsdfgdf', 'gtt@gmail.com', 'Ex_serris_60205947', '$2y$10$V0THpHy2bSwzlO1XrZN21.fZMWmVy9.b1NY2pwg5bgAUNpsHbdqMi', 'admin'),
+(89, 'Stein', 'Juanita', 'jstein@gmail.com', 'Ex_serris_60205947', '$2y$10$3PZm0TKlgEv9veLlWdXFWuxeW3/BOCGF54zlWr8dz.AUynia3t2G6', 'admin');
 
 -- --------------------------------------------------------
 
@@ -255,19 +260,19 @@ ALTER TABLE `sliders_filters`
 -- AUTO_INCREMENT pour la table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `cars_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `cars_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT pour la table `crud`
 --
 ALTER TABLE `crud`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT pour la table `schedules`
