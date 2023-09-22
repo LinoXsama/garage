@@ -3,11 +3,12 @@
 ?>
 
 <?php
+    session_start();
+    ob_start();
     require_once 'templates/header.php';
     require_once 'templates/navbar_visitor.php';
     require_once 'functions.php';
 
-    session_start();
 
     $_SESSION['email'] = $_SESSION['password'] = '';
 
@@ -77,6 +78,7 @@
 
         unset($_POST['LOGIN']);
     }
+    
 ?>
 
 <main id="main-login">

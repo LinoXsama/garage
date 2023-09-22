@@ -10,7 +10,7 @@
 
     <div>
     
-        <h2 class="text-center pb-2">Bienvenue au Garage V.Parrot</h2>
+        <h2 class="text-center pb-2 kanit">Bienvenue au Garage V.Parrot</h2>
 
         <div class="container  d-flex justify-content-center roboto">
             <div class="pb-4">
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <h2 class="text-center pb-2 text-primary">Nos clients témoignent !</h2>
+        <h2 class="text-center pb-2 text-primary kanit">Nos clients témoignent !</h2>
 
         <div class="container mt-5 ">
             <div class="row">

@@ -25,7 +25,7 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><?= $row['service_name']; ?></h5>
+                        <h5 class="card-title kanit"><?= $row['service_name']; ?></h5>
                         <p class="card-text roboto"><?= $row['service_description']; ?></p>
                     </div>
                 </div>

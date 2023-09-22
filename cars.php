@@ -96,7 +96,7 @@
                         <span class="btn btn-dark responsive-font" id="price-tag"><span class="price"><?= "{$row['cars_price']} "; ?></span>€</span>
                         <img src="<?= $row['cars_main_img']; ?>" alt="<?= $row['cars_alt_text']; ?>" class="card-img-top custom-img custom-bg gallery-item cp" />
                         <div class="card-body">
-                            <h4 class="card-title"><?= "{$row['cars_brand']} {$row['cars_model']} {$row['cars_release_year']} {$row['cars_power']} "; ?>CH</h4>
+                            <h4 class="card-title kanit"><?= "{$row['cars_brand']} {$row['cars_model']} {$row['cars_release_year']} {$row['cars_power']} "; ?>CH</h4>
                             <ul class="card-text list-unstyled">
                                 <li class="responsive-font roboto"><span>Année : </span><span class="release-year"><?= $row['cars_release_year']; ?></span></li>
                                 <li class="responsive-font roboto"><span>Type de moteur : </span><?= $row['cars_engine_type']; ?></li>

@@ -2,7 +2,7 @@
   <div class="container">
   
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
           <!-- LOGO DU GARAGE -->
           <img src="config/logo2.png" alt="Logo Garage Vincent">&nbsp;&nbsp;
         </a>
